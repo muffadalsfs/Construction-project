@@ -51,7 +51,7 @@ Route::get('logout',[LoginController::class,'logout']);
       Route::get('delete/{id}', 'destroy')->name('project.delete'); // DELETE a project
       Route::get('edit/{id}', 'edit')->name('project.edit'); // Edit project form
 //    Route::put('update/{id}', 'update')->name('project.update'); // Update project
-   Route::get('detail/{id}', 'detail')->name('project.detail'); // View project details
+ Route::get('detail/{id}', 'detail')->name('project.detail'); // View project details
 //    route::get('projecthome','savepage')->name('project.projecthome');
 // route::get('sp','sp')->name('sp');
 //       route::get('singlepage','singlepage')->name('singlepage');
