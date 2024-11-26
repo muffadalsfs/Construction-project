@@ -1,0 +1,76 @@
+.image-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%; /* Adjust max width */
+    height: 300px; /* Set a fixed height */
+    margin: auto; /* Center the container */
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image scales without distortion */
+}
+
+.image-container h1 {
+    position: absolute;
+    top: 40%;
+    
+    right:70%;
+    transform: translate(-50%, -50%);
+    color: black; /* Adjust text color */
+    font-size: 44px; /* Adjust text size */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow for readability */
+}
+.card-container {
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+justify-content: center;
+margin: 20px auto;
+max-width: 1200px;
+}
+
+.card {
+width: 30%; /* Adjust for 3 cards per row */
+background-color: #f9f9f9;
+border: 1px solid #ddd;
+border-radius: 8px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+overflow: hidden;
+text-align: center;
+transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.card img {
+width: 100%;
+height: 200px;
+object-fit: cover;
+transition: transform 0.3s ease; /* Smooth zoom effect */
+}
+
+.card h2 {
+font-size: 1.5em;
+margin: 10px 0;
+transition: color 0.3s ease; /* Smooth text color change */
+}
+
+.card p {
+font-size: 1em;
+color: #555;
+padding: 0 10px 10px;
+}
+
+/* Hover Effects */
+.card:hover {
+transform: translateY(-10px); /* Moves the card slightly upwards */
+box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Darker shadow */
+}
+
+.card:hover img {
+transform: scale(1.1); /* Zoom in on the image */
+}
+
+.card:hover h2 {
+color: #007bff; /* Change title color on hover */
+}
