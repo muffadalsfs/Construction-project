@@ -196,7 +196,7 @@ footer {
             <div class="dropdown-content">
                 <a href="{{route('element')}}">Project Gallery</a>
                 <a href="{{route('enginner.element')}}">team gallery</a>
-                <a href="#">Link 3</a>
+                <a href="{{route('blogelement')}}">Blog </a>
             </div>
         </div>
         <div class="dropdown">
@@ -208,7 +208,7 @@ footer {
             </div>
         </div>
         <div class="dropdown">
-            <button class="dropbtn"><a href="blog">Blog</a></button>
+            <button class="dropbtn"><a href="{{route('blogelement')}}">Blog</a></button>
             <div class="dropdown-content">
                 <a href="blog">Blog created</a>
                 <a href="#">Blog 2</a>

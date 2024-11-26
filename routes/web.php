@@ -6,6 +6,9 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\Engineercontroller;
 use  App\Http\Controllers\Toolcontroller;
 use App\Http\Controllers\servicecontroller;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\PasswordResetController;
 
 
 /*
@@ -21,20 +24,24 @@ use App\Http\Controllers\servicecontroller;
 
 Route::get('/',[Blogcontroller::class,
 'home']);
+Route::view('login','login');
+Route::view('register','register');
+Route::post('login',[LoginController::class,'login'])->name('login');
+Route::post('register',[RegisterController::class,'register']);
+Route::get('logout',[LoginController::class,'logout']);
 
-
- Route::prefix('blogs')->controller(Blogcontroller::class)->group(function () {
-     Route::get('blog',  'index')->name('blogs.index'); // List all blogs
-     Route::get('create',  'create')->name('blogs.create'); // Show create form
-     Route::post('store',  'store')->name('blogs.store'); // Store new blog
-//     Route::get('blog/detail/{id}', 'detail')->name('blog/detail/'); // View project details
-     Route::get('{id}/edit',  'edit')->name('blogs.edit'); // Show edit form
-//     Route::put('{id}',  'update')->name('blogs.update'); // Update blog
-     Route::delete('{id}',  'destroy')->name('blogs.destroy'); // Delete 
-//     Route::get('show', 'blogshow')->name('.show'); // GET for showing projects
-
- });
-
+  Route::prefix('blogs')->controller(Blogcontroller::class)->group(function () {
+      Route::get('blog',  'index')->name('blogs.index'); // List all blogs
+      Route::get('create',  'create')->name('blogs.create'); // Show create form
+      Route::post('store',  'store')->name('blogs.store'); // Store new blog
+ //     Route::get('blog/detail/{id}', 'detail')->name('blog/detail/'); // View project details
+      Route::get('{id}/edit',  'edit')->name('blogs.edit'); // Show edit form
+ //     Route::put('{id}',  'update')->name('blogs.update'); // Update blog
+      Route::delete('{id}',  'destroy')->name('blogs.destroy'); // Delete 
+ //     Route::get('show', 'blogshow')->name('.show'); // GET for showing projects
+ 
+  });
+ route::get('blogelement',[Blogcontroller::class,'element'])->name('blogelement');
 
 
     // // Project Routes
@@ -106,3 +113,9 @@ route::get('singleservice','singlepage');
 });
 
 
+
+Route::get('/forgot-password', [PasswordResetController::class, 'showForgotPasswordForm'])->name('password.request');
+Route::post('/forgot-password', [PasswordResetController::class, 'sendResetLink'])->name('password.email');
+
+Route::get('/reset-password/{token}', [PasswordResetController::class, 'showResetPasswordForm'])->name('password.reset');
+Route::post('/reset-password', [PasswordResetController::class, 'resetPassword'])->name('password.update');

@@ -6,7 +6,7 @@ use App\Models\Blog;
 use App\Models\Project;
 use App\Models\Enigenner;
 use App\Models\Tool;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class Blogcontroller extends Controller
@@ -31,7 +31,7 @@ class Blogcontroller extends Controller
         $blog->title = $request->title;
         $blog->content = $request->content;
         $blog->path = $image;
-
+        $blog->user_id = Auth::id();
         $blog->save();
         return redirect()->route('blogs.index')->with('success', 'Blog added successfully!');
     }
@@ -106,4 +106,9 @@ public function blogshow()
     $blogs = Blog::all();
     return view('shows.blog', compact('blogs'));
 }
+ public function element(){
+    $blog=Blog::all();
+    return view('element.blog',['blog'=>$blog]);
+
+ }
 }
