@@ -398,73 +398,68 @@
 }
 /*seven layer /*
 /* Engineer Container */
-/* Engineer Container */
 .engineer-container {
-    text-align: center; /* Center the heading */
-    padding: 60px 20px; /* Increased padding for more space */
+    max-width: 1200px;
+    margin: 40px auto;
+    text-align: center;
 }
 
-/* Engineer Grid */
+.section-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Grid Layout for Engineer Cards */
 .engineer-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Center cards horizontally */
-    gap: 30px; /* Increased gap between cards */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
 }
 
-/* Engineer Card */
+/* Engineer Card Styling */
 .engineer-card {
-    width: calc(25% - 30px); /* Increase width of each card to account for more space */
-    background-color: #fff;
+    position: relative;
+    background: #fff;
+    border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Larger shadow for a more pronounced effect */
-    position: relative;
-    transition: transform 0.3s ease-in-out;
-    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Fixed Image Size */
+.engineer-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Engineer Image */
 .engineer-img img {
     width: 100%;
-    height: 250px; /* Increased height for larger images */
+    height: 200px;
     object-fit: cover;
-    transition: transform 0.3s ease-in-out;
+    border-bottom: 1px solid #ddd;
 }
 
-/* Engineer Name */
+/* Hidden Name Overlay */
 .engineer-name {
     position: absolute;
-    bottom: 15px; /* Adjusted bottom position for better visibility */
+    bottom: 0;
     left: 0;
     right: 0;
-    text-align: center;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 18px;
     padding: 10px;
-    opacity: 0; /* Start with the name hidden */
-    transition: opacity 0.3s ease, bottom 0.3s ease;
-}
-
-/* Hover Effect */
-.engineer-card:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
-}
-
-.engineer-card:hover .engineer-img img {
-    transform: scale(1.1); /* Zoom image slightly on hover */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
 }
 
 .engineer-card:hover .engineer-name {
-    opacity: 1; /* Show the engineer's name on hover */
-    bottom: 60px; /* Move the name up further on hover */
-}
-
-/* Heading Styles */
-.engineer-container h3 {
-    font-size: 40px; /* Increased font size for the heading */
-    margin-bottom: 50px; /* More space under the heading */
-    color: #333;
+    opacity: 1;
 }
 /*eight layer*/
 

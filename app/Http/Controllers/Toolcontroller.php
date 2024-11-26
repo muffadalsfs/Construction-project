@@ -21,7 +21,7 @@ class Toolcontroller extends Controller
         $to->path=$image;
         $to->price=$request->price;
         $to->save();
-        return redirect('home');
+        return redirect()->route('tools.index');
 
     }
     public function index()

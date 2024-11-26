@@ -1,4 +1,6 @@
+@extends('layout.header')
 
+@section('content')
 <link rel="stylesheet" href="{{ asset('css/engineers.css') }}">
 
 <div class="engineer-container">
@@ -8,8 +10,9 @@
     <div class="engineer-grid">
         @foreach ($enginner as $enginners)
             <div class="engineer-card">
+            <img src="{{ url('storage/public/' . $enginners->path) }}" alt="{{ $enginners->name }}" class="engineer-image">
                 <h3>{{ $enginners->name }}</h3>
-                <img src="{{ url('storage/public/' . $enginners->path) }}" alt="{{ $enginners->name }}" class="engineer-image">
+           
 
                 <div class="action-buttons">
                     <a href="{{ route('enginners.edit', $enginners->id) }}" class="edit-button">Edit</a>
@@ -23,6 +26,7 @@
         @endforeach
     </div>
 </div>
+@endsection
 <style>
     /* General body styling */
 body {
@@ -112,6 +116,12 @@ body {
     color: white;
     border: none;
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px; /* Set consistent width */
+    height: 36px; /* Set consistent height */
+    box-sizing: border-box; /* Ensure padding is considered within dimensions */
 }
 
 .edit-button {
@@ -128,17 +138,6 @@ body {
 
 .delete-button:hover {
     background-color: #c82333;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .engineer-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-
-    .add-button {
-        font-size: 14px;
-    }
 }
 
 </style>

@@ -137,7 +137,7 @@
         <p>Let us help you build the home of your dreams with the utmost care and expertise in every step of the process.</p>
     </div>
 </div><div class="engineer-container">
-    <h3>Engineers</h3>
+    <h3 class="section-title">Engineers</h3>
     <div class="engineer-grid">
         @foreach($enginner as $eg)
             <div class="engineer-card">

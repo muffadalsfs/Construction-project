@@ -1,3 +1,6 @@
+@extends('layout.header')
+
+@section('content')
 <div class="services-section">
     @foreach($blogs as $blog)
     <div class="service-card">
@@ -11,6 +14,7 @@
     </div>
     @endforeach
 </div>
+@endsection
 <style>
     /* Services Section */
 .services-section {

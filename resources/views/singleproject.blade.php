@@ -89,8 +89,18 @@
         <div style="position: relative;">
             <img src="{{ url('storage/public/' . $singles->path) }}" alt="Blog Image" class="blog-image">
             <div class="title-overlay">{{ $singles->title }}</div>
+            
         </div>
-
+        <p class="paragraph">
+           client name:{{$singles->name}}
+        </p>
+        <p class="paragraph">
+           Location:{{$singles->Location}}
+        </p>
+        
+        <p class="paragraph">
+           value:{{$singles->value}}
+        </p>
         <h3>Our Professional & Expert Team</h3>
         <p class="paragraph">{{ $singles->content }}</p>
 
