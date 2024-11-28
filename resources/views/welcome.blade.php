@@ -11,30 +11,28 @@
             <div class="slide-content">
                 <h2>{{ $projects->title }}</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. </p>
-                    <p>Praesent libero. Sed cursus ante dapibus diam.</p>
+                <p>Praesent libero. Sed cursus ante dapibus diam.</p>
                 <button>Learn More</button><br><br>
+                
+                <!-- Check if user is authenticated -->
                 @auth
-            @if(auth()->user()->id === $projects->user_id)
-                <div class="post-actions">
                     <!-- Edit Button -->
-                    <a href="{{ url('edit', $projects->id) }}" class="edit-button">Edit</a>
+                    <a href="{{ route('project.edit', $projects->id) }}" class="edit-btn">Edit</a>
                     
                     <!-- Delete Button -->
-                    <form action="{{ url('delete', $projects->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this post?');">
+                    <form action="{{ route('project.delete', $projects->id) }}" method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="delete-button">Delete</button>
+                        <button type="submit" class="delete-btn">Delete</button>
                     </form>
-                </div>
-            @endif
-        @endauth
+                @endauth
             </div>
-            
             <img src="{{ url('storage/public/' . $projects->path) }}" alt="{{ $projects->title }}">
         </div>
         @endforeach
     </div>
 </div>
+
 <div class="highlight-box">
     <p class="highlight-text">Are you looking for a Construction & Industrial Experts? </p>
     <button class="highlight-button">Request</button>
