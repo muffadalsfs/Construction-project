@@ -1,0 +1,947 @@
+
+
+
+
+
+
+
+    /* General styling for the slider container */
+    .slider-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+    .slide-content a {
+        display: inline-block;
+        margin: 5px 10px 0 0;
+        padding: 8px 15px;
+        background-color: #007BFF; /* Primary button color */
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+    .slide-content a:hover {
+        background-color: #0056b3; /* Darker shade for hover */
+    }
+    
+    /* Separate buttons for better spacing */
+    .slide-content a:nth-child(2) {
+        background-color: #DC3545; /* Red for delete */
+    }
+    
+    .slide-content a:nth-child(2):hover {
+        background-color: #a71d2a; /* Darker red for hover */
+    }
+    
+    .slider {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+    
+    .slide {
+        position: relative;
+        min-width: 100%;
+        display: flex;
+        align-items: center; /* Align text and image vertically */
+        justify-content: flex-start; /* Align content to the left */
+        background-color: rgba(0, 0, 0, 0.5); /* Optional overlay background for better text visibility */
+    }
+    
+    /* Slide content styling */
+    .slide-content {
+        position: absolute;
+        z-index: 10;
+        padding: 20px;
+        max-width: 40%; /* Adjust width as needed */
+        color: white;
+    }
+    
+    .slide-content h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    
+    .slide-content p {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+    
+    .slide-content button {
+        background-color: yellow;
+        color: black;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    .slide-content button:hover {
+        
+        color: #fff;
+    }
+    
+    /* Image styling */
+    .slide img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+    
+    /*second layer*/
+    /* Highlight Box Styles */
+/* Highlight Box Styles */
+.highlight-box {
+    background-color: #ffeb3b; /* Bright yellow background */
+    padding: 20px;
+    border-radius: 10px;
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center text and button horizontally */
+    align-items: center; /* Vertically center align text and button */
+    margin: 20px auto; /* Centers the box */
+    max-width: 100%; /* Increased width for the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+
+/* Text Styles */
+.highlight-text {
+    font-size: 20px; /* Larger text size */
+    font-weight: bold;
+    color: #333; /* Neutral dark color for the text */
+    margin-right: 20px; /* Adds space between the text and button */
+    white-space: nowrap; /* Prevents text from wrapping */
+}
+
+/* Button Styles */
+.highlight-button {
+    background-color: #333; /* Dark background for contrast */
+    color: #fff; /* White text */
+    border: none;
+    padding: 12px 24px; /* Larger button size */
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* Smooth transitions for hover effects */
+}
+
+/* Hover Effect */
+.highlight-button:hover {
+    background-color: #000; /* Slightly darker background on hover */
+    color: #ffeb3b; /* Yellow text on hover for contrast */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow effect */
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.highlight-button:active {
+    transform: scale(0.95); /* Button shrink effect on click */
+}
+
+/*thrid layer*/
+/* Container styling */
+/* Content Container */
+/* Content Container */
+.content-container {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: flex-start; /* Align the content to the top */
+    padding: 20px;
+    gap: 30px; /* Add some space between the sections */
+}
+
+/* Left section (text) styling */
+.text-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Vertically center the content */
+    align-items: center; /* Horizontally center the content */
+    text-align: center; /* Center align the text */
+}
+
+.text-section h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.text-section p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: yellow;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+/* Right section (image grid) styling */
+.image-grid {
+    display: grid; /* Use grid layout for precise control over image placement */
+    grid-template-columns: repeat(2, 1fr); /* Create two equal-width columns */
+    gap: 20px; /* Space between the images */
+    flex: 1;
+}
+
+.image-box {
+    position: relative;
+    width: 70%; /* Take full width of the grid column */
+    padding-top: 70%; /* Maintain square aspect ratio */
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.image-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.image-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background */
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+/*four layer/*
+/* Section Styles */
+/* Section Styles */
+.featured-project {
+    background-color: #000; /* Black background */
+    padding: 40px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+/* Title Styles */
+.section-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* Button Container */
+.button-container {
+    margin-bottom: 30px;
+}
+
+.project-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.project-button:hover {
+    background-color: #555;
+}
+
+/* Card Container */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    gap: 20px;
+    padding: 20px 0;
+}
+
+/* Card Styles */
+.project-card {
+    background-color: #111;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: left;
+    color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 350px; /* Increased card height */
+    background-color: white;
+}
+
+.project-card:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+}
+
+/* Shine Effect */
+.project-card:hover::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0.1) 60%,
+        rgba(255, 255, 255, 0.2) 100%
+    );
+    transform: rotate(45deg);
+    animation: shine 1s infinite;
+}
+
+@keyframes shine {
+    from {
+        transform: translateX(-100%) rotate(45deg);
+    }
+    to {
+        transform: translateX(100%) rotate(45deg);
+    }
+}
+
+/* Image Styles */
+.image-wrapper {
+    height: 200px; /* Increased image height */
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .image-wrapper img {
+    transform: scale(1.1); /* Image zoom on hover */
+}
+
+/* Card Text */
+.card-title {
+    font-size: 18px;
+    margin: 10px 15px 5px;
+    
+}
+
+.card-content {
+    font-size: 14px;
+    margin: 0 15px 15px;
+    color: black;
+}
+/*five layer/*
+/* Container for the text and image */
+/* Container for the text and image */
+.core-value-container {
+    display: flex; /* Align items side by side */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding: 50px;
+    gap: 20px; /* Add space between text and image */
+}
+
+/* Text Container */
+.text-container {
+    text-align: center; /* Center text horizontally */
+    max-width: 500px; /* Limit width of text */
+    order: 1; /* Ensure text appears on the left side */
+}
+
+.text-container h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333; /* Dark color for the heading */
+}
+
+.text-container p {
+    font-size: 18px;
+    color: #666; /* Lighter color for the paragraph */
+}
+
+/* Image Container */
+.image-container {
+    order: 2; /* Ensure image appears on the right side */
+}
+
+.image-container img {
+    width: 1000px; /* Fixed width for the image */
+    height: auto; /* Maintain aspect ratio */
+}
+/*sixlayer/*
+/* Container for the video and text */
+.core-value-container {
+    display: flex;  /* Center vertically */
+    padding: 50px;
+    gap: 20px; /* Add space between video and text */
+}
+
+/* Video Container */
+.video-container {
+    flex: 1; /* Take up available space */
+    max-width: 1000px; /* Max width for the video */
+    height: 550px; /* Fixed height */
+    overflow: hidden; /* Ensure video doesn't overflow */
+}
+
+.video-container iframe {
+    width: 100%; /* Fill the container */
+    height: 100%; /* Fill the container */
+}
+
+/* Text Container */
+.text-container {
+    flex: 2; /* Take up more space on the right side */
+    text-align: center; /* Center the text */
+    max-width: 600px; /* Limit width of text */
+}
+
+.text-container h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333; /* Dark color for the heading */
+}
+
+.text-container p {
+    font-size: 18px;
+    color: #666; /* Lighter color for the paragraph */
+    margin-bottom: 20px; /* Space between paragraphs */
+}
+/*seven layer /*
+/* Engineer Container */
+.engineer-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Grid Layout for Engineer Cards */
+.engineer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 80px;
+    justify-content: center;
+}
+
+/* Engineer Card Styling */
+.engineer-card {
+    position: relative;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.engineer-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Engineer Image */
+.engineer-img img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Hidden Name Overlay */
+.engineer-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    pointer-events: none; /* Prevent overlay from interfering with clicks */
+}
+
+.engineer-card:hover .engineer-name {
+    opacity: 1;
+}
+.engineer-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn-edit, .btn-delete {
+    padding: 8px 12px;
+        border-radius: 5px;
+        font-size: 14px;
+        text-decoration: none;
+        color: white;
+        border: none;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 90px; /* Set consistent width */
+        height: 36px; /* Set consistent height */
+        box-sizing: border-box; /* Ensure padding is considered within dimensions */
+}
+
+.btn-edit {
+    background-color: #007bff;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+.btn-edit:hover {
+    background-color: #0056b3;
+}
+
+/*eight layer*/
+
+.silver-background {
+    background-color: #c0c0c0; /* Silver background color */
+    padding: 40px 20px; /* Add padding around the container */
+}
+
+/* Sections Container */
+.sections-container {
+    display: flex;
+    justify-content: space-between; /* Space sections side by side */
+    gap: 40px; /* Space between the sections */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Our Client Section */
+.clients-section {
+    flex: 1;
+    text-align: center;
+}
+
+.clients-section h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.clients-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 boxes per row */
+    gap: 20px;
+    justify-content: center; /* Center the boxes */
+}
+
+.client-box {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.client-box:hover {
+    transform: scale(1.05);
+    background-color: gold;
+}
+
+/* Feedback Section */
+.feedback-section {
+    flex: 1;
+    text-align: center;
+}
+
+.feedback-section h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.feedback-slider {
+    overflow: hidden; /* Hide overflow for slider effect */
+    position: relative;
+    max-width: 500px; /* Limit the slider width */
+    margin: 0 auto; /* Center the slider */
+}
+
+.feedback-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth transition */
+}
+
+.feedback {
+    flex: 0 0 100%; /* Each slide takes 100% of the slider width */
+    text-align: center;
+    padding: 20px;
+    color: #333;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.feedback img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.feedback-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.feedback-rating {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #ffa500; /* Gold stars */
+}
+
+.feedback-text {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Slider Navigation */
+.slider-nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.slider-nav button {
+    width: 12px;
+    height: 12px;
+    border: none;
+    border-radius: 50%;
+    background-color: #aaa;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.slider-nav button.active {
+    background-color: #ff6600; /* Orange for active */
+}
+
+.slider-nav button:hover {
+    background-color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sections-container {
+        flex-direction: column; /* Stack sections vertically */
+        gap: 20px; /* Reduce gap */
+    }
+}
+
+
+/* nine layer/*
+/* Tools Container */
+.tools-container {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+.tools-container h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Slider Styling */
+.tools-slider {
+    overflow: hidden;
+    position: relative;
+    max-width: 900px; /* Set max width for the slider */
+    margin: 0 auto;
+}
+
+.tools-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.tool-card {
+    flex: 0 0 300px; /* Fixed width for each tool card */
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tool-card img {
+    width: 200px;
+    height: 200px; /* Fixed image size */
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.tool-details {
+    font-size: 16px;
+}
+
+.tool-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.tool-price {
+    color: #007bff;
+    font-weight: bold;
+}
+/* Action Buttons Container */
+.tool-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* Action Buttons Styling */
+.btn-edit, .btn-delete {
+    padding: 6px 10px;
+    font-size: 12px;
+    text-decoration: none;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn-edit {
+    background-color: #007bff;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+}
+
+.btn-edit:hover {
+    background-color: #0056b3;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
+/* Slider Navigation */
+.slider-nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.slider-nav button {
+    width: 12px;
+    height: 12px;
+    border: none;
+    border-radius: 50%;
+    background-color: #aaa;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.slider-nav button.active {
+    background-color: #007bff;
+}
+
+.slider-nav button:hover {
+    background-color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tools-wrapper {
+        display: grid;
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 20px;
+    }
+
+    .tool-card {
+        margin: 0 auto;
+    }
+}
+/*ten layer/*
+/* Center the heading */
+.news-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Grid layout for the cards */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust to fit screen size */
+    gap: 20px;
+    justify-items: center;
+    padding: 20px;
+}
+
+/* Individual blog card */
+.news-card {
+    position: relative;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 400px;
+    padding-bottom: 20px;
+}
+
+/* Date box on the image */
+.date-box {
+    position: absolute;
+    top: 170px;
+    left: 1px;
+    background: #ff6600;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    height: 19px;
+}
+
+/* Image styling */
+.news-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Ensures fixed size with proper aspect ratio */
+}
+
+/* Title styling */
+.news-card h2 {
+    font-size: 18px;
+    margin: 15px;
+    color: #333;
+    text-align: center;
+}
+
+/* Content styling */
+.news-content {
+    margin: 0 15px;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to two lines */
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+/* Read more link */
+.read-more {
+    display: block;
+    text-align: center;
+    margin: 15px;
+    padding: 10px 20px;
+    background: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.read-more:hover {
+    background: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .news-grid {
+        grid-template-columns: 1fr; /* Stack cards on smaller screens */
+    }
+}
+.post-actions {
+    margin-top: 10px;
+    display: flex; /* Use flexbox to align buttons side by side */
+    gap: 10px; /* Add space between the buttons */
+}
+
+.edit-button, .delete-button {
+    padding: 8px 12px;
+        border-radius: 5px;
+        font-size: 14px;
+        text-decoration: none;
+        color: white;
+        border: none;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 90px; /* Set consistent width */
+        height: 36px; /* Set consistent height */
+        box-sizing: border-box; /* Ensure padding is considered within dimensions */
+}
+
+.edit-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.edit-button:hover {
+    background-color: #45a049;
+}
+
+.delete-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #e53935;
+}
+
