@@ -128,15 +128,15 @@
         </div>
     </div>
 </section>
-<div class="core-value-container">
-    <div class="text-container">
-        <h1>Our Core Value</h1>
-        <p>We believe in providing the highest level of service to our clients and creating sustainable value for all stakeholders.</p>
+    <div class="core-value-container">
+        <div class="text-container">
+            <h1>Our Core Value</h1>
+            <p>We believe in providing the highest level of service to our clients and creating sustainable value for all stakeholders.</p>
+        </div>
+        <div class="image-container">
+            <img src="{{asset('Images/11.jpg')}}" alt="Core Value Image" />
+        </div>
     </div>
-    <div class="image-container">
-        <img src="{{asset('Images/11.jpg')}}" alt="Core Value Image" />
-    </div>
-</div>
 <div class="core-value-container">
     <!-- Video Container -->
     <div class="video-container">
@@ -179,21 +179,21 @@
 
     </div>
 </div>
-<div class="silver-background">
-    <!-- Containers for Our Client and Feedback Sections -->
-    <div class="sections-container">
-        <!-- Our Client Section -->
-        <div class="clients-section">
-            <h1>Our Client</h1>
-            <div class="clients-box">
-                <div class="client-box">Client 1</div>
-                <div class="client-box">Client 2</div>
-                <div class="client-box">Client 3</div>
-                <div class="client-box">Client 4</div>
-                <div class="client-box">Client 5</div>
-                <div class="client-box">Client 6</div>
+    <div class="silver-background">
+        <!-- Containers for Our Client and Feedback Sections -->
+        <div class="sections-container">
+            <!-- Our Client Section -->
+            <div class="clients-section">
+                <h1>Our Client</h1>
+                <div class="clients-box">
+                    <div class="client-box">Client 1</div>
+                    <div class="client-box">Client 2</div>
+                    <div class="client-box">Client 3</div>
+                    <div class="client-box">Client 4</div>
+                    <div class="client-box">Client 5</div>
+                    <div class="client-box">Client 6</div>
+                </div>
             </div>
-        </div>
 
         <!-- Feedback Section -->
         <div class="feedback-section">
@@ -228,32 +228,32 @@
         </div>
     </div>
 </div>
-<div class="tools-container">
-    <h1>Latest Tools</h1>
-    <div class="tools-slider" id="toolsSlider">
-        <div class="tools-wrapper">
-            @foreach($tool as $tools)
-                <div class="tool-card">
-                    <img src="{{ url('storage/public/' . $tools->path) }}" alt="{{ $tools->name }}">
-                    <div class="tool-details">
-                        <p class="tool-name">{{ $tools->name }}</p>
-                        <p class="tool-price">${{ $tools->price }}</p>
-                    </div>
-                    @auth
-                        <div class="tool-actions">
-                            <a href="{{ route('tools.edit', $tools->id) }}" class="btn-edit">Edit</a>
-                            <form action="{{ route('tools.delete', $tools->id) }}" method="POST" style="display: inline;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn-delete" onclick="return confirm('Are you sure you want to delete this tool?')">Delete</button>
-                            </form>
+    <div class="tools-container">
+        <h1>Latest Tools</h1>
+        <div class="tools-slider" id="toolsSlider">
+            <div class="tools-wrapper">
+                @foreach($tool as $tools)
+                    <div class="tool-card">
+                        <img src="{{ url('storage/public/' . $tools->path) }}" alt="{{ $tools->name }}">
+                        <div class="tool-details">
+                            <p class="tool-name">{{ $tools->name }}</p>
+                            <p class="tool-price">${{ $tools->price }}</p>
                         </div>
-                    @endauth
-                </div>
-            @endforeach
+                        @auth
+                            <div class="tool-actions">
+                                <a href="{{ route('tools.edit', $tools->id) }}" class="btn-edit">Edit</a>
+                                <form action="{{ route('tools.delete', $tools->id) }}" method="POST" style="display: inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn-delete" onclick="return confirm('Are you sure you want to delete this tool?')">Delete</button>
+                                </form>
+                            </div>
+                        @endauth
+                    </div>
+                @endforeach
+            </div>
         </div>
     </div>
-</div>
 
     <div class="slider-nav" id="sliderNav">
         @for ($i = 0; $i < count($tool); $i++)
@@ -261,42 +261,42 @@
         @endfor
     </div>
 </div>
-<h1 class="news-title">Latest News</h1>
-<div class="news-grid">
-    @foreach($blog as $blogs)
-    <div class="news-card">
-        <!-- Date Box -->
-        <div class="date-box">
-            {{ \Carbon\Carbon::parse($blogs->created_at)->format('M d, Y') }}
+    <h1 class="news-title">Latest News</h1>
+    <div class="news-grid">
+        @foreach($blog as $blogs)
+        <div class="news-card">
+            <!-- Date Box -->
+            <div class="date-box">
+                {{ \Carbon\Carbon::parse($blogs->created_at)->format('M d, Y') }}
+            </div>
+            <!-- Blog Image -->
+            <img class="news-image" src="{{ url('storage/public/' . $blogs->path) }}" alt="{{ $blogs->name }}">
+            <!-- Blog Title -->
+            <h2 class="news-title">{{ $blogs->title }}</h2>
+            <!-- Blog Content -->
+            <p class="news-content">{{ Str::limit($blogs->content, 150, '...') }}</p>
+            <!-- Created by -->
+            <p>Created by: <strong>{{ $blogs->user->name }}</strong></p>
+            
+            <!-- Edit and Delete Buttons (Visible only for the post author) -->
+            @auth
+                @if(auth()->user()->id === $blogs->user_id)
+                    <div class="post-actions">
+                        <!-- Edit Button -->
+                        <a href="{{ url('edit', $blogs->id) }}" class="edit-button">Edit</a>
+                        
+                        <!-- Delete Button -->
+                        <form action="{{ url('delete', $blogs->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this post?');">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="delete-button">Delete</button>
+                        </form>
+                    </div>
+                @endif
+            @endauth
         </div>
-        <!-- Blog Image -->
-        <img class="news-image" src="{{ url('storage/public/' . $blogs->path) }}" alt="{{ $blogs->name }}">
-        <!-- Blog Title -->
-        <h2 class="news-title">{{ $blogs->title }}</h2>
-        <!-- Blog Content -->
-        <p class="news-content">{{ Str::limit($blogs->content, 150, '...') }}</p>
-        <!-- Created by -->
-        <p>Created by: <strong>{{ $blogs->user->name }}</strong></p>
-        
-        <!-- Edit and Delete Buttons (Visible only for the post author) -->
-        @auth
-            @if(auth()->user()->id === $blogs->user_id)
-                <div class="post-actions">
-                    <!-- Edit Button -->
-                    <a href="{{ url('edit', $blogs->id) }}" class="edit-button">Edit</a>
-                    
-                    <!-- Delete Button -->
-                    <form action="{{ url('delete', $blogs->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this post?');">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="delete-button">Delete</button>
-                    </form>
-                </div>
-            @endif
-        @endauth
+        @endforeach
     </div>
-    @endforeach
-</div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>

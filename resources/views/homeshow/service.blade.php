@@ -16,7 +16,8 @@
             <img src="{{ asset('storage/public/' . $serv->path) }}" alt="Service Image" class="service-image">
         </div>
         <div class="service-content">
-<a href="{{ route('detailservice', $serv->id) }}"><h3 class="service-title">{{ $serv->name }}</h3></a>
+        <a href="{{ route('detailservice', $serv->id) }}"><h3 class="service-title">{{ $serv->name }}</h3></a>
+
             <p class="limited-content">{{ \Illuminate\Support\Str::limit($serv->content, 100) }}</p>
 
         </div>

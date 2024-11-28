@@ -1,7 +1,7 @@
 @extends('layout.header')
 
 @section('content')
-<link rel="stylesheet"  href="{{ asset('css/style.css') }}">
+
 
 
     <h1>Explore Our Projects</h1>
