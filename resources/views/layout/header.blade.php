@@ -132,8 +132,9 @@
                 <a href="{{route('singleblog')}}">single blog</a>
                 
             </div>
+            
         </div>
-        
+        <a href="{{url('logout')}}">logout</a>
 
         <a href="/" class="icon">
             <img src="{{ asset('Images/serach.webp') }}" alt="Search Icon" />
@@ -142,7 +143,7 @@
         <a href="/" class="icon">
             <img src="{{ asset('Images/shop.webp') }}" alt="Shop Icon" />
         </a>
-    <a href="{{url('logout')}}">logout</a>
+   
                 @endguest
     </nav>
 </header>

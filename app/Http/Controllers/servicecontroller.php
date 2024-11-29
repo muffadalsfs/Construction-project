@@ -48,6 +48,30 @@ class servicecontroller extends Controller
         $service = Service::findOrFail($id);
         $service->name=$request->name;
         $service->content=$request->content;
+        if ($request->filled('remove_image') && $request->remove_image == 1) 
+        {
+            if ($service->path) {
+                Storage::delete('public/' . $service->path); // Delete the old image
+                $service->path = null; // Clear the path in the database
+            }
+        }
+        
+        // If a new file is uploaded, store it
+        if ($request->hasFile('file') && $request->file('file')->isValid())
+         {
+            if ($service->path) {
+                Storage::delete('public/' . $service->path); // Delete the old image
+            }
+            $filePath = $request->file('file')->store('public', 'public');
+            $service->path = basename($filePath); // Save new image path
+        }
+        
+
+
+
+
+
+
         $service->save();
 
         

@@ -24,8 +24,8 @@
 }
 
 .edit-tool-form input[type="text"],
-.edit-tool-form textarea,
-.edit-tool-form input[type="file"] {
+.edit-tool-form textarea
+ {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
@@ -38,7 +38,7 @@
 /* Submit button styling */
 .edit-tool-form button {
     display: block;
-    width: 100%;
+    width: 20%;
     padding: 10px;
     background-color: #007bff;
     color: white;
@@ -48,14 +48,6 @@
     cursor: pointer;
 }
 
-.edit-tool-form button:hover {
-    background-color: #0056b3;
-}
+
 
 /* Image preview styling */
-.edit-tool-form img {
-    display: block;
-    margin: 10px auto;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
