@@ -138,26 +138,26 @@
     display: flex; /* Use flexbox for alignment */
     justify-content: center; /* Center text and button horizontally */
     align-items: center; /* Vertically center align text and button */
-    margin: 20px auto; /* Centers the box */
+    margin:  auto; /* Centers the box */
     max-width: 100%; /* Increased width for the box */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
 }
 
 /* Text Styles */
 .highlight-text {
-    font-size: 20px; /* Larger text size */
+    font-size: 40px; /* Larger text size */
     font-weight: bold;
-    color: #333; /* Neutral dark color for the text */
+    color:white; /* Neutral dark color for the text */
     margin-right: 20px; /* Adds space between the text and button */
     white-space: nowrap; /* Prevents text from wrapping */
 }
 
 /* Button Styles */
 .highlight-button {
-    background-color: #333; /* Dark background for contrast */
-    color: #fff; /* White text */
+    background-color: white; /* Dark background for contrast */
+    color: black; /* White text */
     border: none;
-    padding: 12px 24px; /* Larger button size */
+    padding: 10px 20px; /* Larger button size */
     font-size: 16px;
     font-weight: bold;
     border-radius: 5px;
@@ -167,8 +167,8 @@
 
 /* Hover Effect */
 .highlight-button:hover {
-    background-color: #000; /* Slightly darker background on hover */
-    color: #ffeb3b; /* Yellow text on hover for contrast */
+    background-color: gold; /* Slightly darker background on hover */
+    color: white; /* Yellow text on hover for contrast */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow effect */
     transform: scale(1.05); /* Slight zoom on hover */
 }
@@ -223,7 +223,7 @@
 }
 
 .cta-button:hover {
-    background-color: #0056b3;
+    color: white;
 }
 
 /* Right section (image grid) styling */
@@ -880,7 +880,7 @@
     position: absolute;
     top: 170px;
     left: 1px;
-    background: #ff6600;
+    background: gold;
     color: #fff;
     padding: 5px 10px;
     font-size: 14px;
