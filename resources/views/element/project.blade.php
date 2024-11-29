@@ -23,14 +23,17 @@
 
 <div id="project-grid" class="project-grid">
     @forelse ($products as $product)
+
     <div class="project-card" data-category="{{ $product->category }}">
         <div class="project-image-wrapper">
-            <img src="{{ url('storage/public/' . $product->path) }}" alt="Project Image" class="project-image">
+
+         <a href="{{ route('project.detail', $product->id) }}">    <img src="{{ url('storage/public/' . $product->path) }}" alt="Project Image" class="project-image"></a>
         </div>
         <div class="project-details">
-            <h3 class="project-title">{{ $product->title }}</h3>
+        <a href="{{ route('project.detail', $product->id) }}">  <h3 class="project-title">{{ $product->title }}</h3></a>
             <p class="project-content">{{ $product->content }}</p>
         </div>
+
     </div>
     @empty
     <p>No projects available</p>

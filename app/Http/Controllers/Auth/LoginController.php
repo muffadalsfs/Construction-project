@@ -15,7 +15,7 @@ class LoginController extends Controller
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
             $request->session()->regenerate();
 
-            return redirect('show');
+            return redirect()->route('blog.show');
         }
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',

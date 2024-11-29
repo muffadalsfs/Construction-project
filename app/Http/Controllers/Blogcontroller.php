@@ -103,8 +103,8 @@ class Blogcontroller extends Controller
          $tool=Tool::all();
         $blog=Blog::latest()->take(3)->get();
         $project=Project::latest()->take(5)->get();
-
-        return view('welcome',['Project'=>$project,'enginner'=>$enginner,'tool'=>$tool,'blog'=>$blog,
+         $projects=Project::all();
+        return view('welcome',['Project'=>$project,'enginner'=>$enginner,'tool'=>$tool,'blog'=>$blog,'projects'=>$projects
     
     ]);
         

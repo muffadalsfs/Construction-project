@@ -4,12 +4,16 @@
 
 
 
+<link rel="stylesheet" href="{{ asset('css/element/project.css') }}">
+<div class="text-center-section">
     <h1>Explore Our Projects</h1>
     <div class="button-container">
-        <button class="filter-button" onclick="filterProjects('category1')">Category 1</button>
-        <button class="filter-button" onclick="filterProjects('category2')">Category 2</button>
-        <button class="filter-button" onclick="filterProjects('category3')">Category 3</button>
-        <button class="filter-button" onclick="filterProjects('all')">Show All</button>
+    <button class="filter-button" onclick="filterProjects('all')">Show All</button>
+        <button class="filter-button" onclick="filterProjects('automotive')">Automotive</button>
+        <button class="filter-button" onclick="filterProjects('construction')">Construction</button>
+        <button class="filter-button" onclick="filterProjects('industrial')">Industrial</button>
+        <button class="filter-button" onclick="filterProjects('mechanics')">Mechanics</button>
+
     </div>
 </div>
 
@@ -17,9 +21,9 @@
     <p>{{ session('success') }}</p>
 @endif
 
-<div class="project-grid">
+<div class="project-grids">
     @forelse ($products as $product)
-        <div class="project-card">
+        <div class="project-cards">
             <img src="{{ $product->path ? asset('storage/public/' . $product->path) : asset('images/default.jpg') }}" alt="Project Image">
             <h3>{{ $product->title }}</h3>
             <p>{{ $product->content }}</p>
@@ -89,7 +93,7 @@
 }
 
 /* Project Grid */
-.project-grid {
+.project-grids {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Auto-fit layout with min/max constraints */
     gap: 20px;
@@ -99,7 +103,7 @@
 }
 
 /* Project Card */
-.project-card {
+.project-cards{
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -108,32 +112,32 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.project-card:hover {
+.project-cards:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
-.project-card img {
+.project-cards img {
     width: 100%;
     height: 150px;
     object-fit: cover;
     border-radius: 8px;
 }
 
-.project-card h3 {
+.project-cards h3 {
     font-size: 18px;
     font-weight: bold;
     margin: 10px 0;
     color: #333;
 }
 
-.project-card p {
+.project-cards p {
     color: #777;
     margin-bottom: 20px;
 }
 
 /* Buttons */
-.project-card a {
+.project-cards a {
     display: inline-block;
     margin-top: 10px;
     padding: 8px 12px;
@@ -145,7 +149,7 @@
     transition: background-color 0.3s ease;
 }
 
-.project-card a:hover {
+.project-cards a:hover {
     background-color: #0056b3;
 }
 

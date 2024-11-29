@@ -17,10 +17,10 @@
             {{ \Carbon\Carbon::now()->format('M d, Y') }}
         </div>
         <!-- Blog Image -->
-        <img class="news-image" src="{{ url('storage/public/' . $blogs->path) }}" alt="{{ $blogs->title }}">
+        <a href="{{ route('blog.detail', $blogs->id) }}"><img class="news-image" src="{{ url('storage/public/' . $blogs->path) }}" alt="{{ $blogs->title }}">
         <!-- Blog Content -->
         <div class="card-content">
-            <h2 class="blog-title">{{ $blogs->title }}</h2>
+            <h2 class="blog-title">{{ $blogs->title }}</h2></a>
             <p class="blog-content">{{ Str::limit($blogs->content, 100, '...') }}</p>
             <div class="meta-info">
                 <span class="username">{{ $blogs->user->name ?? 'Anonymous' }}</span>

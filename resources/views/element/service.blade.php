@@ -13,7 +13,7 @@
     @foreach($service as $serv)
     <div class="service-card">
         <div class="image-wrapper">
-            <img src="{{ asset('storage/public/' . $serv->path) }}" alt="Service Image" class="service-image">
+          <img src="{{ asset('storage/public/' . $serv->path) }}" alt="Service Image" class="service-image">
         </div>
         <div class="service-content">
         <a href="{{ route('detailservice', $serv->id) }}"><h3 class="service-title">{{ $serv->name }}</h3></a>
