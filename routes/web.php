@@ -23,13 +23,15 @@ use App\Http\Controllers\servicecontroller;
 
 Route::get('/',[Blogcontroller::class,
 'home']);
-Route::view('login','login');
-Route::view('register','register');
-Route::post('login',[LoginController::class,'login'])->name('login');
-Route::post('register',[RegisterController::class,'register']);
-Route::get('logout',[LoginController::class,'logout']);
-Route::middleware('auth')->group(function(){
-Route::controller(Blogcontroller::class)->group(function(){
+//LOGIN AND REGISTER
+    Route::view('login','login');
+    Route::view('register','register');
+    Route::post('login',[LoginController::class,'login'])->name('login');
+    Route::post('register',[RegisterController::class,'register']);
+    Route::get('logout',[LoginController::class,'logout']);
+    //Middleware
+    Route::middleware('auth')->group(function(){
+    Route::controller(Blogcontroller::class)->group(function(){
     
     Route::post('form','add');
     Route::get('show','show');
@@ -56,9 +58,9 @@ Route::prefix('project')->controller(ProjectController::class)->group(function (
  });
 
 
-route::controller(Toolcontroller::class)->group(function(){
+Route::controller(Toolcontroller::class)->group(function(){
    Route::get('create',  'create')->name('tool.create'); // Create form
-    route::post('Tool','Tooladd');
+    Route::post('Tool','Tooladd');
     Route::get('index', 'index')->name('tools.index');
     Route::get('edit{id}/edit',  'edit')->name('tools.edit');
    Route::put('update{id}',  'update')->name('tools.update');
@@ -68,22 +70,22 @@ route::controller(Toolcontroller::class)->group(function(){
 
 
 
-route::controller(Engineercontroller::class)->group(function(){
+Route::controller(Engineercontroller::class)->group(function(){
     Route::get('enginer',  'index')->name('enginners.index');
     Route::get('create',  'create')->name('enginners.create');
    Route::post('store',  'store')->name('enginners.store');
    Route::get('engineer/{id}/edit', 'edit')->name('engineers.edit');
     Route::put('engineer/{id}', 'update')->name('engineers.update');
     Route::delete('engineer/{id}', 'destroy')->name('engineers.destroy');
-   route::get('element','element')->name('enginner.element');
+   Route::get('element','element')->name('enginner.element');
 
 });
 
 
-route::controller(servicecontroller::class)->group(function(){
-    route::get('service','service');
-    route::post('servicestore','servicestore')->name('servicestore');
-    route::get('showservice','showservice')->name('showservice');
+Route::controller(servicecontroller::class)->group(function(){
+    Route::get('service','service');
+    Route::post('servicestore','servicestore')->name('servicestore');
+    Route::get('showservice','showservice')->name('showservice');
     Route::delete('delete/{id}', 'delete')->name('deleteservice');
     Route::get('{id}/edit', 'edit')->name('editservice');
     Route::put('{id}', 'update')->name('updateservice');
@@ -91,27 +93,30 @@ route::controller(servicecontroller::class)->group(function(){
 }); 
 
 });
-route::get('detail{id}',[servicecontroller::class,'detail'])->name('detailservice');
-route::view('enginner' ,'enginner');
-route::view('service','service');
-route::view('blog','blog');
-Route::view('project', 'project');
-route::view('Tool' ,'tool');
-Route::get('detail/{id}', [Blogcontroller::class, 'de'])->name('blog.detail');
+//VIEWS OF ALL FILES
+    Route::view('enginner' ,'enginner');
+    Route::view('service','service');
+    Route::view('blog','blog');
+    Route::view('project', 'project');
+    Route::view('Tool' ,'tool');
+    //DEATIL ROUTE
+    Route::get('detail/{id}', [Blogcontroller::class, 'de'])->name('blog.detail');
+    Route::get('detail{id}',[servicecontroller::class,'detail'])->name('detailservice');
+    Route::get('detail/{id}', [ProjectController::class,'detail'])->name('project.detail'); // View project details
 
-Route::get('detail/{id}', [ProjectController::class,'detail'])->name('project.detail'); // View project details
+    Route::get('sp',[ProjectController::class,'sp'])->name('sp');
+    Route::get('singlepage',[ProjectController::class,'singlepage'])->name('singlepage');
+    Route::get('element',[ProjectController::class,'element'])->name('element');
+    Route::get('card',[Engineercontroller::class,'element'])->name('card');
+    Route::get('serviceshow',[servicecontroller::class,'all'])->name('serviceshow');
+    Route::get('singleservice',[servicecontroller::class,'single'])->name('singleservice');
+    Route::get('elementservice',[servicecontroller::class,'elementservice'])->name('elementservice');
+    Route::get('all',[Blogcontroller::class,'all'])->name('all');
+    Route::get('homeblog',[Blogcontroller::class,'homeblog'])->name('homeblog');
+    Route::get('singleblog',[Blogcontroller::class,'singlepage'])->name('singleblog');
+//FOREGET AND RESET ROUTE
+    Route::get('/forgot-password', [PasswordResetController::class, 'showForgotPasswordForm'])->name('password.request');
+    Route::post('/forgot-password', [PasswordResetController::class, 'sendResetLink'])->name('password.email');
 
-route::get('sp',[ProjectController::class,'sp'])->name('sp');
-route::get('singlepage',[ProjectController::class,'singlepage'])->name('singlepage');
-route::get('element',[ProjectController::class,'element'])->name('element');
-route::get('card',[Engineercontroller::class,'element'])->name('card');
-route::get('serviceshow',[servicecontroller::class,'all'])->name('serviceshow');
-route::get('singleservice',[servicecontroller::class,'single'])->name('singleservice');
-route::get('all',[Blogcontroller::class,'all'])->name('all');
-route::get('homeblog',[Blogcontroller::class,'homeblog'])->name('homeblog');
-route::get('singleblog',[Blogcontroller::class,'singlepage'])->name('singleblog');
-Route::get('/forgot-password', [PasswordResetController::class, 'showForgotPasswordForm'])->name('password.request');
-Route::post('/forgot-password', [PasswordResetController::class, 'sendResetLink'])->name('password.email');
-
-Route::get('/reset-password/{token}', [PasswordResetController::class, 'showResetPasswordForm'])->name('password.reset');
-Route::post('/reset-password', [PasswordResetController::class, 'resetPassword'])->name('password.update');
+    Route::get('/reset-password/{token}', [PasswordResetController::class, 'showResetPasswordForm'])->name('password.reset');
+    Route::post('/reset-password', [PasswordResetController::class, 'resetPassword'])->name('password.update');

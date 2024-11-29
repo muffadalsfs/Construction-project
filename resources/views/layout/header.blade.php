@@ -42,8 +42,9 @@
             <button class="dropbtn">Element</button>
             <div class="dropdown-content">
                 <a href="{{route('element')}}">Project Gallery</a>
-                <a href="{{route('card')}}">team gallery</a>
-                <a href="all">Blog </a>
+                <a href="{{route('card')}}">Team gallery</a>
+                <a href="all">Blog Gallery </a>
+                <a href="{{route('elementservice')}}">Service gallery</a>
             </div>
         </div>
         <div class="dropdown">
@@ -94,7 +95,7 @@
             </div>
         </div>
         <div class="dropdown">
-            <button class="dropbtn"><a href="{{route('serviceshow')}}">service</a></button>
+            <button class="dropbtn"><a href="{{route('serviceshow')}}" class="three">service</button></a>
             <div class="dropdown-content">
                 <a href="service">Service cereted</a>
                 <a href="{{route('singleservice')}}">Single service</a>
@@ -115,6 +116,7 @@
                 <a href="{{route('element')}}">Project Gallery</a>
                 <a href="{{route('card')}}">team gallery</a>
                 <a href="all">Blog </a>
+                <a href="{{route('elementservice')}}">Service gallery</a>
             </div>
         </div>
         <div class="dropdown">

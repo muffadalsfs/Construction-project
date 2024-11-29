@@ -20,11 +20,8 @@
                     <a href="{{ route('project.edit', $projects->id) }}" class="edit-btn">Edit</a>
                     
                     <!-- Delete Button -->
-                    <form action="{{ route('project.delete', $projects->id) }}" method="POST" style="display:inline;">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="delete-btn">Delete</button>
-                    </form>
+                    <a href="{{ route('project.delete', $projects->id) }}"  class="delete-btn"
+               onclick="return confirm('Are you sure you want to delete this project?')">Delete</a>
                 @endauth
             </div>
             <img src="{{ url('storage/public/' . $projects->path) }}" alt="{{ $projects->title }}">
@@ -297,6 +294,39 @@
         </div>
         @endforeach
     </div>
+    <footer class="footers">
+    <div class="footers-logo">
+        <img src="{{ asset('Images/logo-dark.png') }}" alt="Company Logo" class="logos">
+    </div>
+    <div class="footer-columns">
+        <p>United States</p>
+        <ul>
+            <li>New York - 1060 </li>
+            <li>Tel. + (123) 2500-567-8990 </li>
+            <li>Mail. koncrete@mail.com </li>
+            
+        </ul>
+    </div>
+    <div class="footer-columns">
+        <p>United Kingdom</p>
+        <ul>
+            <li>London - 1780</li>
+            <li>Tel. + (123) 9900-567-8990</li>
+            <li>Mail. koncrete@mail.com </li>
+           
+        </ul>
+    </div>
+    <div class="footer-columns">
+        <p>South Asia</p>
+        <ul>
+            <li> Southeo - 590 Street</li>
+            <li>Tel. + (123) 1520-567-0000</li>
+            <li>Mail. koncrete@mail.com </li>
+        </ul>
+    </div>
+</footer>
+
+        
   
 
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>

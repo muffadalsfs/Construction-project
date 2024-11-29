@@ -84,4 +84,9 @@ class servicecontroller extends Controller
         $service=Service::latest()->take(1)->get();
         return view('single.service',['single'=>$service]);
      }
+     public function elementservice()
+     {
+         $service=Service::all();
+         return view('element.service',['service'=>$service]);
+     }
 }

@@ -37,12 +37,7 @@
 @endsection
 <style>
 /* General Body Styling */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 0;
-}
+/* General Body Styling */
 
 /* Section Styling */
 .text-center-section {
@@ -58,28 +53,45 @@ body {
 }
 
 .button-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
     margin-bottom: 20px;
+    gap: 10px; /* Space between buttons */
 }
+
 
 .filter-button {
     padding: 10px 15px;
-    background-color: #007bff;
-    color: white;
+    
+    color:black;
     border: none;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
     margin: 5px;
+    position: relative;
+    overflow: hidden;
 }
 
-.filter-button:hover {
-    background-color: #0056b3;
+.filter-button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: yellow;
+    transition: width 0.3s ease-in-out;
+}
+
+.filter-button:hover::after {
+    width: 100%;
 }
 
 /* Project Grid */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Ensures 3 items per row */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Auto-fit layout with min/max constraints */
     gap: 20px;
     justify-content: center;
     margin-top: 20px;
@@ -149,4 +161,5 @@ body {
         grid-template-columns: repeat(1, 1fr); /* 1 item per row on small screens */
     }
 }
+
 </style>
