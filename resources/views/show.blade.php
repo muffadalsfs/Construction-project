@@ -19,11 +19,12 @@
                 <span class="comment-option">Comments</span>
             </div>
             <div class="blog-actions">
-                <a href="{{ url('detail', $user->id) }}" class="detail-button">Detail</a>
+            <a href="{{ route('blog.detail', $user->id) }}">View Details</a>
+
                 @auth 
                 @if (Auth::id() === $user->user_id)
-                <a href="{{ url('delete', $user->id) }}" class="delete-button">Delete</a>
-                <a href="{{ url('edit', $user->id) }}" class="edit-button">Edit</a>
+                <a href="{{ route('blog.delete', $user->id) }}" class="delete-button">Delete</a>
+                <a href="{{ route('blog.edit', $user->id) }}" class="edit-button">Edit</a>
                 @endif
                 @endauth
             </div>

@@ -17,6 +17,7 @@
             <img src="{{ url('storage/public/' . $user->path) }}" alt="Blog Image" class="blog-image">
             <span class="blog-date">{{ $user->created_at->format('M d, Y') }}</span>
         </div>
+        <a href="{{ route('blog.detail', $user->id) }}">View Details</a>
         <div class="blog-content">
             <p class="title">{{ $user->title }}</p>
             <p class="limited-content">{{ \Illuminate\Support\Str::limit($user->content, 100) }}</p>

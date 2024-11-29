@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="{{ asset('css/edit/blog.css') }}">
 
 <h2 class="edit-title">EDIT PAGE</h2>
-<form action="/update/{{$blog->id}}" method="POST" enctype="multipart/form-data" class="edit-form" onsubmit="return validateForm()">
+<form action="{{ route('blog.update', $blog->id) }}" method="POST" enctype="multipart/form-data" class="edit-form" onsubmit="return validateForm()">
     @csrf
     @method('PUT')
     

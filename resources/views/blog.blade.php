@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="{{asset('css/blog.css')}}">
 <h2 class="blog-form-title">BLOG FORM</h2>
 <div>
-   <form action="form" method="post" enctype="multipart/form-data"  class="blog-form" >
+   <form action="{{route('blog.form')}}" method="post" enctype="multipart/form-data"  class="blog-form" >
     @csrf 
     <label for="title">Tiltle</label>
     <input type="text" name="title" placeholder="ENTER YOUR TITLE" class="input-field" value="{{old('title')}}">

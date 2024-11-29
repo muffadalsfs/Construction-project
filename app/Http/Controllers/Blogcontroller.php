@@ -28,7 +28,7 @@ class Blogcontroller extends Controller
             $imge->path=$image;
             $imge->user_id = Auth::id();
             $imge->save();
-            return redirect('show');
+            return redirect()->route('blog.show');
 
 
             }
@@ -43,7 +43,7 @@ class Blogcontroller extends Controller
 
             public function delete($id){
             $user=Blog::destroy($id);
-            return redirect('show');
+            return redirect()->route('blog.show');
             }
             //EDIT BLOG
                     function edit($id)
@@ -83,12 +83,13 @@ class Blogcontroller extends Controller
             // Save the updated blog post
             $blog->save();
 
-            return redirect('show');
+            return redirect()->route('blog.show');
         }
 
         //DETAIL BLOG 
-        public function de($id)
+        public function detail($id)
         {
+          
             $detail = Blog::findOrFail($id);
 
             return view('detail', ['show' => $detail]); 

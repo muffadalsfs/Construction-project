@@ -31,17 +31,18 @@ Route::get('/',[Blogcontroller::class,
     Route::get('logout',[LoginController::class,'logout']);
     //Middleware
     Route::middleware('auth')->group(function(){
-    Route::controller(Blogcontroller::class)->group(function(){
+    route::prefix('blog')->controller(Blogcontroller::class)->group(function(){
     
-    Route::post('form','add');
-    Route::get('show','show');
-    Route::get('delete/{id}','delete');
-    Route::get('edit/{id}','edit');
+    Route::post('form','add')->name('blog.form');
+    Route::get('show','show')->name('blog.show');
+    Route::get('delete/{id}','delete')->name('blog.delete');
+    Route::get('edit/{id}','edit')->name('blog.edit');
     Route::put('update/{id}', 'update')->name('blog.update');
+    route::get('{id}','detail')->name('blog.detail');
   
 
 });
-
+    
 
 
 
@@ -53,7 +54,7 @@ Route::prefix('project')->controller(ProjectController::class)->group(function (
     Route::get('delete/{id}', 'destroy')->name('project.delete'); // DELETE a project
     Route::get('edit/{id}', 'edit')->name('project.edit'); // Edit project form
     Route::put('update/{id}', 'update')->name('project.update'); // Update project
-
+    Route::get('{id}', 'detail')->name('project.detail');
 
  });
 
@@ -100,9 +101,13 @@ Route::controller(servicecontroller::class)->group(function(){
     Route::view('project', 'project');
     Route::view('Tool' ,'tool');
     //DEATIL ROUTE
-    Route::get('detail/{id}', [Blogcontroller::class, 'de'])->name('blog.detail');
+    // Route::perfix('blog')->group(function(){
+    //     Route::get('detail/{id}', [Blogcontroller::class, 'detail'])->name('blog.detail');
+    // });
+  
+
     Route::get('detail{id}',[servicecontroller::class,'detail'])->name('detailservice');
-    Route::get('detail/{id}', [ProjectController::class,'detail'])->name('project.detail'); // View project details
+    // Route::get('detail/{id}', [ProjectController::class,'detail'])->name('project.detail'); // View project details
 
     Route::get('sp',[ProjectController::class,'sp'])->name('sp');
     Route::get('singlepage',[ProjectController::class,'singlepage'])->name('singlepage');
