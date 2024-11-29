@@ -65,29 +65,22 @@ class servicecontroller extends Controller
             $filePath = $request->file('file')->store('public', 'public');
             $service->path = basename($filePath); // Save new image path
         }
-        
-
-
-
-
-
-
         $service->save();
-
-        
-     
-         // Redirect back to the showservice page with a success message
-         return redirect()->route('showservice')->with('success', 'Service updated successfully.');
+             // Redirect back to the showservice page with a success message
+             return redirect()->route('showservice')->with('success', 'Service updated successfully.');
      }
-     public function detail($id){
+     public function detail($id)
+     {
         $detail = Service::findOrFail($id);
         return view('detail.services',['service'=>$detail]);
     }
-    public function all(){
+    public function all()
+    {
         $service=Service::all();
         return view('homeshow.service',['service'=>$service]);
     }
-     public function single(){
+     public function single()
+     {
         $service=Service::latest()->take(1)->get();
         return view('single.service',['single'=>$service]);
      }
