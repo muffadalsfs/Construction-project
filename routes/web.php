@@ -39,7 +39,7 @@ Route::get('/',[Blogcontroller::class,
     Route::get('edit/{id}','edit')->name('blog.edit');
     Route::put('update/{id}', 'update')->name('blog.update');
     route::get('{id}','detail')->name('blog.detail');
-  
+   route::get('search','search')->name('blog.search');
 
 });
     

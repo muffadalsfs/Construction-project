@@ -124,4 +124,8 @@ class Blogcontroller extends Controller
         $blog=Blog::latest()->take(1)->get();
         return view('single.blog',['single'=>$blog]);
     }
+    public function serach(Request $request){
+        $blog = Blog::where('name','like',"%request->serach%")->get();
+        return view('welcome',['blog'=>$blog,]);
+    }
 }
