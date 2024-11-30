@@ -38,7 +38,7 @@ Route::get('/',[Blogcontroller::class,
     Route::get('delete/{id}','delete')->name('blog.delete');
     Route::get('edit/{id}','edit')->name('blog.edit');
     Route::put('update/{id}', 'update')->name('blog.update');
-    route::get('{id}','detail')->name('blog.detail');
+   
    route::get('search','search')->name('blog.search');
 
 });
@@ -54,8 +54,7 @@ Route::prefix('project')->controller(ProjectController::class)->group(function (
     Route::get('delete/{id}', 'destroy')->name('project.delete'); // DELETE a project
     Route::get('edit/{id}', 'edit')->name('project.edit'); // Edit project form
     Route::put('update/{id}', 'update')->name('project.update'); // Update project
-    Route::get('{id}', 'detail')->name('project.detail');
-
+    
  });
 
 
@@ -104,7 +103,13 @@ Route::controller(servicecontroller::class)->group(function(){
     // Route::perfix('blog')->group(function(){
     //     Route::get('detail/{id}', [Blogcontroller::class, 'detail'])->name('blog.detail');
     // });
-  
+  route::prefix('project')->controller(ProjectController::class)->group(function(){
+    Route::get('{id}', 'detail')->name('project.detail');
+
+  });
+  route::prefix('blog')->controller(Blogcontroller::class)->group(function(){
+    route::get('{id}','detail')->name('blog.detail');
+  });
 
     Route::get('detail{id}',[servicecontroller::class,'detail'])->name('detailservice');
     // Route::get('detail/{id}', [ProjectController::class,'detail'])->name('project.detail'); // View project details
