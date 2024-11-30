@@ -8,9 +8,7 @@
         <div class="dropdown">
             <button class="dropbtn"><a href="/">Home</a></button>
             <div class="dropdown-content">
-                <a href="/">Home 1</a>
-                <a href="#">Home 2</a>
-                <a href="#">Home 3</a>
+
             </div>
         </div>
         
@@ -23,9 +21,9 @@
             </div>
         </div>
         <div class="dropdown">
-            <button class="dropbtn"><a href="{{route('serviceshow')}}">service</a></button>
+            <button class="dropbtn"><a href="{{route('serviceshow')}}">Service</a></button>
             <div class="dropdown-content">
-                <a href="service">Service cereted</a>
+                <a href="service">Add new</a>
                 <a href="{{route('singleservice')}}">Single service</a>
                 
             </div>
@@ -33,8 +31,8 @@
         <div class="dropdown">
             <button class="dropbtn"><a href="{{route('sp')}}">Project</a></button>
             <div class="dropdown-content">
-                <a href="project">Project created</a>
-                <a href="{{route('singlepage')}}">single project</a>
+                <a href="project">Add new</a>
+                <a href="{{route('singlepage')}}">Single Project</a>
                 <a href="#">Project 3</a>
             </div>
         </div>
@@ -58,13 +56,13 @@
         <div class="dropdown">
             <button class="dropbtn"><a href="{{route('homeblog')}}">Blog</a></button>
             <div class="dropdown-content">
-                <a href="blog">Blog created</a>
-                <a href="{{route('singleblog')}}">single blog</a>
+                <a href="blog">Add new</a>
+                <a href="{{route('singleblog')}}">Single Blog</a>
                 
             </div>
         </div>
-        <a href="{{ url('login') }}">login</a>
-        <a href="{{ url('register') }}">register</a>
+        <a href="{{ url('login') }}">Login</a>
+        <a href="{{ url('register') }}">Register</a>
 
         <a href="/" class="icon">
             <img src="{{ asset('Images/serach.webp') }}" alt="Search Icon" />
@@ -80,9 +78,7 @@
         <div class="dropdown">
             <button class="dropbtn"><a href="/">Home</a></button>
             <div class="dropdown-content">
-                <a href="/">Home 1</a>
-                <a href="#">Home 2</a>
-                <a href="#">Home 3</a>
+
             </div>
         </div>
         
@@ -97,7 +93,7 @@
         <div class="dropdown">
             <button class="dropbtn"><a href="{{route('serviceshow')}}" class="three">service</button></a>
             <div class="dropdown-content">
-                <a href="service">Service cereted</a>
+                <a href="service">Add New </a>
                 <a href="{{route('singleservice')}}">Single service</a>
                 
             </div>
@@ -105,7 +101,7 @@
         <div class="dropdown">
             <button class="dropbtn"><a href="{{route('sp')}}">Project</a></button>
             <div class="dropdown-content">
-                <a href="project">Project created</a>
+                <a href="project">Add New </a>
                 <a href="{{route('singlepage')}}">single project</a>
                 <a href="#">Project 3</a>
             </div>
@@ -114,8 +110,8 @@
             <button class="dropbtn">Element</button>
             <div class="dropdown-content">
                 <a href="{{route('element')}}">Project Gallery</a>
-                <a href="{{route('card')}}">team gallery</a>
-                <a href="all">Blog </a>
+                <a href="{{route('card')}}">Team gallery</a>
+                <a href="all">Blog  Gallery</a>
                 <a href="{{route('elementservice')}}">Service gallery</a>
             </div>
         </div>
@@ -130,7 +126,7 @@
         <div class="dropdown">
             <button class="dropbtn"><a href="{{route('homeblog')}}">Blog</a></button>
             <div class="dropdown-content">
-                <a href="blog">Blog created</a>
+                <a href="blog">Add new </a>
                 <a href="{{route('singleblog')}}">single blog</a>
                 
             </div>
