@@ -13,7 +13,7 @@
         </div>
         
         <div class="dropdown">
-            <button class="dropbtn">About</button>
+            <button class="dropbtn"><a href="about">About</button></a>
             <div class="dropdown-content">
                 <a href="#">About 1</a>
                 <a href="#">About 2</a>

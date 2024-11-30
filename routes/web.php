@@ -10,6 +10,7 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\Engineercontroller;
 use  App\Http\Controllers\Toolcontroller;
 use App\Http\Controllers\servicecontroller;
+use App\Http\Controllers\AboutController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -130,3 +131,7 @@ Route::controller(servicecontroller::class)->group(function(){
 
     Route::get('/reset-password/{token}', [PasswordResetController::class, 'showResetPasswordForm'])->name('password.reset');
     Route::post('/reset-password', [PasswordResetController::class, 'resetPassword'])->name('password.update');
+
+
+    //about controller
+    route::get('about',[AboutController::class,'about']);
