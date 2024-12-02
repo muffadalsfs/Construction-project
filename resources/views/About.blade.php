@@ -1,35 +1,76 @@
 @extends('layout.header')
 
 @section('content')
-<link rel="stylesheet" href="{{asset('css/shows/services.css')}}">
+<!-- <link rel="stylesheet" href="{{asset('css/shows/services.css')}}"> -->
+<div class="cover-container">
+  <img src="{{ asset('Images/c.webp') }}" alt="Cover Image" class="cover-image">
+  <div class="cover-text">
+  About
+  </div>
+</div>
 
 
 <div class="core-value-container">
-        <div class="text-container">
-            <h1>Our Core Value</h1>
-            <p>We believe in providing the highest level of service to our clients and creating sustainable value for all stakeholders.</p>
-        </div>
-        <div class="image-container">
-            <img src="{{asset('Images/11.jpg')}}" alt="Core Value Image" />
-        </div>
-    </div>
-    
-    <div class="service-container">
+  <div class="text-container">
+    <h1>We are leading company in this field, And provide specific our every customers. </h1>
+    <p>Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+
+Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap text of the printing and typesetting industry.
+.</p>
+    <button class="service-button">Learn More</button>
+  </div>
+  <div class="image-container">
+    <img src="{{asset('Images/11.jpg')}}" alt="Core Value Image" />
+  </div>
+</div>
+
   
+<h1 class="services-heading">Our Services</h1>
+<div class="services-container">
     @foreach($service as $serv)
     <div class="service-card">
         <div class="image-wrapper">
           <img src="{{ asset('storage/public/' . $serv->path) }}" alt="Service Image" class="service-image">
         </div>
         <div class="service-content">
-        <a href="{{ route('detailservice', $serv->id) }}"><h3 class="service-title">{{ $serv->name }}</h3></a>
-
+            <a href="{{ route('detailservice', $serv->id) }}">
+                <h3 class="service-title">{{ $serv->name }}</h3>
+            </a>
             <p class="limited-content">{{ \Illuminate\Support\Str::limit($serv->content, 100) }}</p>
-
         </div>
     </div>
     @endforeach
 </div>
+
+<div class="counters-container">
+  <div class="counter-card">
+    <img src="{{ asset('Images/hand.webp') }}" alt="Logo" class="counter-logo">
+    <div class="counter-info">
+      <h3 class="counter-number" data-target="428">100</h3>
+      <p class="counter-text">Finished projects</p>
+    </div>
+  </div>
+  <div class="counter-card">
+    <img src="{{ asset('Images/man.webp') }}" alt="Logo" class="counter-logo">
+    <div class="counter-info">
+      <h3 class="counter-number" data-target="1250">100</h3>
+      <p class="counter-text">Expert Team Members</p>
+    </div>
+  </div>
+  <div class="counter-card">
+    <img src="{{ asset('Images/first.webp') }}" alt="Logo" class="counter-logo">
+    <div class="counter-info">
+      <h3 class="counter-number" data-target="1154">100</h3>
+      <p class="counter-text">Received Awards</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+@if($enginner->isNotEmpty())
 <div class="engineer-container">
     <h3 class="section-title">Engineers</h3>
     <div class="engineer-grid">
@@ -55,200 +96,435 @@
         @endforeach
     </div>
 </div>
+@endif
+
+
+
+
 <div class="highlight-box">
     <p class="highlight-text">Are you looking for a Construction & Industrial Experts? </p>
     <button class="highlight-button">Request</button>
 </div>
 @endsection
 <style>
-    .core-value-container {
-    display: flex; /* Align items side by side */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    padding:50px;
-    gap: 20px; /* Add space between text and image */
+   .cover-container {
+  position: relative;
+  width: 100%; /* Full width of the container */
+  height: 50vh; /* Half the viewport height */
+  overflow: hidden; /* Hide any overflow */
 }
 
-/* Text Container */
+.cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the container without distortion */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.cover-text {
+  position: absolute;
+  left:10%; /* Adjust as needed for spacing from the right edge */
+  top: 40%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust vertical alignment */
+  font-weight: 900;
+  color: #fff; /* White text */
+  padding: 10px 20px; /* Optional: Add padding around text */
+  font-size: 3.5rem; /* Adjust font size as needed */
+  border-radius: 5px; /* Optional: Add rounded corners to text box */
+  
+}
+
+/* second layer*/
+.core-value-container {
+  display: flex;
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Center horizontally */
+  gap: 20px; /* Add space between the text and image */
+  padding: 20px; /* Optional padding around the container */
+  flex-wrap: wrap; /* Allow wrapping for responsiveness */
+}
+
 .text-container {
-    text-align: center; /* Center text horizontally */
-    max-width: 500px; /* Limit width of text */
-    order: 1; /* Ensure text appears on the left side */
+  flex: 1; /* Take up equal width with the image */
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center; /* Center vertically */
+  text-align: left; /* Align text to the left */
 }
 
-.text-container h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #333; /* Dark color for the heading */
-}
-
-.text-container p {
-    font-size: 18px;
-    color: #666; /* Lighter color for the paragraph */
-}
-
-/* Image Container */
 .image-container {
-    order: 2; /* Ensure image appears on the right side */
+  flex: 1; /* Take up equal width with the text */
+  display: flex;
+  justify-content: center; /* Center the image horizontally */
 }
 
 .image-container img {
-    width: 1000px; /* Fixed width for the image */
-    height: 500px; /* Maintain aspect ratio */
+  max-width: 100%; /* Ensure the image fits the container */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Optional rounded corners */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow for better aesthetics */
 }
-/*second style*/
+
+.service-button {
+  margin-top: 20px; /* Space between text and button */
+  align-self: flex-start; /* Align the button to the left of the text */
+  padding: 10px 20px; /* Button padding */
+  font-size: 1rem; /* Button font size */
+  color: black; /* Button text color */
+  background: gold; /* Button background color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background 0.3s ease; /* Smooth hover effect */
+}
+
+.service-button:hover {
+  color:white;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .core-value-container {
+    flex-direction: column; /* Stack elements vertically */
+    text-align: center; /* Center text for smaller screens */
+  }
+
+  .text-container {
+    text-align: center; /* Center the text */
+  }
+
+  .service-button {
+    align-self: center; /* Center the button */
+  }
+}
+
+/* third layer */
+/* Centering the heading */
+.services-heading {
+  text-align: center;
+  font-size: 2rem; /* Adjust for desired size */
+  margin-bottom: 20px;
+}
+
+/* Container for service cards */
+.services-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping for responsive layout */
+  justify-content: center; /* Center the items in the row */
+  gap: 20px; /* Space between boxes */
+  padding: 20px; /* Optional padding */
+}
+
+/* Individual service card styling */
+.service-card {
+  flex: 1 1 calc(25% - 20px); /* 4 cards per row with spacing */
+  max-width: calc(25% - 20px); /* Ensure consistent max width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* Prevent overflow from child elements */
+  background-color: #fff; /* Card background */
+  text-align: center; /* Center the content */
+  padding: 15px; /* Inner padding for spacing */
+  transition: transform 0.3s ease; /* Hover effect */
+}
+
+.service-card:hover {
+  transform: translateY(-5px); /* Lift on hover */
+}
+
+/* Service image styling */
+.image-wrapper img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Service content styling */
+.service-title {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.service-title:hover {
+  text-decoration: underline;
+}
+
+.limited-content {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+  .service-card {
+    flex: 1 1 calc(50% - 20px); /* 2 cards per row */
+    max-width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .service-card {
+    flex: 1 1 100%; /* 1 card per row */
+    max-width: 100%;
+  }
+}
+/* four layer */
+/* Container with background */
+.counters-container {
+  display: flex;
+  justify-content: space-around; /* Space between counters */
+  align-items: center; /* Align items vertically */
+  padding: 20px;
+  background: url('{{ asset('Images/back.jpg') }}') no-repeat center center / cover; /* Single background image */
+  border-radius: 10px; /* Rounded corners for container */
+  gap: 10px; /* Space between cards */
+}
+
+/* Each counter card styling */
+.counter-card {
+  display: flex;
+  align-items: center;
+
+  border-radius: 8px;
+  padding: 10px 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+  flex: 1;
+  max-width: 250px; /* Adjust width as needed */
+  text-align: center; /* Center content */
+}
+
+/* Logo Styling */
+.counter-logo {
+  width: 60px;
+  height: 100px;
+  margin-right: 15px; /* Space between logo and text */
+  
+}
+
+/* Counter Info Styling */
+.counter-info {
+  display: flex;
+  flex-direction: column; /* Stack number and text vertically */
+  
+}
+
+.counter-number {
+  font-size: 3.5rem; /* Large counter number */
+  color: white; /* Blue color for the counter */
+  margin: 0;
+  font-weight: 900;
+}
+
+.counter-text {
+  font-size: 1rem; /* Smaller text for the description */
+  color: white;
+  margin: 5px 0 0;
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+  .counters-container {
+    flex-direction: column; /* Stack counters vertically */
+    gap: 20px; /* Increase gap between counters */
+  }
+
+  .counter-card {
+    max-width: 100%; /* Full width for mobile */
+  }
+}
+/*five layer */
+/* Container styling */
 .engineer-container {
-    max-width: 1200px;
-    margin: 40px auto;
-    text-align: center;
+  text-align: center;
+  padding: 20px;
 }
 
 .section-title {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
 }
 
-/* Grid Layout for Engineer Cards */
+/* Engineer grid */
 .engineer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 80px;
-    justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+  gap: 20px; /* Space between cards */
+  justify-content: center; /* Center cards horizontally */
 }
 
-/* Engineer Card Styling */
+/* Engineer card */
 .engineer-card {
-    position: relative;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  overflow: hidden; /* Ensure content stays within card */
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+  position: relative;
+  width: 100%; /* Full width of the grid column */
 }
 
 .engineer-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px); /* Lift card slightly on hover */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
 }
 
-/* Engineer Image */
+/* Engineer image */
 .engineer-img img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 1px solid #ddd;
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Ensure image fills the space */
 }
 
-/* Hidden Name Overlay */
+/* Engineer name (hidden by default) */
 .engineer-name {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    font-size: 18px;
-    padding: 10px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    text-align: center;
-    pointer-events: none; /* Prevent overlay from interfering with clicks */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 10px;
+  opacity: 0; /* Hidden initially */
+  transition: opacity 0.3s ease; /* Smooth fade-in effect */
 }
 
 .engineer-card:hover .engineer-name {
-    opacity: 1;
+  opacity: 1; /* Show on hover */
 }
+
+/* Authenticated user actions */
 .engineer-actions {
-    margin-top: 10px;
-    display: flex;
-    gap: 10px;
+  margin-top: 10px;
 }
 
 .btn-edit, .btn-delete {
-    padding: 8px 12px;
-        border-radius: 5px;
-        font-size: 14px;
-        text-decoration: none;
-        color: white;
-        border: none;
-        cursor: pointer;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 90px; /* Set consistent width */
-        height: 36px; /* Set consistent height */
-        box-sizing: border-box; /* Ensure padding is considered within dimensions */
+  display: inline-block;
+  margin: 5px 0;
+  padding: 5px 10px;
+  color: #fff;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-radius: 5px;
 }
 
 .btn-edit {
-    background-color: #007bff;
+  background: #007bff;
+}
+
+.btn-edit:hover {
+  background: #0056b3;
 }
 
 .btn-delete {
-    background-color: #dc3545;
+  background: #dc3545;
+  border: none;
 }
 
 .btn-delete:hover {
-    background-color: #c82333;
-}
-.btn-edit:hover {
-    background-color: #0056b3;
+  background: #a71d2a;
 }
 
-/*eight layer*/
-
-.silver-background {
-    background-color: #c0c0c0; /* Silver background color */
-    padding: 40px 20px; /* Add padding around the container */
+/* Responsive styling for mobile */
+@media (max-width: 768px) {
+  .engineer-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on smaller screens */
+    gap: 15px; /* Adjust spacing for smaller viewports */
+  }
 }
+
+@media (max-width: 480px) {
+  .engineer-grid {
+    grid-template-columns: 1fr; /* 1 card per row on very small screens */
+  }
+}
+/* six layer */
+/* Highlight box styling */
 .highlight-box {
-    background-color: #ffeb3b; /* Bright yellow background */
-    padding: 20px;
-    border-radius: 10px;
-    display: flex; /* Use flexbox for alignment */
-    justify-content: center; /* Center text and button horizontally */
-    align-items: center; /* Vertically center align text and button */
-    margin:  auto; /* Centers the box */
-    max-width: 100%; /* Increased width for the box */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    background-color: yellow; /* Yellow background */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    padding: 20px; /* Spacing around the content */
+    text-align: center; /* Center text inside */
+    flex-wrap: wrap; /* Allow wrapping for responsiveness */
+    gap: 10px; /* Spacing between text and button */
+  }
+  
+  /* Text Styling */
+  .highlight-text {
+    font-size: 3.5rem; /* Adjust text size */
+    color: white; /* Dark text color for contrast */
+    margin: 0; /* Remove default margins */
+  }
+  
+  /* Button Styling */
+  .highlight-button {
+    padding: 10px 20px; /* Button padding */
+    font-size: 1rem; /* Button font size */
+    color: black; /* Button text color */
+    background-color: white; /* Red button background */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s; /* Smooth hover effect */
+  }
+  
+  .highlight-button:hover {
+    background-color: gold; /* Darker red on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    color:white;
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    .highlight-box {
+      flex-direction: column; /* Stack text and button vertically on smaller screens */
+    }
+  }
+/* Responsive styling for mobile */
+@media (max-width: 768px) {
+  .highlight-box {
+    flex-direction: column; /* Stack text and button vertically */
+    text-align: center; /* Center text and button horizontally */
+  }
+
+  .highlight-text {
+    margin-bottom: 10px; /* Add space between text and button */
+  }
 }
 
-/* Text Styles */
-.highlight-text {
-    font-size: 40px; /* Larger text size */
-    font-weight: bold;
-    color:white; /* Neutral dark color for the text */
-    margin-right: 20px; /* Adds space between the text and button */
-    white-space: nowrap; /* Prevents text from wrapping */
-}
-
-/* Button Styles */
-.highlight-button {
-    background-color: white; /* Dark background for contrast */
-    color: black; /* White text */
-    border: none;
-    padding: 10px 20px; /* Larger button size */
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out; /* Smooth transitions for hover effects */
-}
-
-/* Hover Effect */
-.highlight-button:hover {
-    background-color: gold; /* Slightly darker background on hover */
-    color: white; /* Yellow text on hover for contrast */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow effect */
-    transform: scale(1.05); /* Slight zoom on hover */
-}
-
-.highlight-button:active {
-    transform: scale(0.95); /* Button shrink effect on click */
-}
 
 </style>
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const counters = document.querySelectorAll('.counter-number');
+
+  counters.forEach(counter => {
+    const updateCounter = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText;
+
+      const increment = Math.ceil(target / 100); // Adjust increment speed
+
+      if (count < target) {
+        counter.innerText = count + increment;
+        setTimeout(updateCounter, 30); // Adjust speed of update
+      } else {
+        counter.innerText = target;
+      }
+    };
+
+    updateCounter();
+  });
+});
+
+
+</script>

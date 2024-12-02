@@ -8,25 +8,21 @@
 <div class="text-center-section">
     <h1>Explore Our Projects</h1>
     <div class="button-container">
-    <button class="filter-button" onclick="filterProjects('all')">Show All</button>
+        <button class="filter-button" onclick="filterProjects('all')">Show All</button>
         <button class="filter-button" onclick="filterProjects('automotive')">Automotive</button>
         <button class="filter-button" onclick="filterProjects('construction')">Construction</button>
         <button class="filter-button" onclick="filterProjects('industrial')">Industrial</button>
         <button class="filter-button" onclick="filterProjects('mechanics')">Mechanics</button>
-
     </div>
 </div>
 
-@if (session('success'))
-    <p>{{ session('success') }}</p>
-@endif
 
 <div class="project-grids">
     @forelse ($products as $product)
-        <div class="project-cards">
+        <div class="project-cards" data-category="{{ strtolower($product->category) }}">
             <img src="{{ $product->path ? asset('storage/public/' . $product->path) : asset('images/default.jpg') }}" alt="Project Image">
             <h3>{{ $product->title }}</h3>
-            <p>{{ $product->content }}</p>
+            <p>{{ $product->category }}</p>
             <a href="{{ route('project.detail', $product->id) }}">View Details</a>
             <a href="{{ route('project.edit', $product->id) }}">Edit</a>
             <a href="{{ route('project.delete', $product->id) }}" 
@@ -37,8 +33,30 @@
     @endforelse
 </div>
 
+
 <script src="{{ asset('js/script.js') }}"></script>
 @endsection
+<script>
+function filterProjects(category) {
+    // Get all project cards
+    const projects = document.querySelectorAll('.project-cards');
+
+    // Loop through each project card
+    projects.forEach(project => {
+        // Get the category of the project
+        const projectCategory = project.getAttribute('data-category');
+
+        // Show or hide based on the filter
+        if (category === 'all' || projectCategory === category) {
+            project.style.display = 'block'; // Show the project
+        } else {
+            project.style.display = 'none'; // Hide the project
+        }
+    });
+}
+
+
+</script>
 <style>
 /* General Body Styling */
 /* General Body Styling */

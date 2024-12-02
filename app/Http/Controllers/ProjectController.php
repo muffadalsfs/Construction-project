@@ -20,6 +20,7 @@ class ProjectController extends Controller
         $project->path = $image;
         $project->location=$request->location;
         $project->value=$request->value;
+        $project->Category=$request->Category;
         $project->save();
     
         return redirect()->route('project.show')->with('success', 'Project added successfully!');
@@ -71,6 +72,7 @@ class ProjectController extends Controller
             $project->name=$request->name;
             $project->value=$request->value;
             $project->Location=$request->Location;
+            $project->Category=$request->Category;
             $project->save();
 
             return redirect()->route('project.show')->with('success', 'Project updated successfully!');
@@ -82,18 +84,24 @@ class ProjectController extends Controller
         }
 
 
-        function sp(){
+        function sp()
+        {
             $service=Project::all();
             return view('homeshow.project',['products'=>$service]);
         }
-        function singlepage(){
+        function singlepage()
+        {
+
             $service=Project::latest()->take(1)->get();
             return view('single.project',['single'=>$service]);
         }
 
-            function element (){
+            function element ()
+            {
                 $project=Project::all();
                 return view('element.project',['products'=>$project]);
             }
+
+
 }
  

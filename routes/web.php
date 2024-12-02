@@ -55,6 +55,7 @@ Route::prefix('project')->controller(ProjectController::class)->group(function (
     Route::get('delete/{id}', 'destroy')->name('project.delete'); // DELETE a project
     Route::get('edit/{id}', 'edit')->name('project.edit'); // Edit project form
     Route::put('update/{id}', 'update')->name('project.update'); // Update project
+    Route::get('/projects/filter/{category}',  'filter')->name('projects.filter');
     
  });
 

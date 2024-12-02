@@ -26,7 +26,12 @@
             <label for="title">Projectvalue</label>
             <input type="text" name="value" value="{{ $project->value }}" required>
         </div>
-       
+        <select name="Category">
+        <option value="{{$project->value}}">Construction</option>
+        <option value="{{$project->value}}">Automotive</option>
+        <option value="{{$project->value}}">Industrial</option>
+        <option value="{{$project->value}}">Mechanics  </option>
+    </select>
 
         @if($project->path)
         <div class="image-container">

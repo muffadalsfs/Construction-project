@@ -12,6 +12,34 @@
 
    <label for="description"> ENTER value of project</label>
    <input type="text" name="value" placeholder="Enter your project value">
+  
+   <div>
+    <label for="Category">Category:</label>
+    <div>
+        <label>
+            <input type="radio" name="Category" value="Construction">
+            Construction
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="radio" name="Category" value="Automotive">
+            Automotive
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="radio" name="Category" value="Industrial">
+            Industrial
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="radio" name="Category" value="Mechanics">
+            Mechanics
+        </label>
+    </div>
+</div>
 
    <label for="image">PROJECT IMAGE</label>
    <input type="file" name="file">
