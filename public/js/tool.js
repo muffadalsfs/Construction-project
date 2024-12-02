@@ -1,24 +1,22 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const toolsWrapper = document.querySelector(".tools-wrapper");
-    const toolsNavButtons = document.querySelectorAll(".slider-nav button");
-    const toolSlides = document.querySelectorAll(".tool-card");
-    const totalSlides = toolSlides.length;
-    let toolsIndex = 0;
+document.addEventListener('DOMContentLoaded', function () {
+    const toolsWrapper = document.getElementById('toolsSlider').querySelector('.tools-wrapper');
+    let scrollInterval;
 
-    function showToolsSlide(i) {
-        toolsWrapper.style.transform = `translateX(${-i * 300}px)`; // Adjust based on tool-card width
-        toolsNavButtons.forEach((btn, idx) => btn.classList.toggle("active", idx === i));
-    }
+    const startAutoScroll = () => {
+        scrollInterval = setInterval(() => {
+            toolsWrapper.scrollBy({ left: toolsWrapper.offsetWidth, behavior: 'smooth' });
+            if (toolsWrapper.scrollLeft + toolsWrapper.offsetWidth >= toolsWrapper.scrollWidth) {
+                toolsWrapper.scrollTo({ left: 0, behavior: 'smooth' });
+            }
+        }, 3000); // Adjust timing as needed
+    };
 
-    toolsNavButtons.forEach((button, i) => {
-        button.addEventListener("click", () => {
-            toolsIndex = i;
-            showToolsSlide(toolsIndex);
-        });
-    });
+    const stopAutoScroll = () => {
+        clearInterval(scrollInterval);
+    };
 
-    setInterval(() => {
-        toolsIndex = (toolsIndex + 1) % totalSlides; // Loop through slides
-        showToolsSlide(toolsIndex);
-    }, 5000); // Auto-slide every 5 seconds
+    toolsWrapper.addEventListener('mouseenter', stopAutoScroll);
+    toolsWrapper.addEventListener('mouseleave', startAutoScroll);
+
+    startAutoScroll();
 });

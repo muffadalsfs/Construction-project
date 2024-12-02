@@ -1,9 +1,6 @@
 @extends('layout.header')
 
 @section('content')
-
-
-
 <link rel="stylesheet" href="{{ asset('css/element/project.css') }}">
 <div class="text-center-section">
     <h1>Explore Our Projects</h1>
@@ -15,7 +12,6 @@
         <button class="filter-button" onclick="filterProjects('mechanics')">Mechanics</button>
     </div>
 </div>
-
 
 <div class="project-grids">
     @forelse ($products as $product)
@@ -33,34 +29,27 @@
     @endforelse
 </div>
 
-
 <script src="{{ asset('js/script.js') }}"></script>
-@endsection
+
 <script>
-function filterProjects(category) {
-    // Get all project cards
-    const projects = document.querySelectorAll('.project-cards');
+    function filterProjects(category) {
+        const projectCards = document.querySelectorAll('.project-cards');  // Get all project cards
+        
+        projectCards.forEach(card => {
+            const projectCategory = card.getAttribute('data-category').toLowerCase();  // Get the data-category of the card
 
-    // Loop through each project card
-    projects.forEach(project => {
-        // Get the category of the project
-        const projectCategory = project.getAttribute('data-category');
-
-        // Show or hide based on the filter
-        if (category === 'all' || projectCategory === category) {
-            project.style.display = 'block'; // Show the project
-        } else {
-            project.style.display = 'none'; // Hide the project
-        }
-    });
-}
-
-
+            if (category === 'all' || projectCategory === category) {
+                card.style.display = 'block';  // Show this card
+            } else {
+                card.style.display = 'none';  // Hide this card
+            }
+        });
+    }
 </script>
-<style>
-/* General Body Styling */
-/* General Body Styling */
 
+@endsection
+
+<style>
 /* Section Styling */
 .text-center-section {
     text-align: center;
@@ -76,15 +65,13 @@ function filterProjects(category) {
 
 .button-container {
     display: flex;
-    justify-content: center; /* Center horizontally */
+    justify-content: center;
     margin-bottom: 20px;
-    gap: 10px; /* Space between buttons */
+    gap: 10px;
 }
-
 
 .filter-button {
     padding: 10px 15px;
-    
     color:black;
     border: none;
     border-radius: 5px;
@@ -112,21 +99,23 @@ function filterProjects(category) {
 
 /* Project Grid */
 .project-grids {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Auto-fit layout with min/max constraints */
-    gap: 20px;
-    justify-content: center;
+    display: flex;  /* Use flexbox for the container */
+    flex-wrap: wrap; /* Allow wrapping of cards to the next line */
+    justify-content: space-between;  /* Space between items */
+    gap: 20px;  /* Space between items */
     margin-top: 20px;
     padding: 20px;
 }
 
 /* Project Card */
-.project-cards{
+.project-cards {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
+    width: calc(33.33% - 20px);  /* 3 cards per row with spacing */
+    margin-bottom: 20px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -173,14 +162,14 @@ function filterProjects(category) {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .project-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 items per row on medium screens */
+    .project-cards {
+        width: calc(50% - 20px); /* 2 cards per row on medium screens */
     }
 }
 
 @media (max-width: 600px) {
-    .project-grid {
-        grid-template-columns: repeat(1, 1fr); /* 1 item per row on small screens */
+    .project-cards {
+        width: calc(100% - 20px); /* 1 card per row on small screens */
     }
 }
 
