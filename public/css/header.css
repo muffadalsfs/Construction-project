@@ -1,229 +1,245 @@
-header {
-    position: sticky;
-    top: 0;
-    z-index: 10000;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-header .logo img {
-    width: 150px; /* Adjust width as needed */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: contain; /* Ensure image fits within the set size */
-}
-header .logo {
-    margin-left: 100px; /* Adjust left margin for the logo */
-}
-
-nav {
+/* General Reset */
+/* General Reset */
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Header */
+  .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: nowrap; /* Ensure no wrapping on larger screens */
-}
-.nav-toggle {
-    display: none;
-    cursor: pointer;
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    padding: 10px;
-}
-
-nav .dropdown {
-    position: relative;
-    display: inline-block;
-    margin: 0 15px; /* Add small spacing between dropdowns */
-    font-family: Arial, sans-serif; /* Optional font family */
-}
-
-nav .dropdown .dropbtn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-    padding: 8px 15px;
-    transition: color 0.3s ease, background-color 0.3s ease;
-    position: relative; /* Enable pseudo-element positioning */
-
-}
-
-nav .dropdown .dropbtn:hover  {
-    color: gold; /* Ensure hover color remains consistent */
-    background-color: transparent; /* Maintain no background on hover */
-    border-radius: 5px; /* Rounded corners */
-}
-
-nav .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #ffffff;
-    min-width: 200px; /* Adjust dropdown width */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
-    border-radius: 5px; /* Rounded corners */
-    z-index: 10; /* Ensure it's above other elements */
-    overflow: hidden; /* Clean edges for rounded corners */
-    animation: fadeIn 0.3s ease-in-out; /* Optional fade-in animation */
-}
-
-nav .dropdown-content a {
-    display: block;
-    color: #333;
-    text-decoration: none;
-    padding: 10px 15px;
-    font-size: 14px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-nav .dropdown-content a:hover {
-    background-color: gold; /* Highlighted background */
-    color: white; /* Highlighted text color */
-}
-
-nav .dropdown:hover .dropdown-content {
-    display: block;
-}
-nav .dropdown .dropbtn:hover::after {
-    content: ""; /* Adds a decorative line */
-    position: absolute;
-    bottom: -5px; /* Position it slightly below the text */
-    left: 0;
-    right: 0;
-    height: 8px; /* Line height */
-    background-color: yellow; /* Yellow underline color */
-    transition: width 0.3s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-nav a {
-    text-decoration: none;
-    color: #333;
-    padding: 5px 10px;
-}
-
-nav a.icon img {
-    width: 50px;
-    height: 50px;
-}
-a {
-    text-decoration: none;
-    color: #007bff; /* Default link color */
-    padding: 5px 10px; /* Add padding for better appearance */
-    border-radius: 5px; /* Smooth corners */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
-    
-}
-
-a:hover {
-   
-    color: yellow; /* Change text color for better contrast */
-}
-@media (max-width: 768px) {
-    /* Adjust header for smaller screens */
-    header {
-        padding: 10px;
-    }
-
-    nav {
-        flex-direction: column; /* Stack items vertically */
-        align-items: flex-start; /* Align items to the left */
-        display: none; /* Initially hide the menu */
-        width: 100%; /* Full-width menu */
-        background-color: #fff; /* Match header background */
-    }
-
-    /* Show the nav when the toggle is active */
-    nav.active {
-        display: flex; /* Display the menu */
-    }
-
-    nav a, nav .dropdown .dropbtn {
-        padding: 10px; /* Add padding for smaller items */
-        width: 100%; /* Take full width */
-        text-align: left; /* Align text to the left */
-    }
-
-    nav .dropdown {
-        width: 100%; /* Take full width */
-    }
-
-    nav .dropdown-content {
-        position: relative; /* Keep dropdown inside the nav */
-        box-shadow: none; /* Remove shadow for small screens */
-        width: 100%; /* Take full width */
-    }
-
-    /* Show hamburger icon for small screens */
-    .nav-toggle {
-        display: block; /* Show the icon */
-        color: #333; /* Icon color */
-    }
-}
-footer {
-    background-color: black;
-    color: #fff;
-    padding: 10px ;
-   width: 100%;
-   margin: auto;
-   
-}
-
-.footer-section {
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .header img {
+    height: 40px;
+  }
+  
+  .logo img {
+    height: 40px;
+    margin-left: 80px;
+  }
+  
+  /* Center Navigation Links */
+  .nav {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-left: 98px;
-}
-
-.footer-column {
-    flex: 1 1 22%;
-    padding: 10px;
-}
-
-.footer-column p {
-    font-weight: bold;
-    margin-top: 0;
-    border-bottom: 3px solid yellow;
-    padding-bottom: 9px;
-    width: 35%; /* Shortens the border length */
-    margin-bottom: 10px;
-}
-
-.footer-column ul {
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 15px;
+    display: block;
+    position: relative;
+  }
+  
+  /* Golden Underline Effect */
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 5px;
+    width: 0;
+    background-color: gold;
+    transition: width 0.3s ease-in-out;
+    
+  }
+  
+  .nav-links a:hover::after {
+    width: 100%;
+    
+  }
+  
+  /* Dropdown Menu */
+  .dropdown {
+    position: relative;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
     list-style: none;
     padding: 0;
-}
-
-.footer-column ul li {
-    margin-bottom: 5px;
-    color: #ccc;
-}
-
-/* Adding button with border */
-.footer-column button {
-    background-color: transparent;
-    border: 1px solid yellow;
-    color: yellow;
-    padding: 10px 20px;
-    font-size: 14px;
-    cursor: pointer;
+    margin: 0;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .dropdown-menu li a {
+    padding: 10px 15px;
+    display: block;
+    color: black;
     transition: background-color 0.3s ease;
-}
-
-.footer-column button:hover {
+  }
+  
+  .dropdown-menu li a:hover {
+    background-color: gold;
+    color: white;
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  /* Search and Profile Logo */
+  .search {
+    margin-right: 15px;
+  }
+  
+  .search input {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .profile-logo img {
+    height: 40px;
+  }
+  
+  /* Hamburger Menu */
+  .hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+  }
+  
+  /* Responsive Styles for Header */
+  @media (max-width: 768px) {
+    .nav-links,
+    .search,
+    .profile-logo {
+      display: none;
+    }
+  
+    .nav-links.active {
+      display: flex;
+      flex-direction: column;
+      position: fixed; /* Ensures it doesn't overlap footer */
+      top: 60px;
+      right: 0;
+      background-color: #333;
+      width: 200px;
+      height: calc(100vh - 60px); /* Take full viewport height below header */
+      z-index: 1000; /* Ensure it stays above other elements */
+      overflow-y: auto; /* Add scroll if content overflows */
+    }
+  
+    .nav-links .dropdown-menu {
+      position: static;
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    z-index: 1;
+  }
+  
+  .footer-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .footer-column {
+    flex: 1;
+    margin: 10px;
+    min-width: 200px;
+  }
+  
+  .footer-column p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  
+  .footer-column p::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
     background-color: yellow;
-    color: #333;
-}
+  }
+  
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  footer .hellos {
+    display: block;
+    margin: 20px auto 0; /* Center horizontally with auto margins */
+    font-size: 12px;
+    text-align: center;
+    color: #ccc;
+    width: max-content; /* Adjust to content width */
+  }
+  
+  /* Mobile-Responsive Styling for Footer */
+  @media (max-width: 768px) {
+    .footer-section {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .footer-column {
+      margin-bottom: 20px;
+    }
+  }
+  footer .hellos {
+    display: block;
+    margin: 20px auto 0; /* Center horizontally with auto margins */
+    font-size: 12px;
+    text-align: center;
+    color: #ccc;
+    width: max-content; /* Adjust to content width */
+  }
+  ++\aa
