@@ -1,4 +1,4 @@
-@extends('layout.header')
+@extends('header')
 
 @section('content')
 <link rel="stylesheet" href="{{asset('css/shows/services.css')}}">

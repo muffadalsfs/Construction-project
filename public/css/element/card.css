@@ -75,3 +75,15 @@
     font-weight: bold;
     text-align: center;
 }
+
+@media (max-width: 768px) {
+    .engineer-card {
+        width: 45%; /* Approximately 2 cards in a row */
+    }
+}
+
+@media (max-width: 480px) {
+    .engineer-card {
+        width: 100%; /* Single card per row */
+    }
+}   

@@ -1,4 +1,4 @@
-@extends('layout.header')
+@extends('header')
 
 @section('content')
 <!-- <link rel="stylesheet" href="{{asset('css/shows/services.css')}}"> -->
@@ -338,6 +338,7 @@ Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
 }
 /*five layer */
 /* Container styling */
+/* Engineer container */
 .engineer-container {
   text-align: center;
   padding: 20px;
@@ -366,7 +367,6 @@ Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
   position: relative;
-  width: 100%; /* Full width of the grid column */
 }
 
 .engineer-card:hover {
@@ -374,11 +374,16 @@ Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
 }
 
+.engineer-img {
+  width: 100%;
+  height: 200px; /* Set a fixed height for consistency */
+  overflow: hidden; /* Prevent overflow of the image */
+}
 /* Engineer image */
 .engineer-img img {
   width: 100%;
-  height: 200px;
-  object-fit: cover; /* Ensure image fills the space */
+  height: 100%; /* Match parent container's height */
+  object-fit: cover; /* Fill the container while maintaining aspect ratio */
 }
 
 /* Engineer name (hidden by default) */
@@ -401,17 +406,22 @@ Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
 
 /* Authenticated user actions */
 .engineer-actions {
+  position: relative; /* Ensure buttons are positioned relative to the card */
   margin-top: 10px;
+  display: flex;
+  justify-content: center; /* Center buttons horizontally */
+  gap: 10px; /* Space between buttons */
 }
 
 .btn-edit, .btn-delete {
   display: inline-block;
-  margin: 5px 0;
-  padding: 5px 10px;
+  padding: 5px 15px;
   color: #fff;
   font-size: 0.9rem;
   text-decoration: none;
   border-radius: 5px;
+  border: none;
+  cursor: pointer;
 }
 
 .btn-edit {
@@ -424,7 +434,6 @@ Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
 
 .btn-delete {
   background: #dc3545;
-  border: none;
 }
 
 .btn-delete:hover {
@@ -444,6 +453,7 @@ Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
     grid-template-columns: 1fr; /* 1 card per row on very small screens */
   }
 }
+
 /* six layer */
 /* Highlight box styling */
 .highlight-box {

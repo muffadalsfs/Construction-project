@@ -1,9 +1,10 @@
-@extends('layout.header')
+@extends('header')
 
 @section('content')
 <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"> -->
 
 <link rel="stylesheet"  href="{{ asset('css/raf.css') }}">
+<link rel="stylesheet"  href="{{ asset('css/rafs.css') }}">
 <div class="slider-container">
   <div class="slider" id="project-slider">
     @foreach($Project as $projects)
@@ -26,14 +27,10 @@
   </div>
 </div>
 
-
-
 <div class="highlight-box">
     <p class="highlight-text">Are you looking for a Construction & Industrial Experts? </p>
     <button class="highlight-button">Request</button>
 </div>
-
-
 <div class="content-container">
     <!-- Left Section -->
     <div class="text-section">
@@ -43,7 +40,7 @@
         <button class="cta-button">Learn More</button>
     </div>
 
-    <!-- Right Section -->
+    <!-- Right Section: Image Grid -->
     <div class="image-grid">
         <div class="image-box">
             <img src="{{ asset('Images/1.jpg') }}" alt="Image 1">
@@ -63,6 +60,7 @@
         </div>
     </div>
 </div>
+ 
 
 @if($pro->isNotEmpty())
 <div class="project-container">
@@ -95,8 +93,7 @@
 <!-- No Projects Message -->
 <h1 class="no-projects">No projects available at the moment.</h1>
 @endif
-
-
+ 
 <div class="core-value-containers">
     <div class="text-container">
         <h1>Our Core Value</h1>
@@ -106,7 +103,6 @@
         <img src="{{asset('Images/11.jpg')}}" alt="Core Value Image" />
     </div>
 </div>
-
 
 
 <div class="core-value-container">
@@ -123,35 +119,35 @@
         <p>Let us help you build the home of your dreams with the utmost care and expertise in every step of the process.</p>
     </div>
 </div>
-
-  
 <div class="engineer-container">
     @if($enginner->count() > 0)
         <h3 class="section-title">Engineers</h3>
     @endif
     <div class="engineer-grid">
     @foreach($enginner as $eg)
-            <div class="engineer-card">
-                <div class="engineer-img">
-                    <img src="{{ url('storage/public/' . $eg->path) }}" alt="{{ $eg->name }}">
-                    <div class="engineer-info">
-                        <p class="engineer-name">{{ $eg->name }}</p>
-                    </div>
+        <div class="engineer-card">
+            <div class="engineer-img">
+                <img src="{{ url('storage/public/' . $eg->path) }}" alt="{{ $eg->name }}">
+                <div class="engineer-info">
+                    <p class="engineer-name">{{ $eg->name }}</p>
                 </div>
-                @auth
-                    <div class="engineer-actions">
-                        <a href="{{ route('engineers.edit', $eg->id) }}" class="btn-edit">Edit</a>
-                        <form action="{{ route('engineers.destroy', $eg->id) }}" method="POST" style="display: inline;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn-delete" onclick="return confirm('Are you sure you want to delete this engineer?')">Delete</button>
-                        </form>
-                    </div>
-                @endauth
             </div>
-        @endforeach
+            @auth
+                <div class="engineer-actions">
+                    <a href="{{ route('engineers.edit', $eg->id) }}" class="btn-edit">Edit</a>
+                    <form action="{{ route('engineers.destroy', $eg->id) }}" method="POST" style="display: inline;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn-delete" onclick="return confirm('Are you sure you want to delete this engineer?')">Delete</button>
+                    </form>
+                </div>
+            @endauth
+        </div>
+    @endforeach
     </div>
 </div>
+
+
 
 <div class="silver-background">
     <!-- Containers for Our Client and Feedback Sections -->
@@ -203,6 +199,7 @@
     </div>
 </div>
 
+
 @if($tool->isNotEmpty())
     <div class="tools-container">
         <h1>Latest Tools</h1>
@@ -231,8 +228,8 @@
         </div>
     </div>
 @endif
- 
 
+ 
 @if($blog->isNotEmpty())
     <h1 class="news-title">Latest News</h1>
     <div class="news-grid">
@@ -270,6 +267,7 @@
         @endforeach
     </div>
 @endif
+ 
 
 <footer class="footers">
     <div class="footers-logo">
@@ -304,10 +302,6 @@
 </footer>
 
 
-<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-<script src="{{ asset('js/script.js') }}"></script>
-<script src="{{asset('js/tool.js')}}"></script>
-<script src="{{asset('js/feedback.js')}}"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const slider = document.getElementById('project-slider');
@@ -338,7 +332,30 @@ function filterProjects(category) {
         }
     });
 }
+
 // third js
+document.addEventListener('DOMContentLoaded', function () {
+    const slider = document.getElementById('toolsSlider');
+    const wrapper = slider.querySelector('.tools-wrapper');
+    const totalWidth = wrapper.scrollWidth;
+    const viewportWidth = slider.offsetWidth;
+    const cardWidth = wrapper.querySelector('.tool-card').offsetWidth + 20; // Width of one card + margin
+
+    // Function to scroll the slider
+    function autoScrollSlider() {
+        let currentScroll = wrapper.scrollLeft;
+        
+        if (currentScroll < totalWidth - viewportWidth) {
+            wrapper.scrollLeft += cardWidth;  // Scroll one card width
+        } else {
+            wrapper.scrollLeft = 0;  // Reset to start if at the end
+        }
+    }
+
+    // Scroll every 2 seconds
+    setInterval(autoScrollSlider, 2000);
+});
 
 </script>
+
 @endsection

@@ -1,4 +1,4 @@
-@extends('layout.header')
+@extends('header')
 
 @section('content')
 @foreach($single as $service)

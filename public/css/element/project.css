@@ -92,3 +92,33 @@
     font-size: 14px;
     color: #666;
 }
+
+a {
+    text-decoration: none;
+}
+
+/* Media Queries for responsiveness */
+
+/* For small screens (mobile devices) */
+@media (max-width: 767px) {
+    #project-grid {
+        justify-content: center;
+    }
+
+    .project-card {
+        width: 100%; /* Full width for mobile screens */
+        margin-bottom: 20px;
+    }
+
+    .filter-button {
+        font-size: 14px; /* Slightly smaller font size for mobile */
+        padding: 8px 15px;
+    }
+}
+
+/* For medium screens (tablets) */
+@media (max-width: 1023px) {
+    .project-card {
+        width: 48%; /* Two cards per row for tablets */
+    }
+}

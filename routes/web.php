@@ -101,6 +101,7 @@ Route::controller(servicecontroller::class)->group(function(){
     Route::view('blog','blog');
     Route::view('project', 'project');
     Route::view('Tool' ,'tool');
+    Route::view ('header','header');
     //DEATIL ROUTE
     // Route::perfix('blog')->group(function(){
     //     Route::get('detail/{id}', [Blogcontroller::class, 'detail'])->name('blog.detail');

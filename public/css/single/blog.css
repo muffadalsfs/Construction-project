@@ -39,7 +39,6 @@
     justify-content: center;
     gap: 10px;
     margin: 20px 0;
-
 }
 
 .static-images img {
@@ -67,4 +66,55 @@
     font-size: 14px;
     color: #007BFF;
     text-decoration: underline;
+}
+
+/* Media Query for small screens */
+@media (max-width: 768px) {
+    .service-fixed-image {
+        max-width: 100%; /* Adjust image size for smaller screens */
+    }
+
+    .service-name {
+        font-size: 28px; /* Reduce font size for smaller screens */
+        left: 50%; /* Center the text on small screens */
+    }
+
+    .service-content {
+        max-width: 90%; /* Allow content to take up more width */
+        font-size: 14px; /* Adjust font size for readability */
+    }
+
+    .static-images {
+        flex-direction: column; /* Stack images vertically on small screens */
+    }
+
+    .static-images img {
+        max-width: 90%; /* Adjust image size for smaller screens */
+        margin-bottom: 15px; /* Add spacing between stacked images */
+    }
+
+    .cancel-button {
+        width: 100%; /* Make the cancel button full-width */
+        padding: 15px 20px;
+        font-size: 16px;
+    }
+
+    .back-link {
+        font-size: 16px; /* Increase font size for easier readability */
+    }
+}
+
+/* Media Query for very small screens (like phones) */
+@media (max-width: 480px) {
+    .service-name {
+        font-size: 22px; /* Further reduce font size for smaller screens */
+    }
+
+    .service-content {
+        font-size: 12px; /* Reduce font size for mobile */
+    }
+
+    .static-images img {
+        max-width: 100%; /* Make images full width */
+    }
 }

@@ -1,3 +1,4 @@
+/* Base styles */
 .service-container {
     display: flex;
     flex-direction: column;
@@ -39,7 +40,6 @@
     justify-content: center;
     gap: 10px;
     margin: 20px 0;
-
 }
 
 .static-images img {
@@ -67,4 +67,32 @@
     font-size: 14px;
     color: #007BFF;
     text-decoration: underline;
+}
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+    .service-fixed-image {
+        width: 100%;  /* Make the image responsive */
+        height: auto; /* Adjust height proportionally */
+    }
+
+    .service-name {
+        font-size: 24px; /* Adjust font size for smaller screens */
+        left: 50%; /* Center the text */
+        transform: translateX(-50%); /* Ensure proper centering */
+    }
+
+    .static-images {
+        flex-direction: column;  /* Stack the images vertically */
+    }
+
+    .static-images img {
+        max-width: 90%;  /* Make images more responsive */
+        margin-bottom: 15px; /* Add spacing between stacked images */
+    }
+
+    .service-content {
+        max-width: 100%;  /* Ensure content does not overflow */
+        padding: 0 15px;  /* Add some padding for small screens */
+    }
 }

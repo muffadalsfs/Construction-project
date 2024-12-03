@@ -69,3 +69,35 @@
     color: #007BFF;
     text-decoration: underline;
 }
+@media (max-width: 768px) {
+    .detail-container {
+        padding: 15px;
+    }
+
+    .blog-image {
+        height: 200px;
+    }
+
+    .title-overlay {
+        top: 180px;
+        left: 10px;
+        font-size: 1.2em;
+        padding: 8px 15px;
+    }
+
+    .static-images {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .static-images img {
+        width: 90%;
+        height: auto;
+    }
+
+    .cancel-button {
+        margin: 5px 0;
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="{{asset('css/header.css')}}">
 <header>
+<button class="nav-toggle" onclick="toggleMenu()">☰</button> <!-- Hamburger icon -->
     <nav>
         @guest
     <a href="/" class="logo">
@@ -145,7 +146,7 @@
                 @endguest
     </nav>
 </header>
-@yield('content')
+
 <footer>
     <div class="footer-section">
         <div class="footer-column">
@@ -195,3 +196,9 @@
     </div>
    
 </footer>
+<script>
+    function toggleMenu() {
+        const nav = document.querySelector('nav'); // Select the navigation element
+        nav.classList.toggle('active'); // Toggle the 'active' class
+    }
+</script>

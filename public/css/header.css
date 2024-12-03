@@ -2,8 +2,8 @@ header {
     position: sticky;
     top: 0;
     z-index: 10000;
-    background-color: #fff; /* Ensure background covers content below */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header .logo img {
@@ -19,7 +19,15 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-grow: 1;
+    flex-wrap: nowrap; /* Ensure no wrapping on larger screens */
+}
+.nav-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    padding: 10px;
 }
 
 nav .dropdown {
@@ -123,7 +131,47 @@ a:hover {
    
     color: yellow; /* Change text color for better contrast */
 }
+@media (max-width: 768px) {
+    /* Adjust header for smaller screens */
+    header {
+        padding: 10px;
+    }
 
+    nav {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the left */
+        display: none; /* Initially hide the menu */
+        width: 100%; /* Full-width menu */
+        background-color: #fff; /* Match header background */
+    }
+
+    /* Show the nav when the toggle is active */
+    nav.active {
+        display: flex; /* Display the menu */
+    }
+
+    nav a, nav .dropdown .dropbtn {
+        padding: 10px; /* Add padding for smaller items */
+        width: 100%; /* Take full width */
+        text-align: left; /* Align text to the left */
+    }
+
+    nav .dropdown {
+        width: 100%; /* Take full width */
+    }
+
+    nav .dropdown-content {
+        position: relative; /* Keep dropdown inside the nav */
+        box-shadow: none; /* Remove shadow for small screens */
+        width: 100%; /* Take full width */
+    }
+
+    /* Show hamburger icon for small screens */
+    .nav-toggle {
+        display: block; /* Show the icon */
+        color: #333; /* Icon color */
+    }
+}
 footer {
     background-color: black;
     color: #fff;

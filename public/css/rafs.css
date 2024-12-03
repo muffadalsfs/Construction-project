@@ -1,0 +1,878 @@
+/* General Styling */
+
+
+.content-container {
+    display: flex;
+  
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px; /* Adds space between sections */
+}
+
+/* Left Section */
+.text-section {
+    flex: 1; /* Take 1 part of the space */
+    padding: 10px;
+}
+
+.text-section h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.text-section p {
+    margin-bottom: 10px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+/* Right Section */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns for larger screens */
+    gap: 10px; /* Spacing between images */
+    flex: 1; /* Take 1 part of the space */
+    padding: 10px;
+}
+
+.image-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.image-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.image-text {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column; /* Stack sections vertically */
+        padding: 10px;
+    }
+
+    .text-section, .image-grid {
+        width: 100%; /* Use full width for small screens */
+        margin: 0; /* Remove margins */
+        padding: 0; /* Remove padding */
+    }
+
+    .image-grid {
+        grid-template-columns: repeat(1, 1fr); /* One column for smaller screens */  
+    }
+}
+
+@media (max-width: 480px) {
+    .text-section h1 {
+        font-size: 1.5rem; /* Smaller heading */
+    }
+
+    .cta-button {
+        padding: 8px 16px; /* Adjust button size */
+        font-size: 14px;
+    }
+}
+ 
+
+/* fourlayer */
+.project-container {
+    background-color: black; /* Silver background */
+    padding: 30px;
+    text-align: center;
+}
+
+/* Heading */
+.project-heading {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.project-button {
+    padding: 10px 15px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.project-button:hover {
+    background-color: gold;
+}
+
+/* Projects Grid */
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Project Card */
+.project-card {
+  flex: 1 1 calc(33.333% - 20px); /* 3 cards per row */
+  max-width: calc(33.333% - 20px); /* Ensure proper spacing */
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Project Image */
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Project Info */
+.project-info {
+    padding: 15px;
+}
+
+.project-title {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.project-category {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* No Projects Message */
+.no-projects {
+    font-size: 1.5rem;
+    color: #999;
+    text-align: center;
+    padding: 50px;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .project-grid {
+        flex-direction: column; /* Stack projects vertically */
+    }
+    .project-card {
+      flex: 1 1 100%; /* Full width for smaller screens */
+      max-width: 100%;
+  }
+}
+/* five layer */
+.core-value-containers {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Vertically center the text and image */
+    justify-content: center; /* Horizontally center the entire container */
+    gap: 20px; /* Optional spacing between text and image */
+    text-align: center; /* Center-align text inside the text-container */
+    flex-wrap: wrap; /* Allow wrapping of content when space is constrained */
+}
+
+.text-container {
+    flex: 1;
+    text-align: center;
+    min-width: 200px; /* Ensure text container doesn't shrink too much */
+}
+
+.image-container {
+    flex: 1;
+    text-align: center;
+    min-width: 200px; /* Ensure image container doesn't shrink too much */
+    display: flex;
+    justify-content: center; /* Ensure image is centered */
+}
+
+.image-container img {
+    max-width: 100%; /* Ensure image doesn't overflow its container */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: 0 auto; /* Center the image */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .core-value-containers {
+        flex-direction: column; /* Stack items vertically on mobile */
+    }
+
+    .image-container {
+        max-width: 100%; /* Allow image container to take full width */
+    }
+}
+/* sixlayer */
+/* Container for video and text */
+/* Container for video and text */
+.core-value-container {
+    display: flex;
+    flex-direction: row; /* Display video and text side by side */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center the entire container */
+    gap: 20px; /* Optional spacing between video and text */
+    text-align: center; /* Center-align text inside the text-container */
+  }
+  
+  /* Video container styling */
+  .video-container {
+    flex: 1; /* Allow video container to take up equal width */
+    max-width: 80%; /* Limit the width of the video container */
+  }
+  
+  .video-container iframe {
+    width: 100%; /* Make the iframe responsive */
+    height: 400px; /* Set the height of the video */
+    /* Alternatively, use a percentage if you want it relative to the container's size */
+    /* height: 50%; */
+  }
+  
+  /* Text container styling */
+  .text-container {
+    flex: 1; /* Allow text container to take up equal width */
+    text-align: left; /* Align text to the left */
+    max-width: 600px; /* Limit paragraph width for readability */
+  }
+  
+  .text-container h1 {
+    font-size: 2rem; /* Larger heading for emphasis */
+    margin-bottom: 15px; /* Add space below the heading */
+  }
+  
+  .text-container p {
+    margin: 10px 0; /* Add spacing between paragraphs */
+    font-size: 1rem; /* Adjust font size for readability */
+  }
+  
+  /* Mobile view adjustments */
+  @media (max-width: 768px) {
+    /* Stack video and text vertically */
+    .core-value-container {
+        flex-direction: column; /* Stack video and text in column layout */
+        align-items: center; /* Center-align content */
+        gap: 30px; /* Add space between video and text on mobile */
+    }
+  
+    /* Adjust text container for mobile */
+    .text-container {
+        max-width: 90%; /* Allow text to take up more width on smaller screens */
+        text-align: center; /* Center-align the text on mobile */
+    }
+  
+    /* Adjust video container */
+    .video-container iframe {
+        max-width: 100%; /* Ensure video is responsive */
+        height: 300px; /* Adjust height for mobile */
+    }
+  }
+  
+  /* Image container for core value (if included) */
+  .image-container {
+    flex: 1; /* Adjust width proportionally */
+    text-align: center; /* Center-align the image */
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Ensure the image is centered */
+  }
+  /*seven layer */
+/* Main container for engineers */
+/* Main container for engineers */
+.engineer-container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Section Title */
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Grid for the engineer cards */
+  .engineer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Show 4 cards per row */
+    gap: 20px;
+    justify-items: center;
+  }
+  
+  /* Engineer Card Styling */
+  .engineer-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 250px; /* Adjust width */
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .engineer-card:hover {
+    transform: translateY(-5px); /* Add hover effect */
+    color: #000;
+  }
+  
+  /* Image inside the card */
+  .engineer-img {
+    position: relative;
+  }
+  
+  .engineer-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Engineer Name Styling (Initially hidden inside image) */
+  .engineer-info {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    /* Dark background with some transparency */
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: none; /* Hide name by default */
+  }
+  
+  .engineer-card:hover .engineer-info {
+    display: block; /* Show name on hover */
+  }
+  
+  /* Engineer Actions (Edit, Delete) - Initially hidden, shown at bottom */
+  .engineer-actions {
+    display: none;
+    position: absolute;
+    bottom: 10px; /* Keep it at the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+  }
+  
+  .engineer-card:hover .engineer-actions {
+    display: block; /* Show actions on hover */
+  }
+  
+  /* Buttons styling */
+  .btn-edit, .btn-delete {
+    padding: 8px 12px;
+          border-radius: 5px;
+          font-size: 14px;
+          text-decoration: none;
+          color: white;
+          border: none;
+          cursor: pointer;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 90px; /* Set consistent width */
+          height: 36px; /* Set consistent height */
+          box-sizing: border-box; /* Ensure padding is considered within dimensions */
+  }
+  
+  .btn-edit {
+    background-color: #28a745;
+  }
+  
+  .btn-delete {
+    background-color: #dc3545;
+  }
+  
+  /* Mobile View Adjustments */
+  @media (max-width: 768px) {
+    .engineer-grid {
+        grid-template-columns: repeat(1, 1fr); /* Show 1 card per row */
+    }
+    .engineer-card {
+        max-width: 100%;
+    }
+  }
+  /* eight layer /*
+/* Silver Background for the whole section */
+.silver-background {
+    background-color: silver;
+    padding: 40px 0;
+  }
+  
+  /* Center-align heading for the sections */
+  .sections-container h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+  
+  /* Flexbox container for the sections */
+  .sections-container {
+    display: flex;
+    justify-content: space-between; /* Space between Client and Feedback sections */
+    gap: 20px;
+    flex-wrap: wrap; /* Allows content to wrap on smaller screens */
+  }
+  
+  /* Clients Section */
+  .clients-section h1 {
+    font-size: 2rem;
+  }
+  
+  .clients-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 boxes per row */
+    gap: 20px;
+    justify-items: center;
+    width: 100%;
+  }
+  
+  .client-box {
+    background-color: #fff;
+    width: 200px;
+    height: 150px; /* Square box */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    border: 2px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  /* Hover Effect for Client Boxes */
+  .client-box:hover {
+    transform: scale(1.05); /* Slightly scale up the box */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+    background-color: gold;
+  }
+  
+  /* Feedback Section Styling */
+  .feedback-section h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .feedback-slider {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .feedback-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .feedback {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  .feedback img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .feedback-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  .feedback-rating {
+    font-size: 1.1rem;
+    color: #ffcc00;
+  }
+  
+  .feedback-text {
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #555;
+  }
+  
+  /* Slider Navigation */
+  .slider-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .slider-nav button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ddd;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .slider-nav .active {
+    background-color: #007bff;
+  }
+  
+  /* Mobile View Adjustments */
+  @media (max-width: 768px) {
+    .sections-container {
+        flex-direction: column; /* Stack sections vertically on mobile */
+        gap: 40px; /* Increase space between sections */
+    }
+  
+    .clients-box {
+        grid-template-columns: 1fr; /* Show 1 box per row on small screens */
+    }
+  
+    .client-box {
+        height: 120px; /* Reduce size for smaller screens */
+        font-size: 1rem;
+    }
+  
+    .feedback-slider .feedback {
+        min-width: 100%;
+    }
+  }
+  /*nine layer*/
+/* Container Styling */
+/* Container Styling */
+/* Container Styling */
+/* Container Styling */
+.tools-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.tools-slider {
+  position: relative;
+  overflow: hidden; /* Hide overflowing content */
+  width: 80%; /* Adjust width of the slider (e.g., 80% of the parent container) */
+  margin: 0 auto; /* Center the slider horizontally */
+}
+
+.tools-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  transition: transform 0.5s ease; /* Smooth transition for sliding */
+}
+
+.tool-card {
+  width: 33.33%; /* Set the width of each card to 1/3rd of the container */
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.tool-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.tool-details {
+  padding: 15px;
+  text-align: center;
+}
+
+.tool-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.tool-price {
+  font-size: 16px;
+  color: #333;
+  margin-top: 5px;
+}
+
+.tool-actions {
+  margin-top: 10px;
+}
+
+.tool-actions .btn-edit, .tool-actions .btn-delete {
+  padding: 8px 15px;
+  font-size: 14px;
+  color: white;
+  background-color: #007bff;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.tool-actions .btn-delete {
+  background-color: #dc3545;
+}
+
+.tool-actions .btn-edit:hover, .tool-actions .btn-delete:hover {
+  opacity: 0.8;
+}
+
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .tools-wrapper {
+        animation: none; /* Disable slider on small screens */
+        flex-wrap: wrap; /* Allow cards to wrap on small screens */
+        justify-content: center; /* Center align on small screens */
+    }
+  
+    .tool-card {
+        flex: 1 1 200px; /* Allow cards to take up more space but with a minimum width */
+        margin: 10px; /* Add spacing between cards */
+    }
+  }
+/*ten layer */
+/* News Title */
+.news-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* News Grid */
+  .news-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  /* News Card */
+  .news-card {
+    width: 300px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+    padding: 10px;
+  }
+  
+  /* Date Box */
+  .date-box {
+    position: absolute;
+    top: 180px;
+    left: 10px;
+    background: gold;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+  }
+  
+  /* Blog Image */
+  .news-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  /* Blog Title */
+  .blog-title {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.2em;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  /* Blog Content */
+  .blog-content {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.2em;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  /* Meta Info */
+  .meta-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #777;
+  }
+  
+  /* Post Actions */
+  .post-actions {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .edit-button, .delete-button {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .edit-button {
+    background-color: #28a745;
+  }
+  
+  .delete-button {
+    background-color: #dc3545;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .news-grid {
+        justify-content: center;
+    }
+  }
+  
+  /* ten layer */
+/* Footer Styles */
+/* Footer Styles */
+.footers {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of footer content */
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #f8f8f8;
+    gap: 20px;
+  }
+  
+  /* Logo Section */
+  .footers-logo {
+    flex: 0 0 auto; /* Fixed width for logo */
+  }
+  
+  .logos {
+    width: 550px; /* Adjust the size of the logo */
+    height: auto;
+  }
+  
+  /* Footer Content */
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of footer columns */
+    flex: 1; /* Allow the footer columns to stretch */
+    justify-content: space-between;
+  }
+  
+  .footer-columns {
+    flex: 1 1 200px; /* Allow columns to wrap and grow, with a base width of 200px */
+    text-align: center;
+    margin-bottom: 20px; /* Add margin for spacing between columns */
+  }
+  
+  .footer-columns p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: underline;
+    text-decoration-color: gold;
+    margin-bottom: 10px;
+  }
+  
+  .footer-columns ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-columns ul li {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.5;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footers {
+        flex-wrap: wrap; /* Ensure the footer content wraps on small screens */
+    }
+  
+    .footer-content {
+        flex-direction: column; /* Stack the columns vertically */
+        align-items: center; /* Center align the footer content */
+        justify-content: center; /* Center the content */
+    }
+  
+    .footer-columns {
+        flex: 1 1 100%; /* Make each column take up full width on small screens */
+        text-align: center;
+        margin-bottom: 20px; /* Add some spacing between the columns */
+    }
+  
+    .logos {
+        width: 100%; /* Make the logo take up full width on smaller screens */
+        max-width: 300px; /* Optionally set a maximum width for the logo */
+    }
+  }
+  
+  
+  

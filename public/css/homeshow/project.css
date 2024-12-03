@@ -92,3 +92,43 @@
     font-size: 14px;
     color: #666;
 }
+.filter-button.active {
+    color: gold;
+    border-bottom: 2px solid gold;
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+    #project-grid {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .project-card {
+        width: 45%; /* Adjust to 2 cards per row on tablets */
+    }
+    .filter-button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .project-card {
+        width: 100%; /* Adjust to 1 card per row on small screens */
+    }
+
+    .filter-button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .project-title {
+        font-size: 16px;
+    }
+
+    .project-content {
+        font-size: 12px;
+    }
+}
