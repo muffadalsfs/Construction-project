@@ -9,7 +9,7 @@
 </div>
     <!-- Detail Page Content -->
     <div class="detail-container">
-        <h1>Detail Page</h1>
+    
         <img src="{{ url('storage/public/' . $show->path) }}" alt="Blog Image" class="blog-image">
         <h2>Title: {{ $show->title }}</h2>
         <h3>Content:</h3>

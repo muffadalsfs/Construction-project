@@ -6,9 +6,15 @@
   <title>Responsive Header</title>
 </head>
 <body>
+<div id="loader" class="loader">
+  <div class="spinner"></div>
+</div>
+
 @guest
+
+
   <header class="header">
- 
+
     <div class="logo">
     <img src="{{ asset('Images/logo-dark.png') }}" alt="Logo" />
     </div>
@@ -62,7 +68,7 @@
       <div class="line"></div>
       <div class="line"></div>
     </div>
-  
+
    @else 
    <header class="header">
  
@@ -118,6 +124,7 @@
    <div class="line"></div>
    <div class="line"></div>
  </div>
+
   
    @endguest
   </header>
@@ -169,7 +176,7 @@
         </div>
         <span class='hellos'> © Copyright Koncrete 2020. Designed and Developed by RadiusTheme</span>
     </div>
-   
+    
 </footer>
   <script src="script.js"></script>
 </body>
