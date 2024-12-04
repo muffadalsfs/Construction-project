@@ -13,6 +13,7 @@
 .text-section {
     flex: 1; /* Take 1 part of the space */
     padding: 10px;
+    text-align: center;
 }
 
 .text-section h1 {

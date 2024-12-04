@@ -11,7 +11,8 @@ class Engineercontroller extends Controller
     {
         return view('enginner');
     }
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $path=$request->file('file')->store('public','public');
         $imagarray=explode('/',$path);
         $image=$imagarray[1];
@@ -31,7 +32,7 @@ class Engineercontroller extends Controller
         $enginner = Enginner::findOrFail($id);
 
         if ($enginner->path) {
-            Storage::delete('public/' . $enginner->path); // Delete old image
+            Storage::delete('public/' . $enginner->path); 
         }
 
         $enginner->delete();
@@ -52,7 +53,7 @@ class Engineercontroller extends Controller
 
         if ($request->hasFile('file')) {
             if ($enginner->path) {
-                Storage::delete('public/' . $enginner->path); // Delete old image
+                Storage::delete('public/' . $enginner->path); 
             }
             $path = $request->file('file')->store('public', 'public');
             $enginner->path = basename($path);

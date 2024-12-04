@@ -26,12 +26,38 @@
             <label for="title">Projectvalue</label>
             <input type="text" name="value" value="{{ $project->value }}" required>
         </div>
-        <select name="Category">
-        <option value="{{$project->value}}">Construction</option>
-        <option value="{{$project->value}}">Automotive</option>
-        <option value="{{$project->value}}">Industrial</option>
-        <option value="{{$project->value}}">Mechanics  </option>
-    </select>
+        <div class="category-container">
+    <label for="Category" class="category-label">Category:</label>
+    <div class="radio-group">
+        <label class="radio-label">
+            <input type="radio" name="Category" value="Construction" 
+                   {{ $project->category == 'Construction' ? 'checked' : '' }}>
+            Construction
+        </label>
+    </div>
+    <div class="radio-group">
+        <label class="radio-label">
+            <input type="radio" name="Category" value="Automotive" 
+                   {{ $project->category == 'Automotive' ? 'checked' : '' }}>
+            Automotive
+        </label>
+    </div>
+    <div class="radio-group">
+        <label class="radio-label">
+            <input type="radio" name="Category" value="Industrial" 
+                   {{ $project->category == 'Industrial' ? 'checked' : '' }}>
+            Industrial
+        </label>
+    </div>
+    <div class="radio-group">
+        <label class="radio-label">
+            <input type="radio" name="Category" value="Mechanics" 
+                   {{ $project->category == 'Mechanics' ? 'checked' : '' }}>
+            Mechanics
+        </label>
+    </div>
+</div>
+
 
         @if($project->path)
         <div class="image-container">

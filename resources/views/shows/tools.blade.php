@@ -2,7 +2,8 @@
 
 @section('content')
 <link rel="stylesheet"  href="{{ asset('css/shows/tools.css') }}">
-<h1>All Tools</h1>
+<h1> <a href="Tool">Add Tools</h1></a>
+
 
 <div class="tools-container">
     @foreach($tools as $tool)

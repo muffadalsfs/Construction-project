@@ -9,19 +9,19 @@
  
 </div>
 
-<div class="service-container">
-    @foreach($service as $serv)
-    <a href="{{ route('detailservice', $serv->id) }}">
-    <div class="service-card">
-        <div class="image-wrapper">
-            <img src="{{ asset('storage/public/' . $serv->path) }}" alt="Service Image" class="service-image">
-        </div>
-        <div class="service-content">
-<h3 class="service-title">{{ $serv->name }}</h3>
+    <div class="service-container">
+        @foreach($service as $serv)
+        <a href="{{ route('detailservice', $serv->id) }}">
+        <div class="service-card">
+            <div class="image-wrapper">
+                <img src="{{ asset('storage/public/' . $serv->path) }}" alt="Service Image" class="service-image">
+            </div>
+            <div class="service-content">
+    <h3 class="service-title">{{ $serv->name }}</h3>
 
-            <p class="limited-content">{{ \Illuminate\Support\Str::limit($serv->content, 100) }}</p>
+                <p class="limited-content">{{ \Illuminate\Support\Str::limit($serv->content, 100) }}</p>
 
-        </div>
+            </div>
         </a>
     </div>
     @endforeach

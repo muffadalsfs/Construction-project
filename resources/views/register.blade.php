@@ -15,5 +15,5 @@
     <button>register</button>
     <a href="login">back</a>
 </form> 
-    <!-- When there is no desire, all things are at peace. - Laozi -->
+
 </div>

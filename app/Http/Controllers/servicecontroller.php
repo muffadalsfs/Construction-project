@@ -26,21 +26,16 @@ class servicecontroller extends Controller
      }
      public function delete($id)
      {
-         // Find the service by ID
          $service = Service::findOrFail($id);
      
-         // Delete the service
          $service->delete();
      
-         // Redirect or return a response
          return redirect()->route('showservice')->with('success', 'Service deleted successfully.');
      }
      public function edit($id)
      {
-         // Find the service by ID
          $service = Service::findOrFail($id);
      
-         // Return a view with the service data
          return view('edit.services', compact('service'));
      }
      public function update(Request $request, $id)
@@ -51,22 +46,20 @@ class servicecontroller extends Controller
         if ($request->filled('remove_image') && $request->remove_image == 1) 
         {
             if ($service->path) {
-                Storage::delete('public/' . $service->path); // Delete the old image
-                $service->path = null; // Clear the path in the database
+                Storage::delete('public/' . $service->path); 
+                $service->path = null; 
             }
         }
         
-        // If a new file is uploaded, store it
         if ($request->hasFile('file') && $request->file('file')->isValid())
          {
             if ($service->path) {
-                Storage::delete('public/' . $service->path); // Delete the old image
+                Storage::delete('public/' . $service->path); 
             }
             $filePath = $request->file('file')->store('public', 'public');
-            $service->path = basename($filePath); // Save new image path
+            $service->path = basename($filePath); 
         }
         $service->save();
-             // Redirect back to the showservice page with a success message
              return redirect()->route('showservice')->with('success', 'Service updated successfully.');
      }
      public function detail($id)

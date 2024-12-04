@@ -35,7 +35,7 @@ class ProjectController extends Controller
         {
             $project = Project::findOrFail($id);
 
-            // Delete the file from storage
+            // Delete from storage
             if ($project->path) {
                 \Storage::delete('public/' . $project->path);
             }
@@ -44,7 +44,7 @@ class ProjectController extends Controller
 
             return redirect()->route('project.show')->with('success', 'Project deleted successfully!');
         }
-                // Show the edit form
+                //  edit form
         public function edit($id)
         {
             $project = Project::findOrFail($id);
@@ -58,7 +58,6 @@ class ProjectController extends Controller
 
             $project = Project::findOrFail($id);
 
-            // If a new file is uploaded, replace the old one
             if ($request->hasFile('file')) {
                 if ($project->path) {
                     \Storage::delete('public/' . $project->path);

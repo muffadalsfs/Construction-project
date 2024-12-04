@@ -61,7 +61,7 @@ class Toolcontroller extends Controller
 
         if ($request->hasFile('file')) {
             if ($tool->path) {
-                Storage::delete('public/' . $tool->path); // Delete old image
+                Storage::delete('public/' . $tool->path); 
             }
             $tool->path = basename($request->file('file')->store('public', 'public'));
         }
@@ -73,7 +73,7 @@ class Toolcontroller extends Controller
     public function show($id)
     {
         $tool = Tool::findOrFail($id);
-        return view('show.tool', compact('tool')); // Adjust 'show.tool' to match your view file
+        return view('show.tool', compact('tool')); 
     }
     
 }

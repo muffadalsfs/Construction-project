@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{ asset('css/logoshow.css') }}">
 <link rel="stylesheet" href="{{ asset('css/element/card.css') }}">
 
-<!-- Top Image with Heading -->
+
 <div class="image-container">
     <img src="{{ asset('Images/c.webp') }}" alt="Service Image" class="top-image">
     <h1 class="image-title">Team Gallery</h1>
@@ -12,10 +12,8 @@
 </div>
 
 
-<!-- Link to External CSS -->
 
 
-<!-- Engineers Section -->
 <div class="engineer-container">
     <h3 class="section-title">Engineers</h3>
     <div class="engineer-grid">

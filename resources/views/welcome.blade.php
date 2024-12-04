@@ -77,32 +77,32 @@
     </div>
 
     <!-- Projects Grid -->
-    <div class="project-grid">
-        @foreach($pro as $pros)
-        <div class="project-card" data-category="{{ $pros->category }}">
-            <img src="{{ url('storage/public/' . $pros->path) }}" alt="{{ $pros->title }}" class="project-image">
-            <div class="project-info">
-                <h3 class="project-title">{{ $pros->title }}</h3>
-                <p class="project-category">{{ $pros->category }}</p>
+            <div class="project-grid">
+                @foreach($pro as $pros)
+                <div class="project-card" data-category="{{ $pros->category }}">
+                    <img src="{{ url('storage/public/' . $pros->path) }}" alt="{{ $pros->title }}" class="project-image">
+                    <div class="project-info">
+                        <h3 class="project-title">{{ $pros->title }}</h3>
+                        <p class="project-category">{{ $pros->category }}</p>
+                    </div>
+                </div>
+                @endforeach
             </div>
         </div>
-        @endforeach
+        @else
+        <!-- No Projects Message -->
+        <h1 class="no-projects">No projects available at the moment.</h1>
+        @endif
+    
+    <div class="core-value-containers">
+        <div class="text-container">
+            <h1>Our Core Value</h1>
+            <p>We believe in providing the highest level of service to our clients and creating sustainable value for all stakeholders.</p>
+        </div>
+        <div class="image-container">
+            <img src="{{asset('Images/11.jpg')}}" alt="Core Value Image" />
+        </div>
     </div>
-</div>
-@else
-<!-- No Projects Message -->
-<h1 class="no-projects">No projects available at the moment.</h1>
-@endif
- 
-<div class="core-value-containers">
-    <div class="text-container">
-        <h1>Our Core Value</h1>
-        <p>We believe in providing the highest level of service to our clients and creating sustainable value for all stakeholders.</p>
-    </div>
-    <div class="image-container">
-        <img src="{{asset('Images/11.jpg')}}" alt="Core Value Image" />
-    </div>
-</div>
 
 
 <div class="core-value-container">
@@ -112,40 +112,40 @@
     </div>
 
     <!-- Text Container -->
-    <div class="text-container">
-        <h1>Build Your House with Passion & Excellence</h1>
-        <p>We provide the best construction services with a focus on quality and detail. Our team ensures that every project is built to perfection.</p>
-        <p>With years of experience in the industry, we have developed a reputation for delivering exceptional results on time and within budget.</p>
-        <p>Let us help you build the home of your dreams with the utmost care and expertise in every step of the process.</p>
-    </div>
-</div>
-<div class="engineer-container">
-    @if($enginner->count() > 0)
-        <h3 class="section-title">Engineers</h3>
-    @endif
-    <div class="engineer-grid">
-    @foreach($enginner as $eg)
-        <div class="engineer-card">
-            <div class="engineer-img">
-                <img src="{{ url('storage/public/' . $eg->path) }}" alt="{{ $eg->name }}">
-                <div class="engineer-info">
-                    <p class="engineer-name">{{ $eg->name }}</p>
-                </div>
+            <div class="text-container">
+                <h1>Build Your House with Passion & Excellence</h1>
+                <p>We provide the best construction services with a focus on quality and detail. Our team ensures that every project is built to perfection.</p>
+                <p>With years of experience in the industry, we have developed a reputation for delivering exceptional results on time and within budget.</p>
+                <p>Let us help you build the home of your dreams with the utmost care and expertise in every step of the process.</p>
             </div>
-            @auth
-                <div class="engineer-actions">
-                    <a href="{{ route('engineers.edit', $eg->id) }}" class="btn-edit">Edit</a>
-                    <form action="{{ route('engineers.destroy', $eg->id) }}" method="POST" style="display: inline;">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn-delete" onclick="return confirm('Are you sure you want to delete this engineer?')">Delete</button>
-                    </form>
-                </div>
-            @endauth
         </div>
-    @endforeach
-    </div>
-</div>
+        <div class="engineer-container">
+            @if($enginner->count() > 0)
+                <h3 class="section-title">Engineers</h3>
+            @endif
+            <div class="engineer-grid">
+            @foreach($enginner as $eg)
+                <div class="engineer-card">
+                    <div class="engineer-img">
+                        <img src="{{ url('storage/public/' . $eg->path) }}" alt="{{ $eg->name }}">
+                        <div class="engineer-info">
+                            <p class="engineer-name">{{ $eg->name }}</p>
+                        </div>
+                    </div>
+                    @auth
+                        <div class="engineer-actions">
+                            <a href="{{ route('engineers.edit', $eg->id) }}" class="btn-edit">Edit</a>
+                            <form action="{{ route('engineers.destroy', $eg->id) }}" method="POST" style="display: inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn-delete" onclick="return confirm('Are you sure you want to delete this engineer?')">Delete</button>
+                            </form>
+                        </div>
+                    @endauth
+                </div>
+            @endforeach
+            </div>
+        </div>
 
 
 

@@ -65,8 +65,8 @@ class Blogcontroller extends Controller
             if ($request->filled('remove_image') && $request->remove_image == 1) 
             {
                 if ($blog->path) {
-                    Storage::delete('public/' . $blog->path); // Delete the old image
-                    $blog->path = null; // Clear the path in the database
+                    Storage::delete('public/' . $blog->path); 
+                    $blog->path = null; 
                 }
             }
 
@@ -74,13 +74,13 @@ class Blogcontroller extends Controller
             if ($request->hasFile('file') && $request->file('file')->isValid())
             {
                 if ($blog->path) {
-                    Storage::delete('public/' . $blog->path); // Delete the old image
+                    Storage::delete('public/' . $blog->path); 
                 }
                 $filePath = $request->file('file')->store('public', 'public');
-                $blog->path = basename($filePath); // Save new image path
+                $blog->path = basename($filePath); 
             }
 
-            // Save the updated blog post
+            
             $blog->save();
 
             return redirect()->route('blog.show');
@@ -95,7 +95,7 @@ class Blogcontroller extends Controller
             return view('detail', ['show' => $detail]); 
         }
 
-        //SHOW CURRENT THREE BLOG IN HOME PAGE
+        //SHOW CURRENT  BLOG IN HOME PAGE
    
     public function home()
     {
@@ -124,7 +124,8 @@ class Blogcontroller extends Controller
         $blog=Blog::latest()->take(1)->get();
         return view('single.blog',['single'=>$blog]);
     }
-    public function serach(Request $request){
+    public function serach(Request $request)
+    {
         $blog = Blog::where('name','like',"%request->serach%")->get();
         return view('welcome',['blog'=>$blog,]);
     }
