@@ -54,7 +54,9 @@
     display: block;
     position: relative;
   }
-  
+   a:hover{
+    color: gold;
+   }
   /* Golden Underline Effect */
   .nav-links a::after {
     content: '';
@@ -65,6 +67,7 @@
     width: 0;
     background-color: gold;
     transition: width 0.3s ease-in-out;
+    
     
   }
   
