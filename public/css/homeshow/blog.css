@@ -1,16 +1,17 @@
 .blog-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    display: grid;                /* Use grid layout instead of flex */
+    grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
+    gap: 20px;                     /* Space between grid items */
     padding: 20px;
+    max-width: 1200px;             /* Maximum width of the grid */
+    margin: 0 auto;                /* Center the grid */
 }
 
 .blog-card {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    width: 300px;
+    width: 100%;
     overflow: hidden;
     position: relative;
 }
@@ -91,6 +92,20 @@
 .edit-button {
     background-color: #28a745;
 }
-a{
+
+a {
     text-decoration: none;
+}
+
+/* Responsiveness for smaller screens */
+@media (max-width: 1024px) {
+    .blog-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .blog-container {
+        grid-template-columns: 1fr; /* 1 column on small screens */
+    }
 }

@@ -1,20 +1,24 @@
 .blog-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
+    justify-content: center; /* Center the blog cards horizontally */
+    gap: 20px; /* 20px gap between blog cards */
+    padding: 20px 30px; /* 30px padding on the left and right (3 by 3 space) */
+    max-width: 1200px; /* Optional: set a maximum width for the container */
+    margin: 0 auto; /* Center the container horizontally on the page */
 }
 
+/* Blog card styles */
 .blog-card {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    width: 300px;
+    width: 300px; /* Fixed width for each blog card */
     overflow: hidden;
     position: relative;
 }
 
+/* Image container and styling */
 .blog-image-container {
     position: relative;
     overflow: hidden;
@@ -26,6 +30,7 @@
     object-fit: cover;
 }
 
+/* Date positioning */
 .blog-date {
     position: absolute;
     top: 170px;
@@ -37,6 +42,7 @@
     font-size: 12px;
 }
 
+/* Content padding */
 .blog-content {
     padding: 15px;
 }
@@ -58,6 +64,7 @@
     -webkit-box-orient: vertical;
 }
 
+/* Meta information styling */
 .blog-meta {
     display: flex;
     justify-content: space-between;
@@ -72,6 +79,7 @@
     justify-content: space-between;
 }
 
+/* Button styles */
 .detail-button, .delete-button, .edit-button {
     text-decoration: none;
     font-size: 14px;
@@ -90,4 +98,17 @@
 
 .edit-button {
     background-color: #28a745;
+}
+
+/* Media Query for Responsive Layout */
+@media (max-width: 1200px) {
+    .blog-card {
+        width: 45%; /* Two cards per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-card {
+        width: 100%; /* One card per row on smaller screens */
+    }
 }

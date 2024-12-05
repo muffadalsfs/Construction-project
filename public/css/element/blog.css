@@ -4,7 +4,6 @@
     object-fit: cover;
 }
 
-
 .news-title {
     text-align: center;
     font-size: 28px;
@@ -12,16 +11,16 @@
 }
 
 .news-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    display: grid;               /* Use grid instead of flex */
+    grid-template-columns: repeat(3, 1fr);  /* Create 3 equal-width columns */
+    gap: 20px;                    /* Space between the grid items */
     padding: 0 20px;
+    max-width: 1200px;            /* Max width to ensure it doesn’t stretch too much */
+    margin: 0 auto;               /* Center the grid */
 }
 
 .news-card {
     position: relative;
-    width: 300px;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -84,6 +83,20 @@
     font-size: 12px;
     color: #999;
 }
-a{
-    text-decoration:none;
+
+a {
+    text-decoration: none;
+}
+
+/* Responsiveness for smaller screens */
+@media (max-width: 1024px) {
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .news-grid {
+        grid-template-columns: 1fr; /* 1 column on small screens */
+    }
 }

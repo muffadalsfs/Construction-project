@@ -25,7 +25,7 @@
                 <span>Created by: {{ $user->user->name }}</span>
                 <span class="comment-option">Comments</span>
             </div>
-            
+            gg
         </div>
     </div>
     @endforeach

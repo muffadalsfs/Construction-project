@@ -54,29 +54,42 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   
   // four layer
-  const prevButton = document.querySelector('.slider-nav button:first-child');
-  const nextButton = document.querySelector('.slider-nav button:last-child');
+  let currentIndex = 0;
   const toolsWrapper = document.querySelector('.tools-wrapper');
+  const toolCards = document.querySelectorAll('.tool-card');
+  const prevButton = document.querySelector('.prev');
+  const nextButton = document.querySelector('.next');
   
-  let currentSlide = 0;
-  const slidesToShow = 3; // Number of cards visible at a time
-  const totalSlides = document.querySelectorAll('.tool-card').length;
+  const totalCards = toolCards.length;
   
-  function moveSlider() {
-      const offset = -(currentSlide * 320); // 320px = card width + margin
-      toolsWrapper.style.transform = `translateX(${offset}px)`;
+  function showNextSlide() {
+    currentIndex = (currentIndex + 1) % totalCards;
+    updateSliderPosition();
   }
   
+  function showPrevSlide() {
+    currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+    updateSliderPosition();
+  }
+  
+  function updateSliderPosition() {
+    const offset = -currentIndex * 320; // Adjust based on card width (300px + gap)
+    toolsWrapper.style.transform = `translateX(${offset}px)`;
+  }
+  
+  // Automatic slide every 3 seconds
+  let autoSlide = setInterval(showNextSlide, 3000);
+  
+  // Navigation buttons
   nextButton.addEventListener('click', () => {
-      if (currentSlide < totalSlides - slidesToShow) {
-          currentSlide++;
-          moveSlider();
-      }
+    clearInterval(autoSlide); // Stop auto slide when user interacts
+    showNextSlide();
+    autoSlide = setInterval(showNextSlide, 3000); // Restart auto slide
   });
   
   prevButton.addEventListener('click', () => {
-      if (currentSlide > 0) {
-          currentSlide--;
-          moveSlider();
-      }
+    clearInterval(autoSlide); // Stop auto slide when user interacts
+    showPrevSlide();
+    autoSlide = setInterval(showNextSlide, 3000); // Restart auto slide
   });
+  

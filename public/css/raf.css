@@ -53,7 +53,7 @@
 /* Content inside each slide */
 .slide-content {
   position: absolute; /* Position absolutely within the slide */
-  left: 20px; /* Align content to the left */
+  left: 300px; /* Align content to the left */
   top: 50%; /* Center content vertically */
   transform: translateY(-50%); /* Adjust vertical centering */
   z-index: 2;
@@ -161,10 +161,11 @@
   display: flex; /* Arrange text and button in one row */
   align-items: center; /* Vertically center content */
   justify-content: center; /* Horizontally center content */
-  background-color: #ffd700; /* Gold background color */
+  background-color: gold; /* Gold background color */
   padding: 20px; /* Add some padding */
   border-radius: 8px; /* Rounded corners */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for better visual */
+  height: 200px;
 }
 
 /* Highlight Text */
@@ -290,11 +291,11 @@
 .image-box {
   position: relative;
   width: 100%;
-  padding-top: 100%; /* Make it a square */
+  padding-top: 189px; /* Make it a square */
   max-width: 300px; /* Limit the box size */
   overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+
   margin: 0 auto; /* Center the boxes */
 }
 
@@ -303,7 +304,8 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 200px;
+
   object-fit: cover;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
@@ -315,7 +317,7 @@
 
 .image-box .image-text {
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
@@ -363,7 +365,7 @@
 .project-heading {
   font-size: 3rem;
   margin-bottom: 20px;
-  color: #333;
+  color: white;
   text-align: center;
   font-family: 'Arial', sans-serif;
 }
@@ -389,6 +391,13 @@
 
 .project-button:hover {
   background-color: gold;
+}
+
+/* Active state for the button (when clicked) */
+.project-button:active {
+  background-color: darkgoldenrod; /* Darker gold color when clicked */
+  transform: scale(0.98); /* Slightly shrink the button when clicked */
+  transition: transform 0.1s ease-out; /* Slight transition on active state */
 }
 
 /* Projects Grid */
@@ -418,10 +427,6 @@
 .project-info {
   padding: 15px;
   text-align: center;
-}
-.project-button:active {
-  background-color: gold; /* Gold color when the button is clicked */
-  transform: scale(0.98); /* Slightly shrink the button when clicked */
 }
 
 .project-title {
@@ -472,6 +477,7 @@
     grid-template-columns: 1fr;
   }
 }
+
 /* Active button style */
 /* five layer */
 /* Core Value Section */
@@ -576,7 +582,7 @@
   max-width: 48%;
   background-color: #000;
   max-height: 48%;
-  height: 400px; 
+  height: 600px; 
 }
 
 .video-containers iframe {
@@ -676,7 +682,7 @@
 
 .engineer-img img {
   width: 100%;
-  height: 200px;
+  height: 300px;
   object-fit: cover;
   border-bottom: 2px solid #f0f0f0;
   transition: transform 0.3s ease;
@@ -786,7 +792,7 @@
 
 .clients-section h1,
 .feedback-section h1 {
-  text-align: center;
+
   font-size: 2.5rem;
   color: #333;
   margin-bottom: 20px;
@@ -804,9 +810,9 @@
   background-color: #fff;
   color: #333;
   width: 150px; /* Increase size */
-  height: 150px; /* Increase size */
+  height: 50px; /* Increase size */
   padding: 20px;
-  border-radius: 8px;
+ 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   font-size: 1.2rem;
@@ -833,10 +839,10 @@
 .feedback {
   min-width: 100%;
   text-align: center;
-  padding: 20px;
+ 
   background-color: #fff;
   color: #333;
-  border-radius: 8px;
+
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -922,7 +928,7 @@
 
 .tool-card img {
   width: 100%;
-  height: 200px; /* Adjust image height */
+
   object-fit: contain;
   margin-bottom: 15px;
 }

@@ -116,6 +116,7 @@
   background: url('{{ asset('Images/back.jpg') }}') no-repeat center center / cover; /* Single background image */
   border-radius: 10px; /* Rounded corners for container */
   gap: 10px; /* Space between cards */
+  height: 200px;
 }
 
 
