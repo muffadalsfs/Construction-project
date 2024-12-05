@@ -1,42 +1,48 @@
 @extends('header')
 
 @section('content')
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"> -->
 
 <link rel="stylesheet"  href="{{ asset('css/raf.css') }}">
-<link rel="stylesheet"  href="{{ asset('css/rafs.css') }}">
+<!-- <link rel="stylesheet"  href="{{ asset('css/rafs.css') }}"> -->
 <div class="slider-container">
   <div class="slider" id="project-slider">
     @foreach($Project as $projects)
     <div class="slide">
+      <div class="image-container">
+        <img src="{{ url('storage/public/' . $projects->path) }}" alt="{{ $projects->title }}">
+      </div>
       <div class="slide-content">
         <h2>{{ $projects->title }}</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         <p>Praesent libero. Sed cursus ante dapibus diam.</p>
         <button>Learn More</button>
-        <br><br>
-
         @auth
         <a href="{{ route('project.edit', $projects->id) }}" class="edit-btn">Edit</a>
         <a href="{{ route('project.delete', $projects->id) }}" class="delete-btn" onclick="return confirm('Are you sure you want to delete this project?')">Delete</a>
         @endauth
       </div>
-      <img src="{{ url('storage/public/' . $projects->path) }}" alt="{{ $projects->title }}">
     </div>
     @endforeach
   </div>
 </div>
 
+ 
 <div class="highlight-box">
-    <p class="highlight-text">Are you looking for a Construction & Industrial Experts? </p>
+    <p class="highlight-text">Are you looking for a Construction & Industrial Experts?</p>
     <button class="highlight-button">Request</button>
 </div>
+
+
+
 <div class="content-container">
     <!-- Left Section -->
     <div class="text-section">
-        <h1>Welcome to Website</h1>
-        <p>This is your first paragraph providing some welcoming information about the site.</p>
-        <p>This is your second paragraph giving more context or details about the website.</p>
+        <h1>Welcome to </h1>
+        <h1> Koncrete Website </h1>
+
+        <p> Simply dummy text of the printing and typesetting industry has been the industry's standard. </p>
+        <p>Mimply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        .</p>
         <button class="cta-button">Learn More</button>
     </div>
 
@@ -61,7 +67,6 @@
     </div>
 </div>
  
-
 @if($pro->isNotEmpty())
 <div class="project-container">
     <!-- Heading -->
@@ -77,82 +82,78 @@
     </div>
 
     <!-- Projects Grid -->
-            <div class="project-grid">
-                @foreach($pro as $pros)
-                <div class="project-card" data-category="{{ $pros->category }}">
-                    <img src="{{ url('storage/public/' . $pros->path) }}" alt="{{ $pros->title }}" class="project-image">
-                    <div class="project-info">
-                        <h3 class="project-title">{{ $pros->title }}</h3>
-                        <p class="project-category">{{ $pros->category }}</p>
-                    </div>
-                </div>
-                @endforeach
+    <div class="project-grid">
+        @foreach($pro as $pros)
+        <div class="project-card" data-category="{{ $pros->category }}">
+            <img src="{{ url('storage/public/' . $pros->path) }}" alt="{{ $pros->title }}" class="project-image">
+            <div class="project-info">
+                <h3 class="project-title">{{ $pros->title }}</h3>
+                <p class="project-category">{{ $pros->category }}</p>
             </div>
         </div>
+        @endforeach
+    </div>
+        </div>
         @else
-        <!-- No Projects Message -->
         <h1 class="no-projects">No projects available at the moment.</h1>
         @endif
-    
-    <div class="core-value-containers">
-        <div class="text-container">
-            <h1>Our Core Value</h1>
-            <p>We believe in providing the highest level of service to our clients and creating sustainable value for all stakeholders.</p>
+        <div class="core-value-containers">
+            <div class="text-container">
+                <h1>Our Core Value</h1>
+                <p>We believe in providing the highest level of service to </p>
+        <p>our clients and creating sustainable value for all stakeholders.</p>
+            </div>
+            <div class="image-container">
+                <img src="{{ asset('Images/11.jpg') }}" alt="Core Value Image" />
+            </div>
         </div>
-        <div class="image-container">
-            <img src="{{asset('Images/11.jpg')}}" alt="Core Value Image" />
-        </div>
-    </div>
 
 
-<div class="core-value-container">
-    <!-- Video Container -->
-    <div class="video-container">
+
+<div class="core">
+    <div class="video-containers">
         <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
-    <!-- Text Container -->
-            <div class="text-container">
-                <h1>Build Your House with Passion & Excellence</h1>
-                <p>We provide the best construction services with a focus on quality and detail. Our team ensures that every project is built to perfection.</p>
-                <p>With years of experience in the industry, we have developed a reputation for delivering exceptional results on time and within budget.</p>
-                <p>Let us help you build the home of your dreams with the utmost care and expertise in every step of the process.</p>
-            </div>
+        <div class="text-containers">
+            <h1>Build Your House with Passion & Excellence</h1>
+            <p>We provide the best construction services with a focus on quality and detail. Our team ensures that every project is built to perfection.</p>
+            <p>With years of experience in the industry, we have developed a reputation for delivering exceptional results on time and within budget.</p>
+            <p>Let us help you build the home of your dreams with the utmost care and expertise in every step of the process.</p>
         </div>
-        <div class="engineer-container">
-            @if($enginner->count() > 0)
-                <h3 class="section-title">Engineers</h3>
-            @endif
-            <div class="engineer-grid">
-            @foreach($enginner as $eg)
-                <div class="engineer-card">
-                    <div class="engineer-img">
-                        <img src="{{ url('storage/public/' . $eg->path) }}" alt="{{ $eg->name }}">
-                        <div class="engineer-info">
-                            <p class="engineer-name">{{ $eg->name }}</p>
-                        </div>
-                    </div>
-                    @auth
-                        <div class="engineer-actions">
-                            <a href="{{ route('engineers.edit', $eg->id) }}" class="btn-edit">Edit</a>
-                            <form action="{{ route('engineers.destroy', $eg->id) }}" method="POST" style="display: inline;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn-delete" onclick="return confirm('Are you sure you want to delete this engineer?')">Delete</button>
-                            </form>
-                        </div>
-                    @endauth
+    </div>
+
+<div class="engineer-container">
+    @if($enginner->count() > 0)
+        <h3 class="section-title">Engineers</h3>
+    @endif
+    <div class="engineer-grid">
+        @foreach($enginner as $eg)
+        <div class="engineer-card">
+            <div class="engineer-img">
+                <img src="{{ url('storage/public/' . $eg->path) }}" alt="{{ $eg->name }}">
+                <div class="engineer-info">
+                    <p class="engineer-name">{{ $eg->name }}</p>
                 </div>
-            @endforeach
             </div>
+            @auth
+            <div class="engineer-actions">
+                <a href="{{ route('engineers.edit', $eg->id) }}" class="btn-edit">Edit</a>
+                <form action="{{ route('engineers.destroy', $eg->id) }}" method="POST" style="display: inline;">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn-delete" onclick="return confirm('Are you sure you want to delete this engineer?')">Delete</button>
+                </form>
+            </div>
+            @endauth
         </div>
-
-
+        @endforeach
+    </div>
+</div>
+  
 
 <div class="silver-background">
-    <!-- Containers for Our Client and Feedback Sections -->
     <div class="sections-container">
-        <!-- Our Client Section -->
         <div class="clients-section">
             <h1>Our Client</h1>
             <div class="clients-box">
@@ -165,7 +166,6 @@
             </div>
         </div>
 
-        <!-- Feedback Section -->
         <div class="feedback-section">
             <h1>Customers Feedback</h1>
             <div class="feedback-slider" id="feedbackSlider">
@@ -229,28 +229,26 @@
     </div>
 @endif
 
- 
 @if($blog->isNotEmpty())
     <h1 class="news-title">Latest News</h1>
     <div class="news-grid">
         @foreach($blog as $blogs)
         <div class="news-card">
-            <!-- Date Box -->
+
             <div class="date-box">
                 {{ \Carbon\Carbon::parse($blogs->created_at)->format('M d, Y') }}
             </div>
-            <!-- Blog Image -->
+           
             <img class="news-image" src="{{ url('storage/public/' . $blogs->path) }}" alt="{{ $blogs->title }}">
-            <!-- Blog Title -->
+           
             <h2 class="blog-title">{{ Str::limit($blogs->title, 40, '...') }}</h2>
-            <!-- Blog Content -->
+          
             <p class="blog-content">{{ Str::limit($blogs->content, 150, '...') }}</p>
-            <!-- Created by and Comments -->
-            <div class="meta-info">
+                      <div class="meta-info">
                 <span class="created-by">Created by: <strong>{{ $blogs->user->name }}</strong></span>
                 <span class="comments">Comments: {{ $blogs->comments_count ?? 0 }}</span>
             </div>
-            <!-- Edit and Delete Buttons -->
+          
             @auth
                 @if(auth()->user()->id === $blogs->user_id)
                 <div class="post-actions">
@@ -267,7 +265,6 @@
         @endforeach
     </div>
 @endif
- 
 
 <footer class="footers">
     <div class="footers-logo">
@@ -303,5 +300,7 @@
 
 
 <script src="{{asset('js/all.js')}}"></script>
+
+
 
 @endsection

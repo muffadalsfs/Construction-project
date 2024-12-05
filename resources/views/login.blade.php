@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="{{asset('css/login.css')}}">
 
 <!-- Home Link Heading -->
-<h1><a href="/">Home</a></h1>
 
 <!-- Login Page Heading -->
 <h1>LOGIN PAGE</h1>

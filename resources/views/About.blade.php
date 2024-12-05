@@ -69,34 +69,33 @@
 
 
 
-
-    @if($enginner->isNotEmpty())
-    <div class="engineer-container">
+      <div class="engineer-container">
+    @if($enginner->count() > 0)
         <h3 class="section-title">Engineers</h3>
-        <div class="engineer-grid">
-            @foreach($enginner as $eg)
-                <div class="engineer-card">
-                    <div class="engineer-img">
-                        <img src="{{ url('storage/public/' . $eg->path) }}" alt="{{ $eg->name }}">
-                    </div>
-                    <div class="engineer-name">
-                        <p>{{ $eg->name }}</p>
-                    </div>
-                    @auth
-                        <div class="engineer-actions">
-                            <a href="{{ route('engineers.edit', $eg->id) }}" class="btn-edit">Edit</a>
-                            <form action="{{ route('engineers.destroy', $eg->id) }}" method="POST" style="display: inline;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn-delete" onclick="return confirm('Are you sure you want to delete this engineer?')">Delete</button>
-                            </form>
-                        </div>
-                    @endauth
-                </div>
-            @endforeach
-        </div>
-    </div>
     @endif
+    <div class="engineer-grid">
+        @foreach($enginner as $eg)
+        <div class="engineer-card">
+            <div class="engineer-img">
+                <img src="{{ url('storage/public/' . $eg->path) }}" alt="{{ $eg->name }}">
+                <div class="engineer-info">
+                    <p class="engineer-name">{{ $eg->name }}</p>
+                </div>
+            </div>
+            @auth
+            <div class="engineer-actions">
+                <a href="{{ route('engineers.edit', $eg->id) }}" class="btn-edit">Edit</a>
+                <form action="{{ route('engineers.destroy', $eg->id) }}" method="POST" style="display: inline;">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn-delete" onclick="return confirm('Are you sure you want to delete this engineer?')">Delete</button>
+                </form>
+            </div>
+            @endauth
+        </div>
+        @endforeach
+    </div>
+</div>
 
 
 

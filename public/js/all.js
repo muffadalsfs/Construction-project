@@ -1,52 +1,82 @@
 document.addEventListener('DOMContentLoaded', () => {
     const slider = document.getElementById('project-slider');
-    let currentIndex = 0;
-  
     const slides = document.querySelectorAll('.slide');
-    const totalSlides = slides.length;
+    let index = 0;
   
-    function showSlide(index) {
+    function showNextSlide() {
+      index = (index + 1) % slides.length;
       slider.style.transform = `translateX(-${index * 100}%)`;
     }
   
-    // Auto-slide (optional)
-    setInterval(() => {
-      currentIndex = (currentIndex + 1) % totalSlides;
-      showSlide(currentIndex);
-    }, 5000); // 5 seconds
+    setInterval(showNextSlide, 5000); // Change slide every 5 seconds
   });
-  // second js
+  //  second layer
   function filterProjects(category) {
-      const projects = document.querySelectorAll('.project-card');
+    const projects = document.querySelectorAll('.project-card');
   
-      projects.forEach(project => {
-          if (category === 'All' || project.dataset.category === category) {
-              project.style.display = 'block';
-          } else {
-              project.style.display = 'none';
-          }
-      });
+    projects.forEach(project => {
+      const projectCategory = project.getAttribute('data-category');
+      
+      if (category === 'All' || projectCategory === category) {
+        project.style.display = 'block'; // Show matching project
+      } else {
+        project.style.display = 'none'; // Hide non-matching project
+      }
+    });
   }
+  // thirdlayer
+  document.addEventListener("DOMContentLoaded", function () {
+      const slider = document.querySelector(".feedback-wrapper");
+      const slides = slider.children;
+      const navButtons = document.querySelectorAll(".slider-nav button");
+      let currentIndex = 0;
   
-  // third js
-  document.addEventListener('DOMContentLoaded', function () {
-      const slider = document.getElementById('toolsSlider');
-      const wrapper = slider.querySelector('.tools-wrapper');
-      const totalWidth = wrapper.scrollWidth;
-      const viewportWidth = slider.offsetWidth;
-      const cardWidth = wrapper.querySelector('.tool-card').offsetWidth + 20; // Width of one card + margin
-  
-      // Function to scroll the slider
-      function autoScrollSlider() {
-          let currentScroll = wrapper.scrollLeft;
-          
-          if (currentScroll < totalWidth - viewportWidth) {
-              wrapper.scrollLeft += cardWidth;  // Scroll one card width
-          } else {
-              wrapper.scrollLeft = 0;  // Reset to start if at the end
-          }
+      function updateSlider() {
+          slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+          navButtons.forEach((btn, index) => {
+              btn.classList.toggle("active", index === currentIndex);
+          });
       }
   
-      // Scroll every 2 seconds
-      setInterval(autoScrollSlider, 2000);
+      function autoSlide() {
+          currentIndex = (currentIndex + 1) % slides.length;
+          updateSlider();
+      }
+  
+      navButtons.forEach((button, index) => {
+          button.addEventListener("click", () => {
+              currentIndex = index;
+              updateSlider();
+          });
+      });
+  
+      setInterval(autoSlide, 5000); // Change slide every 5 seconds
+  });
+  
+  // four layer
+  const prevButton = document.querySelector('.slider-nav button:first-child');
+  const nextButton = document.querySelector('.slider-nav button:last-child');
+  const toolsWrapper = document.querySelector('.tools-wrapper');
+  
+  let currentSlide = 0;
+  const slidesToShow = 3; // Number of cards visible at a time
+  const totalSlides = document.querySelectorAll('.tool-card').length;
+  
+  function moveSlider() {
+      const offset = -(currentSlide * 320); // 320px = card width + margin
+      toolsWrapper.style.transform = `translateX(${offset}px)`;
+  }
+  
+  nextButton.addEventListener('click', () => {
+      if (currentSlide < totalSlides - slidesToShow) {
+          currentSlide++;
+          moveSlider();
+      }
+  });
+  
+  prevButton.addEventListener('click', () => {
+      if (currentSlide > 0) {
+          currentSlide--;
+          moveSlider();
+      }
   });

@@ -7,7 +7,7 @@
     <label for="price">Price</label>
     <input type="text" name="price" placeholder="enter your tools price" required>
     <label for="image">Upload your Image</label>
-    <input type="file" name="file" >
+    <input type="file" name="file"   required>
 <a href="">cancel</a>
     <button>Add tool </button>
 </form>

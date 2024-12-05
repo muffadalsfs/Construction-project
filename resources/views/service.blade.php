@@ -3,9 +3,9 @@
 <form action="{{route('servicestore')}}" method="post" enctype="multipart/form-data">
 @csrf 
 <label for="name">Service name</label>
-<input type="text" name="name" placeholder="Enter your service name">
+<input type="text" name="name" placeholder="Enter your service name"  required>
 <label for="content">Service description</label>
-<textarea name="content" class="textarea-field" placeholder="Write your service content"></textarea>
+<textarea name="content" class="textarea-field" placeholder="Write your service content"  required></textarea>
 <label for="image">Image</label>
 <input type="file" name="file" placeholder="Enter your service image">
 <button>service add </button>

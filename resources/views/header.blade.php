@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{asset('css/header.css')}}">
   <title>Responsive Header</title>
 </head>
 <body>
@@ -181,5 +182,5 @@
   <script src="script.js"></script>
 </body>
 </html>
-<link rel="stylesheet" href="{{asset('css/header.css')}}">
+
 <script src="{{asset('js/hamer.js')}}"></script>

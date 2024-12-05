@@ -18,7 +18,7 @@
   margin-right: 15px; /* Space between logo and text */
   
 }
-
+v
 /* Counter Info Styling */
 .counter-info {
   display: flex;
@@ -53,88 +53,98 @@
 /*five layer */
 /* Engineer container */
 .engineer-container {
-  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
+  text-align: center;
 }
 
-/* Section title */
 .section-title {
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin-bottom: 20px;
   color: #333;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
 }
 
-/* Engineer grid */
+/* Grid Layout */
 .engineer-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr)); /* Ensure 4 cards per row */
+  grid-template-columns: repeat(4, 1fr); /* Four cards per row */
   gap: 20px; /* Space between cards */
-  justify-content: center; /* Center cards horizontally */
-  padding: 0 10px; /* Add slight padding */
 }
 
-/* Engineer card */
+/* Engineer Card */
 .engineer-card {
   background: #fff;
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
   position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .engineer-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
 }
 
-/* Image container */
+/* Image Container */
 .engineer-img {
+  position: relative;
   width: 100%;
-  height: 400px;
   overflow: hidden;
 }
 
 .engineer-img img {
   width: 100%;
-  height: 100%;
+  height: 200px;
   object-fit: cover;
+  border-bottom: 2px solid #f0f0f0;
+  transition: transform 0.3s ease;
 }
 
-/* Name overlay */
-.engineer-name {
+.engineer-card:hover img {
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Engineer Info */
+.engineer-info {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.7); /* Dark overlay */
   color: #fff;
-  font-size: 1.2rem;
   padding: 10px;
+  text-align: center;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
-.engineer-card:hover .engineer-name {
-  opacity: 1;
+.engineer-card:hover .engineer-info {
+  opacity: 1; /* Show info on hover */
 }
 
-/* Button actions */
+.engineer-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Auth Buttons */
 .engineer-actions {
   margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
 }
 
 .btn-edit, .btn-delete {
-  padding: 5px 15px;
-  color: #fff;
+  display: inline-block;
+  padding: 8px 12px;
+  margin: 5px;
   font-size: 0.9rem;
   border-radius: 5px;
-  border: none;
-  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  transition: background 0.3s ease;
 }
 
 .btn-edit {
@@ -153,20 +163,28 @@
   background: #a71d2a;
 }
 
-/* Responsive styling */
+/* Responsive Design */
+@media (max-width: 992px) {
+  .engineer-grid {
+      grid-template-columns: repeat(3, 1fr); /* Three cards per row */
+  }
+}
+
 @media (max-width: 768px) {
   .engineer-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 15px;
+      grid-template-columns: repeat(2, 1fr); /* Two cards per row */
   }
 }
 
 @media (max-width: 480px) {
   .engineer-grid {
-    grid-template-columns: 1fr;
+      grid-template-columns: 1fr; /* One card per row */
+  }
+
+  .engineer-img img {
+      height: 150px; /* Adjust image height for smaller screens */
   }
 }
-
 
 /* six layer */
 /* Highlight box styling */
@@ -253,6 +271,7 @@
 }
 
 /* second layer*/
+/* Core value container */
 .core-value-container {
   display: flex;
   align-items: center; /* Vertically center content */
@@ -262,20 +281,46 @@
   flex-wrap: wrap; /* Allow wrapping for responsiveness */
 }
 
+/* Text container */
 .text-container {
   flex: 1; /* Take up equal width with the image */
   display: flex;
   flex-direction: column; /* Stack elements vertically */
   justify-content: center; /* Center vertically */
   text-align: left; /* Align text to the left */
+  padding: 10px; /* Add padding to ensure spacing around the text */
 }
 
+/* Heading styles (h1, h2, etc.) */
+.text-container h1,
+.text-container h2,
+.text-container h3,
+.text-container h4 {
+  margin-bottom: 15px; /* Space below the heading */
+  font-weight: bold; /* Make headings bold */
+  font-size: 1.5rem; /* Adjust size for hierarchy */
+  color: #333; /* Dark text color */
+}
+
+/* Paragraph styles */
+.text-container p {
+  font-size: 1rem; /* Set a comfortable text size */
+  color: #666; /* Lighter text color */
+  line-height: 1.6; /* Improve readability with more line height */
+  margin-bottom: 20px; /* Space below the paragraph */
+  padding-left: 5px; /* Slight padding to the left */
+  padding-right: 5px; /* Slight padding to the right */
+}
+
+/* Image container */
 .image-container {
   flex: 1; /* Take up equal width with the text */
   display: flex;
   justify-content: center; /* Center the image horizontally */
+  padding: 10px; /* Padding around the image */
 }
 
+/* Image styles */
 .image-container img {
   max-width: 100%; /* Ensure the image fits the container */
   height: auto; /* Maintain aspect ratio */
@@ -283,6 +328,7 @@
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow for better aesthetics */
 }
 
+/* Service button */
 .service-button {
   margin-top: 20px; /* Space between text and button */
   align-self: flex-start; /* Align the button to the left of the text */
@@ -296,8 +342,10 @@
   transition: background 0.3s ease; /* Smooth hover effect */
 }
 
+/* Button hover effect */
 .service-button:hover {
-  color:white;
+  color: white; /* Change text color on hover */
+  background-color: #f1a800; /* Darker shade of gold */
 }
 
 /* Responsive adjustments for mobile */
@@ -309,19 +357,35 @@
 
   .text-container {
     text-align: center; /* Center the text */
+    padding: 20px; /* Add more padding on smaller screens */
   }
 
   .service-button {
     align-self: center; /* Center the button */
   }
+
+  .text-container h1,
+  .text-container h2,
+  .text-container h3,
+  .text-container h4 {
+    font-size: 1.2rem; /* Adjust heading size for smaller screens */
+  }
+
+  .text-container p {
+    font-size: 1rem; /* Ensure readability on mobile */
+  }
 }
+
 
 /* third layer */
 /* Centering the heading */
+/* Services Heading */
 .services-heading {
   text-align: center;
   font-size: 2rem; /* Adjust for desired size */
   margin-bottom: 20px;
+  padding-left: 10px;  /* Optional: Add left padding for some spacing */
+  padding-right: 10px; /* Optional: Add right padding for some spacing */
 }
 
 /* Container for service cards */
@@ -331,6 +395,8 @@
   justify-content: center; /* Center the items in the row */
   gap: 20px; /* Space between boxes */
   padding: 20px; /* Optional padding */
+  padding-left: 10px; /* Space on the left side of the container */
+  padding-right: 10px; /* Space on the right side of the container */
 }
 
 /* Individual service card styling */
@@ -344,6 +410,7 @@
   text-align: center; /* Center the content */
   padding: 15px; /* Inner padding for spacing */
   transition: transform 0.3s ease; /* Hover effect */
+  margin-bottom: 20px; /* Space between cards vertically */
 }
 
 .service-card:hover {
@@ -388,6 +455,8 @@
     max-width: 100%;
   }
 }
-a{
-  text-decoration:none;
+
+/* Remove underline for links */
+a {
+  text-decoration: none;
 }
