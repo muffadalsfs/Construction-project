@@ -294,25 +294,39 @@ v
 }
 
 /* Heading styles (h1, h2, etc.) */
-.text-container h1,
-.text-container h2,
-.text-container h3,
-.text-container h4 {
+/* Heading styles (h1) */
+/* Heading styles (h1) */
+.text-container h1 {
   margin-bottom: 15px; /* Space below the heading */
-  font-weight: bold; /* Make headings bold */
-  font-size: 1.5rem; /* Adjust size for hierarchy */
+  font-weight: bold; /* Make the heading bold */
+  font-size: 2rem; /* Adjust size for hierarchy (larger size for h1) */
   color: #333; /* Dark text color */
+  text-align: center; /* Center the text */
+  word-wrap: break-word; /* Ensures long words or links break to fit the line */
+  width: 80%; /* Limit the width for better line breaks (you can adjust this percentage) */
+  max-width: 600px; /* Optional: control maximum width to avoid excessively long lines */
+  margin-left: auto; /* Center the paragraph */
+  margin-right: auto; /* Center the paragraph */
 }
 
-/* Paragraph styles */
+/* Paragraph styles (with inline line breaks) */
 .text-container p {
-  font-size: 1rem; /* Set a comfortable text size */
+  font-size: 1rem; /* Comfortable text size */
   color: #666; /* Lighter text color */
-  line-height: 1.6; /* Improve readability with more line height */
+  line-height: 1.6; /* Improve readability */
   margin-bottom: 20px; /* Space below the paragraph */
   padding-left: 5px; /* Slight padding to the left */
   padding-right: 5px; /* Slight padding to the right */
+  text-align: center; /* Center text alignment */
+  
+  /* Force the paragraph to break after a certain width to avoid long lines */
+  word-wrap: break-word; /* Ensures long words or links break to fit the line */
+  width: 80%; /* Limit the width for better line breaks (you can adjust this percentage) */
+  max-width: 600px; /* Optional: control maximum width to avoid excessively long lines */
+  margin-left: auto; /* Center the paragraph */
+  margin-right: auto; /* Center the paragraph */
 }
+
 
 /* Image container */
 .image-container {
@@ -342,6 +356,9 @@ v
   border-radius: 5px; /* Rounded corners */
   cursor: pointer; /* Pointer cursor on hover */
   transition: background 0.3s ease; /* Smooth hover effect */
+  width: 134px;
+  height: 47px;
+  margin-left: 356px;
 }
 
 /* Button hover effect */

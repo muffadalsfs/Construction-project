@@ -276,7 +276,8 @@
 }
 
 .text-section .cta-button:hover {
-  background-color: #0056b3;
+  background-color: yellow;
+  color:black;
   transform: scale(1.1);
 }
 
