@@ -7,9 +7,7 @@
   <title>Responsive Header</title>
 </head>
 <body>
-<div id="loader" class="loader">
-  <div class="spinner"></div>
-</div>
+
 
 @guest
 
@@ -120,11 +118,12 @@
    <img src="{{ asset('Images/shop.webp') }}" alt="Shop Icon" />
    </div>
  </nav>
- <div class="hamburger">
-   <div class="line"></div>
-   <div class="line"></div>
-   <div class="line"></div>
- </div>
+ 
+<div class="hamburger">
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+</div>
 
   
    @endguest
@@ -175,7 +174,7 @@
                 <li>Site Inspection</li>
             </ul>
         </div>
-        <span class='hellos'> © Copyright Koncrete 2020. Designed and Developed by RadiusTheme</span>
+        <span > © Copyright Koncrete 2020. Designed and Developed by RadiusTheme</span>
     </div>
     
 </footer>

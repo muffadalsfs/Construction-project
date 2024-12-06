@@ -11,14 +11,15 @@
 
 
     <div class="core-value-container">
-      <div class="text-container">
-        <h1>We are leading company in this field, And provide specific our every customers. </h1>
-        <p>Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+    <div class="text-section">
+        <h1>Welcome to </h1>
+        <h1> Koncrete Website </h1>
 
-    Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap text of the printing and typesetting industry.
-    .</p>
-        <button class="service-button">Learn More</button>
-      </div>
+        <p> Simply dummy text of the printing and typesetting industry has been the industry's standard. </p>
+        <p>Mimply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        .</p>
+        <button class="cta-button">Learn More</button>
+    </div>
       <div class="image-container">
         <img src="{{asset('Images/11.jpg')}}" alt="Core Value Image" />
       </div>

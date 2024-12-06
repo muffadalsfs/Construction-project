@@ -1199,12 +1199,15 @@
 }
 
 .footer-columns p {
-  font-size: 1.2rem;
+  font-size: 2.2rem;
   font-weight: bold;
   color: #333;
   text-decoration: underline;
   text-decoration-color: gold;
+  text-decoration-thickness: 4px;
+  text-underline-offset: 9px;
   margin-bottom: 10px;
+
 }
 
 .footer-columns ul {
@@ -1214,7 +1217,7 @@
 }
 
 .footer-columns ul li {
-  font-size: 0.9rem;
+  font-size: 21px;
   color: #555;
   line-height: 1.5;
 }
