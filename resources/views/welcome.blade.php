@@ -22,11 +22,11 @@
         @endauth
       </div>
     </div>
-    @endforeach
+    @endforeach 
   </div>
 </div>
 
- 
+   
 <div class="highlight-box">
     <p class="highlight-text">Are you looking for a Construction & Industrial Experts?</p>
     <button class="highlight-button">Request</button>
@@ -66,7 +66,7 @@
         </div>
     </div>
 </div>
- 
+
 @if($pro->isNotEmpty())
 <div class="project-container">
     <!-- Heading -->
@@ -298,8 +298,6 @@
         </div>
     </div>
 </footer>
-
-
 <script src="{{asset('js/all.js')}}"></script>
 
 

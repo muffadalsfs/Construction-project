@@ -4,7 +4,7 @@
 .slider-container {
   position: relative;
   width: 100%;
-  height: 70vh; /* Increase height for larger screens */
+  height: 70vh; /* Default height for larger screens */
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -36,7 +36,6 @@
   align-items: center;
   justify-content: center; /* Center content */
   overflow: hidden;
-
 }
 
 .slide img {
@@ -46,6 +45,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover; /* Ensure image fills the container */
+  object-position: center center; /* Ensure image is centered */
   z-index: 1;
   filter: brightness(50%); /* Darken the image to improve text readability */
 }
@@ -53,14 +53,15 @@
 /* Content inside each slide */
 .slide-content {
   position: absolute; /* Position absolutely within the slide */
-  left: 300px; /* Align content to the left */
+  left: 50%; /* Align content to the left */
   top: 50%; /* Center content vertically */
-  transform: translateY(-50%); /* Adjust vertical centering */
+  transform: translate(-50%, -50%); /* Adjust vertical and horizontal centering */
   z-index: 2;
   max-width: 50%; /* Adjust content width for larger screens */
   color: #fff;
   padding: 20px;
   text-align: left;
+  transition: transform 0.3s ease-in-out; /* Smooth transition for responsive changes */
 }
 
 .slide-content h2 {
@@ -88,7 +89,7 @@
 
 .slide-content button {
   background-color: gold;
-  color: black
+  color: black;
 }
 
 .slide-content button:hover {
@@ -112,7 +113,7 @@
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .slide-content {
-    max-width: 70%; /* Reduce content width for tablets */
+    max-width: 80%; 
     text-align: left; /* Left-align content for tablets */
   }
 
@@ -132,8 +133,7 @@
 
 @media (max-width: 480px) {
   .slide-content {
-    max-width: 80%; /* Reduce content width for smaller screens */
-    padding: 15px;
+    max-width: 90%; /* Allow more space for content on very small screens */
   }
 
   .slide-content h2 {
@@ -146,11 +146,19 @@
 
   .slide-content button {
     font-size: 0.8rem;
-    padding: 8px 16px;
+
   }
 
+  /* Ensure full-screen height on mobile */
   .slider-container {
-    height: 100vh; /* Ensure full-screen height on mobile */
+    height: 100vh; /* Full viewport height for smaller screens */
+
+  }
+
+  /* Adjust image behavior to avoid being cut off */
+  .slide imgs {
+    object-fit: cover; /* Keep image fully covered */
+    object-position: center center; /* Ensure the image is centered */
   }
 }
 
@@ -183,9 +191,11 @@
   background-color: white; /* Dark button color for contrast */
   color: black; /* Gold text color */
   border: 5px solid #ffd700; /* Gold border */
-  border-radius: 6px; /* Slightly larger border radius */
+  border-radius: 10px; /* Slightly larger border radius */
   font-size: 1.2rem; /* Slightly larger font size */
   font-weight: bold;
+  width: 239px;
+  height: 73px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
@@ -271,6 +281,7 @@
   border-radius: 5px; /* Slightly larger border radius for smooth corners */
   font-size: 1.1rem; /* Slightly larger text in button */
   font-weight: bold;
+  height: 40px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
@@ -292,11 +303,9 @@
 .image-box {
   position: relative;
   width: 100%;
-  padding-top: 189px; /* Make it a square */
+  padding-top: 66.66%; /* 189px / 300px = 0.63, or 63%, use 66.66% to maintain a more responsive square aspect ratio */
   max-width: 300px; /* Limit the box size */
   overflow: hidden;
-
-
   margin: 0 auto; /* Center the boxes */
 }
 
@@ -305,11 +314,11 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 200px;
-
+  height: 100%; /* Ensure the height fills the box properly */
   object-fit: cover;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
+
 
 .image-box:hover img {
   transform: scale(1.1);
@@ -335,13 +344,14 @@
     align-items: center;
     gap: 30px; /* Add more space between sections */
   }
-
   .image-grid {
-    grid-template-columns: 1fr; /* Single column layout */
+    grid-template-columns: 1fr; /* Single column layout for images */
+    padding: 0 10px; /* Ensure padding is consistent */
   }
 
   .image-box {
-    max-width: 250px; /* Adjust box size for smaller screens */
+    max-width: 100%; /* Ensure image box takes up full width */
+    padding-top: 66.66%; /* Maintain aspect ratio */
   }
 
   .text-section h1 {
@@ -553,7 +563,7 @@
   .image-container img {
       width: 100%;
       height: auto;
-      object-fit: contain; /* Adjust image fit for smaller screens */
+  
   }
 }
 
@@ -1171,7 +1181,8 @@
   align-items: flex-start;
   padding: 20px;
   background-color: #f8f8f8;
-  gap: 20px;
+  gap: 220px;
+  height: auto;
 }
 
 /* Logo Section */
@@ -1205,7 +1216,7 @@
   text-decoration: underline;
   text-decoration-color: gold;
   text-decoration-thickness: 4px;
-  text-underline-offset: 9px;
+  text-underline-offset: 7px;
   margin-bottom: 10px;
 
 }

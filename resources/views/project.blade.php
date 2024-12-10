@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{asset('css/project.css')}}">
+<link rel="stylesheet" href="{{asset('css/Project.css')}}">
 <h1>Project form </h1>
 <form action="{{ route('project.store') }}" method="post" enctype="multipart/form-data">
    @csrf 

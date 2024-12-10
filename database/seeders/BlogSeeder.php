@@ -17,7 +17,7 @@ class BlogSeeder extends Seeder
         Blog::create([
             'title' => 'Super Admin',
             'content' => 'jajajsjs',
-            'path' => "0zkpI0SkKrk5tjoRV0s4TPzpLFHTPnUFORwTGti0.jpg", 
+            'path' => "{{url('storage/public/image1.jpg')}}", 
             'user_id' => 1,
 
             
