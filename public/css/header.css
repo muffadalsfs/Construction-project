@@ -1,112 +1,207 @@
 .navbar {
-  background-color: white; /* Navbar background color */
+  background-color: whitesmoke;
+  position: static;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 5px;
 }
 
 .navbar-brand {
-  color: black; /* Color for the logo */
   font-weight: bold;
-  margin-left: 10px; /* Adjust the margin as needed */
+  margin-left: 100px;
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .navbar-nav .nav-link {
-  color: black; /* Color for nav links */
+  color: black;
   font-size: 20px;
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-weight: 500;
   line-height: 26px;
   text-transform: uppercase;
   font-style: normal;
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 26px;
+  border-bottom: 4px solid transparent;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover {
-  color: gold; /* Change text color to gold on hover */
-}
-
-.dropdown-menu {
-  background-color: white; /* Same as navbar background */
-  color: black;
-  font-size: 23px;
-  border: none; /* Remove border */
-  display: none; /* Hide dropdown by default */
-  position: absolute; /* Position it correctly */
-  top: 100%; /* Position it below the nav link */
-  left: 0;
-  right: 0;
-  max-width: 200px; /* Adjust the width as needed */
-  word-wrap: break-word; /* Ensure long text wraps inside the dropdown */
-  white-space: normal; /* Allow text to wrap */
-  min-width: 150px; /* Optional: Set a minimum width for the dropdown */
-}
-
-.dropdown-item {
-  color: black; /* Color for dropdown items */
-  padding: 10px 20px; /* Add padding for better clickability */
-  word-wrap: break-word; /* Allow text to wrap in dropdown items */
-  white-space: normal; /* Allow text to wrap within items */
-}
-
-.dropdown-item:hover {
-  background-color: gold; /* Change background color on hover */
-  color: #ffffff; /* White text on hover */
+  color: gold;
+  border-bottom-color: gold;
 }
 
 .navbar-nav-center {
-  margin: auto; /* Center navigation links */
+  margin: auto;
 }
 
-/* Remove the default dropdown arrow */
-.nav-item.dropdown .nav-link::after {
+.navbar img {
+  margin-left: 150px;
+  height: 52px;
+  object-fit: contain;
+}
+
+.dropdown-menu {
+  background-color: white;
+  color: black;
+  font-size: 23px;
+  font-family: 'Arial', sans-serif;
+  border: none;
   display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 250px;
+  max-width: 250px;
+  min-width: 150px;
+  height: auto;
+  max-height: 300px;
+  border-top: 3px solid gold;
+  white-space: nowrap;
+  overflow-y: auto;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  visibility: hidden;
+  opacity: 0;
 }
 
-/* Show the dropdown menu when the parent is hovered */
 .nav-item.dropdown:hover .dropdown-menu {
-  display: block; /* Show the dropdown */
+  visibility: visible;
+  opacity: 1;
+  display: block;
 }
 
-/* No background color change on hover */
-.nav-item.dropdown:hover .nav-link {
-  background-color: transparent; /* No background change on hover */
+.dropdown-item {
+  color: black;
+  padding: 10px 20px;
+  white-space: nowrap;
+  font-family: 'Arial', sans-serif;
 }
 
-  /* Custom styles for the footer */
-  .footer {
-background-color: black; /* Blue background */
-color: white; /* White text */
-padding: 10px 0; /* Padding for footer */
+.dropdown-item:hover {
+  background-color: gold;
+  color: white;
+}
+
+.footer {
+  background-color: black;
+  color: white;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .footer a {
-color: white; /* White text for links */
-text-decoration: none; /* Remove underline */
-transition: color 0.3s ease; /* Smooth transition for hover */
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .footer a:hover {
-color: #ffdd57; /* Gold text on hover */
+  color: #ffdd57;
 }
 
 h5 {
-text-decoration: underline;
-text-decoration-color: gold;
-margin: 12px;
-font-size: 30px;
+  text-decoration: underline;
+  text-decoration-color: gold;
+  margin: 29px;
+  font-size: 30px;
 }
 
 .footer .row {
-display: flex;
-justify-content: space-between; /* Distribute items evenly */
-align-items: center; /* Align items vertically centered */
-flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .footer .col-md-4 {
-text-align: center;
-flex: 1 1 20%; /* Allow columns to shrink and grow, with a minimum width */
+  text-align: center;
+  flex: 1 1 20%;
 }
 
 .footer .col-md-4 h5 {
-display: inline-block; /* Align h5 elements in a line */
-margin: 0 15px; /* Space between the h5 elements */
-text-align: center;
+  display: inline-block;
+  margin: 0 15px;
+  text-align: center;
+}
+
+@media (max-width: 992px) {
+  .navbar {
+    padding: 15px 5px;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 18px;
+    padding-bottom: 45px;
+  }
+
+  .navbar img {
+    margin-left: 20px;
+    height: 60px;
+  }
+
+  .dropdown-menu {
+    width: 200px;
+    max-width: 200px;
+  }
+
+  .footer .col-md-4 {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 0;
+  }
+
+  .navbar-brand {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 16px;
+    padding-bottom: 35px;
+  }
+
+  .dropdown-menu {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .footer .col-md-4 {
+    flex: 1 1 100%;
+  }
+}
+
+.nav-item .nav-link i {
+  font-size: 20px;
+  color: black;
+  transition: color 0.3s ease;
+  padding: 5px;
+}
+
+.nav-item .nav-link:hover i {
+  color: gold;
 }

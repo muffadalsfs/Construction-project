@@ -41,7 +41,6 @@
 /* Responsive styles for mobile */
 @media (max-width: 768px) {
   .counters-container {
-    flex-direction: column; /* Stack counters vertically */
     gap: 20px; /* Increase gap between counters */
   }
 
@@ -197,7 +196,7 @@
   }
 
   .engineer-img img {
-      height: 150px; /* Adjust image height for smaller screens */
+      height: 350px; /* Adjust image height for smaller screens */
   }
 }
 
@@ -245,6 +244,7 @@
   @media (max-width: 768px) {
     .highlight-box {
       flex-direction: column; /* Stack text and button vertically on smaller screens */
+      font-size: 1.5rem;
     }
   }
 /* Responsive styling for mobile */
@@ -252,10 +252,14 @@
   .highlight-box {
     flex-direction: column; /* Stack text and button vertically */
     text-align: center; /* Center text and button horizontally */
+    font-size: 1.5rem;
+
   }
 
   .highlight-text {
     margin-bottom: 10px; /* Add space between text and button */
+    font-size: 1.5rem;
+
   }
 }
 .cover-container {

@@ -83,6 +83,7 @@ color: #007bff; /* Change title color on hover */
     .image-container h1 {
         font-size: 28px; /* Reduce font size */
         top: 50%; /* Ensure vertical centering */
+        left: 50%;
         transform: translate(-50%, -50%);
         padding: 0 10px; /* Add padding for better spacing */
         text-align: center; /* Ensure text is centered */

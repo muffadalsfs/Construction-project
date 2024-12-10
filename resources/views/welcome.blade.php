@@ -257,11 +257,7 @@
                 @if(auth()->user()->id === $blogs->user_id)
                 <div class="post-actions">
                     <a href="{{ route('blog.edit', $blogs->id) }}" class="edit-button">Edit</a>
-                    <form action="{{ route('blog.delete', $blogs->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this post?');">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="delete-button">Delete</button>
-                    </form>
+                    <a href="{{ route('blog.delete', $blogs->id) }}" class="delete-button">Delete</a>
                 </div>
                 @endif
             @endauth

@@ -123,11 +123,12 @@
 
   .slide-content p {
     font-size: 1rem;
+
   }
 
   .slide-content button {
     font-size: 0.9rem;
-    padding: 10px 20px;
+
   }
 }
 
@@ -146,6 +147,8 @@
 
   .slide-content button {
     font-size: 0.8rem;
+    left: 50%;
+
 
   }
 
@@ -510,7 +513,6 @@
 /* Image container */
 .show {
   flex: 1; /* Take up equal space */
-  display: flex;
   justify-content: flex-end; /* Align image to the right */
 }
 
@@ -736,7 +738,7 @@
   }
 
   .engineer-img img {
-      height: 150px; /* Adjust image height for smaller screens */
+      height: 350px; /* Adjust image height for smaller screens */
   }
 }
 /* seven layer */
