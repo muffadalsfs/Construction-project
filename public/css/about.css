@@ -2,13 +2,14 @@
 .counter-card {
   display: flex;
   align-items: center;
-
   border-radius: 8px;
   padding: 10px 15px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
   flex: 1;
   max-width: 250px; /* Adjust width as needed */
   text-align: center; /* Center content */
+  height: 150px; /* Adjust height here */
+  min-height: 150px; /* Ensures minimum height is maintained */
 }
 
 /* Logo Styling */
@@ -16,14 +17,12 @@
   width: 60px;
   height: 100px;
   margin-right: 15px; /* Space between logo and text */
-  
 }
-v
+
 /* Counter Info Styling */
 .counter-info {
   display: flex;
   flex-direction: column; /* Stack number and text vertically */
-  
 }
 
 .counter-number {
@@ -48,8 +47,24 @@ v
 
   .counter-card {
     max-width: 100%; /* Full width for mobile */
+    height: auto; /* Adjust height automatically for mobile */
+    padding: 20px 15px; /* Adjust padding for better fit */
+  }
+
+  .counter-logo {
+    width: 50px; /* Adjust logo size for smaller screens */
+    height: 80px; /* Adjust logo height for smaller screens */
+  }
+
+  .counter-number {
+    font-size: 3rem; /* Adjust font size for smaller screens */
+  }
+
+  .counter-text {
+    font-size: 15px; /* Adjust font size for smaller screens */
   }
 }
+
 /*five layer */
 /* Engineer container */
 .engineer-container {
@@ -328,7 +343,7 @@ v
   color:black;
   transform: scale(1.1);
 }
-
+c
 
 /* Image container */
 .image-container {
@@ -370,32 +385,55 @@ v
 }
 
 /* Responsive adjustments for mobile */
+/* Responsive adjustments for mobile */
 @media (max-width: 768px) {
   .core-value-container {
     flex-direction: column; /* Stack elements vertically */
     text-align: center; /* Center text for smaller screens */
   }
 
-  .text-container {
+  /* Adjust text section for mobile */
+  .text-section {
     text-align: center; /* Center the text */
     padding: 20px; /* Add more padding on smaller screens */
   }
 
-  .service-button {
-    align-self: center; /* Center the button */
+  /* Adjust h1 for smaller screens */
+  .text-section h1 {
+    font-size: 2rem; /* Smaller font size for headings */
+    margin-bottom: 10px; /* Less space between headings */
+    margin-left: 0; /* Remove left margin for better alignment */
   }
 
-  .text-container h1,
-  .text-container h2,
-  .text-container h3,
-  .text-container h4 {
+  /* Adjust p for smaller screens */
+  .text-section p {
+    font-size: 1rem; /* Adjust paragraph font size */
+    margin-bottom: 10px; /* Reduce space between paragraphs */
+    margin-left: 0; /* Remove left margin for better alignment */
+    line-height: 1.5; /* Adjust line height for readability */
+  }
+
+  .cta-button {
+    font-size: 1rem; /* Adjust button text size for mobile */
+    padding: 10px 20px; /* Adjust button padding */
+    margin-left: 0; /* Remove left margin */
+  }
+
+  .service-button {
+    align-self: center; /* Center the service button */
+    width: 120px; /* Adjust width for better fit */
+    height: 40px; /* Adjust height for better fit */
+    margin-left: 0; /* Remove left margin */
+  }
+
+  /* Adjust h2, h3, h4 if present */
+  .text-section h2,
+  .text-section h3,
+  .text-section h4 {
     font-size: 1.2rem; /* Adjust heading size for smaller screens */
   }
-
-  .text-container p {
-    font-size: 1rem; /* Ensure readability on mobile */
-  }
 }
+
 
 
 /* third layer */

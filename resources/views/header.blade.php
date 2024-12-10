@@ -5,79 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Responsive Header and Footer</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    /* Custom styles for the navbar */
-    .navbar {
-      background-color: white; /* Blue background */
-    }
-
-    .navbar-brand {
-      color: black; /* White text for logo */
-      font-weight: bold;
-      margin-left: 10px; /* Adjust the margin as needed */
-    }
-
-    .navbar-nav .nav-link {
-      color: black; /* White text for nav links */
-      font-size: 20px;
-  font-family: Roboto;
-  font-weight: 500;
-  line-height: 26px;
-  text-transform: uppercase;
-  font-style: normal;
-      transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover */
-    }
-
-    .navbar-nav .nav-link:hover {
-      color: gold; /* White text */
-    }
-
-    .dropdown-menu {
-      background-color: white; /* Same as navbar background */
-      color:black;
-      font-size:23px;
-      border: none; /* Remove border */
-    }
-
-    .dropdown-item {
-      color: black; /* White text for dropdown items */
-      transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover */
-    }
-
-    .dropdown-item:hover {
-      background-color: gold; /* Darker blue on hover */
-      color: #ffffff; /* White text */
-    }
-
-    .navbar-nav-center {
-      margin: auto; /* Center navigation links */
-    }
-
-    /* Custom styles for the footer */
-    .footer {
-      background-color: black; /* Blue background */
-      color: white; /* White text */
-      padding: 10px 0; /* Padding for footer */
-      
-    }
-
-    .footer a {
-      color: white; /* White text for links */
-      text-decoration: none; /* Remove underline */
-    
-      transition: color 0.3s ease; /* Smooth transition for hover */
-    }
-
-    .footer a:hover {
-      color: #ffdd57; /* Gold text on hover */
-    }
-    h5{
-      text-decoration: underline;
-      text-decoration-color: gold;
-      margin:12px;
-      font-size: 30px;
-    }
-  </style>
+<link rel="stylesheet" href="{{asset('css/header.css')}}">
 </head>
 <body>
   <!-- Header Section -->
@@ -120,7 +48,7 @@
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Element
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">

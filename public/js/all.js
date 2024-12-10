@@ -93,3 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
     autoSlide = setInterval(showNextSlide, 3000); // Restart auto slide
   });
   
+
+
+    

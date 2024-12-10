@@ -97,16 +97,19 @@
         @else
         <h1 class="no-projects">No projects available at the moment.</h1>
         @endif
-        <div class="core-value-containers">
-            <div class="text-container">
-                <h1>Our Core Value</h1>
-                <p>We believe in providing the highest level of service to </p>
+
+        <div class="cores"> <!-- Changed 'core' to 'cores' -->
+    <div class="text-container">
+        <h1>Our Core Value</h1>
+        <p>We believe in providing the highest level of service to</p>
         <p>our clients and creating sustainable value for all stakeholders.</p>
-            </div>
-            <div class="image-container">
-                <img src="{{ asset('Images/11.jpg') }}" alt="Core Value Image" />
-            </div>
-        </div>
+    </div>
+    <div class="show">
+        <img src="{{ asset('Images/11.jpg') }}" alt="Core Value Image" />
+    </div>
+</div>
+
+
 
 
 
