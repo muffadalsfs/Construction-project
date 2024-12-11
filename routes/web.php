@@ -137,3 +137,4 @@ Route::controller(servicecontroller::class)->group(function(){
 
     //about controller
     route::get('about',[AboutController::class,'about']);
+    route::view('one','duplicate');

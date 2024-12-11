@@ -1,207 +1,258 @@
+/* Navbar styles */
 .navbar {
-  background-color: whitesmoke;
-  position: static;
-  top: 0;
-  z-index: 100;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 25px 5px;
+  background-color: whitesmoke; /* Light background color for the navbar */
+  position: static; /* Ensures the navbar stays in the document flow */
+  top: 0; /* Aligns the navbar to the top */
+  z-index: 100; /* Keeps the navbar above other elements */
+  display: flex; /* Flexbox for alignment */
+  justify-content: center; /* Centers the content horizontally */
+  align-items: center; /* Centers the content vertically */
+  padding: 2px 52px; /* Adds space inside the navbar */
 }
 
+/* Navbar brand (logo or text) styles */
 .navbar-brand {
-  font-weight: bold;
-  margin-left: 100px;
+  font-weight: bold; /* Bold text for the brand */
+  margin-left: 100px; /* Adds space to the left of the brand */
 }
 
+/* Navbar navigation styles */
 .navbar-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: flex; /* Flexbox for alignment */
+  justify-content: center; /* Centers the navigation links */
+  align-items: center; /* Aligns items vertically */
 }
 
+/* Individual navigation link styles */
 .navbar-nav .nav-link {
-  color: black;
-  font-size: 20px;
-  font-family: Roboto, sans-serif;
-  font-weight: 500;
-  line-height: 26px;
-  text-transform: uppercase;
-  font-style: normal;
-  position: relative;
-  text-decoration: none;
-  padding-bottom: 26px;
-  border-bottom: 4px solid transparent;
-  transition: color 0.3s ease, border-bottom 0.3s ease;
+  color: black; /* Text color */
+  font-size: 20px; /* Font size */
+  font-family: Roboto; /* Font style */
+  font-weight: 500; /* Font weight */
+  line-height: 56px; /* Line spacing */
+  text-transform: uppercase; /* Makes text uppercase */
+  font-style: normal; /* Ensures no italics */
+  position: relative; /* Allows positioning of child elements */
+  text-decoration: none; /* Removes underline */
+  padding-bottom: 9px; /* Adds space below the text */
+  border-bottom: 4px solid transparent; /* Invisible border for hover effect */
+  margin-right: 21px; /* Spacing between links */
+  margin-bottom: 1px; /* Additional spacing */
+
+  transition: color 0.3s ease, border-bottom 0.3s ease; /* Smooth transition for hover effects */
 }
 
+/* Hover effect for navigation links */
 .navbar-nav .nav-link:hover {
-  color: gold;
-  border-bottom-color: gold;
+  color: gold; /* Changes text color on hover */
+  border-bottom-color: gold; /* Changes border color on hover */
 }
 
+/* Navbar center alignment */
 .navbar-nav-center {
-  margin: auto;
+  margin: auto; /* Centers the nav items */
 }
 
+/* Navbar logo styles */
 .navbar img {
-  margin-left: 150px;
-  height: 52px;
-  object-fit: contain;
+  margin-left: 250px; /* Adds space to the left */
+  height: 52px; /* Sets logo height */
+  object-fit: contain; /* Maintains aspect ratio */
+  margin-bottom: 3px; /* Adds space below the logo */
 }
 
+/* Dropdown menu styles */
 .dropdown-menu {
-  background-color: white;
-  color: black;
-  font-size: 23px;
-  font-family: 'Arial', sans-serif;
-  border: none;
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  width: 250px;
-  max-width: 250px;
-  min-width: 150px;
-  height: auto;
-  max-height: 300px;
-  border-top: 3px solid gold;
-  white-space: nowrap;
-  overflow-y: auto;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  visibility: hidden;
-  opacity: 0;
+  background-color: white; /* Background color for the menu */
+  color: black; /* Text color */
+  font-size: 23px; /* Font size */
+  font-family: 'Arial', sans-serif; /* Font style */
+  border: none; /* Removes border */
+  display: none; /* Initially hidden */
+  position: absolute; /* Positioned relative to the parent */
+  top: 100%; /* Places below the parent */
+  left: 0; /* Aligns to the left */
+  right: 0; /* Stretches to the right */
+  width: 250px; /* Menu width */
+  max-width: 250px; /* Maximum menu width */
+  min-width: 150px; /* Minimum menu width */
+  height: auto; /* Automatic height */
+  max-height: 300px; /* Maximum height */
+  border-top: 3px solid gold; /* Adds a gold border at the top */
+  white-space: nowrap; /* Prevents text wrapping */
+  overflow-y: auto; /* Enables vertical scrolling */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+  visibility: hidden; /* Hidden by default */
+  opacity: 0; /* Invisible by default */
 }
 
+/* Show dropdown menu on hover */
 .nav-item.dropdown:hover .dropdown-menu {
-  visibility: visible;
-  opacity: 1;
-  display: block;
+  visibility: visible; /* Makes the menu visible */
+  opacity: 1; /* Fully visible */
+  display: block; /* Displays the menu */
 }
 
+/* Dropdown item styles */
 .dropdown-item {
-  color: black;
-  padding: 10px 20px;
-  white-space: nowrap;
-  font-family: 'Arial', sans-serif;
+  color: black; /* Text color */
+  padding: 10px 20px; /* Adds padding */
+  white-space: nowrap; /* Prevents text wrapping */
+  font-family: 'Arial', sans-serif; /* Font style */
 }
 
+/* Hover effect for dropdown items */
 .dropdown-item:hover {
-  background-color: gold;
-  color: white;
+  background-color: gold; /* Changes background color */
+  color: white; /* Changes text color */
 }
 
+/* Footer styles */
 .footer {
-  background-color: black;
-  color: white;
-  padding: 10px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  background-color: black; /* Background color */
+  color: white; /* Text color */
+  padding: 10px 0; /* Padding inside the footer */
+  display: flex; /* Flexbox for alignment */
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  text-align: center; /* Centers text */
 }
 
+/* Footer link styles */
 .footer a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease;
+  color: white; /* Link color */
+  text-decoration: none; /* Removes underline */
+  transition: color 0.3s ease; /* Smooth transition for hover */
 }
 
+/* Hover effect for footer links */
 .footer a:hover {
-  color: #ffdd57;
+  color: #ffdd57; /* Changes color on hover */
 }
 
+/* Header styles */
 h5 {
-  text-decoration: underline;
-  text-decoration-color: gold;
-  margin: 29px;
-  font-size: 30px;
+  text-decoration: underline; /* Underlines text */
+  text-decoration-color: gold; /* Gold underline */
+  margin: 29px; /* Adds margin */
+  font-size: 30px; /* Font size */
 }
 
+/* Footer row and column styles */
 .footer .row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  display: flex; /* Flexbox for alignment */
+  justify-content: space-between; /* Spreads content */
+  align-items: center; /* Aligns items vertically */
+  flex-wrap: wrap; /* Wraps items if necessary */
 }
 
 .footer .col-md-4 {
-  text-align: center;
-  flex: 1 1 20%;
+  text-align: center; /* Centers text */
+  flex: 1 1 20%; /* Flexible width */
 }
 
 .footer .col-md-4 h5 {
-  display: inline-block;
-  margin: 0 15px;
-  text-align: center;
+  display: inline-block; /* Inline element */
+  margin: 0 15px; /* Spacing around the element */
+  text-align: center; /* Centers text */
 }
 
+/* Media query for screens smaller than 992px */
 @media (max-width: 992px) {
   .navbar {
-    padding: 15px 5px;
+    padding: 15px 5px; /* Reduces padding */
   }
 
   .navbar-nav .nav-link {
-    font-size: 18px;
-    padding-bottom: 45px;
+    font-size: 18px; /* Smaller font size */
+    padding-bottom: 45px; /* Adjusted padding */
   }
 
   .navbar img {
-    margin-left: 20px;
-    height: 60px;
+    margin-left: 20px; /* Reduces margin */
+    height: 30px; /* Reduces height */
   }
 
   .dropdown-menu {
-    width: 200px;
-    max-width: 200px;
+    width: 200px; /* Smaller width */
+    max-width: 200px; /* Maximum width */
   }
 
   .footer .col-md-4 {
-    flex: 1 1 100%;
+    flex: 1 1 100%; /* Full width */
   }
 }
 
+/* Media query for screens smaller than 768px */
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px 0;
+    flex-direction: column; /* Stacks items vertically */
+    align-items: flex-start; /* Aligns items to the left */
+    padding: 10px 0; /* Reduces padding */
   }
 
   .navbar-brand {
-    margin-left: 0;
-    margin-bottom: 10px;
+    margin-left: 0; /* Removes margin */
+    margin-bottom: 10px; /* Adds spacing below */
   }
 
   .navbar-nav {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: column; /* Stacks items vertically */
+    align-items: flex-start; /* Aligns items to the left */
   }
 
   .navbar-nav .nav-link {
-    font-size: 16px;
-    padding-bottom: 35px;
+    font-size: 16px; /* Smaller font size */
+    padding-bottom: 35px; /* Adjusted padding */
   }
 
   .dropdown-menu {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
+    width: 100%; /* Full width */
+    max-width: 100%; /* Maximum width */
+    min-width: 0; /* Minimum width */
   }
 
   .footer .col-md-4 {
-    flex: 1 1 100%;
+    flex: 1 1 100%; /* Full width */
   }
 }
 
-.nav-item .nav-link i {
-  font-size: 20px;
-  color: black;
-  transition: color 0.3s ease;
-  padding: 5px;
+/* Dropdown arrow styles */
+.navbar-nav .dropdown-toggle::after {
+  display: none; /* Hides the dropdown arrow */
 }
 
-.nav-item .nav-link:hover i {
-  color: gold;
+/* Mobile dropdown styles */
+@media (max-width: 768px) {
+  .nav-item.dropdown {
+    position: relative; /* Positions relative to parent */
+  }
+
+  .nav-item .dropdown-toggle::after {
+    content: '+'; /* Adds plus sign */
+    position: absolute; /* Positioned absolutely */
+    right: 10px; /* Aligns to the right */
+    top: 50%; /* Centers vertically */
+    transform: translateY(-50%); /* Adjusts position */
+    font-size: 18px; /* Font size */
+    color: black; /* Text color */
+    cursor: pointer; /* Pointer cursor */
+    transition: transform 0.3s ease; /* Smooth transition */
+  }
+
+  .nav-item .dropdown-toggle.active::after {
+    content: '-'; /* Changes to minus when active */
+    transform: translateY(-50%) rotate(180deg); /* Rotates the symbol */
+  }
+
+  .dropdown-menu {
+    position: static; /* Static positioning */
+    display: none; /* Initially hidden */
+    margin-top: 10px; /* Adds margin */
+    width: 100%; /* Full width */
+  }
+
+  .nav-item.dropdown.active .dropdown-menu {
+    display: block; /* Displays the dropdown */
+  }
 }
