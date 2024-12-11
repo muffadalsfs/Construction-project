@@ -4,10 +4,10 @@
 <link rel="stylesheet" href="{{ asset('css/logoshow.css') }}">
 <link rel="stylesheet" href="{{asset('css/shows/services.css')}}">
 <div class="image-container">
-    <img src="{{ asset('Images/c.webp') }}" alt="Service Image" class="top-image">
+    <img src="{{ asset('Images/banner2.jpg') }}" alt="Service Image" class="top-image">
     <h1 class="image-title"> Archives: Services</h1>
  
-</div>
+</div>d
 
 <h1 class="services-heading">Our Services</h1>
     <div class="services-container">

@@ -3,7 +3,7 @@
 @section('content')
   <link rel="stylesheet" href="{{asset('css/about.css')}}"> 
   <div class="cover-container">
-    <img src="{{ asset('Images/c.webp') }}" alt="Cover Image" class="cover-image">
+    <img src="{{ asset('Images/banner2.jpg') }}" alt="Cover Image" class="cover-image">
     <div class="cover-text">
     About
     </div>
@@ -27,6 +27,7 @@
 
   
     <h1 class="services-heading">Our Services</h1>
+    <h1 class="services"></h1>
     <div class="services-container">
         @foreach($service as $serv)
         <div class="service-card">
