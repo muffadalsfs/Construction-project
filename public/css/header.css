@@ -1,3 +1,9 @@
+body {
+  min-height: 100vh; /* Makes sure the body element covers the full height */
+  margin: 0; /* Removes default margin */
+  background-color: whitesmoke; /* Or any background color */
+}
+
 /* Navbar styles */
 .navbar {
   background-color: whitesmoke; /* Light background color for the navbar */
@@ -8,6 +14,7 @@
   justify-content: center; /* Centers the content horizontally */
   align-items: center; /* Centers the content vertically */
   padding: 2px 52px; /* Adds space inside the navbar */
+  
 }
 
 /* Navbar brand (logo or text) styles */
@@ -26,19 +33,20 @@
 /* Individual navigation link styles */
 .navbar-nav .nav-link {
   color: black; /* Text color */
-  font-size: 20px; /* Font size */
-  font-family: Roboto; /* Font style */
-  font-weight: 500; /* Font weight */
-  line-height: 56px; /* Line spacing */
-  text-transform: uppercase; /* Makes text uppercase */
-  font-style: normal; /* Ensures no italics */
+  font-size: 15px;
+  font-family: Roboto;
+  font-weight: 500;
+  line-height: 26px;
+  text-transform: uppercase;
+  font-style: normal;
   position: relative; /* Allows positioning of child elements */
   text-decoration: none; /* Removes underline */
   padding-bottom: 9px; /* Adds space below the text */
   border-bottom: 4px solid transparent; /* Invisible border for hover effect */
   margin-right: 21px; /* Spacing between links */
   margin-bottom: 1px; /* Additional spacing */
-
+  display: inline-block; /* Ensures the link spans the full width */
+  width: auto; /* Ensures the link has automatic width */
   transition: color 0.3s ease, border-bottom 0.3s ease; /* Smooth transition for hover effects */
 }
 
@@ -48,6 +56,7 @@
   border-bottom-color: gold; /* Changes border color on hover */
 }
 
+
 /* Navbar center alignment */
 .navbar-nav-center {
   margin: auto; /* Centers the nav items */
@@ -56,7 +65,7 @@
 /* Navbar logo styles */
 .navbar img {
   margin-left: 250px; /* Adds space to the left */
-  height: 52px; /* Sets logo height */
+  height: 40px; /* Sets logo height */
   object-fit: contain; /* Maintains aspect ratio */
   margin-bottom: 3px; /* Adds space below the logo */
 }
@@ -189,6 +198,7 @@ h5 {
     flex-direction: column; /* Stacks items vertically */
     align-items: flex-start; /* Aligns items to the left */
     padding: 10px 0; /* Reduces padding */
+    background-color: whitesmoke; /* Make sure background is applied */
   }
 
   .navbar-brand {
@@ -256,3 +266,76 @@ h5 {
     display: block; /* Displays the dropdown */
   }
 }
+
+
+
+
+/* Container for icon links */
+.icon-links {
+  display: flex; /* Makes the icons align horizontally */
+  justify-content: center; /* Centers the icons horizontally within the container */
+  align-items: center; /* Centers the icons vertically */
+  gap: 15px; /* Adds spacing between the icons */
+  padding: 10px 0; /* Adds padding above and below the icons */
+}
+
+/* Individual icon link styles */
+.icon-link {
+  color: black; /* Set the icon color to white by default */
+  font-size: 24px; /* Icon size */
+  text-decoration: none; /* Removes underline */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and transform */
+  position: relative; /* Allows positioning of pseudo-elements */
+}
+
+/* Add a vertical gold line after the search icon */
+.icon-link:first-child::after {
+  content: ""; /* Adds an empty content (the line) */
+  position: absolute; /* Positions the line relative to the icon */
+  top: 0; /* Aligns the top of the line with the icon */
+  right: -5px; /* Positions the line to the right of the icon */
+  width: 2px; /* Width of the vertical line */
+  height: 0; /* Initially the line has no height */
+  background-color: gold; /* Gold color for the line */
+  transition: height 0.3s ease; /* Smooth transition for the line's height */
+}
+
+/* Show the vertical gold line on hover of the search icon */
+.icon-link:first-child:hover::after {
+  height: 20px; /* Increases the height of the line on hover */
+}
+
+/* Add a vertical line after the shopping cart icon and increase height on hover */
+.icon-link:nth-child(2)::after {
+  content: ""; /* Adds an empty content (the line) */
+  position: absolute; /* Positions the line relative to the icon */
+  top: 0; /* Aligns the top of the line with the icon */
+  right: -5px; /* Positions the line to the right of the icon */
+  width: 2px; /* Width of the vertical line */
+  height: 0; /* Initially the line has no height */
+  background-color: gold; /* Gold color for the line */
+  transition: height 0.3s ease; /* Smooth transition for the line's height */
+}
+
+/* Show the vertical gold line on hover of the shopping cart icon */
+.icon-link:nth-child(2):hover::after {
+  height: 30px; /* Increases the height of the line on hover */
+}
+
+/* Hover effect for icon links */
+.icon-link:hover {
+  color: gold; /* Changes icon color to gold on hover */
+  transform: scale(1.1); /* Slightly enlarges the icon on hover */
+}
+
+/* Optional: Add some responsive styling for smaller screens */
+@media (max-width: 768px) {
+  .icon-links {
+    gap: 10px; /* Reduces gap between icons on smaller screens */
+  }
+
+  .icon-link {
+    font-size: 20px; /* Reduces icon size on smaller screens */
+  }
+}
+
