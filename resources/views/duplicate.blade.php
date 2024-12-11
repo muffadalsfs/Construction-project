@@ -1,186 +1,407 @@
-<!DOCTYPE html>
-<html lang="en">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<footer>
+       <div class="container-fluid mt-5 mb-5">
+           
+       
+       <div class="card">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
+            <div class="row g-0">
+        
+            <div class="col-md-8 border-right">
+                <div class="border-bottom">
+                    
+               
+                <div class="row p-4">
 
-<body>
-  <nav>
-    <input type="checkbox" id="nav-toggle">
-    <img src="{{ asset('Images/logo-dark.png') }}" alt="Logo" />
-    <ul class="links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="icon-links">
-        <a class="icon-link" href="#search"><i class="fas fa-search"></i></a>
-        <a class="icon-link" href="#cart"><i class="fas fa-shopping-cart"></i></a>
-      </div>
-    </div>
-    <label for="nav-toggle" class="icon-burger">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-    </label>
-  </nav>
+                    <div class="col-md-3">
 
- 
-  <label for="nav-toggle" class="icon-burger">
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-  </label>
-</body>
+                        <ul class="item-list">
+                            
+                            <li><a href="#">Desktop app</a></li>
+                            <li><a href="#">Mobile app</a></li>
+                            <li><a href="#">Plan</a></li>
+                            <li><a href="#">Security</a></li>
+                            <li><a href="#">Features</a></li>
 
-</html>
-<style>
-  body {
-  padding: 0;
-  margin: 0;
+                        </ul>
+                        
+                    </div>
+
+
+
+                    <div class="col-md-3">
+
+                        <ul class="item-list">
+                            
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">FAQS</a></li>
+                            <li><a href="#">Press Releases</a></li>
+                            <li><a href="#">Media Kit</a></li>
+                            <li><a href="#">Events</a></li>
+                            
+
+                        </ul>
+                        
+                    </div>
+
+
+
+                    <div class="col-md-3">
+
+                        <ul class="item-list">
+                            
+                            <li><a href="#">Desktop app</a></li>
+                            <li><a href="#">Mobile app</a></li>
+                            <li><a href="#">Plan</a></li>
+                            <li><a href="#">Security</a></li>
+                            <li><a href="#">Features</a></li>
+
+                        </ul>
+                        
+                    </div>
+
+
+
+                    <div class="col-md-3">
+
+                        <ul class="item-list">
+                            
+                            <li><a href="#">Developers</a></li>
+                            <li><a href="#">Referals</a></li>
+                            <li><a href="#">Forum</a></li>
+                            
+
+                        </ul>
+                        
+                    </div>
+                    
+                </div>
+
+                </div>
+
+                <div class="border-bottom">
+                    
+
+                
+                <div class="row p-4">
+
+
+                    <div class="col-md-3">
+
+                        <div class="d-flex flex-column align-items-center mr-46">
+
+                            <img src="https://i.imgur.com/phiO1J4.jpg" class="rounded-circle" width="50" />
+                            <span class="text-white mt-2">USA</span>
+                            
+                        </div>
+                        
+                    </div>
+
+
+
+                     <div class="col-md-3">
+
+                        <div class="d-flex flex-column align-items-center mr-46">
+
+                            <img src="https://i.imgur.com/KXDKPvt.jpg" class="rounded-circle" width="50" />
+                            <span class="text-white mt-2">RUSSIA</span>
+                            
+                        </div>
+                        
+                    </div>
+
+
+
+                     <div class="col-md-3">
+
+                        <div class="d-flex flex-column align-items-center mr-46">
+
+                            <img src="https://i.imgur.com/D4pUdsf.jpg" class="rounded-circle" width="50" />
+                            <span class="text-white mt-2">GERMANY</span>
+                            
+                        </div>
+                        
+                    </div>
+
+
+
+
+                     <div class="col-md-3">
+
+                        <div class="d-flex flex-column align-items-center mr-46">
+
+                            <img src="https://i.imgur.com/Tm9cEMT.png" class="rounded-circle" width="50" />
+                            <span class="text-white mt-2">JAPAN</span>
+                            
+                        </div>
+                        
+                    </div>
+                    
+
+
+
+                </div>
+
+                </div>
+
+
+                <div class="d-flex justify-content-between p-4">
+
+                    <span class="text-white">2021 Copyright</span>
+                    <span class="text-white">Terms and conditions</span>
+                    
+                </div>
+                
+
+
+            </div>
+
+
+            <div class="col-md-4">
+
+
+               <div class="border-bottom"> 
+
+               <div class="bg-danger p-3">
+
+                 <div class="d-flex justify-content-between align-items-center">
+
+                    <span class="dots"><i class="fa fa-phone"></i></span>
+                    <span class="text-content">Let's Talk</span>
+                     
+                 </div>
+                   
+               </div>
+
+
+               <div class="mt-3 text-center p-2">
+
+
+                    <div class="text-center d-flex flex-row align-items-center">
+
+                        <img src="https://i.imgur.com/QpQpT3e.png" width="60">
+
+                        <div class="ml-3">
+                            <span class="text-white d-block text-left">Business Enquiry</span>
+                            <span class="text-white">contact@bbbootstrap.com</span>
+                        </div>
+                        
+                    </div>
+
+                   
+               </div>
+
+
+               <div class="mt-0 text-center p-2">
+
+
+                    <div class="text-center d-flex flex-row align-items-center">
+
+                        <img src="https://i.imgur.com/KtUwFEK.png" width="60">
+
+                        <div class="ml-3">
+                            <span class="text-white d-block text-left">PR or Media</span>
+                            <span class="text-white">marketing@bbbootstrap.com</span>
+                        </div>
+                        
+                    </div>
+
+                   
+               </div>
+
+               </div>
+
+
+
+
+
+               <div class="border-bottom"> 
+
+               <div class="p-3 px-3 py-2">
+
+
+            <div class="search d-flex align-items-center"> <input class="search_input" type="text" name="" placeholder="Enter your email"> <a href="#" class="search_icon"><i class="fa fa-envelope"></i></a> </div>
+    
+
+
+
+               </div>
+
+               </div>
+
+
+               <div class="social p-4 text-center">
+
+                    
+                    <ul class="social-icons">
+                        
+                        <li><i class="fa fa-facebook fa-2x text-white"></i></li>
+
+                        <li><i class="fa fa-linkedin fa-2x text-white"></i></li>
+
+                        <li><i class="fa fa-google fa-2x text-white"></i></li>
+                    </ul>                   
+
+               </div>
+                
+
+
+            </div>
+
+
+            </div>
+
+            
+
+
+       </div>
+
+   </div>
+
+   </footer>
+   <style>
+    body{
+
+background-color: #15294c;
 }
-.container {
-  position: relative;
-  margin-top: 100px;
-  margin-left:50px;
+
+
+.card{
+
+background: #101e41;
+border-radius: 5px;
+box-shadow: 5px 6px 6px 2px #101e41;
 }
-.container img {
-  display: block;
-  width: 10%;
-  height: 10%;
+
+.border-bottom {
+border-bottom: 1px solid #9e9e9e29!important;
 }
-nav {
-  position: fixed;
-  z-index: 10;
-  left: 0;
-  right: 0;
-  top: 0;
-  font-family: "Montserrat", "sans-serif";
-  height: 100px;
-  background-color: #3e65da;
-  padding: 0 5%;
+
+
+.border-right {
+border-right: 1px solid #9e9e9e29!important;
 }
-nav .logo {
-  float: left;
-  width: 40%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  font-size: 24px;
-  color: #fff;
+
+
+.mr-46{
+
+    margin-right: 44px;
 }
-nav .links {
-  float: right;
-  padding: 0;
-  margin: 0;
-  width: 60%;
-  height: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+
+
+a{
+
+text-decoration: none;
+color: #fff;
 }
-nav .links li {
-  list-style: none;
+
+
+.item-list li{
+
+list-style: none;
+padding: 5px;
 }
-nav .links a {
-  display: block;
-  padding: 2em;
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff;
-  text-decoration: none;
-  position: relative;
+
+
+
+.dots {
+height: 50px;
+width: 50px;
+background-color: #fff;
+color: red;
+line-height: 37px;
+padding: 10px;
+border-radius: 50%;
+display: inline-block;
+
 }
-nav .links a:hover {
-  color: white;
+
+.dots i{
+
+    font-size: 25px;
+margin-left: 5px;
 }
-nav .links a::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: white;
-  visibility: hidden;
-  transform: scaleX(0);
-  transition: all 0.3s ease-in-out 0s;
+
+
+.text-content{
+font-size: 30px;
+color: #fff;
+font-weight: 500;
 }
-nav .links a:hover::before {
-  visibility: visible;
-  transform: scaleX(1);
-  color: white;
+
+
+
+.social-icons{
+
+display: inline-flex;
 }
-#nav-toggle {
-  position: absolute;
-  top: -100px;
+
+
+.social-icons li{
+
+padding: 10px;
+list-style: none;
 }
-nav .icon-burger {
-  display: none;
-  position: absolute;
-  right: 5%;
-  top: 50%;
-  transform: translateY(-50%);
+
+
+
+
+
+
+
+.search {
+ /*margin-bottom: auto;
+margin-top: auto;*/
+height: 53px;
+border:1px solid #eee;
+background-color: #101e41;
+border-radius: 40px;
+padding: 2px;
 }
-nav .icon-burger .line {
-  width: 30px;
-  height: 5px;
-  background-color: #fff;
-  margin: 5px;
-  border-radius: 3px;
-  transition: all 0.5s ease-in-out;
+
+.search_input {
+ color: white;
+ border: 0;
+ outline: 0;
+ background: none;
+ width: 0;
+
+ margin-top: 2px;
+ caret-color: transparent;
+ line-height: 40px;
+ transition: width 0.4s linear
 }
-@media screen and (max-width: 768px) {
-  nav .logo {
-    float: none;
-    width: auto;
-    justify-content: center;
-  }
-  nav .links {
-    float: none;
-    position: fixed;
-    z-index: 9;
-    left: 0;
-    right: 0;
-    top: 100px;
-    bottom: 100%;
-    width: auto;
-    height: auto;
-    flex-direction: column;
-    justify-content: space-evenly;
-    background-color: rgba(0, 0, 0, 0.8);
-    overflow: hidden;
-    transition: all 0.5s ease-in-out;
-  }
-  nav .links a {
-    font-size: 20px;
-  }
-  nav :checked ~ .links {
-    bottom: 0;
-  }
-  nav .icon-burger {
-    display: block;
-  }
-  nav :checked ~ .icon-burger .line:nth-child(1) {
-    transform: translateY(10px) rotate(225deg);
-  }
-  nav :checked ~ .icon-burger .line:nth-child(3) {
-    transform: translateY(-10px) rotate(-225deg);
-  }
-  nav :checked ~ .icon-burger .line:nth-child(2) {
-    opacity: 0;
-  }
+
+.search .search_input {
+ padding: 0 10px;
+ width: 100%;
+ caret-color: red;
+ transition: width 0.4s linear
 }
-</style>
+
+.search:hover>.search_icon {
+ background: red;
+ color: #fff
+}
+
+.search_icon {
+height: 46px;
+width: 46px;
+margin-right: 2px;
+float: right;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 100%;
+color: white;
+padding: 20px;
+background-color: black;
+}
+
+a:link {
+ text-decoration: none
+}
+   </style>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

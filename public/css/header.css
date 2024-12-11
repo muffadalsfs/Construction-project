@@ -1,341 +1,307 @@
 body {
-  min-height: 100vh; /* Makes sure the body element covers the full height */
-  margin: 0; /* Removes default margin */
-  background-color: whitesmoke; /* Or any background color */
+  min-height: 100vh;
+  margin: 0;
+  background-color: whitesmoke;
 }
 
-/* Navbar styles */
 .navbar {
-  background-color: whitesmoke; /* Light background color for the navbar */
-  position: static; /* Ensures the navbar stays in the document flow */
-  top: 0; /* Aligns the navbar to the top */
-  z-index: 100; /* Keeps the navbar above other elements */
-  display: flex; /* Flexbox for alignment */
-  justify-content: center; /* Centers the content horizontally */
-  align-items: center; /* Centers the content vertically */
-  padding: 2px 52px; /* Adds space inside the navbar */
-  
+  background-color: whitesmoke;
+  position: static;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 52px;
 }
 
-/* Navbar brand (logo or text) styles */
 .navbar-brand {
-  font-weight: bold; /* Bold text for the brand */
-  margin-left: 100px; /* Adds space to the left of the brand */
+  font-weight: bold;
+  margin-left: 100px;
 }
 
-/* Navbar navigation styles */
 .navbar-nav {
-  display: flex; /* Flexbox for alignment */
-  justify-content: center; /* Centers the navigation links */
-  align-items: center; /* Aligns items vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Individual navigation link styles */
 .navbar-nav .nav-link {
-  color: black; /* Text color */
+  color: black;
   font-size: 15px;
   font-family: Roboto;
   font-weight: 500;
   line-height: 26px;
   text-transform: uppercase;
   font-style: normal;
-  position: relative; /* Allows positioning of child elements */
-  text-decoration: none; /* Removes underline */
-  padding-bottom: 9px; /* Adds space below the text */
-  border-bottom: 4px solid transparent; /* Invisible border for hover effect */
-  margin-right: 21px; /* Spacing between links */
-  margin-bottom: 1px; /* Additional spacing */
-  display: inline-block; /* Ensures the link spans the full width */
-  width: auto; /* Ensures the link has automatic width */
-  transition: color 0.3s ease, border-bottom 0.3s ease; /* Smooth transition for hover effects */
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 9px;
+  border-bottom: 4px solid transparent;
+  margin-right: 21px;
+  margin-bottom: 1px;
+  display: inline-block;
+  width: auto;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
-/* Hover effect for navigation links */
 .navbar-nav .nav-link:hover {
-  color: gold; /* Changes text color on hover */
-  border-bottom-color: gold; /* Changes border color on hover */
+  color: gold;
+  border-bottom-color: gold;
 }
 
-
-/* Navbar center alignment */
 .navbar-nav-center {
-  margin: auto; /* Centers the nav items */
+  margin: auto;
 }
 
-/* Navbar logo styles */
 .navbar img {
-  margin-left: 250px; /* Adds space to the left */
-  height: 40px; /* Sets logo height */
-  object-fit: contain; /* Maintains aspect ratio */
-  margin-bottom: 3px; /* Adds space below the logo */
+  margin-left: 250px;
+  height: 40px;
+  object-fit: contain;
+  margin-bottom: 3px;
 }
 
-/* Dropdown menu styles */
 .dropdown-menu {
-  background-color: white; /* Background color for the menu */
-  color: black; /* Text color */
-  font-size: 23px; /* Font size */
-  font-family: 'Arial', sans-serif; /* Font style */
-  border: none; /* Removes border */
-  display: none; /* Initially hidden */
-  position: absolute; /* Positioned relative to the parent */
-  top: 100%; /* Places below the parent */
-  left: 0; /* Aligns to the left */
-  right: 0; /* Stretches to the right */
-  width: 250px; /* Menu width */
-  max-width: 250px; /* Maximum menu width */
-  min-width: 150px; /* Minimum menu width */
-  height: auto; /* Automatic height */
-  max-height: 300px; /* Maximum height */
-  border-top: 3px solid gold; /* Adds a gold border at the top */
-  white-space: nowrap; /* Prevents text wrapping */
-  overflow-y: auto; /* Enables vertical scrolling */
-  transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
-  visibility: hidden; /* Hidden by default */
-  opacity: 0; /* Invisible by default */
+  background-color: white;
+  color: black;
+  font-size: 23px;
+  font-family: 'Arial', sans-serif;
+  border: none;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 250px;
+  max-width: 250px;
+  min-width: 150px;
+  height: auto;
+  max-height: 300px;
+  border-top: 3px solid gold;
+  white-space: nowrap;
+  overflow-y: auto;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  visibility: hidden;
+  opacity: 0;
 }
 
-/* Show dropdown menu on hover */
 .nav-item.dropdown:hover .dropdown-menu {
-  visibility: visible; /* Makes the menu visible */
-  opacity: 1; /* Fully visible */
-  display: block; /* Displays the menu */
+  visibility: visible;
+  opacity: 1;
+  display: block;
 }
 
-/* Dropdown item styles */
 .dropdown-item {
-  color: black; /* Text color */
-  padding: 10px 20px; /* Adds padding */
-  white-space: nowrap; /* Prevents text wrapping */
-  font-family: 'Arial', sans-serif; /* Font style */
+  color: black;
+  padding: 10px 20px;
+  white-space: nowrap;
+  font-family: 'Arial', sans-serif;
 }
 
-/* Hover effect for dropdown items */
 .dropdown-item:hover {
-  background-color: gold; /* Changes background color */
-  color: white; /* Changes text color */
+  background-color: gold;
+  color: white;
 }
 
-/* Footer styles */
 .footer {
-  background-color: black; /* Background color */
-  color: white; /* Text color */
-  padding: 10px 0; /* Padding inside the footer */
-  display: flex; /* Flexbox for alignment */
-  justify-content: center; /* Centers content horizontally */
-  align-items: center; /* Centers content vertically */
-  text-align: center; /* Centers text */
+  background-color: black;
+  color: white;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-/* Footer link styles */
 .footer a {
-  color: white; /* Link color */
-  text-decoration: none; /* Removes underline */
-  transition: color 0.3s ease; /* Smooth transition for hover */
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-/* Hover effect for footer links */
 .footer a:hover {
-  color: #ffdd57; /* Changes color on hover */
+  color: #ffdd57;
 }
 
-/* Header styles */
 h5 {
-  text-decoration: underline; /* Underlines text */
-  text-decoration-color: gold; /* Gold underline */
-  margin: 29px; /* Adds margin */
-  font-size: 30px; /* Font size */
+  text-decoration: underline;
+  text-decoration-color: gold;
+  margin: 29px;
+  font-size: 30px;
 }
 
-/* Footer row and column styles */
 .footer .row {
-  display: flex; /* Flexbox for alignment */
-  justify-content: space-between; /* Spreads content */
-  align-items: center; /* Aligns items vertically */
-  flex-wrap: wrap; /* Wraps items if necessary */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .footer .col-md-4 {
-  text-align: center; /* Centers text */
-  flex: 1 1 20%; /* Flexible width */
+  text-align: center;
+  flex: 1 1 20%;
 }
 
 .footer .col-md-4 h5 {
-  display: inline-block; /* Inline element */
-  margin: 0 15px; /* Spacing around the element */
-  text-align: center; /* Centers text */
+  display: inline-block;
+  margin: 0 15px;
+  text-align: center;
 }
 
-/* Media query for screens smaller than 992px */
 @media (max-width: 992px) {
   .navbar {
-    padding: 15px 5px; /* Reduces padding */
+    padding: 15px 5px;
   }
 
   .navbar-nav .nav-link {
-    font-size: 18px; /* Smaller font size */
-    padding-bottom: 45px; /* Adjusted padding */
+    font-size: 18px;
+    padding-bottom: 45px;
   }
 
   .navbar img {
-    margin-left: 20px; /* Reduces margin */
-    height: 30px; /* Reduces height */
+    margin-left: 20px;
+    height: 30px;
   }
 
   .dropdown-menu {
-    width: 200px; /* Smaller width */
-    max-width: 200px; /* Maximum width */
+    width: 200px;
+    max-width: 200px;
   }
 
   .footer .col-md-4 {
-    flex: 1 1 100%; /* Full width */
+    flex: 1 1 100%;
   }
 }
 
-/* Media query for screens smaller than 768px */
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column; /* Stacks items vertically */
-    align-items: flex-start; /* Aligns items to the left */
-    padding: 10px 0; /* Reduces padding */
-    background-color: whitesmoke; /* Make sure background is applied */
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 0;
+    background-color: whitesmoke;
   }
 
   .navbar-brand {
-    margin-left: 0; /* Removes margin */
-    margin-bottom: 10px; /* Adds spacing below */
+    margin-left: 0;
+    margin-bottom: 10px;
   }
 
   .navbar-nav {
-    flex-direction: column; /* Stacks items vertically */
-    align-items: flex-start; /* Aligns items to the left */
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .navbar-nav .nav-link {
-    font-size: 16px; /* Smaller font size */
-    padding-bottom: 35px; /* Adjusted padding */
+    font-size: 16px;
+    padding-bottom: 35px;
   }
 
   .dropdown-menu {
-    width: 100%; /* Full width */
-    max-width: 100%; /* Maximum width */
-    min-width: 0; /* Minimum width */
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
   }
 
   .footer .col-md-4 {
-    flex: 1 1 100%; /* Full width */
+    flex: 1 1 100%;
   }
 }
 
-/* Dropdown arrow styles */
 .navbar-nav .dropdown-toggle::after {
-  display: none; /* Hides the dropdown arrow */
+  display: none;
 }
 
-/* Mobile dropdown styles */
 @media (max-width: 768px) {
   .nav-item.dropdown {
-    position: relative; /* Positions relative to parent */
+    position: relative;
   }
 
   .nav-item .dropdown-toggle::after {
-    content: '+'; /* Adds plus sign */
-    position: absolute; /* Positioned absolutely */
-    right: 10px; /* Aligns to the right */
-    top: 50%; /* Centers vertically */
-    transform: translateY(-50%); /* Adjusts position */
-    font-size: 18px; /* Font size */
-    color: black; /* Text color */
-    cursor: pointer; /* Pointer cursor */
-    transition: transform 0.3s ease; /* Smooth transition */
+    content: '+';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: black;
+    cursor: pointer;
+    transition: transform 0.3s ease;
   }
 
   .nav-item .dropdown-toggle.active::after {
-    content: '-'; /* Changes to minus when active */
-    transform: translateY(-50%) rotate(180deg); /* Rotates the symbol */
+    content: '-';
+    transform: translateY(-50%) rotate(180deg);
   }
 
   .dropdown-menu {
-    position: static; /* Static positioning */
-    display: none; /* Initially hidden */
-    margin-top: 10px; /* Adds margin */
-    width: 100%; /* Full width */
+    position: static;
+    display: none;
+    margin-top: 10px;
+    width: 100%;
   }
 
   .nav-item.dropdown.active .dropdown-menu {
-    display: block; /* Displays the dropdown */
+    display: block;
   }
 }
 
-
-
-
-/* Container for icon links */
 .icon-links {
-  display: flex; /* Makes the icons align horizontally */
-  justify-content: center; /* Centers the icons horizontally within the container */
-  align-items: center; /* Centers the icons vertically */
-  gap: 15px; /* Adds spacing between the icons */
-  padding: 10px 0; /* Adds padding above and below the icons */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 0;
 }
 
-/* Individual icon link styles */
 .icon-link {
-  color: black; /* Set the icon color to white by default */
-  font-size: 24px; /* Icon size */
-  text-decoration: none; /* Removes underline */
-  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and transform */
-  position: relative; /* Allows positioning of pseudo-elements */
+  color: black;
+  font-size: 24px;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative;
 }
 
-/* Add a vertical gold line after the search icon */
 .icon-link:first-child::after {
-  content: ""; /* Adds an empty content (the line) */
-  position: absolute; /* Positions the line relative to the icon */
-  top: 0; /* Aligns the top of the line with the icon */
-  right: -5px; /* Positions the line to the right of the icon */
-  width: 2px; /* Width of the vertical line */
-  height: 0; /* Initially the line has no height */
-  background-color: gold; /* Gold color for the line */
-  transition: height 0.3s ease; /* Smooth transition for the line's height */
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -5px;
+  width: 2px;
+  height: 0;
+  background-color: gold;
+  transition: height 0.3s ease;
 }
 
-/* Show the vertical gold line on hover of the search icon */
 .icon-link:first-child:hover::after {
-  height: 20px; /* Increases the height of the line on hover */
+  height: 20px;
 }
 
-/* Add a vertical line after the shopping cart icon and increase height on hover */
 .icon-link:nth-child(2)::after {
-  content: ""; /* Adds an empty content (the line) */
-  position: absolute; /* Positions the line relative to the icon */
-  top: 0; /* Aligns the top of the line with the icon */
-  right: -5px; /* Positions the line to the right of the icon */
-  width: 2px; /* Width of the vertical line */
-  height: 0; /* Initially the line has no height */
-  background-color: gold; /* Gold color for the line */
-  transition: height 0.3s ease; /* Smooth transition for the line's height */
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -5px;
+  width: 2px;
+  height: 0;
+  background-color: gold;
+  transition: height 0.3s ease;
 }
 
-/* Show the vertical gold line on hover of the shopping cart icon */
 .icon-link:nth-child(2):hover::after {
-  height: 30px; /* Increases the height of the line on hover */
+  height: 30px;
 }
 
-/* Hover effect for icon links */
 .icon-link:hover {
-  color: gold; /* Changes icon color to gold on hover */
-  transform: scale(1.1); /* Slightly enlarges the icon on hover */
+  color: gold;
+  transform: scale(1.1);
 }
 
-/* Optional: Add some responsive styling for smaller screens */
 @media (max-width: 768px) {
   .icon-links {
-    gap: 10px; /* Reduces gap between icons on smaller screens */
+    gap: 10px;
   }
 
   .icon-link {
-    font-size: 20px; /* Reduces icon size on smaller screens */
+    font-size: 20px;
   }
 }
-

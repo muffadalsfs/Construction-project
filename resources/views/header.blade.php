@@ -90,11 +90,12 @@
       </div>
     </div>
         </ul>
+
         
       </div>
     </div>
   </nav>
-  
+  @yield('content')
  
   
   
