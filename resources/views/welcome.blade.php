@@ -3,7 +3,7 @@
 @section('content')
 
 <link rel="stylesheet"  href="{{ asset('css/raf.css') }}">
-<!-- <link rel="stylesheet"  href="{{ asset('css/rafs.css') }}"> -->
+
 <div class="slider-container">
   <div class="slider" id="project-slider">
     @foreach($Project as $projects)
@@ -113,7 +113,7 @@
 
 
 
-<div class="core">
+<div class="core" >
     <div class="video-containers">
         <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
@@ -205,7 +205,7 @@
 
 @if($tool->isNotEmpty())
     <div class="tools-container">
-        <h1>Latest Tools</h1>
+        <h1>Our Latest Products </h1>
         <div class="tools-slider" id="toolsSlider">
             <div class="tools-wrapper">
                 @foreach($tool as $tools)
@@ -234,7 +234,7 @@
 @endif
 
 @if($blog->isNotEmpty())
-    <h1 class="news-title">Latest News</h1>
+    <h1 class="news-title">Our Latest News </h1>
     <div class="news-grid">
         @foreach($blog as $blogs)
         <div class="news-card">

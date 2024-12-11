@@ -88,7 +88,7 @@
 }
 
 .slide-content button {
-  background-color: gold;
+  background-color: #ffb400;
   color: black;
 }
 
@@ -172,7 +172,7 @@
   display: flex; /* Arrange text and button in one row */
   align-items: center; /* Vertically center content */
   justify-content: center; /* Horizontally center content */
-  background-color: gold; /* Gold background color */
+  background-color: #ffb400;
   padding: 20px; /* Add some padding */
   border-radius: 8px; /* Rounded corners */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for better visual */
@@ -194,20 +194,22 @@
 .highlight-button {
   padding: 19px 40px; /* Larger padding for increased button size */
   background-color: white; /* Dark button color for contrast */
-  color: black; /* Gold text color */
+
   border: 5px solid #ffd700; /* Gold border */
   border-radius: 10px; /* Slightly larger border radius */
-  font-size: 1.2rem; /* Slightly larger font size */
-  font-weight: bold;
+  font-size: 18px;
+  font-weight: 500;
+  color: #000000;
+
   width: 239px;
   height: 73px;
-  cursor: pointer;
+
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
 /* Button Hover Effect */
 .highlight-button:hover {
-  background-color: #ffd700; /* Swap colors on hover */
+  background-color: #ffb400;
   color:white; /* Dark text on hover */
   transform: scale(1.1); /* Slightly enlarge button on hover */
 }
@@ -261,11 +263,8 @@
 }
 
 .text-section h1 {
-
   margin-bottom: 20px;
-
   color: #111111;
-
   font-family: Rubik, sans-serif;
   font-size: 28px;
   line-height: 36px;
@@ -291,7 +290,6 @@
   font-size: 16px;
   font-weight: 500;
   color: #111111;
-
   border-radius: 4px;
   padding: 15px 30px;
   transition: all 0.3s ease-out;
@@ -301,8 +299,8 @@
 }
 
 .text-section .cta-button:hover {
-  background-color: yellow;
-  color:black;
+  background-color: #ffb400;
+  color: black;
   transform: scale(1.1);
 }
 
@@ -315,24 +313,20 @@
 }
 
 .image-box {
-  position: relative;
   width: 100%;
-  padding-top: 66.66%; /* Keep aspect ratio */
+
   max-width: 300px;
   overflow: hidden;
   margin: 0 auto;
   min-height: 200px; /* Add minimum height to prevent collapse */
 }
+
 .image-box img {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%; /* Ensure the height fills the box properly */
   object-fit: cover;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
-
 
 .image-box:hover img {
   transform: scale(1.1);
@@ -340,7 +334,6 @@
 }
 
 .image-box .image-text {
-  position: absolute;
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -348,7 +341,6 @@
   font-size: 1.2rem;
   font-weight: bold;
   text-align: center;
-  /* Removed text-shadow */
 }
 
 /* Responsive Adjustments */
@@ -356,7 +348,7 @@
   .content-container {
     flex-direction: column; /* Stack the text and images */
     align-items: center;
-    gap: 30px; /* Add more space between sections */
+  
   }
   .image-grid {
     grid-template-columns: 1fr; /* Single column layout for images */
@@ -365,7 +357,7 @@
 
   .image-box {
     max-width: 100%; /* Ensure image box takes up full width */
-    padding-top: 75%; /* Adjust padding-top to make it more responsive */
+   
     min-height: 200px; /* Add a minimum height for small screens */
   }
 
@@ -409,18 +401,20 @@
 }
 
 .project-button {
-  padding: 10px 20px;
-  background-color: white;
-  color: black;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
+  color: #111111;
+    padding: 8px 20px;
+    margin-bottom: 10px;
+    background-color: #f8f8f8;
+    border-radius: 4px;
+    font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  display: inline-block;
+  border: none;
 }
 
 .project-button:hover {
-  background-color: gold;
+  background-color: #ffb400;
 }
 
 /* Active state for the button (when clicked) */
@@ -563,6 +557,24 @@
   gap: 20px;
   padding: 30px;
   background-color: #f4f4f4;
+  background-image: url('path-to-your-image.jpg'); /* Add your image URL here */
+  background-size: cover; /* Ensure the image covers the entire container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  position: relative; /* Set position to relative for layering */
+  z-index: 1;
+}
+
+/* Add a semi-transparent overlay to enhance text and video visibility */
+.core::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.8); /* Adjust opacity for visibility */
+  z-index: -1; /* Place the overlay behind the content */
 }
 
 /* Video Container */
@@ -572,6 +584,8 @@
   background-color: #000;
   max-height: 48%;
   height: 600px; 
+  z-index: 2; /* Ensure video stays above background */
+  position: relative;
 }
 
 .video-containers iframe {
@@ -587,12 +601,18 @@
   padding: 20px;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative; /* Ensure text is on top */
+  z-index: 2; /* Ensure content stays above the background */
 }
 
 .text-containers h1 {
-  font-size: 28px;
-  color: #333;
-  margin-bottom: 15px;
+  font-family: "Rubik", Sans-serif;
+  font-size: 34px;
+  font-weight: 500;
+  color: #000;
+  line-height: 1.3;
+  margin: 0;
+  padding-bottom: 12px;
 }
 
 .text-containers p {
@@ -623,6 +643,8 @@
   }
 }
 
+
+
 /* six layer */
 /* Container Styling */
 .engineer-container {
@@ -633,10 +655,13 @@
 }
 
 .section-title {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #333;
-  font-family: 'Arial', sans-serif;
+  font-family: "Rubik", Sans-serif;
+  font-size: 34px;
+  font-weight: 500;
+  color: #000;
+  line-height: 1.3;
+  margin: 0;
+  padding-bottom: 12px;
   text-align: center;
 }
 
@@ -700,10 +725,16 @@
 }
 
 .engineer-name {
-  font-size: 1.2rem;
-  font-weight: bold;
+  margin-bottom: 10px;
+  font-family: Rubik, sans-serif;
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 500;
+  font-style: normal;
 }
-
+.enginner-name::after{
+  background-color: #000000;
+}
 /* Auth Buttons */
 .engineer-actions {
   margin-top: 10px;
@@ -782,9 +813,13 @@
 .clients-section h1,
 .feedback-section h1 {
 
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 20px;
+  font-family: "Rubik", Sans-serif;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 0;
+  padding-bottom: 12px;
+  color: #ffffff;
 }
 
 /* Clients Section */
@@ -886,10 +921,15 @@
 
 /* Heading */
 .tools-container h1 {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-  color: #333;
+  font-family: "Rubik", Sans-serif;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 0;
+  padding-bottom: 12px;
+  color: #000;
 }
+
 
 /* Tools Slider */
 .tools-slider {
@@ -1023,9 +1063,13 @@
 /* News Section */
 .news-title {
   text-align: center; /* Center the title */
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 40px;
+  font-family: "Rubik", Sans-serif;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 0;
+  padding-bottom: 12px;
+  color: #000;
 }
 
 /* News Grid */
@@ -1058,7 +1102,7 @@
   position: absolute;
   top: 220px;
   left: 10px;
-  background-color: #FFD700; /* Golden color */
+  background-color:#ffb400; /* Golden color */
   color: #fff;
   padding: 7px 15px;
   font-size: 1rem;
@@ -1160,9 +1204,11 @@
   flex-wrap: wrap; /* Allow wrapping of footer content */
   align-items: flex-start;
   padding: 20px;
-  background-color: #f8f8f8;
-  gap: 220px;
-  height: auto;
+  line-height: 26px;
+  color: #444444;
+
+
+
 }
 
 /* Logo Section */
@@ -1171,8 +1217,14 @@
 }
 
 .logos {
-  width: 550px; /* Adjust the size of the logo */
   height: auto;
+  max-width: 100%;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  vertical-align: middle;
+  display: inline-block;
+ margin-left: 10px;
 }
 
 /* Footer Content */
@@ -1190,11 +1242,11 @@
 }
 
 .footer-columns p {
-  font-size: 2.2rem;
-  font-weight: bold;
-  color: #333;
+  font-size: 20px;
+  color: #111111;
+  font-weight: 500;
   text-decoration: underline;
-  text-decoration-color: gold;
+  text-decoration-color: #ffb400;
   text-decoration-thickness: 4px;
   text-underline-offset: 7px;
   margin-bottom: 10px;
