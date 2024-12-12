@@ -309,6 +309,20 @@
         </div>
     </div>
 </footer>
+<style>
+    .highlight-box {
+  display: flex; /* Arrange text and button in one row */
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+  background-color: #ffb400;
+  padding: 20px; /* Add some padding */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for better visual */
+  height: 200px;
+  background-image: url('{{ asset('Images/scale.png') }}');
+  background-repeat: repeat-x;
+}
+</style>
 <script src="{{asset('js/all.js')}}"></script>
 
 <script>
