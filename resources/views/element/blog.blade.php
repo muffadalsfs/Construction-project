@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{ asset('css/logoshow.css') }}">
 <link rel="stylesheet" href="{{asset('css/element/blog.css')}}">
 <div class="image-container">
-    <img src="{{ asset('Images/c.webp') }}" alt="Service Image" class="top-image">
+    <img src="{{ asset('Images/banner2.jpg') }}" alt="Service Image" class="top-image">
     <h1 class="image-title">Blog Gallery</h1>
 </div>
 

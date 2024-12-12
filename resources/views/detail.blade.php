@@ -4,7 +4,7 @@
 <link rel="stylesheet"  href="{{ asset('css/detail/project.css') }}">
 <link rel="stylesheet"  href="{{ asset('css/logoshow.css') }}">
 <div class="image-container">
-    <img src="{{ asset('Images/c.webp') }}" alt="Service Image">
+    <img src="{{ asset('Images/banner2.jpg') }}" alt="Service Image">
     <h1>{{$show->title}}</h1>
 </div>
     <!-- Detail Page Content -->

@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="{{ asset('css/logoshow.css') }}">
 <link rel="stylesheet" href="{{ asset('css/element/project.css') }}">
 <div class="image-container">
-    <img src="{{ asset('Images/c.webp') }}" alt="Service Image">
+    <img src="{{ asset('Images/banner2.jpg') }}" alt="Service Image">
     <h1>Project gallery</h1>
 </div>
 

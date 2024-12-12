@@ -6,7 +6,7 @@
 
 
 <div class="image-container">
-    <img src="{{ asset('Images/c.webp') }}" alt="Service Image" class="top-image">
+    <img src="{{ asset('Images/banner2.jpg') }}" alt="Service Image" class="top-image">
     <h1 class="image-title">Team Gallery</h1>
  
 </div>

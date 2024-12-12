@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="{{ asset('css/homeshow/project.css') }}">
 
 <div class="image-container">
-    <img src="{{ asset('Images/c.webp') }}" alt="Service Image">
+    <img src="{{ asset('Images/banner2.jpg') }}" alt="Service Image">
     <h1>Project Page</h1>
 </div>
 
