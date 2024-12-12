@@ -10,20 +10,16 @@
   </div>
 
 
-    <div class="core-value-container">
-    <div class="text-section">
-        <h1>Welcome to </h1>
-        <h1> Koncrete Website </h1>
+  <div class="core-value-container">
+  <div class="text-section">
+    <h1>Welcome to</h1>
+    <h1>Koncrete Website</h1>
+    <p>Simply dummy text of the printing and typesetting industry has been the industry's standard.</p>
+    <p>Mimply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    <button class="cta-button">Learn More</button>
+  </div>
+</div>
 
-        <p> Simply dummy text of the printing and typesetting industry has been the industry's standard. </p>
-        <p>Mimply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-        .</p>
-        <button class="cta-button">Learn More</button>
-    </div>
-      <div class="image-container">
-        <img src="{{asset('Images/11.jpg')}}" alt="Core Value Image" />
-      </div>
-    </div>
 
   
     <h1 class="services-heading">Our Services</h1>
@@ -108,20 +104,58 @@
     </div>
     @endsection
 <style>
-
+.core-value-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  background: url('{{asset('Images/11.jpg')}}') no-repeat right center;
+  padding: 0px;
+  height: 640px;
+}
 
 .counters-container {
   display: flex;
   justify-content: space-around; /* Space between counters */
   align-items: center; /* Align items vertically */
-  padding: 20px;
+  border-radius: 10px;
+  padding: 96px 0px 110px 0px;
+  flex-wrap: wrap; /* Allow counters to wrap on smaller screens */
+  gap: 20px; /* Add space between items */
   background: url('{{ asset('Images/back.jpg') }}') no-repeat center center / cover; /* Single background image */
-  border-radius: 10px; /* Rounded corners for container */
-  gap: 10px; /* Space between cards */
-  height: 200px;
+ 
 }
 
 
+.services-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping for responsive layout */
+  justify-content: center; /* Center the items in the row */
+  gap: 20px; /* Space between boxes */
+  padding: 20px 30px; /* Added horizontal padding for side spacing */
+  background-image: url('{{ asset('Images/service-banner1.png') }}');
+
+  background-size: cover; /* Ensure the image covers the entire section */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent tiling */
+}
+
+
+
+.highlight-box {
+  display: flex; /* Arrange text and button in one row */
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+  background-color: #ffb400;
+  background-image: url('{{ asset('Images/scale.png') }}');
+  background-repeat: repeat-x;
+  padding: 20px; /* Add some padding */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for better visual */
+  height: 200px;
+}
 
 
 </style>

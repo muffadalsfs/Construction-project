@@ -6,10 +6,11 @@
   padding: 10px 15px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
   flex: 1;
-  max-width: 250px; /* Adjust width as needed */
+  max-width: 250px; /* Ensure max-width but allow responsiveness */
   text-align: center; /* Center content */
   height: 150px; /* Adjust height here */
   min-height: 150px; /* Ensures minimum height is maintained */
+  margin-bottom: 20px; /* Space at the bottom of each card */
 }
 
 /* Logo Styling */
@@ -37,20 +38,13 @@
   color: white;
   margin: 5px 0 0;
 }
-.counters-container {
-  display: flex;
-  justify-content: space-around; /* Space between counters */
-  align-items: center; /* Align items vertically */
 
-  background: url('{{ asset('Images/back.jpg') }}') no-repeat center center / cover; /* Single background image */
-  border-radius: 10px;
-
-  padding: 96px 0px 110px 0px;
-}
 /* Responsive styles for mobile */
 @media (max-width: 768px) {
   .counters-container {
     gap: 20px; /* Increase gap between counters */
+    flex-direction: column; /* Stack counters vertically on smaller screens */
+    justify-content: center; /* Center content vertically */
   }
 
   .counter-card {
@@ -214,65 +208,70 @@
 
 /* six layer */
 /* Highlight box styling */
-.highlight-box {
+
+
+/* Highlight Text */
+.highlight-text {
+  margin-right: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 0px;
+  font-size: 34px;
+  line-height: 1.3;
+}
+
+/* Highlight Button */
+.highlight-button {
+  padding: 19px 40px; /* Larger padding for increased button size */
+  background-color: white; /* Dark button color for contrast */
+
+  border: 5px solid white; /* Gold border */
+  border-radius: 10px; /* Slightly larger border radius */
+  font-size: 18px;
+  font-weight: 500;
+  color: #000000;
+
+  width: 239px;
+  height: 73px;
+
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+/* Button Hover Effect */
+.highlight-button:hover {
   background-color: #ffb400;
-    display: flex; /* Flexbox for alignment */
-    align-items: center; /* Center items vertically */
-    justify-content: center; /* Center items horizontally */
-    padding: 20px; /* Spacing around the content */
-    text-align: center; /* Center text inside */
-    flex-wrap: wrap; /* Allow wrapping for responsiveness */
-    gap: 10px; /* Spacing between text and button */
-    height: 200px;
-  }
-  
-  /* Text Styling */
-  .highlight-text {
-    color: #ffffff;
-    margin-bottom: 0px;
-    font-size: 34px;
-    line-height: 1.3;
-  }
-  
-  /* Button Styling */
-  .highlight-button {
-    border: none;
-    position: relative;
-    overflow: hidden;
-    border-radius: 4px;
-    font-size: 18px;
-    font-weight: 500;
-    color: #000000;
-    background-color: #ffffff;
-    padding: 15px 30px;
-  }
-  
-  .highlight-button:hover {
-    background-color: #ffb400;
-    transform: scale(1.05); /* Slightly enlarge on hover */
-    color:white;
-  }
-  
-  /* Responsive Styling */
-  @media (max-width: 768px) {
-    .highlight-box {
-      flex-direction: column; /* Stack text and button vertically on smaller screens */
-      font-size: 1.5rem;
-    }
-  }
-/* Responsive styling for mobile */
+  color:white; /* Dark text on hover */
+  transform: scale(1.1); /* Slightly enlarge button on hover */
+}
+
+/* Media Queries for Smaller Screens */
 @media (max-width: 768px) {
   .highlight-box {
     flex-direction: column; /* Stack text and button vertically */
-    text-align: center; /* Center text and button horizontally */
-    font-size: 1.5rem;
-
+    padding: 15px;
   }
 
   .highlight-text {
-    margin-bottom: 10px; /* Add space between text and button */
-    font-size: 1.5rem;
+    margin-right: 0; /* Remove space between text and button */
+    margin-bottom: 10px; /* Add space below the text */
+    font-size: 1.3rem; /* Slightly smaller font size for text */
+  }
 
+  .highlight-button {
+    padding: 12px 25px; /* Adjust button size for smaller screens */
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .highlight-text {
+    font-size: 1.1rem; /* Smaller font size for very small screens */
+  }
+
+  .highlight-button {
+    padding: 10px 20px; /* Further adjust padding */
+    font-size: 0.9rem; /* Further adjust font size */
   }
 }
 .cover-container {
@@ -309,158 +308,7 @@
   
 }
 
-/* second layer*/
-/* Core value container */
-.core-value-container {
-  display: flex;
-  align-items: center; /* Vertically center content */
-  justify-content: center; /* Center horizontally */
-  gap: 20px; /* Add space between the text and image */
-  padding: 20px; /* Optional padding around the container */
-  flex-wrap: wrap; /* Allow wrapping for responsiveness */
-  margin: 0px 0px 0px 0px;
-  padding: 0px 0px 0px 0px;
-}
 
-/* Text container */
-.text-section {
-  flex: 1; /* Take up equal space */
-  text-align: left;
-  text-decoration: double;
-}
-
-.text-section h1 {
-  font-size: 3rem; /* Larger size for the heading */
-  margin-bottom: 20px; /* More space below the heading */
-  font-family: Rubik, sans-serif;
-  font-size: 28px;
-  line-height: 36px;
-  font-weight: 500;
-  font-style: normal;
-
-  margin-left: 222px;
-}
-
-.text-section p {
-  font-size: 1.2rem; /* Slightly larger text */
-  color: #555; /* Lighter color for the paragraph */
-  margin-bottom: 15px; /* More space between paragraphs */
-  line-height: 1.6; /* Increased line height for better readability */
-  font-family: 'Verdana', sans-serif; /* Different font family for paragraph */
-  text-align: justify; /* Justified text for a cleaner look */
-  letter-spacing: 0.5px; /* Slight letter spacing for better readability */
-  margin-left: 222px;
-}
-
-.text-section .cta-button {
-  cursor: pointer;
-  display: inline-block;
-  font-size: 16px;
-  font-weight: 500;
-  color: #111111;
-  background-color: #ffc92b;
-  border: 1px solid #ffc92b;
-  border-radius: 4px;
-  padding: 15px 30px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-left: 222px;
-}
-
-.text-section .cta-button:hover {
-  background-color: #ffc92b;
-  color: whitesmoke;
-  transform: scale(1.1);
-}
-c
-
-/* Image container */
-.image-container {
-  flex: 1; /* Take up equal width with the text */
-  display: flex;
-  justify-content: center; /* Center the image horizontally */
-  padding: 10px; /* Padding around the image */
-}
-
-/* Image styles */
-.image-container img {
-  height: 660px;
-  width: 100%;
-  border-radius: 8px; /* Optional rounded corners */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow for better aesthetics */
-}
-
-/* Service button */
-.service-button {
-  margin-top: 20px; /* Space between text and button */
-  align-self: flex-start; /* Align the button to the left of the text */
-  padding: 10px 20px; /* Button padding */
-  font-size: 1rem; /* Button font size */
-  color: black; /* Button text color */
-  background: gold; /* Button background color */
-  border: none; /* Remove border */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background 0.3s ease; /* Smooth hover effect */
-  width: 134px;
-  height: 47px;
-  margin-left: 356px;
-}
-
-/* Button hover effect */
-.service-button:hover {
-  color: white; /* Change text color on hover */
-  background-color: #f1a800; /* Darker shade of gold */
-}
-
-/* Responsive adjustments for mobile */
-/* Responsive adjustments for mobile */
-@media (max-width: 768px) {
-  .core-value-container {
-    flex-direction: column; /* Stack elements vertically */
-    text-align: center; /* Center text for smaller screens */
-  }
-
-  /* Adjust text section for mobile */
-  .text-section {
-    text-align: center; /* Center the text */
-    padding: 20px; /* Add more padding on smaller screens */
-  }
-
-  /* Adjust h1 for smaller screens */
-  .text-section h1 {
-    font-size: 2rem; /* Smaller font size for headings */
-    margin-bottom: 10px; /* Less space between headings */
-    margin-left: 0; /* Remove left margin for better alignment */
-  }
-
-  /* Adjust p for smaller screens */
-  .text-section p {
-    font-size: 1rem; /* Adjust paragraph font size */
-    margin-bottom: 10px; /* Reduce space between paragraphs */
-    margin-left: 0; /* Remove left margin for better alignment */
-    line-height: 1.5; /* Adjust line height for readability */
-  }
-
-  .cta-button {
-    font-size: 1rem; /* Adjust button text size for mobile */
-    padding: 10px 20px; /* Adjust button padding */
-    margin-left: 0; /* Remove left margin */
-  }
-
-  .service-button {
-    align-self: center; /* Center the service button */
-    width: 120px; /* Adjust width for better fit */
-    height: 40px; /* Adjust height for better fit */
-    margin-left: 0; /* Remove left margin */
-  }
-
-  /* Adjust h2, h3, h4 if present */
-  .text-section h2,
-  .text-section h3,
-  .text-section h4 {
-    font-size: 1.2rem; /* Adjust heading size for smaller screens */
-  }
-}
 
 
 
@@ -490,16 +338,6 @@ c
 }
 
 /* Container for service cards */
-.services-container {
-  display: flex;
-  flex-wrap: wrap; /* Allows wrapping for responsive layout */
-  justify-content: center; /* Center the items in the row */
-  gap: 20px; /* Space between boxes */
-  padding: 20px; /* Optional padding */
-  padding-left: 10px; /* Space on the left side of the container */
-  padding-right: 10px; /* Space on the right side of the container */
- 
-}
 
 /* Individual service card styling */
 .service-card {
@@ -508,11 +346,13 @@ c
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
   border-radius: 8px; /* Rounded corners */
   overflow: hidden; /* Prevent overflow from child elements */
-  background-color: #fff; /* Card background */
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background for cards */
   text-align: center; /* Center the content */
   padding: 15px; /* Inner padding for spacing */
   transition: transform 0.3s ease; /* Hover effect */
   margin-bottom: 20px; /* Space between cards vertically */
+  margin-left: 10px; /* Add side spacing between cards */
+  margin-right: 10px; /* Add side spacing between cards */
 }
 
 .service-card:hover {
@@ -561,4 +401,94 @@ c
 /* Remove underline for links */
 a {
   text-decoration: none;
+}
+
+
+
+/* second layer part  */
+.text-section {
+  flex: 1; /* Take up equal space */
+  text-align: left;
+  text-decoration: double;
+  max-width: 600px; /* Optional, to constrain text width */
+}
+
+/* Heading styles */
+.text-section h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-family: Rubik, sans-serif;
+  font-weight: 500;
+  line-height: 36px;
+  margin-left: 222px;
+}
+
+/* Paragraph styles */
+.text-section p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.6;
+  font-family: 'Verdana', sans-serif;
+  text-align: justify;
+  letter-spacing: 0.5px;
+  margin-left: 222px;
+}
+
+/* Button styles */
+.text-section .cta-button {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 500;
+  color: #111111;
+  background-color: #ffc92b;
+  border: 1px solid #ffc92b;
+  border-radius: 4px;
+  padding: 15px 30px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-left: 222px;
+}
+
+.text-section .cta-button:hover {
+  background-color: #ffc92b;
+  color: whitesmoke;
+  transform: scale(1.1);
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .core-value-container {
+    flex-direction: column;
+    text-align: center;
+    background-position: center center;
+    background-size: cover;
+    height: auto;
+  }
+
+  .text-section {
+    text-align: center;
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .text-section h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    margin-left: 0;
+  }
+
+  .text-section p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    margin-left: 0;
+    line-height: 1.5;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 10px 15px;
+    margin-left: 0;
+    width: auto;
+  }
 }
