@@ -56,7 +56,7 @@
             <img src="{{ asset('Images/2.jpeg') }}" alt="Image 2">
             <div class="image-text">Industrial</div>
         </div>
-        <div class="image-box">v
+        <div class="image-box">
             <img src="{{ asset('Images/3.jpg') }}" alt="Image 3">
             <div class="image-text">Road</div>
         </div>
@@ -123,7 +123,7 @@
     src="https://www.youtube.com/embed/sPhvyHG15es?autoplay=1&controls=1"
     style="display:none; width: 100%; height: 900px; border-radius: 8px;"
     frameborder="0"
-    allow="autoplay; encrypted-media"
+   
     allowfullscreen>
 </iframe>
 
