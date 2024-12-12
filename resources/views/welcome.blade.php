@@ -56,7 +56,7 @@
             <img src="{{ asset('Images/2.jpeg') }}" alt="Image 2">
             <div class="image-text">Industrial</div>
         </div>
-        <div class="image-box">
+        <div class="image-box">v
             <img src="{{ asset('Images/3.jpg') }}" alt="Image 3">
             <div class="image-text">Road</div>
         </div>
@@ -112,19 +112,26 @@
 
 
 
-
-<div class="core" >
+<div class="core">
     <div class="video-containers">
-        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="video-thumbnail" onclick="playVideo()">
+            <img src="{{ asset('Images/back.jpg') }}" alt="Video Thumbnail">
+            <div class="play-button">&#9658;</div>
+        </div>
+        <video id="background-video" controls style="display:none;">
+            <source src="https://www.youtube.com/embed/tgbNymZ7vqY" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
 
-        <div class="text-containers">
-            <h1>Build Your House with Passion & Excellence</h1>
-            <p>We provide the best construction services with a focus on quality and detail. Our team ensures that every project is built to perfection.</p>
-            <p>With years of experience in the industry, we have developed a reputation for delivering exceptional results on time and within budget.</p>
-            <p>Let us help you build the home of your dreams with the utmost care and expertise in every step of the process.</p>
-        </div>
+    <div class="text-containers">
+        <h1>Build Your House with Passion & Excellence</h1>
+        <p>We provide the best construction services with a focus on quality and detail. Our team ensures that every project is built to perfection.</p>
+        <p>With years of experience in the industry, we have developed a reputation for delivering exceptional results on time and within budget.</p>
+        <p>Let us help you build the home of your dreams with the utmost care and expertise in every step of the process.</p>
     </div>
+</div>
+
 
 <div class="engineer-container">
     @if($enginner->count() > 0)
@@ -299,6 +306,16 @@
 </footer>
 <script src="{{asset('js/all.js')}}"></script>
 
+<script>
+    function playVideo() {
+  const thumbnail = document.querySelector('.video-thumbnail');
+  const video = document.getElementById('background-video');
+  
+  thumbnail.style.display = 'none'; // Hide the thumbnail
+  video.style.display = 'block';   // Show the video
+  video.play();                    // Play the video
+}
 
+</script>
 
 @endsection

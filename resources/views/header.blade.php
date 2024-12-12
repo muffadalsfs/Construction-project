@@ -97,7 +97,56 @@
   </nav>
   @yield('content')
  
-  
+  <footer class="footer-container">
+  <div class="footer-content">
+    <!-- About Company Section -->
+    <div class="footer-section">
+      <h1>About Company</h1>
+      <ul>
+        <li>Vestibulum ante ipsum primis in faucibus </li>
+        <li>orci luctus et ultrices posuere cubilia Curae; </li>
+        <li>posuere cubilia Curae ante ipsum primis in </li>
+      </ul>
+    </div>
+
+    <!-- Industries Section -->
+    <div class="footer-section">
+      <h1>Industries</h1>
+      <ul>
+        <li>Industrial Infrastructure</li>
+        <li>Wireling Machinery</li>
+        <li>Road Repair</li>
+        <li>Engine Replacement</li>
+        <li>Stainless Bridge Building</li>
+        <li>Commercial Building</li>
+      </ul>
+    </div>
+
+    <!-- Additional Industries Section -->
+    <div class="footer-section">
+      <h1>Recent Posts</h1>
+      <ul>
+        <li>Use of Drone in Construction</li>
+        <li>How to Use Safety Signs</li>
+        <li>Biomimetics As a Tool For New</li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h1>Services</h1>
+      <ul>
+        <li>    Design and Build Infrastructure</li>
+        <li>    Road Constructionachinery</li>
+        <li>    Power & Energyr</li>
+        <li>    Construction Planninglacement</li>
+        <li>    Aero Space ServicesBridge Building</li>
+        <li>    Site Inspection Building</li>
+      </ul>
+    </div>
+    <!-- Centered Span -->
+
+  </div>
+  <span> © Copyright Koncrete 2020. Designed and Developed by RadiusTheme</span>
+</footer>
   
 
   
