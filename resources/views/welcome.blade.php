@@ -113,16 +113,21 @@
 
 
 <div class="core">
-    <div class="video-containers">
-        <div class="video-thumbnail" onclick="playVideo()">
-            <img src="{{ asset('Images/back.jpg') }}" alt="Video Thumbnail">
-            <div class="play-button">&#9658;</div>
-        </div>
-        <video id="background-video" controls style="display:none;">
-            <source src="https://www.youtube.com/embed/tgbNymZ7vqY" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+<div class="video-containers">
+    <div class="video-thumbnail" onclick="playVideo()">
+        <img src="{{ asset('Images/background.jpg') }}" alt="Video Thumbnail">
+        <div class="play-button">&#9658;</div>
     </div>
+    <iframe
+    id="background-video"
+    src="https://www.youtube.com/embed/sPhvyHG15es?autoplay=1&controls=1"
+    style="display:none; width: 100%; height: 900px; border-radius: 8px;"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+</iframe>
+
+</div>
 
     <div class="text-containers">
         <h1>Build Your House with Passion & Excellence</h1>
@@ -307,14 +312,14 @@
 <script src="{{asset('js/all.js')}}"></script>
 
 <script>
-    function playVideo() {
-  const thumbnail = document.querySelector('.video-thumbnail');
-  const video = document.getElementById('background-video');
-  
-  thumbnail.style.display = 'none'; // Hide the thumbnail
-  video.style.display = 'block';   // Show the video
-  video.play();                    // Play the video
+function playVideo() {
+    const thumbnail = document.querySelector('.video-thumbnail');
+    const video = document.getElementById('background-video');
+    
+    thumbnail.style.display = 'none'; // Hide the thumbnail
+    video.style.display = 'block';   // Show the iframe
 }
+
 
 </script>
 

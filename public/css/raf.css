@@ -559,9 +559,9 @@
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 20px;
-  padding: 30px;
+
   background-color: #f4f4f4;
-  background-image: url('path-to-your-image.jpg');
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -594,9 +594,9 @@
 
 .video-thumbnail img {
   width: 100%;
-  height: auto;
+height: auto;
   display: block;
-  border-radius: 8px;
+
 }
 
 .play-button {
@@ -1233,11 +1233,13 @@ video {
   align-items: flex-start;
   padding: 20px;
   line-height: 26px;
-  color: #444444;
-
-
-
+  background-color: #f1d7d7;
+  transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  padding: 60px 0px 60px 0px;
 }
+
+
+
 
 /* Logo Section */
 .footers-logo {
@@ -1260,14 +1262,16 @@ video {
   display: flex;
   flex-wrap: wrap; /* Allow wrapping of footer columns */
   flex: 1; /* Allow the footer columns to stretch */
-  justify-content: space-between;
+
 }
 
 .footer-columns {
-  flex: 1 1 200px; /* Allow columns to wrap and grow, with a base width of 200px */
-  text-align: center;
-  margin-bottom: 20px; /* Add margin for spacing between columns */
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center;    /* Center horizontally */
+  justify-content: center; /* Center vertically */
 }
+
 
 .footer-columns p {
   font-size: 20px;
@@ -1278,8 +1282,9 @@ video {
   text-decoration-thickness: 4px;
   text-underline-offset: 7px;
   margin-bottom: 10px;
-
+  text-align: center; /* Center text horizontally */
 }
+
 
 .footer-columns ul {
   list-style-type: none;
