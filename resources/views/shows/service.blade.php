@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{asset('css/shows/services.css')}}">
 <div class="service-container">
     @foreach($service as $serv)
-    <div class="service-card">f
+    <div class="service-card">
         <div class="image-wrapper">
             <img src="{{ asset('storage/public/' . $serv->path) }}" alt="Service Image" class="service-image">
         </div>
@@ -25,8 +25,6 @@
     @endforeach
 </div>
 @endsection
-<style>
+
    
 
-
-</style>
