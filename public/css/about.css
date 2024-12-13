@@ -406,89 +406,122 @@ a {
 
 
 /* second layer part  */
+/* Main Container */
+/* Main Container */
+/* Main Container */
+.core-value-container {
+  display: flex;
+  flex-wrap: wrap; /* Enable wrapping for responsive design */
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  margin: 0; /* Remove any margin */
+  padding: 0; /* Remove any padding */
+  overflow: hidden;
+  flex-direction: row-reverse; /* Ensures the image appears on the right */
+}
+
+/* Right Section: Image */
+.image-section {
+  flex: 1;
+  background-color: #f4f4f4;
+}
+
+.image-section img {
+  width: 100%;
+  height: 666px; /* Fixed height for the image */
+  object-fit: cover; /* Ensure the image covers the container */
+}
+
+/* Left Section: Text */
 .text-section {
-  flex: 1; /* Take up equal space */
-  text-align: left;
-  text-decoration: double;
-  max-width: 600px; /* Optional, to constrain text width */
+  flex: 1;
+  padding-left: 50px; /* Adds 50px spacing to the left */
+  padding-bottom: 0; /* Ensure no bottom padding */
 }
 
-/* Heading styles */
 .text-section h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  font-family: Rubik, sans-serif;
-  font-weight: 500;
-  line-height: 36px;
-  margin-left: 222px;
+  margin: 0;
+  font-size: 2.5rem;
+  color: #333;
 }
 
-/* Paragraph styles */
+.yellow-line {
+  width: 50px;
+  height: 5px;
+  background-color: #ffb400; /* Yellow color */
+  margin: 10px 0; /* Adds space between the line and text */
+}
+
 .text-section p {
-  font-size: 1.2rem;
+  margin: 10px 0;
+  font-size: 1rem;
   color: #555;
-  margin-bottom: 15px;
-  line-height: 1.6;
-  font-family: 'Verdana', sans-serif;
-  text-align: justify;
-  letter-spacing: 0.5px;
-  margin-left: 222px;
+  word-break: break-word; /* Breaks long words gracefully */
+  white-space: normal; /* Ensures normal word wrapping */
+  line-height: 1.5; /* Adds spacing between lines */
+  max-width: 90%; /* Prevents overly wide lines, making text easier to read */
 }
 
-/* Button styles */
-.text-section .cta-button {
+.cta-button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffb400; /* Yellow button */
+  color: #000;
   cursor: pointer;
-  display: inline-block;
-  font-size: 16px;
-  font-weight: 500;
-  color: #111111;
-  background-color: #ffc92b;
-  border: 1px solid #ffc92b;
-  border-radius: 4px;
-  padding: 15px 30px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-left: 222px;
+  transition: background-color 0.3s ease;
 }
 
-.text-section .cta-button:hover {
-  background-color: #ffc92b;
-  color: whitesmoke;
-  transform: scale(1.1);
+.cta-button:hover {
+  background-color: #e0a300;
 }
 
-/* Responsive adjustments for mobile */
+
+
+/* Media Query for Smaller Screens */
 @media (max-width: 768px) {
   .core-value-container {
-    flex-direction: column;
-    text-align: center;
-    background-position: center center;
-    background-size: cover;
-    height: auto;
+    flex-direction: column; /* Stack sections vertically */
+    height: auto; /* Allow content to define height */
   }
 
   .text-section {
+    order: 1; /* Ensures the text section appears first */
+    width: 100%;
+    padding: 10px;
+    align-items: center;
     text-align: center;
-    padding: 20px;
-    max-width: 100%;
+  }
+
+  .image-section {
+    order: 2; /* Ensures the image section appears below the text */
+    width: 100%;
+    height: 50vh; /* Adjust image height for small screens */
   }
 
   .text-section h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    margin-left: 0;
+    font-size: 2rem; /* Adjust font size for smaller screens */
+  }
+
+  .yellow-line {
+    width: 30px; /* Adjust width for smaller screens */
+    height: 4px; /* Adjust height for smaller screens */
+    margin: 8px auto; /* Center the line and adjust spacing */
+    background-color: #ffb400; /* Yellow color remains the same */
   }
 
   .text-section p {
-    font-size: 1rem;
-    margin-bottom: 10px;
-    margin-left: 0;
-    line-height: 1.5;
+    font-size: 0.9rem; /* Adjust paragraph font size */
   }
 
   .cta-button {
-    font-size: 1rem;
-    padding: 10px 15px;
-    margin-left: 0;
-    width: auto;
+    font-size: 0.9rem; /* Adjust button size */
+    margin-top: 15px;
   }
 }
+
+
+
+

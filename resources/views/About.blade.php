@@ -11,14 +11,24 @@
 
 
   <div class="core-value-container">
+  <!-- right Section: Image -->
+  <div class="image-section">
+    <img src="{{ asset('Images/11.jpg') }}" alt="Core Value Image" />
+  </div>
+
+  <!-- left Section: Text -->
   <div class="text-section">
     <h1>Welcome to</h1>
+    <div class="yellow-line"></div>
     <h1>Koncrete Website</h1>
     <p>Simply dummy text of the printing and typesetting industry has been the industry's standard.</p>
-    <p>Mimply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    <p>Mimply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+<p> when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
     <button class="cta-button">Learn More</button>
   </div>
 </div>
+
+
 
 
   
@@ -104,17 +114,7 @@
     </div>
     @endsection
 <style>
-.core-value-container {
-  display: flex;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  background: url('{{asset('Images/11.jpg')}}') no-repeat right center;
-  padding: 0px;
-  height: 640px;
-}
+
 
 .counters-container {
   display: flex;

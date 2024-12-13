@@ -135,6 +135,10 @@
 @media (max-width: 480px) {
   .slide-content {
     max-width: 90%; /* Allow more space for content on very small screens */
+    text-align: center; /* Center align text */
+    left: 50%; /* Center horizontally */
+    top: 50%; /* Center vertically */
+    transform: translate(-50%, -50%); /* Ensure perfect centering */
   }
 
   .slide-content h2 {
@@ -147,23 +151,21 @@
 
   .slide-content button {
     font-size: 0.8rem;
-    left: 50%;
-
-
+    margin: 5px 0; /* Add spacing between buttons */
   }
 
   /* Ensure full-screen height on mobile */
   .slider-container {
     height: 100vh; /* Full viewport height for smaller screens */
-
   }
 
   /* Adjust image behavior to avoid being cut off */
-  .slide imgs {
+  .slide img {
     object-fit: cover; /* Keep image fully covered */
     object-position: center center; /* Ensure the image is centered */
   }
 }
+
 
 
 /* second layer */
@@ -508,7 +510,6 @@
 
 /* Active button style */
 /* five layer */
-
 .cores { /* Corrected 'cores' instead of 'core' */
   display: flex;
   justify-content: space-between; /* Image on the right, text on the left */
@@ -518,9 +519,28 @@
 }
 
 /* Text container */
+/* Text container */
 .text-container {
   flex: 1; /* Take up equal space */
   text-align: center;
+}
+
+/* Rectangular box styling */
+.rectangular-box {
+  width: 80%; /* Decrease box width (adjust percentage as needed) */
+  background-color: #f0f0f0; /* Light gray background for the box */
+  padding: 15px; /* Decrease padding for a smaller box */
+  margin-top: 10px; /* Reduce space above the box */
+  border: 1px solid yellow; /* Light border */
+
+  text-align: center; /* Center text inside the box */
+}
+
+.rectangular-box p {
+  color: #111;
+  font-size: 18px; /* Slightly smaller font size */
+  font-weight: 500;
+  line-height: 1.2;
 }
 
 /* Image container */
@@ -537,20 +557,27 @@
 
 /* Media Query for smaller screens */
 @media (max-width: 768px) {
-  .cores { /* Corrected 'core' to 'cores' */
+  .cores {
       flex-direction: column; /* Stack text and image */
       align-items: center; /* Center both text and image horizontally */
-      gap: 30px; /* Add space between text and image */
+      gap: 20px; /* Adjust space between text and image */
   }
 
   .text-container {
       text-align: center; /* Ensure text is centered on small screens */
   }
 
+  .rectangular-box {
+      width: 90%; /* Slightly smaller box width on smaller screens */
+      padding: 10px; /* Reduce padding further */
+      margin-top: 10px; /* Adjust margin */
+  }
+
   .show img {
       max-width: 100%; /* Ensure image takes up full width */
   }
 }
+
 
 
 /* five layer */
@@ -1236,10 +1263,10 @@ video {
   background-color: #f1d7d7;
   transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
   padding: 60px 0px 60px 0px;
+
+
+
 }
-
-
-
 
 /* Logo Section */
 .footers-logo {

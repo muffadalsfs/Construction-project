@@ -14,7 +14,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px 0px;
+  padding: 15px px;
 }
 
 .navbar-brand {
@@ -38,10 +38,10 @@ body {
   font-style: normal;
   position: relative;
   text-decoration: none;
-  padding-bottom: 9px;
+  padding-bottom: 10px;
   border-bottom: 4px solid transparent;
-  margin-right: 21px;
-  margin-bottom: 1px;
+  margin-right: 22px;
+  margin-bottom: -9px;
   display: inline-block;
   width: auto;
   transition: color 0.3s ease, border-bottom 0.3s ease;
@@ -71,7 +71,7 @@ body {
   border: none;
   display: none;
   position: absolute;
-  top: 100%;
+  top: 49px;
   left: 0;
   right: 0;
   width: 250px;

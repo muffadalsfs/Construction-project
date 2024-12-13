@@ -22,7 +22,7 @@
         @endauth
       </div>
     </div>
-    @endforeach 
+    @endforeach
   </div>
 </div>
 
@@ -103,11 +103,26 @@
         <h1>Our Core Value</h1>
         <p>We believe in providing the highest level of service to</p>
         <p>our clients and creating sustainable value for all stakeholders.</p>
+        
+        <!-- New rectangular box with text -->
+        <div class="rectangular-box">
+            <p>
+Modern Technology we used for you
+</p>
+        </div>
+        <div class="rectangular-box">
+            <p>We have Experinced Technician Team.</p>
+        </div>
+        <div class="rectangular-box">
+            <p>Completely revolution in Agriculture</p>
+        </div>
     </div>
     <div class="show">
         <img src="{{ asset('Images/11.jpg') }}" alt="Core Value Image" />
     </div>
 </div>
+
+
 
 
 
@@ -319,9 +334,25 @@
   border-radius: 8px; /* Rounded corners */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for better visual */
   height: 200px;
-  background-image: url('{{ asset('Images/scale.png') }}');
+   background-image: url('{{ asset('Images/scale.png') }}');
   background-repeat: repeat-x;
 }
+
+
+.content-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  gap: 20px;
+  max-width: 1200px; /* Limit container width for large screens */
+  margin: 0 auto; /* Center the container horizontally */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('{{ asset('Images/servicebg.jpg') }}');
+}
+
+
 </style>
 <script src="{{asset('js/all.js')}}"></script>
 
