@@ -17,7 +17,7 @@ class ProjectSeeder extends Seeder
             'name'=>'rahul',
             'Location'=>'mumbai',
             'value'=>'45core',
-            'path'=>'0zkpI0SkKrk5tjoRV0s4TPzpLFHTPnUFORwTGti0.jpg',
+            'path' => asset('storage/public/image1.jpg'),
             
         ]);
     }

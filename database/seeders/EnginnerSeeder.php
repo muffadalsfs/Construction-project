@@ -16,7 +16,7 @@ class EnginnerSeeder extends Seeder
         Enginner::create([
             
              'name'=>'rahul',
-             'path' => Storage::url('0zkpI0SkKrk5tjoRV0s4TPzpLFHTPnUFORwTGti0.jpg')
+             'path' => asset('storage/public/image1.jpg'),
              
          ]);   
     }

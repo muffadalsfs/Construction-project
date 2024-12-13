@@ -15,7 +15,7 @@ class ServiceSeeder extends Seeder
         Service::create([
             'name' => 'bulding',
             'content' => 'jajajsjs',
-            'path' => "0zkpI0SkKrk5tjoRV0s4TPzpLFHTPnUFORwTGti0.jpg", 
+            'path' => asset('storage/public/image1.jpg'),
             
         ]);
     }
