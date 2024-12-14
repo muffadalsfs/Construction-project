@@ -75,5 +75,10 @@ class Toolcontroller extends Controller
         $tool = Tool::findOrFail($id);
         return view('show.tool', compact('tool')); 
     }
-    
+    public function detail($id)
+    {
+        $tool = Tool::findOrFail($id);
+        $t=Tool::latest()->take(3)->get();
+        return view('detail.tool', compact('tool','t'));
+    }
 }

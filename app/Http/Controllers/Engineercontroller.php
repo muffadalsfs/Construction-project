@@ -66,4 +66,11 @@ class Engineercontroller extends Controller
         $enginner=Enginner::all();
         return view('element.card',['enginner'=>$enginner]);
       }
+      public function detail($id)
+      {
+          $enginner = Enginner::findOrFail($id);
+          $engi=Enginner::latest()->take(3)->get();
+          return view('detail.enginner', compact('enginner','engi'));
+      }
+
 }

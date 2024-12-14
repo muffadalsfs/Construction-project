@@ -11,7 +11,8 @@
         <img src="{{ asset('storage/public/' . $tool->path) }}" alt="Project Image" class="tool-image">
             <h2>{{ $tool->name }}</h2>
             <p>Price: {{ $tool->price }}</p>
-           
+            <a href="{{ route('tools.detail', $tool->id) }}" class="edit-button">detail</a>
+                
             
             <div class="action-buttons">
                 <a href="{{ route('tools.edit', $tool->id) }}" class="edit-button">Edit</a>

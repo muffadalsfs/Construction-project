@@ -164,7 +164,7 @@ Modern Technology we used for you
             <div class="engineer-img">
                 <img src="{{ url('storage/public/' . $eg->path) }}" alt="{{ $eg->name }}">
                 <div class="engineer-info">
-                    <p class="engineer-name">{{ $eg->name }}</p>
+                <a href="{{ route('enginners.detail', $eg->id) }}">  <p class="engineer-name">{{ $eg->name }}</p></a>
                 </div>
             </div>
             @auth

@@ -12,7 +12,7 @@
             <div class="engineer-card">
             <img src="{{ url('storage/public/' . $enginners->path) }}" alt="{{ $enginners->name }}" class="engineer-image">
                 <h3>{{ $enginners->name }}</h3>
-           
+                <a href="{{ route('enginners.detail', $enginners->id) }}">View Details</a>
 
                 <div class="action-buttons">
                     <a href="{{ route('engineers.edit', $enginners->id) }}" class="edit-button">Edit</a>

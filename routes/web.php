@@ -72,7 +72,7 @@ Route::controller(Toolcontroller::class)->group(function(){
 
 
 
-Route::controller(Engineercontroller::class)->group(function(){
+Route::prefix('enginners')->controller(Engineercontroller::class)->group(function(){
     Route::get('enginer',  'index')->name('enginners.index');
     Route::get('create',  'create')->name('enginners.create');
    Route::post('store',  'store')->name('enginners.store');
@@ -113,7 +113,12 @@ Route::controller(servicecontroller::class)->group(function(){
   route::prefix('blog')->controller(Blogcontroller::class)->group(function(){
     route::get('{id}','detail')->name('blog.detail');
   });
-
+ route::prefix('enginners')->controller(Engineercontroller::class)->group(function(){
+  Route::get('{id}','detail')->name('enginners.detail');
+ });
+ route::prefix('tools')->controller(Toolcontroller::class)->group(function(){
+  Route::get('{id}','detail')->name('tools.detail');
+ });
     Route::get('detail{id}',[servicecontroller::class,'detail'])->name('detailservice');
     // Route::get('detail/{id}', [ProjectController::class,'detail'])->name('project.detail'); // View project details
 
