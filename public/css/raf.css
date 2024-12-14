@@ -475,7 +475,9 @@
   font-size: 2rem;
   text-align: center;
 }
-
+a{
+  text-decoration: none;
+}
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   /* Stack the button container vertically */

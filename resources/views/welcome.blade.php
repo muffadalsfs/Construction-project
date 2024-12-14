@@ -15,7 +15,7 @@
         <h2>{{ $projects->title }}</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         <p>Praesent libero. Sed cursus ante dapibus diam.</p>
-        <button>Learn More</button>
+        <a href="{{ route('project.detail', $projects->id) }}"><button>Learn More</button></a>
         @auth
         <a href="{{ route('project.edit', $projects->id) }}" class="edit-btn">Edit</a>
         <a href="{{ route('project.delete', $projects->id) }}" class="delete-btn" onclick="return confirm('Are you sure you want to delete this project?')">Delete</a>
@@ -85,12 +85,13 @@
     <div class="project-grid">
         @foreach($pro as $pros)
         <div class="project-card" data-category="{{ $pros->category }}">
-            <img src="{{ url('storage/public/' . $pros->path) }}" alt="{{ $pros->title }}" class="project-image">
+        <a href="{{ route('project.detail', $projects->id) }}">  <img src="{{ url('storage/public/' . $pros->path) }}" alt="{{ $pros->title }}" class="project-image">
             <div class="project-info">
                 <h3 class="project-title">{{ $pros->title }}</h3>
                 <p class="project-category">{{ $pros->category }}</p>
             </div>
         </div>
+        <a>
         @endforeach
     </div>
         </div>
@@ -111,7 +112,7 @@ Modern Technology we used for you
 </p>
         </div>
         <div class="rectangular-box">
-            <p>We have Experinced Technician Team.</p>
+        <button onclick="myFunction()"> <p>We have Experinced Technician Team.</p></button>
         </div>
         <div class="rectangular-box">
             <p>Completely revolution in Agriculture</p>
@@ -270,7 +271,7 @@ Modern Technology we used for you
                 {{ \Carbon\Carbon::parse($blogs->created_at)->format('M d, Y') }}
             </div>
            
-            <img class="news-image" src="{{ url('storage/public/' . $blogs->path) }}" alt="{{ $blogs->title }}">
+            <a href="{{ route('blog.detail', $blogs->id) }}">  <img class="news-image" src="{{ url('storage/public/' . $blogs->path) }}" alt="{{ $blogs->title }}">
            
             <h2 class="blog-title">{{ Str::limit($blogs->title, 40, '...') }}</h2>
           
@@ -291,6 +292,7 @@ Modern Technology we used for you
         </div>
         @endforeach
     </div>
+</a>
 @endif
 
 <footer class="footers">
@@ -364,7 +366,6 @@ function playVideo() {
     thumbnail.style.display = 'none'; // Hide the thumbnail
     video.style.display = 'block';   // Show the iframe
 }
-
 
 </script>
 

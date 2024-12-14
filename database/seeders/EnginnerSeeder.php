@@ -16,7 +16,7 @@ class EnginnerSeeder extends Seeder
         Enginner::create([
             
              'name'=>'rahul',
-             'path' => 'image1.jpg',
+             'path' => 'enginner.jpg',
              
          ]);   
     }
