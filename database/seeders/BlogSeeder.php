@@ -15,7 +15,7 @@ class BlogSeeder extends Seeder
     public function run(): void
     {
         Blog::create([
-            'title' => 'Super Admin',
+            'title' => ' Admin',
             'content' => 'jajajsjs',
              'path' => asset('storage/public/image1.jpg'),
             'user_id' => 1,
