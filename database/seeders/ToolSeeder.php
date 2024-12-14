@@ -16,7 +16,7 @@ class ToolSeeder extends Seeder
             
             'name'=>'rahul',
             'price'=>55,
-            'path' => asset('storage/public/image1.jpg'),
+            'path' => 'image1.jpg',
             
         ]);   
     }

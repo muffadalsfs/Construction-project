@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Service;
+use Illuminate\Support\Facades\Storage; 
 class servicecontroller extends Controller
 {
     public function service(){
@@ -40,28 +41,49 @@ class servicecontroller extends Controller
      }
      public function update(Request $request, $id)
      {
-        $service = Service::findOrFail($id);
-        $service->name=$request->name;
-        $service->content=$request->content;
-        if ($request->filled('remove_image') && $request->remove_image == 1) 
-        {
-            if ($service->path) {
-                Storage::delete('public/' . $service->path); 
-                $service->path = null; 
-            }
-        }
-        
-        if ($request->hasFile('file') && $request->file('file')->isValid())
-         {
-            if ($service->path) {
-                Storage::delete('public/' . $service->path); 
-            }
-            $filePath = $request->file('file')->store('public', 'public');
-            $service->path = basename($filePath); 
-        }
-        $service->save();
-             return redirect()->route('showservice')->with('success', 'Service updated successfully.');
+         // Find the service by ID
+         $service = Service::findOrFail($id);
+         
+         // Update name and content
+         $service->name = $request->name;
+         $service->content = $request->content;
+         
+         // Check if remove_image flag is set
+         if ($request->filled('remove_image') && $request->remove_image == 1) {
+             // Delete the existing image if it exists
+             if ($service->path) {
+                 Storage::delete('public/' . $service->path);
+                 $service->path = null;  // Remove the image path, but check if a new file is uploaded
+             }
+         }
+         
+         // Check if a new file is uploaded
+         if ($request->hasFile('file')) {
+             // Store the new image
+             $path = $request->file('file')->store('public/services');
+             
+             // Extract the filename from the path
+             $imageArray = explode('/', $path);
+             $image = $imageArray[1]; // The image file name
+             
+             // Update the service with the new image path
+             $service->path = $image;
+         }
+         
+         // If path is still null (i.e., no new image uploaded and remove_image flag was set), 
+         // you may want to keep the old path or set a default value.
+         if ($service->path === null) {
+             $service->path = $service->getOriginal('path');  // Retain original path
+         }
+     
+         // Save the updated service
+         $service->save();
+         
+         // Redirect back with a success message
+         return redirect()->route('showservice')->with('success', 'Service updated successfully.');
      }
+     
+     
      public function detail($id)
      {
         $detail = Service::findOrFail($id);
