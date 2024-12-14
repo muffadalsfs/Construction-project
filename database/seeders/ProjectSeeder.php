@@ -17,6 +17,7 @@ class ProjectSeeder extends Seeder
             'name'=>'rahul',
             'Location'=>'mumbai',
             'value'=>'45core',
+            'Category'=>'  Construction',
             'path' => 'image1.jpg',
             
         ]);
