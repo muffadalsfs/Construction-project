@@ -23,6 +23,11 @@
         <button class="add-card-button">Add to Card</button>
     </div>
 </div>
+<div class="description-box">
+    <h1>Descreption</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque delectus eum non iure sed tenetur, exercitationem unde sequi quia illo omnis quae adipisci ipsam est numquam harum aliquam officiis dignissimos.</p>
+</div>
+
 
 <h1 class="related-products-title">Related Products</h1>
 <div class="related-products-container">
@@ -38,7 +43,7 @@
     </div>
     @endforeach
 </div>
-
+ 
 @endsection
 
 
@@ -196,5 +201,19 @@
 }
 
 
+.description-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    margin: 20px auto; /* Center the box horizontally */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center text inside the box */
+}
 
 </style>

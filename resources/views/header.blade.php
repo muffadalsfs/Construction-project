@@ -13,7 +13,7 @@
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
     
-   <a href="/"> <img src="{{ asset('Images/logo-dark.png') }}" alt="Logo" /></a>
+    <a  href="/"> <img src="{{ asset('Images/logo-dark.png') }}" alt="Logo" /></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

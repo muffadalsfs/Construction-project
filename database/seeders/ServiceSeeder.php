@@ -17,7 +17,7 @@ class ServiceSeeder extends Seeder
         Service::create([
             'name' => 'building',
             'content' => 'jajajsjs',
-            'path' => 'image1.jpg',
+            'path' => 'service.jpg',
         ]);
     }
 }

@@ -240,7 +240,7 @@ Modern Technology we used for you
                     <div class="tool-card">
                         <img src="{{ url('storage/public/' . $tools->path) }}" alt="{{ $tools->name }}">
                         <div class="tool-details">
-                            <p class="tool-name">{{ $tools->name }}</p>
+                        <a href="{{ route('tools.detail', $tools->id) }}">   <p class="tool-name">{{ $tools->name }}</p></a>
                             <p class="tool-price">${{ $tools->price }}</p>
                         </div>
                         @auth
