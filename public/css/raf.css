@@ -1267,23 +1267,19 @@ video {
 .foot {
   width: 100%;
   display: flex;
-  flex-direction: column; /* Stack content vertically */
-  align-items: center; /* Center align all content horizontally */
-  justify-content: center; /* Center align content */
+  background-color: #f2f2f2;
   padding: 20px; /* Adds spacing inside the footer */
-  background-color: silver; /* Background color for the footer */
+ 
 }
 
 /* Logo and Title Row */
 .foot-logo {
-  display: flex;
-  align-items: center; /* Vertically align logo and text */
-  justify-content: center; /* Center horizontally */
-  margin-bottom: 20px; /* Adds space between logo-title row and footer content */
+ 
+  margin: 50px; /* Adds space between logo-title row and footer content */
 }
 
 .logos {
-  max-width: 150px; /* Set maximum width for the logo */
+  max-width: 100%; /* Set maximum width for the logo */
   height: auto;
   margin-right: 10px; /* Adds space between logo and p */
 }
