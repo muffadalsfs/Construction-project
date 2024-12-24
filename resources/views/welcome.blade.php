@@ -99,29 +99,20 @@
         <h1 class="no-projects">No projects available at the moment.</h1>
         @endif
 
-        <div class="cores"> <!-- Changed 'core' to 'cores' -->
+        <div class="cores">
     <div class="text-container">
         <h1>Our Core Value</h1>
-        <p>We believe in providing the highest level of service to</p>
-        <p>our clients and creating sustainable value for all stakeholders.</p>
-        
-        <!-- New rectangular box with text -->
-        <div class="rectangular-box">
-            <p>
-Modern Technology we used for you
-</p>
-        </div>
-        <div class="rectangular-box">
-        <button onclick="myFunction()"> <p>We have Experinced Technician Team.</p></button>
-        </div>
-        <div class="rectangular-box">
-            <p>Completely revolution in Agriculture</p>
-        </div>
+        <p>We believe in providing the highest level of service to our clients<br>and creating sustainable value for all stakeholders.</p>
     </div>
-    <div class="show">
-        <img src="{{ asset('Images/11.jpg') }}" alt="Core Value Image" />
+    <div class="image-container">
+        <img src="{{asset('Images/11.jpg')}}" alt="Core Value Image" />
     </div>
 </div>
+
+
+
+
+
 
 
 
@@ -295,12 +286,12 @@ Modern Technology we used for you
 </a>
 @endif
 
-<footer class="footers">
-    <div class="footers-logo">
+<footer class="foot">
+    <div class="foot-logo">
         <img src="{{ asset('Images/logo-dark.png') }}" alt="Company Logo" class="logos">
     </div>
-    <div class="footer-content">
-        <div class="footer-columns">
+    <div class="foot-content">
+        <div class="foot-columns">
             <p>United States</p>
             <ul>
                 <li>New York - 1060</li>
@@ -308,7 +299,7 @@ Modern Technology we used for you
                 <li>Mail. koncrete@mail.com</li>
             </ul>
         </div>
-        <div class="footer-columns">
+        <div class="foot-columns">
             <p>United Kingdom</p>
             <ul>
                 <li>London - 1780</li>
@@ -316,7 +307,7 @@ Modern Technology we used for you
                 <li>Mail. koncrete@mail.com</li>
             </ul>
         </div>
-        <div class="footer-columns">
+        <div class="foot-columns">
             <p>South Asia</p>
             <ul>
                 <li>Southeo - 590 Street</li>
@@ -326,6 +317,7 @@ Modern Technology we used for you
         </div>
     </div>
 </footer>
+
 <style>
     .highlight-box {
   display: flex; /* Arrange text and button in one row */
@@ -354,6 +346,13 @@ Modern Technology we used for you
   background-image: url('{{ asset('Images/servicebg.jpg') }}');
 }
 
+.image {
+            width: 100%; /* Adjust width of image */
+            height: 660px;
+            background: url('{{ asset('Images/11.jpg') }}') no-repeat center center;
+            background-size: cover;
+        }
+
 
 </style>
 <script src="{{asset('js/all.js')}}"></script>
@@ -366,6 +365,38 @@ function playVideo() {
     thumbnail.style.display = 'none'; // Hide the thumbnail
     video.style.display = 'block';   // Show the iframe
 }
+
+
+
+// Select all buttons
+const buttons = document.querySelectorAll('.project-button');
+
+// Add click event listener to each button
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    // Remove 'active' class from all buttons
+    buttons.forEach(btn => btn.classList.remove('active'));
+    
+    // Add 'active' class to the clicked button
+    button.classList.add('active');
+  });
+});
+
+
+
+// Select all toggle-circle elements
+// Select all toggle-circle elements
+// Select all toggle circles
+
+  document.querySelectorAll('.toggle-circle').forEach((toggle, index) => {
+    toggle.addEventListener('click', () => {
+      const dummyText = document.querySelectorAll('.dummy-text')[index];
+      dummyText.classList.toggle('visible');
+    });
+  });
+
+
+
 
 </script>
 

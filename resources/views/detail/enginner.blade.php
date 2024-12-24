@@ -42,15 +42,15 @@
     justify-content: center;
     margin: 20px auto;
     padding: 20px;
-    max-width: 1200px;
+    max-width: 100%;
+    background-color: #f2f2f2;
  
 }
 
 /* Engineer Image */
 .engineer-image {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+    max-width: 100%;
+    height: auto;
     margin-right: 20px;
     object-fit: cover;
 }
@@ -83,7 +83,6 @@
     gap: 20px; /* Space between cards */
     padding: 20px;
     margin-top: 20px;
-    background: #f1f1f1; /* Optional background color */
 }
 
 .cards {
@@ -92,7 +91,7 @@
     border-radius: 10px;
     text-align: center;
     padding: 15px;
-    background: #fff;
+    background-color: #f2f2f2;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -111,17 +110,19 @@
 }
 
 .cards-button {
-    background-color: #007bff;
-    color: white;
+    background-color: white;
+    color: #646464;
+  font-size: 16px;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 55px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .cards-button:hover {
-    background-color: #0056b3;
+    background-color: gold;
+    color:white;
 }
 
 </style>

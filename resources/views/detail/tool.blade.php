@@ -13,13 +13,15 @@
         <img src="{{ url('storage/public/' . $tool->path) }}" alt="{{ $tool->name }}" class="engineer-image">
     </div>
     <div class="engineer-info">
-        <h1 class="engineer-description">Tool Details</h1>
+        <h1 class="engineer-description">{{$tool->name}}</h1>
         <h2 class="engineer-price">{{ $tool->price }}</h2>
+        <div class="line-1"></div>
         <p class="paragraph">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, 
             pulvinar dapibus leo. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
             Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
         </p>
+        <div class="line-1"></div>
         <button class="add-card-button">Add to Card</button>
     </div>
 </div>
@@ -52,13 +54,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+
 }
 
 .engineer-image-box {
@@ -78,16 +78,18 @@
 }
 
 .engineer-description {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
+    color: #222222;
+  font-size: 24px;
+  line-height: 1.1;
+  margin-bottom: 10px;
 }
 
 .engineer-price {
-    font-size: 20px;
-    color: #2a9d8f;
-    font-weight: bold;
-    margin-bottom: 10px;
+    color: #222222;
+  font-size: 24px;
+  line-height: 1.1;
+  margin-bottom: 10px;
+  color:gold;
 }
 
 .paragraph {
@@ -194,6 +196,7 @@
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
+    margin:20px;
 }
 
 .product-button:hover {
@@ -216,4 +219,8 @@
     text-align: center; /* Center text inside the box */
 }
 
+.line-1 {
+  height: 1px;
+  color: rgb(211,211,211);
+}
 </style>

@@ -6,6 +6,7 @@
   <title>Responsive Header and Footer</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
 <link rel="stylesheet" href="{{asset('css/header.css')}}">
 </head>
 <body>
@@ -87,6 +88,9 @@
       </li>
       <div class="icon-links">
         <a class="icon-link" href="#search"><i class="fas fa-search"></i></a>
+        <div class="wrap">
+        <div class="vLine"></div>
+    </div>
         <a class="icon-link" href="#cart"><i class="fas fa-shopping-cart"></i></a>
       </div>
     </div>
@@ -190,9 +194,12 @@
     <div class="footer-section">
       <h1>About Company</h1>
       <ul>
-        <li>Vestibulum ante ipsum primis in faucibus </li>
-        <li>orci luctus et ultrices posuere cubilia Curae; </li>
-        <li>posuere cubilia Curae ante ipsum primis in </li>
+        <p>Vestibulum ante ipsum primis in faucibus </p>
+        <p>orci luctus et ultrices posuere cubilia Curae; </p>
+        <p>posuere cubilia Curae ante ipsum primis in </p>
+        <i class="fa fa-facebook circle"></i>
+        <i class="fa fa-twitter circle"></i>
+
       </ul>
     </div>
 
@@ -200,12 +207,13 @@
     <div class="footer-section">
       <h1>Industries</h1>
       <ul>
-        <li>Industrial Infrastructure</li>
-        <li>Wireling Machinery</li>
-        <li>Road Repair</li>
-        <li>Engine Replacement</li>
-        <li>Stainless Bridge Building</li>
-        <li>Commercial Building</li>
+ 
+      <li>&#11166 Wireling Machinery</li>
+        <li>&#11166 Wireling Machinery</li>
+        <li>&#11166 Road Repair</li>
+        <li>&#11166 Engine Replacement</li>
+        <li>&#11166 Stainless Bridge Building</li>
+        <li>&#11166 Commercial Building</li>
       </ul>
     </div>
 
@@ -214,19 +222,27 @@
       <h1>Recent Posts</h1>
       <ul>
         <li>Use of Drone in Construction</li>
+        <p>April 17, 2019</p>
+        <div class="line-1"></div>
         <li>How to Use Safety Signs</li>
+        <p>April 17, 2019</p>
+        <div class="line-1"></div>
+
         <li>Biomimetics As a Tool For New</li>
+        <p>April 17, 2019</p>
+        <div class="line-1"></div>
+
       </ul>
     </div>
     <div class="footer-section">
       <h1>Services</h1>
       <ul>
-        <li>    Design and Build Infrastructure</li>
-        <li>    Road Constructionachinery</li>
-        <li>    Power & Energyr</li>
-        <li>    Construction Planninglacement</li>
-        <li>    Aero Space ServicesBridge Building</li>
-        <li>    Site Inspection Building</li>
+        <li> &#11166   Design and Build Infrastructure</li>
+        <li> &#11166   Road Constructionachinery</li>
+        <li> &#11166   Power & Energyr</li>
+        <li> &#11166   Construction Planninglacement</li>
+        <li> &#11166   Aero Space ServicesBridge Building</li>
+        <li> &#11166   Site Inspection Building</li>
       </ul>
     </div>
     <!-- Centered Span -->

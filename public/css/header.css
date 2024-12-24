@@ -220,16 +220,7 @@ body {
   position: relative;
 }
 
-.icon-link:first-child::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: -5px;
-  width: 2px;
-  height: 0;
-  background-color: gold;
-  transition: height 0.3s ease;
-}
+ 
 
 .icon-link:first-child:hover::after {
   height: 20px;
@@ -332,7 +323,7 @@ transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover transition */
 /* Hover Effect */
 .footer-content ul li:hover {
 color: gold; /* Change text color on hover */
-transform: translateY(-3px); /* Slightly elevate the item on hover */
+
 }
 
 /* Centered Span */
@@ -373,3 +364,32 @@ margin: 7px auto; /* Center the line */
 
 
 
+.line-1 {
+  height: 1px;
+  background: gray;
+}
+.fa-facebook{
+
+	color: #FFFFFF;
+
+	}
+  .circle{
+    font-size: inherit;
+    }
+    .fa-twitter{
+
+      color: #FFFFFF;
+      padding: 0.05em 0.07em;
+      }
+
+
+      .wrap {
+        display: flex;
+        justify-content: center;
+        height: 1vh;
+        align-items: center;
+    }
+    .vLine {
+        border-left: 1px solid black;
+        height: 30px;
+    }
