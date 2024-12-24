@@ -103,6 +103,13 @@
     <div class="text-container">
         <h1>Our Core Value</h1>
         <p>We believe in providing the highest level of service to our clients<br>and creating sustainable value for all stakeholders.</p>
+        <button class="button button3" onclick="myFunction()">+ Modern Technology we used for you</button>
+        <p id="demo"></p>
+        <button class="button button3" onclick="myFunction()">+ Modern Technology we used for you</button>
+        <p id="do"></p>
+        <button class="button button3" onclick="myFunction()">+ Modern Technology we used for you</button>
+        <p id="do"></p>
+
     </div>
     <div class="image-container">
         <img src="{{asset('Images/11.jpg')}}" alt="Core Value Image" />
@@ -395,6 +402,9 @@ buttons.forEach(button => {
     });
   });
 
+  function myFunction() {
+  document.getElementById("demo").innerHTML = "Hello World";
+}
 
 
 
