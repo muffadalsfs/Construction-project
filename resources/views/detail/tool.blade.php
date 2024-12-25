@@ -33,7 +33,7 @@
         </p>
         <hr class="new1">
         <div class="div1">
-    <button class="action-button">Action</button>
+    <button class="action-buttons">Action</button>
 </div>
 
     </div>
@@ -59,7 +59,7 @@
         <img src="{{ url('storage/public/' . $to->path) }}" alt="{{ $to->name }}" class="product-image">
         <div class="product-info">
             <h2 class="product-name">{{ $to->name }}</h2>
-            <p class="product-rating">Rating: ★★★★☆</p>
+            <p class="product-rating"> ★★★★☆</p>
             <p class="product-price">{{ $to->price }}</p>
             <button class="product-button">Quick Here</button>
         </div>
@@ -83,7 +83,7 @@
     align-items: flex-start;
     gap: 20px;
     padding: 20px;
-    border: 1px solid #ddd;
+
     border-radius: 10px;
     max-width: 1200px;
     margin: 20px auto;
@@ -93,13 +93,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 40%;
+    width: 100%;
 }
 
 .engineer-image {
     border: 2px solid #ccc;
     border-radius: 10px;
     margin-bottom: 15px;
+    display: block;
+  width: 100%;
+  height: auto;
+  box-shadow: none;
 }
 
 .additional-images {
@@ -154,7 +158,18 @@
     margin-top: 10px; /* Adds some space above the button */
 }
 
+.action-buttons {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
+.action-button:hover {
+    background-color: #0056b3;
+}
 .action-button {
     padding: 10px 20px;
     background-color: #007bff;
@@ -204,9 +219,12 @@
 
 .related-products-title {
     text-align: center;
-    font-size: 32px;
-    margin-bottom: 20px;
-    color: #333;
+ 
+    color: #222222;
+
+  font-size: 30px;
+  line-height: 1.4;
+  margin-bottom: 0;
 }
 
 .related-products-container {
@@ -251,28 +269,35 @@
 }
 
 .product-name {
-    font-size: 18px;
+   
     font-weight: bold;
-    color: #333;
+    font-size: 22px;
+    color: #000000;
     margin-bottom: 10px;
 }
 
 .product-rating {
-    font-size: 14px;
-    color: #f39c12; /* Use a color to highlight the rating */
+   
+    color: #ffc92b;
     margin-bottom: 10px;
+    font-size: 20px;
+  line-height: 1.5;
 }
 
 .product-price {
-    font-size: 16px;
-    color: #28a745; /* Green color for the price */
+    font-size: 20px;
+    line-height: 1.5;
+    color: #ffc92b;
     margin-bottom: 15px;
 }
 
 .product-button {
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: white;
+  
+    margin-top: 0;
+  padding: 8px 0px;
+  font-size: 28px;
+    background-color: #ffc92b;
+    color:#000000;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -280,11 +305,11 @@
 }
 
 .product-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    color: white;
 }
 .product-name:hover {
-    background-color: #007bff; /* Blue background on hover */
-    color: white; /* White text color on hover */
+    
+    color: gold; /* White text color on hover */
 }
 
 
