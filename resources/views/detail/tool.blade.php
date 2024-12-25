@@ -8,26 +8,47 @@
     <img src="{{ asset('Images/banner2.jpg') }}" alt="Service Image">
     <h1 class="main-title">{{ $tool->name }}</h1>
 </div>
-<div class="engineer-details">
-    <div class="engineer-image-box">
-        <img src="{{ url('storage/public/' . $tool->path) }}" alt="{{ $tool->name }}" class="engineer-image">
+<div class="tool-details">
+    <!-- Left Section: Images -->
+    <div class="tool-image-box">
+        <!-- Main Image -->
+        <img src="{{ url('storage/public/' . $tool->path) }}" alt="{{ $tool->name }}" class="engineer-image" width="300" height="300">
+        <!-- Additional Images -->
+        <div class="additional-images">
+            <img class="images" src="https://radiustheme.com/demo/wordpress/themes/koncrete/wp-content/uploads/2019/05/product_5.jpg" alt="image">
+            <img class="images" src="https://radiustheme.com/demo/wordpress/themes/koncrete/wp-content/uploads/2019/05/product_5.jpg" alt="image">
+            <img class="images" src="https://radiustheme.com/demo/wordpress/themes/koncrete/wp-content/uploads/2019/05/product_5.jpg" alt="image">
+        </div>
     </div>
-    <div class="engineer-info">
-        <h1 class="engineer-description">{{$tool->name}}</h1>
-        <h2 class="engineer-price">{{ $tool->price }}</h2>
-        <div class="line-1"></div>
+
+    <!-- Right Section: Details -->
+    <div class="tool-info">
+        <h1 class="tool-description">{{ $tool->name }}</h1>
+        <h2 class="tool-price">{{ $tool->price }}</h2>
+        <hr class="new1">
         <p class="paragraph">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, 
             pulvinar dapibus leo. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
             Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
         </p>
-        <div class="line-1"></div>
-        <button class="add-card-button">Add to Card</button>
+        <hr class="new1">
+        <div class="div1">
+    <button class="action-button">Action</button>
+</div>
+
     </div>
 </div>
-<div class="description-box">
-    <h1>Descreption</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque delectus eum non iure sed tenetur, exercitationem unde sequi quia illo omnis quae adipisci ipsam est numquam harum aliquam officiis dignissimos.</p>
+<div class="button-container">
+    <div class="button-wrapper">
+        <button id="addButton" class="action-button">Add</button>
+        <button id="newButton" class="action-button">New</button>
+    </div>
+    <div id="addContent" class="hidden-content">
+        <p>This is the text shown for the Add button.</p>
+    </div>
+    <div id="newContent" class="hidden-content">
+        <p>This is the text shown for the New button.</p>
+    </div>
 </div>
 
 
@@ -38,189 +59,249 @@
         <img src="{{ url('storage/public/' . $to->path) }}" alt="{{ $to->name }}" class="product-image">
         <div class="product-info">
             <h2 class="product-name">{{ $to->name }}</h2>
-            <p class="product-price">{{ $to->price }}</p>
             <p class="product-rating">Rating: ★★★★☆</p>
+            <p class="product-price">{{ $to->price }}</p>
             <button class="product-button">Quick Here</button>
         </div>
     </div>
     @endforeach
 </div>
+
+
+
+
+
+
  
 @endsection
 
 
 <style>
-    .engineer-details {
+.tool-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.tool-image-box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-
-
-}
-
-.engineer-image-box {
-    text-align: center;
-    margin-bottom: 20px;
+    width: 40%;
 }
 
 .engineer-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 15px;
 }
 
-.engineer-info {
-    text-align: center;
+.additional-images {
+    display: flex;
+    justify-content: space-around;
     width: 100%;
+    gap: 10px;
 }
 
-.engineer-description {
-    color: #222222;
-  font-size: 24px;
-  line-height: 1.1;
-  margin-bottom: 10px;
+.images {
+    width: 100px;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.engineer-price {
-    color: #222222;
-  font-size: 24px;
-  line-height: 1.1;
-  margin-bottom: 10px;
-  color:gold;
+.tool-info {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.tool-description {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.tool-price {
+    font-size: 20px;
+    color: #28a745;
+    margin: 0;
+}
+
+.new1 {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
 }
 
 .paragraph {
     font-size: 16px;
+    color: #555;
     line-height: 1.6;
-    margin-bottom: 20px;
-    padding: 0 15px;
 }
 
-.add-card-button {
-    background-color: #e76f51;
-    color: #fff;
-    border: none;
+.div1 {
+    display: flex;
+    justify-content: flex-start; /* Aligns the button to the left */
+    margin-top: 10px; /* Adds some space above the button */
+}
+
+
+.action-button {
     padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.action-button:hover {
+    background-color: #0056b3;
+}
+
+
+.button-container {
+    display: flex;
+    flex-direction: column; /* Stack buttons and content vertically */
+    justify-content: center; /* Center elements horizontally */
+    align-items: center; /* Center elements vertically */
+    gap: 10px;
+    border: 3px solid black; /* Increase border width */
+    padding: 20px ; /* Increase padding for better spacing */
+    margin: 20px auto; /* Center the container itself */
+    width: fit-content; /* Adjust container width to fit the buttons and content */
+    border-radius: 10px; /* Add rounded corners */
+    background-color: #f9f9f9; /* Optional: Add a subtle background color */
+}
+
+.button-wrapper {
+    display: flex; /* Place buttons side by side */
+    gap: 10px; /* Add spacing between buttons */
+}
+
+.hidden-content {
+    display: none; /* Initially hide the content */
+    margin-top: 10px; /* Add some spacing from the buttons */
     font-size: 16px;
+    color: #555;
+    border: 1px solid #ddd; /* Optional: Add a lighter border for content box */
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center; /* Center-align text */
+    background-color: #fff; /* Background for content area */
+    width: 100%; /* Match the width of the container */
 }
 
-.add-card-button:hover {
-    background-color: #d45d42;
-}
 
-@media (min-width: 768px) {
-    .engineer-details {
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 20px;
-    }
-    .engineer-image-box {
-        flex: 1;
-    }
-    .engineer-info {
-        flex: 2;
-        text-align: left;
-    }
-}
-/* Center the Related Products title */
-/* Center the Related Products title */
 .related-products-title {
     text-align: center;
-    font-size: 28px;
-    font-weight: bold;
+    font-size: 32px;
     margin-bottom: 20px;
+    color: #333;
 }
 
-/* Container for the related product cards */
 .related-products-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 20px;
+    justify-content: center; /* Center the product cards */
     padding: 20px;
 }
 
-/* Individual product card styling */
 .product-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    width: 250px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Stack image and details vertically */
+    align-items: center; /* Center align content */
+    border-radius: 10px;
     padding: 15px;
+    width: 250px; /* Adjust card width */
+    background-color: #f9f9f9; /* Light background for better contrast */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for a modern look */
+    transition: transform 0.3s ease; /* Add smooth transition effect on hover */
 }
 
-/* Product image styling with fixed size */
+.product-card:hover {
+    transform: scale(1.05); /* Slightly scale the card on hover */
+}
+
 .product-image {
-    width: 200px; /* Fixed width */
-    height: 150px; /* Fixed height */
-    object-fit: cover; /* Ensures the image fills the area while maintaining aspect ratio */
-    margin-bottom: 10px;
-    border-radius: 4px;
+    width: 100%; /* Ensure image fits the card */
+    height: 200px; /* Set a fixed height for the image */
+    object-fit: cover; /* Make sure the image covers the area */
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease; /* Smooth transition on hover */
 }
 
-/* Product name styling */
+.product-card:hover .product-image {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+.product-info {
+    text-align: center; /* Center align text inside the card */
+}
+
 .product-name {
     font-size: 18px;
     font-weight: bold;
-    margin: 10px 0;
-}
-
-/* Product price styling */
-.product-price {
-    font-size: 16px;
-    color: #2a9d8f;
+    color: #333;
     margin-bottom: 10px;
 }
 
-/* Product rating styling */
 .product-rating {
     font-size: 14px;
-    color: #555;
+    color: #f39c12; /* Use a color to highlight the rating */
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 16px;
+    color: #28a745; /* Green color for the price */
     margin-bottom: 15px;
 }
 
-/* Product button styling */
 .product-button {
-    background-color: #e76f51;
-    color: #fff;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
     border: none;
-    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 14px;
-    margin:20px;
+    transition: background-color 0.3s ease; /* Add transition for button */
 }
 
 .product-button:hover {
-    background-color: #d45d42;
+    background-color: #0056b3; /* Darker blue on hover */
+}
+.product-name:hover {
+    background-color: #007bff; /* Blue background on hover */
+    color: white; /* White text color on hover */
 }
 
 
-.description-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-width: 800px;
-    margin: 20px auto; /* Center the box horizontally */
-    padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Center text inside the box */
-}
-
-.line-1 {
-  height: 1px;
-  color: rgb(211,211,211);
-}
 </style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Add click event to buttons
+    document.getElementById("addButton").addEventListener("click", function () {
+        document.getElementById("addContent").style.display = "block"; // Show Add content
+        document.getElementById("newContent").style.display = "none"; // Hide New content
+    });
+
+    document.getElementById("newButton").addEventListener("click", function () {
+        document.getElementById("newContent").style.display = "block"; // Show New content
+        document.getElementById("addContent").style.display = "none"; // Hide Add content
+    });
+});
+
+
+</script>

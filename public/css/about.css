@@ -422,8 +422,8 @@ a {
 
 /* Right Section: Image */
 .image-section {
-  flex: 1;
-  background-color: #f4f4f4;
+  float: right;
+
 }
 
 .image-section img {
@@ -433,11 +433,7 @@ a {
 }
 
 /* Left Section: Text */
-.text-section {
-  flex: 1;
-  padding-left: 50px; /* Adds 50px spacing to the left */
-  padding-bottom: 0; /* Ensure no bottom padding */
-}
+
 
 .text-section h1 {
   margin: 0;
