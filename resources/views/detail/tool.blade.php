@@ -24,6 +24,7 @@
     <!-- Right Section: Details -->
     <div class="tool-info">
         <h1 class="tool-description">{{ $tool->name }}</h1>
+        <p class="product-rating"> ★★★★☆ (1 customer)</p>
         <h2 class="tool-price">{{ $tool->price }}</h2>
         <hr class="new1">
         <p class="paragraph">
@@ -154,8 +155,8 @@
 
 .div1 {
     display: flex;
-    justify-content: flex-start; /* Aligns the button to the left */
-    margin-top: 10px; /* Adds some space above the button */
+    justify-content: flex-start; 
+    margin-top: 10px; 
 }
 
 .action-buttons {
@@ -186,34 +187,33 @@
 
 .button-container {
     display: flex;
-    flex-direction: column; /* Stack buttons and content vertically */
-    justify-content: center; /* Center elements horizontally */
-    align-items: center; /* Center elements vertically */
-    gap: 10px;
-    border: 3px solid black; /* Increase border width */
-    padding: 20px ; /* Increase padding for better spacing */
-    margin: 20px auto; /* Center the container itself */
-    width: fit-content; /* Adjust container width to fit the buttons and content */
-    border-radius: 10px; /* Add rounded corners */
-    background-color: #f9f9f9; /* Optional: Add a subtle background color */
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center; 
+    border: 3px solid black; 
+    padding: 20px ;
+    margin: 20px auto; 
+    width: fit-content; 
+    border-radius: 10px; 
+    background-color: #f9f9f9; 
 }
 
 .button-wrapper {
-    display: flex; /* Place buttons side by side */
-    gap: 10px; /* Add spacing between buttons */
+    display: flex; 
+    gap: 10px; 
 }
 
 .hidden-content {
-    display: none; /* Initially hide the content */
-    margin-top: 10px; /* Add some spacing from the buttons */
+    display: none; 
+    margin-top: 10px; 
     font-size: 16px;
     color: #555;
-    border: 1px solid #ddd; /* Optional: Add a lighter border for content box */
+    border: 1px solid #ddd; 
     padding: 10px;
     border-radius: 5px;
-    text-align: center; /* Center-align text */
-    background-color: #fff; /* Background for content area */
-    width: 100%; /* Match the width of the container */
+    text-align: center; 
+    background-color: #fff; 
+    width: 100%; 
 }
 
 
@@ -231,41 +231,41 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center; /* Center the product cards */
+    justify-content: center; 
     padding: 20px;
 }
 
 .product-card {
     display: flex;
-    flex-direction: column; /* Stack image and details vertically */
-    align-items: center; /* Center align content */
+    flex-direction: column; 
+    align-items: center; 
     border-radius: 10px;
     padding: 15px;
-    width: 250px; /* Adjust card width */
-    background-color: #f9f9f9; /* Light background for better contrast */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for a modern look */
-    transition: transform 0.3s ease; /* Add smooth transition effect on hover */
+    width: 250px;
+    background-color: #f9f9f9; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease; 
 }
 
 .product-card:hover {
-    transform: scale(1.05); /* Slightly scale the card on hover */
+    transform: scale(1.05); 
 }
 
 .product-image {
-    width: 100%; /* Ensure image fits the card */
-    height: 200px; /* Set a fixed height for the image */
-    object-fit: cover; /* Make sure the image covers the area */
+    width: 100%; 
+    height: 200px; 
+    object-fit: cover; 
     border-radius: 5px;
     margin-bottom: 15px;
-    transition: transform 0.3s ease; /* Smooth transition on hover */
+    transition: transform 0.3s ease; 
 }
 
 .product-card:hover .product-image {
-    transform: scale(1.1); /* Zoom effect on hover */
+    transform: scale(1.1); 
 }
 
 .product-info {
-    text-align: center; /* Center align text inside the card */
+    text-align: center; 
 }
 
 .product-name {
@@ -301,7 +301,7 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Add transition for button */
+    transition: background-color 0.3s ease; 
 }
 
 .product-button:hover {
@@ -309,7 +309,7 @@
 }
 .product-name:hover {
     
-    color: gold; /* White text color on hover */
+    color: gold; 
 }
 
 
