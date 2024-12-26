@@ -22,7 +22,7 @@
     <div class="detail-container">
         <div style="position: relative;">
             <img src="{{ url('storage/public/' . $project->path) }}" alt="Blog Image" class="blog-image">
-            <div class="title-overlay">{{ $project->title }}</div>
+           
         </div>
 
         <h3>Our Professional & Expert Team</h3>

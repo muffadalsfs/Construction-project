@@ -7,7 +7,7 @@
     <img src="{{ asset('Images/banner2.jpg') }}" alt="Service Image" class="top-image">
     <h1 class="image-title"> Archives: Services</h1>
  
-</div>d
+</div>
 
 <h1 class="services-heading">Our Services</h1>
     <div class="services-container">

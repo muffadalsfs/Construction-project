@@ -107,7 +107,9 @@
 .delete-form {
   margin: 0;
 }
-
+a{
+  text-decoration: none;
+}
 /* Responsive Design */
 @media (max-width: 1024px) {
   .service-container {

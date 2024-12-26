@@ -45,12 +45,13 @@
         <button id="newButton" class="action-button">New</button>
     </div>
     <div id="addContent" class="hidden-content">
-        <p>This is the text shown for the Add button.</p>
+        <p>This is the text shown for the Add button. This paragraph may contain a longer description that will automatically adjust its container size to accommodate the content.</p>
     </div>
     <div id="newContent" class="hidden-content">
-        <p>This is the text shown for the New button.</p>
+        <p>This is the text shown for the New button. This paragraph will also expand the container as needed based on its length.</p>
     </div>
 </div>
+
 
 
 <h1 class="related-products-title">Related Products</h1>
@@ -62,7 +63,7 @@
             <h2 class="product-name">{{ $to->name }}</h2>
             <p class="product-rating"> ★★★★☆</p>
             <p class="product-price">{{ $to->price }}</p>
-            <button class="product-button">Quick Here</button>
+           <button class="product-button">Quick Here</button>
         </div>
     </div>
     @endforeach
@@ -171,49 +172,57 @@
 .action-button:hover {
     background-color: #0056b3;
 }
-.action-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
 
-.action-button:hover {
-    background-color: #0056b3;
-}
 
 
 .button-container {
     display: flex;
-    flex-direction: column; 
-    justify-content: center;
-    align-items: center; 
-    border: 3px solid black; 
-    padding: 20px ;
-    margin: 20px auto; 
-    width: fit-content; 
-    border-radius: 10px; 
-    background-color: #f9f9f9; 
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border: 3px solid black;
+    padding: 40px 218px;
+    margin: 20px auto;
+    width: fit-content;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    position: relative;
 }
 
 .button-wrapper {
-    display: flex; 
-    gap: 10px; 
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
 }
 
 .hidden-content {
-    display: none; 
-    margin-top: 10px; 
+    display: none;
+    margin-top: 10px;
     font-size: 16px;
     color: #555;
-    border: 1px solid #ddd; 
+    border: 1px solid #ddd;
     padding: 10px;
     border-radius: 5px;
-    text-align: center; 
-    background-color: #fff; 
-    width: 100%; 
+    background-color: #fff;
+    max-width: 300px; /* Set maximum width */
+    box-sizing: border-box;
+    overflow-wrap: break-word; /* Break long words to prevent overflow */
+    word-wrap: break-word;    /* For older browser support */
+    white-space: normal;      /* Allow wrapping of text */
+}
+.action-button {
+    padding: 10px 15px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.action-button.active {
+    background-color: #007bff;
+    color: white;
 }
 
 
@@ -315,18 +324,33 @@
 
 </style>
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // Add click event to buttons
-    document.getElementById("addButton").addEventListener("click", function () {
-        document.getElementById("addContent").style.display = "block"; // Show Add content
-        document.getElementById("newContent").style.display = "none"; // Hide New content
-    });
+document.addEventListener("DOMContentLoaded", () => {
+    const addButton = document.getElementById("addButton");
+    const newButton = document.getElementById("newButton");
+    const addContent = document.getElementById("addContent");
+    const newContent = document.getElementById("newContent");
 
-    document.getElementById("newButton").addEventListener("click", function () {
-        document.getElementById("newContent").style.display = "block"; // Show New content
-        document.getElementById("addContent").style.display = "none"; // Hide Add content
+    const buttons = [addButton, newButton];
+    const contents = [addContent, newContent];
+
+    buttons.forEach((button, index) => {
+        button.addEventListener("click", () => {
+            // Toggle active class on buttons
+            buttons.forEach((btn) => btn.classList.remove("active"));
+            button.classList.add("active");
+
+            // Show or hide content
+            contents.forEach((content, i) => {
+                if (i === index) {
+                    content.style.display = content.style.display === "none" || !content.style.display ? "block" : "none";
+                } else {
+                    content.style.display = "none";
+                }
+            });
+        });
     });
 });
+
 
 
 </script>
