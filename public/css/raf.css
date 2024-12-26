@@ -1229,12 +1229,12 @@ video {
 .date-box {
   position: absolute;
   top: 220px;
-  left: 10px;
+  left: 35px;
   background-color: #ffb400; /* Golden color */
-  color: #fff;
-  padding: 7px 15px;
-  font-size: 1rem;
-  border-radius: 40px;
+  color: #ffffff;
+  padding: 8px 15px;
+  font-size: 15px;
+  border-radius: 4px;
   font-weight: bold;
 }
 
@@ -1249,10 +1249,15 @@ video {
 
 /* Blog Title */
 .blog-title {
-  font-size: 1.8rem;
-  margin-top: 15px;
-  color: #333;
-  text-align: left; /* Align title to the left */
+
+  margin-top: 27px;
+    color: #333;
+    text-align: left;
+    font-family: Rubik, sans-serif;
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 500;
+    font-style: normal;
 }
 
 /* Blog Content */
@@ -1334,6 +1339,7 @@ video {
   display: flex;
   background-color: #f2f2f2;
   padding: 20px; /* Adds spacing inside the footer */
+  margin-top: 29px;
 }
 
 /* Logo and Title Row */
