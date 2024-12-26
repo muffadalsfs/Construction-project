@@ -36,7 +36,7 @@
 @endsection
 <style>
     /* Engineer Details */
-.engineer-details {
+    .engineer-details {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,7 +44,6 @@
     padding: 20px;
     max-width: 100%;
     background-color: #f2f2f2;
- 
 }
 
 /* Engineer Image */
@@ -76,6 +75,43 @@
     margin-top: 10px;
     text-align: left; /* Aligns the paragraph text to the left */
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .engineer-details {
+        flex-direction: column; /* Stack content vertically on smaller screens */
+        padding: 15px; /* Reduce padding on smaller screens */
+    }
+
+    .engineer-image {
+        margin-right: 0;
+        margin-bottom: 15px; /* Add space between image and text when stacked */
+    }
+
+    .engineer-info {
+        max-width: 100%; /* Ensure the text section spans full width */
+        text-align: center; /* Center align the text for small screens */
+    }
+
+    .engineer-info h2 {
+        font-size: 1.6rem; /* Adjust font size for small screens */
+    }
+
+    .paragraph {
+        font-size: 0.9rem; /* Adjust paragraph font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .engineer-info h2 {
+        font-size: 1.4rem; /* Further reduce font size on very small screens */
+    }
+
+    .paragraph {
+        font-size: 0.8rem; /* Further reduce paragraph font size */
+    }
+}
+
 .related-engineers {
     display: flex;
     flex-wrap: wrap; /* Enables wrapping to the next row for multiple cards */
@@ -112,7 +148,7 @@
 .cards-button {
     background-color: white;
     color: #646464;
-  font-size: 16px;
+    font-size: 16px;
     border: none;
     padding: 10px 55px;
     border-radius: 5px;
@@ -122,7 +158,46 @@
 
 .cards-button:hover {
     background-color: gold;
-    color:white;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .cards {
+        width: 220px; /* Slightly smaller card size for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .related-engineers {
+        justify-content: space-around; /* Adjusts card spacing for smaller screens */
+    }
+
+    .cards {
+        width: 180px; /* Smaller card size for mobile devices */
+        padding: 12px; /* Reduced padding for mobile */
+    }
+
+    .cards-title {
+        font-size: 1rem; /* Smaller title font size */
+    }
+
+    .cards-button {
+        padding: 8px 40px; /* Smaller button padding */
+        font-size: 14px; /* Smaller button font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .related-engineers {
+        flex-direction: column; /* Stack the cards vertically on very small screens */
+        align-items: center; /* Center the cards */
+    }
+
+    .cards {
+        width: 100%; /* Full width for each card */
+        margin-bottom: 20px; /* Space between stacked cards */
+    }
 }
 
 </style>

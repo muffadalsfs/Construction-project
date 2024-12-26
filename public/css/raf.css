@@ -435,12 +435,14 @@
 
 
 /* Projects Grid */
+/* Projects Grid - 4 by 4 layout */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 projects per row */
+  grid-template-columns: repeat(4, 1fr); /* 4 projects per row */
   gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
+  padding-bottom: 40px; /* Optional: Adds space at the bottom */
 }
 
 /* Individual Project Card */
@@ -479,6 +481,7 @@
   font-size: 2rem;
   text-align: center;
 }
+
 a{
   text-decoration: none;
 }
@@ -602,9 +605,7 @@ a{
 .core {
   display: flex;
   flex-wrap: wrap;
- 
   background-color: #f2f2f3;
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -628,6 +629,7 @@ a{
   max-width: 48%;
   position: relative;
   cursor: pointer;
+  margin-bottom: 20px; /* Added margin to separate from text */
 }
 
 .video-thumbnail {
@@ -637,9 +639,8 @@ a{
 
 .video-thumbnail img {
   width: 100%;
-height: auto;
+  height: auto;
   display: block;
-
 }
 
 .play-button {
@@ -665,7 +666,6 @@ video {
   flex: 1;
   max-width: 48%;
   padding: 100px;
-
   position: relative;
   z-index: 2;
 }
@@ -687,25 +687,78 @@ video {
   margin-bottom: 15px;
 }
 
-@media (max-width: 768px) {
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
   .core {
-    flex-direction: column;
-    padding: 10px;
+    flex-direction: column; /* Stack video and text containers on top of each other */
+    align-items: center;
   }
 
   .video-containers,
   .text-containers {
-    max-width: 100%;
+    max-width: 80%; /* Allow more space for content on medium screens */
+    margin-bottom: 40px; /* Add space between video and text */
   }
 
   .text-containers h1 {
-    font-size: 24px;
+    font-size: 28px; /* Reduce font size for medium screens */
   }
 
   .text-containers p {
-    font-size: 14px;
+    font-size: 14px; /* Reduce paragraph font size for medium screens */
   }
 }
+
+@media (max-width: 768px) {
+  .core {
+    padding: 10px; /* Add padding to the core container on smaller screens */
+  }
+
+  .video-containers,
+  .text-containers {
+    max-width: 100%; /* Take full width on small screens */
+    margin-bottom: 20px; /* Adjust margin for smaller screens */
+  }
+
+  .text-containers h1 {
+    font-size: 24px; /* Further reduce font size for smaller screens */
+  }
+
+  .text-containers p {
+    font-size: 14px; /* Further reduce font size for better readability on small screens */
+  }
+
+  .play-button {
+    font-size: 40px; /* Reduce play button size for smaller screens */
+    padding: 12px; /* Adjust padding for play button */
+  }
+}
+
+@media (max-width: 480px) {
+  .core {
+    padding: 5px; /* Minimize padding on the smallest screens */
+  }
+
+  .video-containers,
+  .text-containers {
+    max-width: 100%; /* Ensure containers take full width on small devices */
+    margin-bottom: 10px; /* Adjust spacing for mobile */
+  }
+
+  .text-containers h1 {
+    font-size: 20px; /* Reduce font size for very small screens */
+  }
+
+  .text-containers p {
+    font-size: 12px; /* Adjust paragraph font size for better mobile experience */
+  }
+
+  .play-button {
+    font-size: 35px; /* Adjust play button size for mobile */
+    padding: 10px; /* Adjust padding for mobile devices */
+  }
+}
+
 
 
 

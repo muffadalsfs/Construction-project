@@ -30,23 +30,44 @@
         <p>No projects found.</p>
     @endforelse
 </div>
+<style>
+    .filter-button.active {
+    background-color: #ffb400;  /* Yellow background for active button */
+    color: white;  /* White text for active button */
+    border: 1px solid #ffb400;  /* Matching border for active button */
+}
 
+</style>
 <script src="{{ asset('js/script.js') }}"></script>
 
 <script>
-    function filterProjects(category) {
-        const projectCards = document.querySelectorAll('.project-cards');  // Get all project cards
-        
-        projectCards.forEach(card => {
-            const projectCategory = card.getAttribute('data-category').toLowerCase();  // Get the data-category of the card
+function filterProjects(category) {
+    const projectCards = document.querySelectorAll('.project-cards');  // Get all project cards
+    const filterButtons = document.querySelectorAll('.filter-button');  // Get all filter buttons
+    
+    // Remove 'active' class from all buttons
+    filterButtons.forEach(button => {
+        button.classList.remove('active');
+    });
 
-            if (category === 'all' || projectCategory === category) {
-                card.style.display = 'block';  // Show this card
-            } else {
-                card.style.display = 'none';  // Hide this card
-            }
-        });
+    // Add 'active' class to the clicked button
+    const activeButton = Array.from(filterButtons).find(button => button.innerText.toLowerCase() === category || (category === 'all' && button.innerText.toLowerCase() === 'show all'));
+    if (activeButton) {
+        activeButton.classList.add('active');
     }
+
+    // Filter project cards based on the category
+    projectCards.forEach(card => {
+        const projectCategory = card.getAttribute('data-category').toLowerCase();  // Get the data-category of the card
+
+        if (category === 'all' || projectCategory === category) {
+            card.style.display = 'block';  // Show this card
+        } else {
+            card.style.display = 'none';  // Hide this card
+        }
+    });
+}
+
 </script>
 
 @endsection

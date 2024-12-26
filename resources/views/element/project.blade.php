@@ -12,14 +12,14 @@
 <div class="text-center-section">
     <h1>Explore Our Projects</h1>
     <div class="button-container">
-    <button class="filter-button" onclick="filterProjects('all')">Show All</button>
+        <button class="filter-button" onclick="filterProjects('all')">Show All</button>
         <button class="filter-button" onclick="filterProjects('automotive')">Automotive</button>
         <button class="filter-button" onclick="filterProjects('construction')">Construction</button>
         <button class="filter-button" onclick="filterProjects('industrial')">Industrial</button>
         <button class="filter-button" onclick="filterProjects('mechanics')">Mechanics</button>
-
     </div>
 </div>
+
 
 <div id="project-grid" class="project-grid">
     @forelse ($products as $product)
@@ -43,8 +43,12 @@
 @endsection
 
 <style>
-    /* General styling */
-/* General Styles */
+.filter-button.active {
+    background-color: #ffb400; /* Yellow background color for active button */
+    color: white; /* White text color */
+    border: 1px solid #ffb400; /* Border to match the background */
+}
+
 
 
 </style>
