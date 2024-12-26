@@ -411,7 +411,7 @@ a {
 /* Main Container */
 .core-value-container {
   display: flex;
-  background-color: gray;
+  background-color: #f2f2f2;
   flex-wrap: wrap; /* Enable wrapping for responsive design */
   width: 100%;
 
