@@ -38,7 +38,7 @@
         @foreach($service as $serv)
         <div class="service-card">
             <div class="image-wrapper">
-              <img src="{{ asset('storage/public/' . $serv->path) }}" alt="Service Image" class="service-image">
+            <img src="{{ $serv->path ? (file_exists(public_path('storage/public/' . $serv->path)) ? url('storage/public/' . $serv->path) : asset('Images/1.jpg')) : asset('Images/1.jpg') }}" alt="{{ $serv->title }}">
             </div>
             <div class="service-content">
                 <a href="{{ route('detailservice', $serv->id) }}">
@@ -85,7 +85,7 @@
         @foreach($enginner as $eg)
         <div class="engineer-card">
             <div class="engineer-img">
-                <img src="{{ url('storage/public/' . $eg->path) }}" alt="{{ $eg->name }}">
+            <img src="{{ $eg->path ? (file_exists(public_path('storage/public/' . $eg->path)) ? url('storage/public/' . $eg->path) : asset('Images/12.jpg')) : asset('Images/12.jpg') }}" alt="{{ $eg->title }}">
                 <div class="engineer-info">
                 <a href="{{ route('enginners.detail', $eg->id) }}"><p class="engineer-name">{{ $eg->name }}</p></a>
                 </div>

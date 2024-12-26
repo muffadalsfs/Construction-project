@@ -238,7 +238,7 @@
             <div class="tools-wrapper">
                 @foreach($tool as $tools)
                     <div class="tool-card">
-                    <img src="{{ $tools->path ? (file_exists(public_path('storage/public/' . $projects->path)) ? url('storage/public/' . $projects->path) : asset('Images/t6.jpg')) : asset('Images/t6.jpg') }}" alt="{{ $tools->title }}">
+                    <img src="{{ $tools->path ? (file_exists(public_path('storage/public/' . $tools->path)) ? url('storage/public/' . $tools->path) : asset('Images/t6.jpg')) : asset('Images/t6.jpg') }}" alt="{{ $tools->title }}">
                     <div class="tool-details">
                         <a href="{{ route('tools.detail', $tools->id) }}">   <p class="tool-name">{{ $tools->name }}</p></a>
                             <p class="tool-price">${{ $tools->price }}</p>

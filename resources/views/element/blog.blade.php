@@ -17,7 +17,8 @@
             {{ \Carbon\Carbon::now()->format('M d, Y') }}
         </div>
        
-        <a href="{{ route('blog.detail', $blogs->id) }}"><img class="news-image" src="{{ url('storage/public/' . $blogs->path) }}" alt="{{ $blogs->title }}">
+        <a href="{{ route('blog.detail', $blogs->id) }}">              <img src="{{ $blogs->path ? (file_exists(public_path('storage/public/' . $blogs->path)) ? url('storage/public/' . $blogs->path) : asset('Images/23.jpeg')) : asset('Images/23.jpeg') }}" alt="{{ $blogs->title }}">
+
         
         <div class="card-content">
             <h2 class="blog-title">{{ $blogs->title }}</h2></a>
