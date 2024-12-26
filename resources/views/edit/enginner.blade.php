@@ -28,7 +28,8 @@
         @if($enginner->path)
         <div class="image-container">
             <div class="current-image-wrapper">
-                <img src="{{ asset('storage/public/' . $enginner->path) }}" alt="Image" class="current-image-thumbnail" id="currentImage">
+            <img src="{{ $enginner->path ? (file_exists(public_path('storage/public/' . $enginner->path)) ? url('storage/public/' . $enginner->path) : asset('Images/12.jpg')) : asset('Images/12.jpg') }}" alt="{{ $enginner->title }}"
+            class="current-image-thumbnail" id="currentImage">
                 
                 <button type="button" class="remove-image-btn" id="removeImageBtn">&times;</button>
             </div>

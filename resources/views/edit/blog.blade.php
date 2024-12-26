@@ -22,7 +22,8 @@
             <input type="file" name="file">
             @if (isset($blog) && $blog->path)
                 <p>Current Image:</p>
-                <img src="{{ url('storage/public/' . $blog->path) }}" alt="Blog Image" style="max-width: 100px;">
+                <img src="{{ $blog->path ? (file_exists(public_path('storage/public/' . $blog->path)) ? url('storage/public/' . $blog->path) : asset('Images/t6.jpg')) : asset('Images/t6.jpg') }}" alt="{{ $blog->title }}">
+
             @endif
         </div>
 

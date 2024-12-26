@@ -20,7 +20,8 @@
         @foreach($enginner as $eg)
             <div class="engineer-card">
                 <div class="engineer-img">
-                    <img src="{{ url('storage/public/' . $eg->path) }}" alt="{{ $eg->name }}">
+                <img src="{{ $eg->path ? (file_exists(public_path('storage/public/' . $eg->path)) ? url('storage/public/' . $eg->path) : asset('Images/12.jpg')) : asset('Images/12.jpg') }}" alt="{{ $eg->title }}">
+
                     <div class="overlay">
                     <a href="{{ route('enginners.detail', $eg->id) }}"><p class="engineer-name">{{ $eg->name }}</p></a>
                     </div>

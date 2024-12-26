@@ -25,7 +25,8 @@
     @forelse ($products as $product)
     <div class="project-card" data-category="{{ strtolower($product->category) }}">
         <div class="project-image-wrapper">
-            <img src="{{ url('storage/public/' . $product->path) }}" alt="Project Image" class="project-image">
+        <img src="{{ $product->path ? (file_exists(public_path('storage/public/' . $product->path)) ? url('storage/public/' . $product->path) : asset('Images/1.jpg')) : asset('Images/1.jpg') }}" alt="{{ $product->title }}"
+        class="project-image">
         </div>
         <div class="project-details">
             <a href="{{ route('project.detail', $product->id) }}">View Details</a>

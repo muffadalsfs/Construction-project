@@ -15,7 +15,8 @@
         <a href="{{ route('detailservice', $serv->id) }}">
         <div class="service-card">
             <div class="image-wrapper">
-              <img src="{{ asset('storage/public/' . $serv->path) }}" alt="Service Image" class="service-image">
+            <img src="{{ $serv->path ? (file_exists(public_path('storage/public/' . $serv->path)) ? url('storage/public/' . $serv->path) : asset('Images/1.jpg')) : asset('Images/1.jpg') }}" alt="{{ $serv->title }}"
+            class="service-image">
             </div>
             <div class="service-content">
               

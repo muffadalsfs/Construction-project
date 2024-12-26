@@ -21,7 +21,8 @@
     <!-- Detail Page Content -->
     <div class="detail-container">
         <div style="position: relative;">
-            <img src="{{ url('storage/public/' . $project->path) }}" alt="Blog Image" class="blog-image">
+        <img src="{{ $project->path ? (file_exists(public_path('storage/public/' . $project->path)) ? url('storage/public/' . $project->path) : asset('Images/1.jpg')) : asset('Images/1.jpg') }}" alt="{{ $project->title }}"
+        class="blog-image">
            
         </div>
 

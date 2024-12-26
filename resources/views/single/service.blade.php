@@ -11,7 +11,8 @@
 <div class="service-container">
     <div class="service-image-name">
         <div class="image-wrapper">
-            <img src="{{ url('storage/public/' . $service->path) }}" alt="Service Image" class="service-fixed-image">
+        <img src="{{ $service->path ? (file_exists(public_path('storage/public/' . $service->path)) ? url('storage/public/' . $service->path) : asset('Images/1.jpg')) : asset('Images/1.jpg') }}" alt="{{ $service->title }}"
+        class="service-fixed-image">
             <h1 class="service-name">{{$service->name}}</h1>
         </div>
     </div>

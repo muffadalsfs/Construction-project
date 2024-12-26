@@ -18,7 +18,7 @@ class ProjectSeeder extends Seeder
             'Location' => 'mumbai',
             'value' => '45core',
             'category' => 'Automotive',
-            'path' => 'Images/1.jpg', // Correct relative path
+            'path' => 'images/1.jpg', // Correct relative path
         ]);
         
     }

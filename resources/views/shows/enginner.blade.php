@@ -10,9 +10,9 @@
     <div class="engineer-grid">
         @foreach ($enginner as $enginners)
             <div class="engineer-card">
-            <img src="{{ url('storage/public/' . $enginners->path) }}" alt="{{ $enginners->name }}" class="engineer-image">
-                <h3>{{ $enginners->name }}</h3>
-                <a href="{{ route('enginners.detail', $enginners->id) }}">View Details</a>
+            <a href="{{ route('enginners.detail', $enginners->id) }}">   <img src="{{ $enginners->path ? (file_exists(public_path('storage/public/' . $enginners->path)) ? url('storage/public/' . $enginners->path) : asset('Images/12.jpg')) : asset('Images/12.jpg') }}" alt="{{ $enginners->title }}"
+            class="engineer-image"></a>
+        <h3>{{ $enginners->name }}</h3>
 
                 <div class="action-buttons">
                     <a href="{{ route('engineers.edit', $enginners->id) }}" class="edit-button">Edit</a>

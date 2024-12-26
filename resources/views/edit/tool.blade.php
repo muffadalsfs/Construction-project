@@ -25,7 +25,8 @@
     @if($tool->path)
         <div class="image-container">
             <div class="current-image-wrapper">
-                <img src="{{ asset('storage/public/' . $tool->path) }}" alt="Image" class="current-image-thumbnail" id="currentImage">
+            <img src="{{ $tool->path ? (file_exists(public_path('storage/public/' . $tool->path)) ? url('storage/public/' . $tool->path) : asset('Images/t6.jpg')) : asset('Images/t6.jpg') }}" alt="{{ $tool->title }}"
+            class="current-image-thumbnail" id="currentImage">
                 
                 <button type="button" class="remove-image-btn" id="removeImageBtn">&times;</button>
             </div>

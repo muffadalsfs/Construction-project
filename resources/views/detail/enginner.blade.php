@@ -10,7 +10,8 @@
 </div>
 
 <div class="engineer-details">
-    <img src="{{ url('storage/public/' . $enginner->path) }}" alt="{{ $enginner->name }}" class="engineer-image">
+<img src="{{ $enginner->path ? (file_exists(public_path('storage/public/' . $enginner->path)) ? url('storage/public/' . $enginner->path) : asset('Images/12.jpg')) : asset('Images/12.jpg') }}" alt="{{ $enginner->title }}"
+class="engineer-image">
     <div class="engineer-info">
         <h2>{{ $enginner->name }}</h2>
         <p class="paragraph">
@@ -24,7 +25,8 @@
 <div class="related-engineers">
     @foreach($engi as $name)
     <div class="cards">
-        <img src="{{ url('storage/public/' . $name->path) }}" alt="{{ $name->name }}" class="cards-image">
+    <img src="{{ $name->path ? (file_exists(public_path('storage/public/' . $name->path)) ? url('storage/public/' . $name->path) : asset('Images/12.jpg')) : asset('Images/12.jpg') }}" alt="{{ $name->title }}"
+    class="cards-image">
         <h3 class="cards-title">{{ $name->name }}</h3>
         <a href="{{ route('enginners.detail', $name->id) }}">
             <button class="cards-button">View Profile</button>

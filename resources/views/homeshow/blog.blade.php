@@ -14,10 +14,11 @@
     @foreach($blog as $user)
     <div class="blog-card">
         <div class="blog-image-container">
-            <img src="{{ url('storage/public/' . $user->path) }}" alt="Blog Image" class="blog-image">
+        <a href="{{ route('blog.detail', $user->id) }}"> <img src="{{ $user->path ? (file_exists(public_path('storage/public/' . $user->path)) ? url('storage/public/' . $user->path) : asset('Images/t6.jpg')) : asset('Images/t6.jpg') }}" alt="{{ $user->title }}"
+        class="blog-image"></a>
             <span class="blog-date">{{ $user->created_at->format('M d, Y') }}</span>
         </div>
-        <a href="{{ route('blog.detail', $user->id) }}">View Details</a>
+     
         <div class="blog-content">
             <p class="title">{{ $user->title }}</p>
             <p class="limited-content">{{ \Illuminate\Support\Str::limit($user->content, 100) }}</p>

@@ -8,7 +8,8 @@
 <div class="tools-container">
     @foreach($tools as $tool)
         <div class="tool-card">
-       <img src="{{ asset('storage/public/' . $tool->path) }}" alt="Project Image" class="tool-image">
+        <img src="{{ $tool->path ? (file_exists(public_path('storage/public/' . $tool->path)) ? url('storage/public/' . $tool->path) : asset('Images/t6.jpg')) : asset('Images/t6.jpg') }}" alt="{{ $tool->title }}"
+        class="tool-image">
        <a href="{{ route('tools.detail', $tool->id) }}">  <h2>{{ $tool->name }}</h2>
             <p>Price: {{ $tool->price }}</p>
 </a>

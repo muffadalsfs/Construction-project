@@ -27,7 +27,8 @@
     <div class="project-card" data-category="{{ $product->category }}">
         <div class="project-image-wrapper">
 
-         <a href="{{ route('project.detail', $product->id) }}">    <img src="{{ url('storage/public/' . $product->path) }}" alt="Project Image" class="project-image"></a>
+         <a href="{{ route('project.detail', $product->id) }}">         <img src="{{ $product->path ? (file_exists(public_path('storage/public/' . $product->path)) ? url('storage/public/' . $product->path) : asset('Images/1.jpg')) : asset('Images/1.jpg') }}" alt="{{ $product->title }}"
+         class="project-image"></a>
         </div>
         <div class="project-details">
         <a href="{{ route('project.detail', $product->id) }}">  <h3 class="project-title">{{ $product->title }}</h3></a>
