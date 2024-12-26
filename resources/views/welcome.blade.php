@@ -9,7 +9,9 @@
     @foreach($Project as $projects)
     <div class="slide">
       <div class="image-containers">
-        <img src="{{ url('storage/public/' . $projects->path) }}" alt="{{ $projects->title }}">
+      <img src="{{ $projects->path ? (file_exists(public_path('storage/public/' . $projects->path)) ? url('storage/public/' . $projects->path) : asset('Images/1.jpg')) : asset('Images/1.jpg') }}" alt="{{ $projects->title }}">
+
+
       </div>
       <div class="slide-content">
         <h2>{{ $projects->title }}</h2>
@@ -24,7 +26,7 @@
     </div>
     @endforeach
   </div>
-</div> s
+</div> 
 
    
 <div class="highlight-box">
@@ -85,8 +87,8 @@
     <div class="project-grid">
         @foreach($pro as $pros)
         <div class="project-card" data-category="{{ $pros->category }}">
-        <a href="{{ route('project.detail', $projects->id) }}">  <img src="{{ url('storage/public/' . $pros->path) }}" alt="{{ $pros->title }}" class="project-image">
-            <div class="project-info">
+        <img src="{{ $pros->path ? (file_exists(public_path('storage/public/' . $pros->path)) ? url('storage/public/' . $pros->path) : asset('Images/1.jpg')) : asset('Images/1.jpg') }}" alt="{{ $pros->title }}">
+        <div class="project-info">
                 <h3 class="project-title">{{ $pros->title }}</h3>
                 <p class="project-category">{{ $pros->category }}</p>
             </div>
@@ -160,8 +162,8 @@
         @foreach($enginner as $eg)
         <div class="engineer-card">
             <div class="engineer-img">
-                <img src="{{ url('storage/public/' . $eg->path) }}" alt="{{ $eg->name }}">
-                <div class="engineer-info">
+            <img src="{{ $eg->path ? (file_exists(public_path('storage/public/' . $eg->path)) ? url('storage/public/' . $eg->path) : asset('Images/1.jpg')) : asset('Images/1.jpg') }}" alt="{{ $eg->title }}">
+            <div class="engineer-info">
                 <a href="{{ route('enginners.detail', $eg->id) }}">  <p class="engineer-name">{{ $eg->name }}</p></a>
                 </div>
             </div>
@@ -236,8 +238,8 @@
             <div class="tools-wrapper">
                 @foreach($tool as $tools)
                     <div class="tool-card">
-                        <img src="{{ url('storage/public/' . $tools->path) }}" alt="{{ $tools->name }}">
-                        <div class="tool-details">
+                    <img src="{{ $tools->path ? (file_exists(public_path('storage/public/' . $projects->path)) ? url('storage/public/' . $projects->path) : asset('Images/1.jpg')) : asset('Images/1.jpg') }}" alt="{{ $tools->title }}">
+                    <div class="tool-details">
                         <a href="{{ route('tools.detail', $tools->id) }}">   <p class="tool-name">{{ $tools->name }}</p></a>
                             <p class="tool-price">${{ $tools->price }}</p>
                         </div>
@@ -269,8 +271,8 @@
                 {{ \Carbon\Carbon::parse($blogs->created_at)->format('M d, Y') }}
             </div>
            
-            <a href="{{ route('blog.detail', $blogs->id) }}">  <img class="news-image" src="{{ url('storage/public/' . $blogs->path) }}" alt="{{ $blogs->title }}">
-           
+            <a href="{{ route('blog.detail', $blogs->id) }}">    <img src="{{ $blogs->path ? (file_exists(public_path('storage/public/' . $blogs->path)) ? url('storage/public/' . $blogs->path) : asset('Images/1.jpg')) : asset('Images/1.jpg') }}" alt="{{ $blogs->title }}">
+
             <h2 class="blog-title">{{ Str::limit($blogs->title, 40, '...') }}</h2>
           
             <p class="blog-content">{{ Str::limit($blogs->content, 150, '...') }}</p>

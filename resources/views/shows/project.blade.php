@@ -18,7 +18,8 @@
 <div class="project-grids">
     @forelse ($products as $product)
         <div class="project-cards" data-category="{{ strtolower($product->category) }}">
-            <img src="{{ $product->path ? asset('storage/public/' . $product->path) : asset('images/default.jpg') }}" alt="Project Image">
+        <img src="{{ $product->path ? (file_exists(public_path('storage/public/' . $product->path)) ? url('storage/public/' . $product->path) : asset('Images/1.jpg')) : asset('Images/1.jpg') }}" alt="{{ $product->title }}">
+
             <h3>{{ $product->title }}</h3>
             <p>{{ $product->category }}</p>
             <a href="{{ route('project.detail', $product->id) }}">View Details</a>

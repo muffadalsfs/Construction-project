@@ -13,13 +13,13 @@ class ProjectSeeder extends Seeder
     public function run(): void
     {
         Project::create([
-           'title'=>'digital project',
-            'name'=>'rahul',
-            'Location'=>'mumbai',
-            'value'=>'45core',
-            'category'=>'Automotive',
-            'path' => 'project.jpg',
-            
+            'title' => 'digital project',
+            'name' => 'rahul',
+            'Location' => 'mumbai',
+            'value' => '45core',
+            'category' => 'Automotive',
+            'path' => 'Images/1.jpg', // Correct relative path
         ]);
+        
     }
 }
