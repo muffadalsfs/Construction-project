@@ -115,6 +115,7 @@ Route::controller(servicecontroller::class)->group(function(){
   });
  route::prefix('enginners')->controller(Engineercontroller::class)->group(function(){
   Route::get('{id}','detail')->name('enginners.detail');
+
  });
  route::prefix('tools')->controller(Toolcontroller::class)->group(function(){
   Route::get('{id}','detail')->name('tools.detail');

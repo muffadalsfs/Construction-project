@@ -22,7 +22,7 @@
                 <div class="engineer-img">
                     <img src="{{ url('storage/public/' . $eg->path) }}" alt="{{ $eg->name }}">
                     <div class="overlay">
-                        <p class="engineer-name">{{ $eg->name }}</p>
+                    <a href="{{ route('enginners.detail', $eg->id) }}"><p class="engineer-name">{{ $eg->name }}</p></a>
                     </div>
                 </div>
             </div>

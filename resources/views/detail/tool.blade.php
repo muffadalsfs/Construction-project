@@ -63,7 +63,7 @@
             <h2 class="product-name">{{ $to->name }}</h2>
             <p class="product-rating"> ★★★★☆</p>
             <p class="product-price">{{ $to->price }}</p>
-           <button class="product-button">Quick Here</button>
+            <a href="{{ route('tools.detail', $to->id) }}"> <button class="product-button">Quick Here</button></a>
         </div>
     </div>
     @endforeach

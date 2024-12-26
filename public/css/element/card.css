@@ -87,3 +87,6 @@
         width: 100%; /* Single card per row */
     }
 }   
+a{
+    text-decoration: none;
+}
