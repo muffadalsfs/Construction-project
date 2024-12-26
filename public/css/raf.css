@@ -1281,19 +1281,28 @@ video {
   display: flex;
   background-color: #f2f2f2;
   padding: 20px; /* Adds spacing inside the footer */
- 
 }
 
 /* Logo and Title Row */
 .foot-logo {
- 
-  margin: 50px; /* Adds space between logo-title row and footer content */
+  display: flex;
+  flex-direction: column; /* Stack logo and any additional content vertically */
+  align-items: center; /* Center logo horizontally */
+  margin: 20px auto; /* Center and add spacing around the logo */
 }
 
 .logos {
-  max-width: 100%; /* Set maximum width for the logo */
-  height: auto;
-  margin-right: 10px; /* Adds space between logo and p */
+  max-width: 100%; /* Ensure logo is fully responsive */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 10px; /* Adds space below the logo */
+}
+
+/* Additional content below the logo */
+.additional-logo-content {
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+  margin-top: 10px; /* Adds space above the additional content */
 }
 
 /* Footer Content */
@@ -1352,22 +1361,68 @@ video {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .foot-content {
-    flex-direction: column; /* Stack columns vertically */
-    align-items: center;
-  }
-
-  .foot-columns {
-    text-align: center; /* Ensure text is centered on small screens */
-    margin-bottom: 20px;
+  .foot {
+    flex-direction: column; /* Stack footer items vertically */
+    padding: 20px 10px; /* Reduce padding for smaller screens */
   }
 
   .foot-logo {
-    flex-direction: column; /* Stack logo and text vertically on small screens */
+    margin: 20px 0; /* Adjust margin for smaller screens */
   }
 
   .logos {
-    margin-bottom: 10px; /* Adds spacing below logo */
-    margin-right: 0; /* Reset margin for responsive view */
+    max-width: 80%; /* Limit logo size on smaller screens */
+    margin-bottom: 15px; /* Increase space below logo */
+  }
+
+  .additional-logo-content {
+    font-size: 14px; /* Slightly reduce font size */
+    margin-top: 5px; /* Adjust spacing for mobile */
+  }
+
+  .foot-content {
+    flex-direction: column; /* Stack columns vertically */
+    align-items: center; /* Center align footer columns */
+  }
+
+  .foot-columns {
+    text-align: center; /* Center text in columns */
+    margin-bottom: 20px; /* Add space between columns */
+    padding: 15px; /* Increase padding in columns */
+  }
+
+  .foot-columns p {
+    font-size: 18px; /* Reduce font size for small screens */
+  }
+
+  .foot-columns ul li {
+    font-size: 14px; /* Slightly smaller list item font size */
   }
 }
+
+@media (max-width: 480px) {
+  .foot-logo {
+    margin: 15px 0; /* Further reduce margin for smaller screens */
+  }
+
+  .logos {
+    max-width: 70%; /* Further limit the logo size on small screens */
+  }
+
+  .additional-logo-content {
+    font-size: 12px; /* Further reduce font size */
+  }
+
+  .foot-columns {
+    padding: 10px; /* Reduce padding inside columns */
+  }
+
+  .foot-columns p {
+    font-size: 16px; /* Reduce font size for even smaller screens */
+  }
+
+  .foot-columns ul li {
+    font-size: 12px; /* Reduce font size for small screens */
+  }
+}
+

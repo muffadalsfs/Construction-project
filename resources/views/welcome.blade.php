@@ -8,7 +8,7 @@
   <div class="slider" id="project-slider">
     @foreach($Project as $projects)
     <div class="slide">
-      <div class="image-container">
+      <div class="image-containers">
         <img src="{{ url('storage/public/' . $projects->path) }}" alt="{{ $projects->title }}">
       </div>
       <div class="slide-content">
@@ -24,7 +24,7 @@
     </div>
     @endforeach
   </div>
-</div>
+</div> s
 
    
 <div class="highlight-box">
