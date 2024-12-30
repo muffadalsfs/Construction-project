@@ -28,13 +28,10 @@
   </div>
 </div> 
 
-   
 <div class="highlight-box">
     <p class="highlight-text">Are you looking for a Construction & Industrial Experts?</p>
     <button class="highlight-button">Request</button>
 </div>
-
-
 
 <div class="content-container">
     <!-- Left Section -->
@@ -68,6 +65,9 @@
         </div>
     </div>
 </div>
+
+
+
 
 @if($pro->isNotEmpty())
 <div class="project-container">
@@ -105,27 +105,14 @@
     <div class="text-container">
         <h1>Our Core Value</h1>
         <p>We believe in providing the highest level of service to our clients<br>and creating sustainable value for all stakeholders.</p>
-        <button class="button button3" onclick="myFunction()">+ Modern Technology we used for you</button>
-        <p id="demo"></p>
-        <button class="button button3" onclick="myFunction()">+ Modern Technology we used for you</button>
-        <p id="do"></p>
-        <button class="button button3" onclick="myFunction()">+ Modern Technology we used for you</button>
-        <p id="do"></p>
 
+        
     </div>
+
     <div class="image-container">
-        <img src="{{asset('Images/11.jpg')}}" alt="Core Value Image" />
+        <img src="{{asset('Images/11.jpg')}}" alt="Core Value Image">
     </div>
 </div>
-
-
-
-
-
-
-
-
-
 
 
 <div class="core">
@@ -154,6 +141,7 @@
 </div>
 
 
+
 <div class="engineer-container">
     @if($enginner->count() > 0)
         <h3 class="section-title">Engineers</h3>
@@ -162,9 +150,11 @@
         @foreach($enginner as $eg)
         <div class="engineer-card">
             <div class="engineer-img">
-            <img src="{{ $eg->path ? (file_exists(public_path('storage/public/' . $eg->path)) ? url('storage/public/' . $eg->path) : asset('Images/12.jpg')) : asset('Images/12.jpg') }}" alt="{{ $eg->title }}">
-            <div class="engineer-info">
-                <a href="{{ route('enginners.detail', $eg->id) }}">  <p class="engineer-name">{{ $eg->name }}</p></a>
+                <img src="{{ $eg->path ? (file_exists(public_path('storage/public/' . $eg->path)) ? url('storage/public/' . $eg->path) : asset('Images/12.jpg')) : asset('Images/12.jpg') }}" alt="{{ $eg->title }}">
+                <div class="engineer-info">
+                    <a href="{{ route('enginners.detail', $eg->id) }}">  
+                        <p class="engineer-name">{{ $eg->name }}</p>
+                    </a>
                 </div>
             </div>
             @auth
@@ -181,7 +171,9 @@
         @endforeach
     </div>
 </div>
-  
+
+
+
 
 <div class="silver-background">
     <div class="sections-container">
@@ -221,26 +213,27 @@
                     </div>
                 </div>
             </div>
-            <div class="slider-nav" id="sliderNav">
-                <button class="active"></button>
-                <button></button>
-                <button></button>
-            </div>
+            
         </div>
     </div>
 </div>
 
 
+
 @if($tool->isNotEmpty())
+
     <div class="tools-container">
-        <h1>Our Latest Products </h1>
+        <h1 class="tools-title">Our Latest Products</h1>
         <div class="tools-slider" id="toolsSlider">
             <div class="tools-wrapper">
                 @foreach($tool as $tools)
                     <div class="tool-card">
-                    <img src="{{ $tools->path ? (file_exists(public_path('storage/public/' . $tools->path)) ? url('storage/public/' . $tools->path) : asset('Images/t6.jpg')) : asset('Images/t6.jpg') }}" alt="{{ $tools->title }}">
-                    <div class="tool-details">
-                        <a href="{{ route('tools.detail', $tools->id) }}">   <p class="tool-name">{{ $tools->name }}</p></a>
+                        <img src="{{ $tools->path ? (file_exists(public_path('storage/public/' . $tools->path)) ? url('storage/public/' . $tools->path) : asset('Images/t6.jpg')) : asset('Images/t6.jpg') }}" 
+                             alt="{{ $tools->name }}" class="tool-image">
+                        <div class="tool-details">
+                            <a href="{{ route('tools.detail', $tools->id) }}">
+                                <p class="tool-name">{{ $tools->name }}</p>
+                            </a>
                             <p class="tool-price">${{ $tools->price }}</p>
                         </div>
                         @auth
@@ -253,7 +246,6 @@
                                 </form>
                             </div>
                         @endauth
-     
                     </div>
                 @endforeach
             </div>
@@ -261,39 +253,56 @@
     </div>
 @endif
 
+
+
+
 @if($blog->isNotEmpty())
-    <h1 class="news-title">Our Latest News </h1>
+    <h1 class="news-title">Our Latest News</h1>
     <div class="news-grid">
         @foreach($blog as $blogs)
-        <div class="news-card">
-
-            <div class="date-box">
-                {{ \Carbon\Carbon::parse($blogs->created_at)->format('M d, Y') }}
-            </div>
-           
-            <a href="{{ route('blog.detail', $blogs->id) }}">    <img src="{{ $blogs->path ? (file_exists(public_path('storage/public/' . $blogs->path)) ? url('storage/public/' . $blogs->path) : asset('Images/23.jpeg')) : asset('Images/23.jpeg') }}" alt="{{ $blogs->title }}">
-
-            <h2 class="blog-title">{{ Str::limit($blogs->title, 40, '...') }}</h2>
-          
-            <p class="blog-content">{{ Str::limit($blogs->content, 150, '...') }}</p>
-                      <div class="meta-info">
-                <span class="created-by">Created by: <strong>{{ $blogs->user->name }}</strong></span>
-                <span class="comments">Comments: {{ $blogs->comments_count ?? 0 }}</span>
-            </div>
-          
-            @auth
-                @if(auth()->user()->id === $blogs->user_id)
-                <div class="post-actions">
-                    <a href="{{ route('blog.edit', $blogs->id) }}" class="edit-button">Edit</a>
-                    <a href="{{ route('blog.delete', $blogs->id) }}" class="delete-button">Delete</a>
+            <div class="news-card">
+                <!-- Date Box -->
+                <div class="date-box">
+                    &#128197; {{ \Carbon\Carbon::parse($blogs->created_at)->format('M d, Y') }}
                 </div>
-                @endif
-            @endauth
-        </div>
+
+                <!-- Image Section -->
+                <div class="image-wrapper">
+                    <a href="{{ route('blog.detail', $blogs->id) }}">
+                        <img src="{{ $blogs->path ? (file_exists(public_path('storage/public/' . $blogs->path)) ? url('storage/public/' . $blogs->path) : asset('Images/23.jpeg')) : asset('Images/23.jpeg') }}" 
+                             alt="{{ $blogs->title }}" class="news-image">
+                    </a>
+                </div>
+
+                <!-- Blog Title -->
+                <h2 class="blog-title">{{ Str::limit($blogs->title, 40, '...') }}</h2>
+
+                <!-- Blog Content -->
+                <p class="blog-content">{{ Str::limit($blogs->content, 150, '...') }}</p>
+
+                <!-- Meta Information -->
+                <div class="meta-info">
+                    <div class="created-by">Created by: <strong>{{ $blogs->user->name }}</strong></div>
+                    <div class="comments">Comments: {{ $blogs->comments_count ?? 0 }}</div>
+                </div>
+
+                <!-- Post Actions -->
+                @auth
+                    @if(auth()->user()->id === $blogs->user_id)
+                        <div class="post-actions">
+                            <a href="{{ route('blog.edit', $blogs->id) }}" class="edit-button">Edit</a>
+                            <a href="{{ route('blog.delete', $blogs->id) }}" class="delete-button">Delete</a>
+                        </div>
+                    @endif
+                @endauth
+            </div>
         @endforeach
     </div>
-</a>
 @endif
+
+
+
+
 
 <footer class="foot">
     <div class="foot-logo">
@@ -340,6 +349,9 @@
    background-image: url('{{ asset('Images/scale.png') }}');
   background-repeat: repeat-x;
 }
+
+
+
 
 
 .content-container {
@@ -407,6 +419,7 @@ buttons.forEach(button => {
   function myFunction() {
   document.getElementById("demo").innerHTML = "Hello World";
 }
+
 
 
 

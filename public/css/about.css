@@ -4,68 +4,66 @@
   align-items: center;
   border-radius: 8px;
   padding: 10px 15px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   flex: 1;
-  max-width: 250px; /* Ensure max-width but allow responsiveness */
-  text-align: center; /* Center content */
-  height: 150px; /* Adjust height here */
-  min-height: 150px; /* Ensures minimum height is maintained */
-  margin-bottom: 20px; /* Space at the bottom of each card */
+  max-width: 250px;
+  text-align: center;
+  height: 150px;
+  min-height: 150px;
+  margin-bottom: 20px;
 }
 
-/* Logo Styling */
 .counter-logo {
   width: 60px;
   height: 100px;
-  margin-right: 15px; /* Space between logo and text */
+  margin-right: 15px;
 }
 
-/* Counter Info Styling */
 .counter-info {
   display: flex;
-  flex-direction: column; /* Stack number and text vertically */
+  flex-direction: column;
 }
 
 .counter-number {
-  font-size: 3.5rem; /* Large counter number */
-  color: white; /* Blue color for the counter */
+  font-size: 3.5rem;
+  color: white;
   margin: 0;
   font-weight: 900;
 }
 
 .counter-text {
-  font-size: 17px; /* Smaller text for the description */
+  font-size: 17px;
   color: white;
   margin: 5px 0 0;
 }
 
-/* Responsive styles for mobile */
 @media (max-width: 768px) {
   .counters-container {
-    gap: 20px; /* Increase gap between counters */
-    flex-direction: column; /* Stack counters vertically on smaller screens */
-    justify-content: center; /* Center content vertically */
+    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .counter-card {
-    max-width: 100%; /* Full width for mobile */
-    height: auto; /* Adjust height automatically for mobile */
-    padding: 20px 15px; /* Adjust padding for better fit */
+    max-width: 100%;
+    height: auto;
+    padding: 20px 15px;
   }
 
   .counter-logo {
-    width: 50px; /* Adjust logo size for smaller screens */
-    height: 80px; /* Adjust logo height for smaller screens */
+    width: 50px;
+    height: 80px;
   }
 
   .counter-number {
-    font-size: 3rem; /* Adjust font size for smaller screens */
+    font-size: 3rem;
   }
 
   .counter-text {
-    font-size: 15px; /* Adjust font size for smaller screens */
+    font-size: 15px;
   }
 }
+
 
 /*five layer */
 /* Engineer container */
@@ -87,14 +85,12 @@
   text-align: center;
 }
 
-/* Grid Layout */
 .engineer-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Four cards per row */
-  gap: 20px; /* Space between cards */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 
-/* Engineer Card */
 .engineer-card {
   background: #fff;
   border-radius: 8px;
@@ -105,11 +101,10 @@
 }
 
 .engineer-card:hover {
-  transform: translateY(-5px); /* Slight lift on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Image Container */
 .engineer-img {
   position: relative;
   width: 100%;
@@ -125,16 +120,15 @@
 }
 
 .engineer-card:hover img {
-  transform: scale(1.1); /* Slight zoom effect */
+  transform: scale(1.1);
 }
 
-/* Engineer Info */
 .engineer-info {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+  background: rgba(0, 0, 0, 0.7);
   color: #fff;
   padding: 10px;
   text-align: center;
@@ -143,7 +137,7 @@
 }
 
 .engineer-card:hover .engineer-info {
-  opacity: 1; /* Show info on hover */
+  opacity: 1;
 }
 
 .engineer-name {
@@ -151,12 +145,12 @@
   font-weight: bold;
 }
 
-/* Auth Buttons */
 .engineer-actions {
   margin-top: 10px;
 }
 
-.btn-edit, .btn-delete {
+.btn-edit,
+.btn-delete {
   display: inline-block;
   padding: 8px 12px;
   margin: 5px;
@@ -183,28 +177,28 @@
   background: #a71d2a;
 }
 
-/* Responsive Design */
 @media (max-width: 992px) {
   .engineer-grid {
-      grid-template-columns: repeat(3, 1fr); /* Three cards per row */
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 768px) {
   .engineer-grid {
-      grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 480px) {
   .engineer-grid {
-      grid-template-columns: 1fr; /* One card per row */
+    grid-template-columns: 1fr;
   }
 
   .engineer-img img {
-      height: 350px; /* Adjust image height for smaller screens */
+    height: 350px;
   }
 }
+
 
 /* six layer */
 /* Highlight box styling */
@@ -221,70 +215,65 @@
   line-height: 1.3;
 }
 
-/* Highlight Button */
 .highlight-button {
-  padding: 19px 40px; /* Larger padding for increased button size */
-  background-color: white; /* Dark button color for contrast */
-
-  border: 5px solid white; /* Gold border */
-  border-radius: 10px; /* Slightly larger border radius */
+  padding: 19px 40px;
+  background-color: white;
+  border: 5px solid white;
+  border-radius: 10px;
   font-size: 18px;
   font-weight: 500;
   color: #000000;
-
   width: 239px;
   height: 73px;
-
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
-/* Button Hover Effect */
 .highlight-button:hover {
   background-color: #ffb400;
-  color:white; /* Dark text on hover */
-  transform: scale(1.1); /* Slightly enlarge button on hover */
+  color: white;
+  transform: scale(1.1);
 }
 
-/* Media Queries for Smaller Screens */
 @media (max-width: 768px) {
   .highlight-box {
-    flex-direction: column; /* Stack text and button vertically */
+    flex-direction: column;
     padding: 15px;
   }
 
   .highlight-text {
-    margin-right: 0; /* Remove space between text and button */
-    margin-bottom: 10px; /* Add space below the text */
-    font-size: 1.3rem; /* Slightly smaller font size for text */
+    margin-right: 0;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
   }
 
   .highlight-button {
-    padding: 12px 25px; /* Adjust button size for smaller screens */
-    font-size: 1rem; /* Adjust font size for smaller screens */
+    padding: 12px 25px;
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 480px) {
   .highlight-text {
-    font-size: 1.1rem; /* Smaller font size for very small screens */
+    font-size: 1.1rem;
   }
 
   .highlight-button {
-    padding: 10px 20px; /* Further adjust padding */
-    font-size: 0.9rem; /* Further adjust font size */
+    padding: 10px 20px;
+    font-size: 0.9rem;
   }
 }
+
 .cover-container {
   position: relative;
-  width: 100%; /* Full width of the container */
-  height: 50vh; /* Half the viewport height */
-  overflow: hidden; /* Hide any overflow */
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
 }
 
 .cover-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures the image covers the container without distortion */
+  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
@@ -292,11 +281,10 @@
 
 .cover-text {
   position: absolute;
-  left:10%; /* Adjust as needed for spacing from the right edge */
-  top: 40%; /* Center vertically */
-  transform: translateY(-50%); /* Adjust vertical alignment */
-  padding: 10px 20px; /* Optional: Add padding around text */
-  border-radius: 5px; /* Optional: Add rounded corners to text box */
+  left: 10%;
+  top: 40%;
+  transform: translateY(-50%);
+  padding: 10px 20px;
   border-radius: 5px;
   font-size: 40px;
   font-weight: 500;
@@ -305,9 +293,7 @@
   color: #ffffff;
   margin-bottom: 20px;
   line-height: 45px;
-  
 }
-
 
 
 
@@ -325,8 +311,8 @@
   line-height: 1.3;
   margin: 0;
   padding-bottom: 12px;
-
 }
+
 .services {
   text-align: center;
   font-family: "Roboto", Sans-serif;
@@ -334,39 +320,49 @@
   font-weight: 400;
   margin: 0;
   padding-bottom: 12px;
-
 }
 
-/* Container for service cards */
+a {
+  text-decoration: none;
+}
 
-/* Individual service card styling */
 .service-card {
-  flex: 1 1 calc(25% - 20px); /* 4 cards per row with spacing */
-  max-width: calc(25% - 20px); /* Ensure consistent max width */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
-  border-radius: 8px; /* Rounded corners */
-  overflow: hidden; /* Prevent overflow from child elements */
-  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background for cards */
-  text-align: center; /* Center the content */
-  padding: 15px; /* Inner padding for spacing */
-  transition: transform 0.3s ease; /* Hover effect */
-  margin-bottom: 20px; /* Space between cards vertically */
-  margin-left: 10px; /* Add side spacing between cards */
-  margin-right: 10px; /* Add side spacing between cards */
+  flex: 1 1 calc(25% - 20px);
+  max-width: calc(25% - 20px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .service-card:hover {
-  transform: translateY(-5px); /* Lift on hover */
+  transform: translateY(-5px);
 }
 
-/* Service image styling */
+.image-wrapper {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 15px;
+}
+
 .image-wrapper img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   border-radius: 8px;
 }
 
-/* Service content styling */
 .service-title {
   font-size: 1.2rem;
   margin: 10px 0;
@@ -375,32 +371,29 @@
 }
 
 .service-title:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .limited-content {
   font-size: 0.9rem;
   color: #666;
+  margin-bottom: 15px;
 }
 
-/* Responsive styles for mobile */
 @media (max-width: 768px) {
   .service-card {
-    flex: 1 1 calc(50% - 20px); /* 2 cards per row */
+    flex: 1 1 calc(50% - 20px);
     max-width: calc(50% - 20px);
+    height: auto;
   }
 }
 
 @media (max-width: 480px) {
   .service-card {
-    flex: 1 1 100%; /* 1 card per row */
+    flex: 1 1 100%;
     max-width: 100%;
+    height: auto;
   }
-}
-
-/* Remove underline for links */
-a {
-  text-decoration: none;
 }
 
 
@@ -412,29 +405,23 @@ a {
 .core-value-container {
   display: flex;
   background-color: #f2f2f2;
-  flex-wrap: wrap; /* Enable wrapping for responsive design */
+  flex-wrap: wrap;
   width: 100%;
-
-  margin: 0; /* Remove any margin */
-  padding: 0; /* Remove any padding */
+  margin: 0;
+  padding: 0;
   overflow: hidden;
-  flex-direction: row-reverse; /* Ensures the image appears on the right */
+  flex-direction: row-reverse;
 }
 
-/* Right Section: Image */
 .image-section {
   float: right;
-
 }
 
 .image-section img {
   width: 100%;
-  height: auto; /* Fixed height for the image */
-  object-fit: cover; /* Ensure the image covers the container */
+  height: auto;
+  object-fit: cover;
 }
-
-/* Left Section: Text */
-
 
 .text-section h1 {
   margin: 0;
@@ -445,18 +432,18 @@ a {
 .yellow-line {
   width: 50px;
   height: 5px;
-  background-color: #ffb400; /* Yellow color */
-  margin: 10px 0; /* Adds space between the line and text */
+  background-color: #ffb400;
+  margin: 10px 0;
 }
 
 .text-section p {
   margin: 10px 0;
   font-size: 1rem;
   color: #555;
-  word-break: break-word; /* Breaks long words gracefully */
-  white-space: normal; /* Ensures normal word wrapping */
-  line-height: 1.5; /* Adds spacing between lines */
-  max-width: 90%; /* Prevents overly wide lines, making text easier to read */
+  word-break: break-word;
+  white-space: normal;
+  line-height: 1.5;
+  max-width: 90%;
 }
 
 .cta-button {
@@ -465,7 +452,7 @@ a {
   font-size: 1rem;
   border: none;
   border-radius: 5px;
-  background-color: #ffb400; /* Yellow button */
+  background-color: #ffb400;
   color: #000;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -475,17 +462,14 @@ a {
   background-color: #e0a300;
 }
 
-
-
-/* Media Query for Smaller Screens */
 @media (max-width: 768px) {
   .core-value-container {
-    flex-direction: column; /* Stack sections vertically */
-    height: auto; /* Allow content to define height */
+    flex-direction: column;
+    height: auto;
   }
 
   .text-section {
-    order: 1; /* Ensures the text section appears first */
+    order: 1;
     width: 100%;
     padding: 10px;
     align-items: center;
@@ -493,32 +477,31 @@ a {
   }
 
   .image-section {
-    order: 2; /* Ensures the image section appears below the text */
+    order: 2;
     width: 100%;
-    height: auto; /* Adjust image height for small screens */
+    height: auto;
   }
 
   .text-section h1 {
-    font-size: 2rem; /* Adjust font size for smaller screens */
+    font-size: 2rem;
   }
 
   .yellow-line {
-    width: 30px; /* Adjust width for smaller screens */
-    height: 4px; /* Adjust height for smaller screens */
-    margin: 8px auto; /* Center the line and adjust spacing */
-    background-color: #ffb400; /* Yellow color remains the same */
+    width: 30px;
+    height: 4px;
+    margin: 8px auto;
+    background-color: #ffb400;
   }
 
   .text-section p {
-    font-size: 0.9rem; /* Adjust paragraph font size */
+    font-size: 0.9rem;
   }
 
   .cta-button {
-    font-size: 0.9rem; /* Adjust button size */
+    font-size: 0.9rem;
     margin-top: 15px;
   }
 }
-
 
 
 

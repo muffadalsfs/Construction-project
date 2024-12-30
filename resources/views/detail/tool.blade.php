@@ -12,7 +12,8 @@
     <!-- Left Section: Images -->
     <div class="tool-image-box">
         <!-- Main Image -->
-        <img src="{{ url('storage/public/' . $tool->path) }}" alt="{{ $tool->name }}" class="engineer-image" width="300" height="300">
+        <img src="{{ $tool->path ? (file_exists(public_path('storage/public/' . $tool->path)) ? url('storage/public/' . $tool->path) : asset('Images/t6.jpg')) : asset('Images/t6.jpg') }}" alt="{{ $tool->title }}"
+        class="engineer-image" width="300" height="300">
         <!-- Additional Images -->
         <div class="additional-images">
             <img class="images" src="https://radiustheme.com/demo/wordpress/themes/koncrete/wp-content/uploads/2019/05/product_5.jpg" alt="image">
@@ -58,7 +59,8 @@
 <div class="related-products-container">
     @foreach($t as $to)
     <div class="product-card">
-        <img src="{{ url('storage/public/' . $to->path) }}" alt="{{ $to->name }}" class="product-image">
+    <img src="{{ $to->path ? (file_exists(public_path('storage/public/' . $to->path)) ? url('storage/public/' . $to->path) : asset('Images/t6.jpg')) : asset('Images/t6.jpg') }}" alt="{{ $to->title }}"
+    class="product-image">
         <div class="product-info">
             <h2 class="product-name">{{ $to->name }}</h2>
             <p class="product-rating"> ★★★★☆</p>

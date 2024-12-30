@@ -54,45 +54,63 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   
   // four layer
-  let currentIndex = 0;
-  const toolsWrapper = document.querySelector('.tools-wrapper');
-  const toolCards = document.querySelectorAll('.tool-card');
-  const prevButton = document.querySelector('.prev');
-  const nextButton = document.querySelector('.next');
-  
-  const totalCards = toolCards.length;
-  
-  function showNextSlide() {
-    currentIndex = (currentIndex + 1) % totalCards;
-    updateSliderPosition();
-  }
-  
-  function showPrevSlide() {
-    currentIndex = (currentIndex - 1 + totalCards) % totalCards;
-    updateSliderPosition();
-  }
-  
-  function updateSliderPosition() {
-    const offset = -currentIndex * 320; // Adjust based on card width (300px + gap)
-    toolsWrapper.style.transform = `translateX(${offset}px)`;
-  }
-  
-  // Automatic slide every 3 seconds
-  let autoSlide = setInterval(showNextSlide, 3000);
-  
-  // Navigation buttons
-  nextButton.addEventListener('click', () => {
-    clearInterval(autoSlide); // Stop auto slide when user interacts
-    showNextSlide();
-    autoSlide = setInterval(showNextSlide, 3000); // Restart auto slide
-  });
-  
-  prevButton.addEventListener('click', () => {
-    clearInterval(autoSlide); // Stop auto slide when user interacts
-    showPrevSlide();
-    autoSlide = setInterval(showNextSlide, 3000); // Restart auto slide
-  });
-  
+  document.addEventListener("DOMContentLoaded", function () {
+    const slider = document.getElementById("toolsSlider");
+    const wrapper = slider.querySelector(".tools-wrapper");
+    const sliderButtons = document.querySelectorAll(".slider-button");
+    let slideIndex = 0;
+    const slideInterval = 3000; // Auto-slide every 3 seconds
+    let autoSlide;
+
+    // Function to calculate card width dynamically
+    const getCardWidth = () => {
+        const cards = wrapper.querySelectorAll(".tool-card");
+        return cards[0].offsetWidth + 20; // Card width plus gap
+    };
+
+    // Function to slide
+    const slide = (direction = "next") => {
+        const cardWidth = getCardWidth();
+        const cards = wrapper.querySelectorAll(".tool-card");
+        if (direction === "next") {
+            slideIndex = (slideIndex + 1) % cards.length;
+        } else {
+            slideIndex = (slideIndex - 1 + cards.length) % cards.length;
+        }
+        wrapper.style.transform = `translateX(-${slideIndex * cardWidth}px)`;
+    };
+
+    // Start auto slider
+    const startAutoSlide = () => {
+        autoSlide = setInterval(() => slide("next"), slideInterval);
+    };
+
+    // Stop auto slider
+    const stopAutoSlide = () => {
+        clearInterval(autoSlide);
+    };
+
+    // Attach event listeners for navigation buttons
+    sliderButtons.forEach(button => {
+        button.addEventListener("click", (e) => {
+            const direction = e.target.dataset.direction;
+            stopAutoSlide();
+            slide(direction);
+            startAutoSlide();
+        });
+    });
+
+    // Restart slider on window resize to adjust card width
+    window.addEventListener("resize", () => {
+        stopAutoSlide();
+        slideIndex = 0; // Reset index to avoid out-of-bound issues
+        wrapper.style.transform = "translateX(0)"; // Reset position
+        startAutoSlide();
+    });
+
+    // Initialize auto slider
+    startAutoSlide();
+});
 
 
     

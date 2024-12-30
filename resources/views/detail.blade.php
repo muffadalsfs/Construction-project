@@ -10,7 +10,7 @@
     <!-- Detail Page Content -->
     <div class="detail-container">
     
-    <img src="{{ $show->path ? (file_exists(public_path('storage/public/' . $show->path)) ? url('storage/public/' . $show->path) : asset('Images/t6.jpg')) : asset('Images/t6.jpg') }}" alt="{{ $show->title }}"
+    <img src="{{ $show->path ? (file_exists(public_path('storage/public/' . $show->path)) ? url('storage/public/' . $show->path) : asset('Images/23.jpeg')) : asset('Images/t6.jpg') }}" alt="{{ $show->title }}"
     class="blog-image">
         <h2>Title: {{ $show->title }}</h2>
         <h3>Content:</h3>

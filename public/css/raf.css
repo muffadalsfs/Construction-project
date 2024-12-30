@@ -4,23 +4,21 @@
 .slider-container {
   position: relative;
   width: 100%;
-  height: 70vh; /* Default height for larger screens */
+  height: 70vh;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #f4f4f4;
-  animation: fadeIn 1s ease-out; /* Add animation */
+  animation: fadeIn 1s ease-out;
 }
 
 @media (max-width: 480px) {
-  /* Adjust container height for small screens */
   .slider-container {
-    height: 100vh; /* Full height on smaller screens */
+    height: 100vh;
   }
 }
 
-/* Slider settings */
 .slider {
   display: flex;
   transition: transform 0.5s ease-in-out;
@@ -29,12 +27,12 @@
 }
 
 .slide {
-  min-width: 100%; /* Each slide takes full width */
+  min-width: 100%;
   height: 100%;
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center; /* Center content */
+  justify-content: center;
   overflow: hidden;
 }
 
@@ -44,24 +42,24 @@
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensure image fills the container */
-  object-position: center center; /* Ensure image is centered */
+  object-fit: cover;
+  object-position: center center;
   z-index: 1;
-  filter: brightness(50%); /* Darken the image to improve text readability */
+  filter: brightness(50%);
 }
 
-/* Content inside each slide */
 .slide-content {
-  position: absolute; /* Position absolutely within the slide */
-  left: 20%; /* Align content to the left */
-  top: 50%; /* Center content vertically */
-  transform: translate(-50%, -50%); /* Adjust vertical and horizontal centering */
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   z-index: 2;
-  max-width: 50%; /* Adjust content width for larger screens */
+  max-width: 50%;
   color: #fff;
   padding: 20px;
   text-align: left;
-  transition: transform 0.3s ease-in-out; /* Smooth transition for responsive changes */
+  transition: transform 0.3s ease-in-out;
 }
 
 .slide-content h2 {
@@ -85,6 +83,8 @@
   border-radius: 5px;
   cursor: pointer;
   margin-right: 10px;
+  font-size: 0.8rem;
+  margin: 5px 0;
 }
 
 .slide-content button {
@@ -110,11 +110,10 @@
   background-color: #a71d2a;
 }
 
-/* Responsive Adjustments */
 @media (max-width: 768px) {
   .slide-content {
-    max-width: 80%; 
-    text-align: left; /* Left-align content for tablets */
+    max-width: 80%;
+    text-align: left;
   }
 
   .slide-content h2 {
@@ -123,22 +122,25 @@
 
   .slide-content p {
     font-size: 1rem;
-
   }
 
   .slide-content button {
     font-size: 0.9rem;
+    padding: 10px 20px;
+  }
 
+  .edit-btn, .delete-btn {
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 480px) {
   .slide-content {
-    max-width: 90%; /* Allow more space for content on very small screens */
-    text-align: center; /* Center align text */
-    left: 50%; /* Center horizontally */
-    top: 50%; /* Center vertically */
-    transform: translate(-50%, -50%); /* Ensure perfect centering */
+    max-width: 90%;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .slide-content h2 {
@@ -151,18 +153,37 @@
 
   .slide-content button {
     font-size: 0.8rem;
-    margin: 5px 0; /* Add spacing between buttons */
+    margin: 10px 0;
+    padding: 10px 20px;
   }
 
-  /* Ensure full-screen height on mobile */
+  .edit-btn {
+    background-color: #28a745;
+    color: white;
+    margin: 10px 0;
+  }
+
+  .edit-btn:hover {
+    background-color: #218838;
+  }
+
+  .delete-btn {
+    background-color: #dc3545;
+    color: white;
+    margin: 10px 0;
+  }
+
+  .delete-btn:hover {
+    background-color: #a71d2a;
+  }
+
   .slider-container {
-    height: 100vh; /* Full viewport height for smaller screens */
+    height: 100vh;
   }
 
-  /* Adjust image behavior to avoid being cut off */
   .slide img {
-    object-fit: cover; /* Keep image fully covered */
-    object-position: center center; /* Ensure the image is centered */
+    object-fit: cover;
+    object-position: center center;
   }
 }
 
@@ -171,17 +192,16 @@
 /* second layer */
 /* Highlight Box */
 .highlight-box {
-  display: flex; /* Arrange text and button in one row */
-  align-items: center; /* Vertically center content */
-  justify-content: center; /* Horizontally center content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #ffb400;
-  padding: 20px; /* Add some padding */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for better visual */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   height: 200px;
 }
 
-/* Highlight Text */
 .highlight-text {
   margin-right: 20px;
   font-weight: bold;
@@ -192,59 +212,54 @@
   line-height: 1.3;
 }
 
-/* Highlight Button */
 .highlight-button {
-  padding: 19px 40px; /* Larger padding for increased button size */
-  background-color: white; /* Dark button color for contrast */
-
-  border: 5px solid #ffd700; /* Gold border */
-  border-radius: 10px; /* Slightly larger border radius */
+  padding: 19px 40px;
+  background-color: white;
+  border: 5px solid #ffd700;
+  border-radius: 10px;
   font-size: 18px;
   font-weight: 500;
   color: #000000;
-
   width: 239px;
   height: 73px;
-
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
-/* Button Hover Effect */
 .highlight-button:hover {
   background-color: #ffb400;
-  color:white; /* Dark text on hover */
-  transform: scale(1.1); /* Slightly enlarge button on hover */
+  color: white;
+  transform: scale(1.1);
 }
 
-/* Media Queries for Smaller Screens */
 @media (max-width: 768px) {
   .highlight-box {
-    flex-direction: column; /* Stack text and button vertically */
+    flex-direction: column;
     padding: 15px;
   }
 
   .highlight-text {
-    margin-right: 0; /* Remove space between text and button */
-    margin-bottom: 10px; /* Add space below the text */
-    font-size: 1.3rem; /* Slightly smaller font size for text */
+    margin-right: 0;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
   }
 
   .highlight-button {
-    padding: 12px 25px; /* Adjust button size for smaller screens */
-    font-size: 1rem; /* Adjust font size for smaller screens */
+    padding: 12px 25px;
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 480px) {
   .highlight-text {
-    font-size: 1.1rem; /* Smaller font size for very small screens */
+    font-size: 1.1rem;
   }
 
   .highlight-button {
-    padding: 10px 20px; /* Further adjust padding */
-    font-size: 0.9rem; /* Further adjust font size */
+    padding: 10px 20px;
+    font-size: 0.9rem;
   }
 }
+
 /* third layr */
 /* Content Container */
 .content-container {
@@ -379,146 +394,183 @@
 
 /* four layer */
 /* Gray background for the project section */
+/* Container styling */
+/* Container styling */
+/* Container styling */
 .project-container {
-  background-color: black; /* Gray background */
-  padding: 40px 20px;
-  text-align: center;
-}
-.project-button:active {
-  background-color: #ff5722; /* Add a distinct background color for the active button */
-  transform: scale(0.98); /* Slightly shrink the button when clicked */
-  transition: transform 0.1s ease-out; /* Smooth transition for the active state */
-}
-/* Heading */
-.project-heading {
-  color: white;
-  text-align: center;
-  
-  font-family: "Rubik", Sans-serif;
-  font-size: 34px;
-  font-weight: 500;
-  line-height: 1.3;
-  margin: 0;
-  padding-bottom: 12px;
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  padding: 20px;
+  text-align: center; /* Center-align content */
 }
 
-/* Button container for project filters */
+/* Heading styling */
+.project-heading {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* Button container */
 .button-container {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  margin-bottom: 30px;
+  gap: 10px; /* Spacing between buttons */
+  margin-bottom: 20px;
 }
 
+/* Button styling */
 .project-button {
-  color: #111111;
-    padding: 8px 20px;
-    margin-bottom: 10px;
-    background-color: #f8f8f8;
-    border-radius: 4px;
-    font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
   border: none;
+  border-radius: 5px;
+  background-color: #555; /* Default button color */
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .project-button:hover {
-  background-color: #ffb400;
+  background-color: #ffb400; /* Hover effect */
+  color: #000;
 }
 
-/* Active state for the button (when clicked) */
 .project-button.active {
-  background-color: #ffb400; /* Change background color for the active button */
-  color: white; /* Optional: Change text color for better contrast */
+  background-color: #ffb400; /* Active button styling */
+  color: #000;
 }
 
-
-/* Projects Grid */
-/* Projects Grid - 4 by 4 layout */
+/* Grid layout for projects with side spacing */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 projects per row */
-  gap: 20px;
-  width: 100%; /* Ensure full width */
-  margin: 0 auto; /* Center the grid container */
-  padding-bottom: 40px; /* Optional: Adds space at the bottom */
-  box-sizing: border-box; /* Make sure padding doesn't affect width */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusts to fit available space */
+  gap: 20px; /* Spacing between cards */
+  padding: 20px; /* Internal padding for the grid */
+  margin: 0 20px; /* Spacing on both sides of the grid */
+  box-sizing: border-box; /* Ensure padding and margin are included in total width */
 }
 
-
-/* Individual Project Card */
+/* Card styling */
 .project-card {
-  background-color: white;
-  border-radius: 8px;
+  background-color: #222; /* Dark card background */
+  border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
   transition: transform 0.3s ease;
-  padding: 10px; /* Add padding for spacing */
+}
+
+.project-card:hover {
+  transform: scale(1.05); /* Hover effect */
 }
 
 .project-card img {
   width: 100%;
-  height: auto; /* Adjust the height dynamically */
-  object-fit: cover;
+  height: 200px;
+  object-fit: cover; /* Auto-adjust image size */
 }
 
 .project-info {
   padding: 15px;
-  text-align: center;
 }
 
 .project-title {
   font-size: 1.2rem;
-  font-weight: bold;
+  margin: 10px 0;
 }
 
 .project-category {
-  font-size: 1rem;
-  color: #777;
+  font-size: 0.9rem;
+  color: #aaa;
 }
 
-/* No Projects Message */
+/* No projects message */
 .no-projects {
-  color: #777;
   font-size: 2rem;
+  color: #fff;
   text-align: center;
+  margin-top: 50px;
 }
 
-a{
-  text-decoration: none;
-}
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  /* Stack the button container vertically */
+/* Media Queries */
+
+/* For tablets and small laptops */
+@media (max-width: 1024px) {
+  .project-heading {
+      font-size: 2rem; /* Adjust heading size */
+  }
+
   .button-container {
-    flex-direction: column;
-    gap: 15px;
+      flex-wrap: wrap; /* Wrap buttons to avoid overflow */
+      gap: 8px; /* Reduce gap between buttons */
   }
 
-  /* Adjust grid layout to 2 columns on small screens */
-  .project-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* Adjust project card size for smaller screens */
-  .project-card {
-    max-width: 100%;
-  }
-
-  /* Smaller button sizes for mobile */
   .project-button {
-    font-size: 0.9rem;
-    padding: 8px 15px;
+      font-size: 0.9rem; /* Adjust button font size */
+      padding: 8px 16px; /* Adjust button padding */
+  }
+
+  .project-grid {
+      margin: 0 10px; /* Reduce side spacing */
+      gap: 15px; /* Reduce spacing between cards */
   }
 }
 
-@media (max-width: 480px) {
-  /* Single column layout on very small screens */
+/* For mobile screens */
+@media (max-width: 768px) {
+  .project-heading {
+      font-size: 1.8rem; /* Smaller heading size */
+  }
+
+  .button-container {
+      gap: 5px; /* Reduce gap further */
+  }
+
+  .project-button {
+      font-size: 0.8rem; /* Smaller font size */
+      padding: 6px 12px; /* Smaller padding */
+  }
+
   .project-grid {
-    grid-template-columns: 1fr;
+      gap: 10px; /* Smaller spacing between cards */
   }
 }
+
+/* For very small screens (phones) */
+@media (max-width: 480px) {
+  .project-heading {
+      font-size: 1.5rem; /* Smaller heading size */
+  }
+
+  .button-container {
+      flex-direction: column; /* Stack buttons vertically */
+      align-items: center;
+  }
+
+  .project-button {
+      width: 80%; /* Full-width buttons */
+      font-size: 0.8rem;
+      padding: 8px; /* Adjust padding */
+  }
+
+  .project-grid {
+      gap: 10px; /* Minimal spacing between cards */
+      margin: 0 5px; /* Narrow side spacing */
+  }
+
+  .project-card img {
+      height: 150px; /* Adjust image height for smaller screens */
+  }
+
+  .project-title {
+      font-size: 1rem; /* Smaller title size */
+  }
+
+  .project-category {
+      font-size: 0.8rem; /* Smaller category text */
+  }
+}
+
 
 /* Active button style */
 /* five layer */
@@ -526,81 +578,135 @@ a{
 /* Container for the text and image */
 .cores {
   display: flex;
-  justify-content: space-between; /* Pushes text to the left, image to the right */
-  align-items: center; /* Vertically centers the text and image */
-  background-color: #f2f2f3;
-
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allow the items to wrap on smaller screens */
 }
 
-/* Text container with heading and paragraph */
 .text-container {
-  flex: 1; /* Allows text container to take up available space on the left */
-  padding-right: 20px; /* Creates some space between text and image */
-  text-align: center; /* Centers the text inside the container */
+  flex: 1;
+  margin-right: 20px;
 }
 
-/* Style for the heading */
 .text-container h1 {
-  color: #000;
-  font-family: "Rubik", Sans-serif;
-  font-size: 34px;
-  font-weight: 500;
-  line-height: 1.3;
-  margin: 0;
-  padding-bottom: 12px;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
-/* Paragraph below the heading */
 .text-container p {
-  color: #444444;
-  font-family: "Rubik", Sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.4em;
-  padding: 0;
-  margin: 0;
-  word-wrap: break-word; /* Ensures long words break */
-  white-space: normal; /* Ensures normal line breaks */
-  width: 100%; /* Adjust width if needed for controlling text wrapping */
+  font-size: 1rem;
+  margin-bottom: 20px;
+  word-break: break-word; /* Ensure text wraps properly */
+  text-align: center;
 }
 
+.image-container {
+  flex: 1;
+  text-align: right;
+}
 
-/* Image container on the right */
 .image-container img {
-  width: 100%; /* Adjust the image size */
-  height: 797px;
-  object-fit: cover; /* Ensures the image fits nicely within the container */
+  height: 660px;
+  width: 100%;
 }
 
-@media (max-width: 768px) {
-  .cores {
-    flex-direction: column; /* Stacks text and image vertically */
-    align-items: center;
-  }
+.box-container {
+  margin-top: 20px;
+}
 
-  .text-container {
-    padding-right: 0;
+.box {
+  background-color: #555;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.box:hover {
+  background-color: #ffb400;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+.toggle-text {
+  display: none;
+  margin: 10px 0;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .cores {
+    flex-direction: column; /* Stack the text and image containers vertically */
     text-align: center;
   }
 
+  .text-container h1 {
+    font-size: 2rem; /* Smaller font size for the heading */
+  }
+
+  .text-container p {
+    font-size: 0.9rem; /* Smaller text for the paragraph */
+  }
+
+  .image-container {
+    margin-top: 20px; /* Space between image and text */
+  }
+
   .image-container img {
-    height: auto;
-    max-width: 100%; /* Ensures image doesn't overflow */
+    height: auto; /* Adjust image height for smaller screens */
+    max-height: 400px; /* Limit the height of the image */
   }
 }
 
-.button {
-  background-color: white; /* Green */
-  border: 1px solid gold;
-  color: black;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
+@media (max-width: 768px) {
+  .text-container h1 {
+    font-size: 1.8rem; /* Smaller font size for the heading */
+  }
+
+  .text-container p {
+    font-size: 0.85rem; /* Smaller text for the paragraph */
+  }
+
+  .image-container img {
+    height: auto; /* Allow image to scale based on content */
+    max-height: 300px; /* Limit the height of the image */
+  }
+
+  .box {
+    font-size: 0.9rem; /* Smaller font size for buttons */
+    padding: 8px 16px; /* Adjust padding for smaller screens */
+  }
 }
-.button3 {padding: 14px 40px;}
+
+@media (max-width: 480px) {
+  .text-container h1 {
+    font-size: 1.5rem; /* Even smaller font size for very small screens */
+  }
+
+  .text-container p {
+    font-size: 0.8rem; /* Even smaller text for the paragraph */
+  }
+
+  .image-container img {
+    height: auto; /* Scale image according to the screen */
+    max-height: 250px; /* Limit image height further */
+  }
+
+  .box {
+    font-size: 0.8rem; /* Smaller font size for buttons */
+    padding: 6px 12px; /* Adjust padding for small screens */
+  }
+}
+
 
 
 
@@ -614,6 +720,7 @@ a{
   background-repeat: no-repeat;
   position: relative;
   z-index: 1;
+
 }
 
 .core::before {
@@ -629,7 +736,7 @@ a{
 
 .video-containers {
   flex: 1;
-  max-width: 48%;
+  max-width: 98%;
   position: relative;
   cursor: pointer;
   margin-bottom: 20px; /* Added margin to separate from text */
@@ -655,9 +762,12 @@ a{
   color: white;
   background: rgba(0, 0, 0, 0.7);
   border-radius: 50%;
-  padding: 15px;
+  padding: 1px 0 29px 19px;
   cursor: pointer;
   z-index: 2;
+  width: 80px;
+    height: 80px;
+    background-color:  #ffb400;
 }
 
 video {
@@ -775,7 +885,7 @@ video {
 }
 
 .section-title {
-  font-family: "Rubik", Sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 34px;
   font-weight: 500;
   color: #000;
@@ -790,6 +900,8 @@ video {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* Four cards per row */
   gap: 20px; /* Space between cards */
+  justify-items: center; /* Center items horizontally */
+  margin-top: 20px;
 }
 
 /* Engineer Card */
@@ -800,6 +912,8 @@ video {
   overflow: hidden;
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 300px; /* Max width to prevent large cards */
 }
 
 .engineer-card:hover {
@@ -816,8 +930,8 @@ video {
 
 .engineer-img img {
   width: 100%;
-  height: 300px;
-  object-fit: cover;
+  height: 300px; /* Fixed height to ensure consistency */
+  object-fit: cover; /* Ensures the image covers the container without distortion */
   border-bottom: 2px solid #f0f0f0;
   transition: transform 0.3s ease;
 }
@@ -850,11 +964,8 @@ video {
   font-size: 22px;
   line-height: 30px;
   font-weight: 500;
-  font-style: normal;
 }
-.enginner-name::after{
-  background-color: #000000;
-}
+
 /* Auth Buttons */
 .engineer-actions {
   margin-top: 10px;
@@ -907,6 +1018,7 @@ video {
       height: 350px; /* Adjust image height for smaller screens */
   }
 }
+
 /* seven layer */
 /* Silver Background */
 .silver-background {
@@ -1031,83 +1143,82 @@ video {
 }
 /* eight layer */
 /* Tools Section */
+/* Container Styles */
+/* Container Styles */
 .tools-container {
+  text-align: center;
+  padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 20px;
-  color: #333;
-  text-align: center;
 }
 
-/* Heading */
-.tools-container h1 {
-  font-family: "Rubik", Sans-serif;
+.tools-title {
+  font-family: "Rubik", sans-serif;
   font-size: 34px;
   font-weight: 500;
-  line-height: 1.3;
-  margin: 0;
-  padding-bottom: 12px;
+  margin-bottom: 20px;
   color: #000;
 }
 
-
-/* Tools Slider */
+/* Slider Styles */
 .tools-slider {
-  position: relative;
-  overflow: hidden;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  padding-bottom: 20px;
 }
 
 .tools-wrapper {
   display: flex;
   gap: 20px;
-  transition: transform 0.5s ease-in-out;
+  justify-content: center; /* Center content on smaller screens */
 }
 
+/* Tool Card Styles */
 .tool-card {
-  background-color: #fff;
-  color: #333;
-  padding: 20px;
+  flex: 0 0 calc(33.33% - 20px); /* Three cards per row */
+  max-width: calc(33.33% - 20px);
+  background: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 300px; /* Adjust card width */
-  flex-shrink: 0; /* Prevent shrinking */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 10px;
+  transition: transform 0.3s ease;
 }
 
-.tool-card img {
-  width: 100%;
+.tool-card:hover {
+  transform: scale(1.05);
+}
 
-  object-fit: contain;
-  margin-bottom: 15px;
+/* Tool Image */
+.tool-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 /* Tool Details */
 .tool-details {
-  font-size: 1rem;
+  margin-top: 10px;
 }
 
 .tool-name {
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-size: 18px;
+  font-weight: 500;
+  color: #111;
+  margin-bottom: 5px;
 }
 
 .tool-price {
-  font-size: 1rem;
+  font-size: 16px;
   color: #555;
 }
 
-/* Hover Effects: Image Zoom and Card Lift */
-.tool-card:hover {
-  transform: translateY(-10px); /* Lift the card more on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.tool-card:hover img {
-  transform: scale(1.1); /* Enlarge the image on hover */
-}
-
-/* Tool Actions (Edit, Delete) */
+/* Tool Actions */
 .tool-actions {
   margin-top: 10px;
 }
@@ -1119,82 +1230,67 @@ video {
   padding: 5px 10px;
   border-radius: 5px;
   text-decoration: none;
+  font-size: 14px;
+  margin-right: 5px;
 }
 
 .btn-delete {
   background-color: #ff4444;
-  margin-left: 10px;
 }
 
 .btn-edit:hover,
 .btn-delete:hover {
-  background-color: #0056b3;
+  opacity: 0.9;
 }
-
-/* Slider Navigation (Optional) */
-.slider-nav {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-  gap: 10px;
+a{
+  text-decoration: none;
 }
-
-.slider-nav button {
-  width: 12px;
-  height: 12px;
-  background: #fff;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  opacity: 0.5;
-}
-
-.slider-nav button.active {
-  opacity: 1;
-  background: #007bff;
-}
-
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .tools-wrapper {
-      justify-content: space-between;
-  }
-
   .tool-card {
-      width: 250px; /* Smaller card size on medium screens */
+    flex: 0 0 calc(50% - 20px); /* Two cards per row */
+    max-width: calc(50% - 20px);
   }
 }
 
-/* Single Slide Display for Small Screens */
+/* Responsive Design for Single Card */
 @media (max-width: 768px) {
-  .tools-slider {
-    overflow: hidden; /* Ensure only one card is visible */
+  .tool-card {
+    flex: 0 0 100%; /* Full width for one card */
+    max-width: 100%;
   }
 
   .tools-wrapper {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
+    justify-content: center; /* Center the single card */
   }
 
-  .tool-card {
-    width: 100%; /* Full width for a single slide */
-    flex-shrink: 0;
+  .tools-slider {
+    overflow: hidden; /* Hide the scrollbar */
   }
 }
+
+
+
 
 
 
 /* nine layer */
 /* News Section */
 /* News Section */
+/* Centered Title */
+/* Centered Title */
+/* Centered Title */
+/* Centered Title */
+/* Centered Title */
+/* News Card */
+/* News Title */
 .news-title {
   text-align: center; /* Center the title */
-  font-family: "Rubik", Sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 34px;
   font-weight: 500;
   line-height: 1.3;
-  margin: 0;
-  padding-bottom: 12px;
+  margin-bottom: 20px; /* Add some space below the title */
   color: #000;
 }
 
@@ -1202,8 +1298,8 @@ video {
 .news-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Three columns for larger screens */
-  gap: 30px;
-  padding: 0 20px;
+  gap: 20px; /* Reduced gap between cards */
+  padding: 0 10px; /* Adjust padding around the grid */
   justify-items: center; /* Center align cards within the grid */
   margin: 0 auto; /* Centers the entire grid */
   max-width: 1200px; /* Optional: limits the max width of the grid */
@@ -1216,27 +1312,23 @@ video {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   position: relative;
-  padding: 20px;
+  padding: 15px; /* Reduced padding inside the card */
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Space out content */
-  max-width: 100%; /* Ensures the card takes up available width */
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 20px; /* Added padding to the left */
-  padding-right: 20px; /* Added padding to the right */
-  width: calc(100% - 40px); /* Adjust width to account for the padding */
+  justify-content: space-between;
+  width: 300px; /* Fixed card width for smaller size */
+  height: 400px; /* Fixed card height */
 }
 
-/* Date Box with Golden Background */
+/* Date Box */
 .date-box {
   position: absolute;
-  top: 220px;
-  left: 35px;
-  background-color: #ffb400; /* Golden color */
+  top: 135px;
+  left: 10px;
+  background-color: #ffb400;
   color: #ffffff;
-  padding: 8px 15px;
-  font-size: 15px;
+  padding: 5px 10px; /* Reduced padding for smaller size */
+  font-size: 14px; /* Slightly smaller font size */
   border-radius: 4px;
   font-weight: bold;
 }
@@ -1244,43 +1336,44 @@ video {
 /* Blog Image */
 .news-image {
   width: 100%;
-  height: 200px; /* Fixed height for the image */
+  height: 150px; /* Reduced height */
   object-fit: cover;
-  margin-top: 20px;
   border-radius: 8px;
 }
 
 /* Blog Title */
 .blog-title {
+  margin-top: 15px; /* Reduced margin above the title */
+  color: #111111;
+  text-align: left;
+  font-family: "Rubik", sans-serif;
+  font-size: 18px; /* Smaller font size */
+  line-height: 24px;
+  font-weight: 500;
+}
 
-  margin-top: 27px;
-    color: #333;
-    text-align: left;
-    font-family: Rubik, sans-serif;
-    font-size: 22px;
-    line-height: 30px;
-    font-weight: 500;
-    font-style: normal;
+.blog-title:hover {
+  color: #ffb400;
 }
 
 /* Blog Content */
 .blog-content {
-  font-size: 1rem;
+  font-size: 0.85rem; /* Smaller font size */
   color: #555;
   margin-bottom: 10px;
-  line-height: 1.2em;
+  line-height: 1.3em;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-/* Meta Info (Created by, Comments) */
+/* Meta Info */
 .meta-info {
   display: flex;
   justify-content: space-between;
-  margin-top: 15px;
-  font-size: 0.9rem;
+  margin-top: 10px; /* Reduced margin */
+  font-size: 0.8rem; /* Smaller font size */
   color: #777;
 }
 
@@ -1289,22 +1382,19 @@ video {
 }
 
 .comments {
-  color: #007bff;
+  color: #444;
 }
 
-/* Edit and Delete Buttons */
-.post-actions {
-  margin-top: 15px;
-}
-
+/* Buttons */
 .edit-button,
 .delete-button {
   background-color: #007bff;
   color: #fff;
-  padding: 5px 10px;
+  padding: 4px 8px; /* Reduced padding */
   border-radius: 5px;
   text-decoration: none;
-  margin: 5px;
+  margin: 5px 2px; /* Adjusted margin */
+  font-size: 0.8rem; /* Smaller font size */
 }
 
 .delete-button {
@@ -1325,14 +1415,15 @@ video {
 
 @media (max-width: 768px) {
   .news-grid {
-      grid-template-columns: 1fr; /* Single column for mobile */
+      grid-template-columns: 1fr; /* Single column for small screens */
   }
 
   .date-box {
-      font-size: 0.9rem; /* Smaller date text on mobile */
-      padding: 4px 10px;
+      font-size: 0.8rem; /* Smaller font for mobile */
+      padding: 4px 8px;
   }
 }
+
 
 /* tenlayer */
 /* Footer Styles */

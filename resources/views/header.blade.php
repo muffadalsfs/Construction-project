@@ -176,6 +176,10 @@
       </li>
       <div class="icon-links">
         <a class="icon-link" href="#search"><i class="fas fa-search"></i></a>
+        <div class="wrap">
+        <div class="vLine"></div>
+    </div>
+
         <a class="icon-link" href="#cart"><i class="fas fa-shopping-cart"></i></a>
       </div>
     </div>

@@ -32,23 +32,24 @@
 
 
   
-    <h1 class="services-heading">Our Services</h1>
-    <h1 class="services"></h1>
-    <div class="services-container">
-        @foreach($service as $serv)
-        <div class="service-card">
-            <div class="image-wrapper">
+<h1 class="services-heading">Our Services</h1>
+<h1 class="services"></h1>
+<div class="services-container">
+    @foreach($service as $serv)
+    <div class="service-card">
+        <div class="image-wrapper">
             <img src="{{ $serv->path ? (file_exists(public_path('storage/public/' . $serv->path)) ? url('storage/public/' . $serv->path) : asset('Images/1.jpg')) : asset('Images/1.jpg') }}" alt="{{ $serv->title }}">
-            </div>
-            <div class="service-content">
-                <a href="{{ route('detailservice', $serv->id) }}">
-                    <h3 class="service-title">{{ $serv->name }}</h3>
-                </a>
-                <p class="limited-content">{{ \Illuminate\Support\Str::limit($serv->content, 100) }}</p>
-            </div>
         </div>
-        @endforeach
+        <div class="service-content">
+            <a href="{{ route('detailservice', $serv->id) }}" >
+                <h3 class="service-title">{{ $serv->name }}</h3>
+            </a>
+            <p class="limited-content">{{ \Illuminate\Support\Str::limit($serv->content, 100) }}</p>
+        </div>
     </div>
+    @endforeach
+</div>
+
 
       <div class="counters-container">
         <div class="counter-card">
@@ -129,6 +130,7 @@
 }
 
 
+
 .services-container {
   display: flex;
   flex-wrap: wrap; /* Allows wrapping for responsive layout */
@@ -136,12 +138,10 @@
   gap: 20px; /* Space between boxes */
   padding: 20px 30px; /* Added horizontal padding for side spacing */
   background-image: url('{{ asset('Images/service-banner1.png') }}');
-
   background-size: cover; /* Ensure the image covers the entire section */
   background-position: center; /* Center the background image */
   background-repeat: no-repeat; /* Prevent tiling */
 }
-
 
 
 .highlight-box {
