@@ -76,7 +76,7 @@
 
     <!-- Category Buttons -->
     <div class="button-container">
-        <button class="project-button" onclick="filterProjects('All')">All</button>
+        <button class="project-button active" onclick="filterProjects('All')">All</button>
         <button class="project-button" onclick="filterProjects('Construction')">Construction</button>
         <button class="project-button" onclick="filterProjects('Automotive')">Automotive</button>
         <button class="project-button" onclick="filterProjects('Industrial')">Industrial</button>
@@ -87,19 +87,20 @@
     <div class="project-grid">
         @foreach($pro as $pros)
         <div class="project-card" data-category="{{ $pros->category }}">
-        <img src="{{ $pros->path ? (file_exists(public_path('storage/public/' . $pros->path)) ? url('storage/public/' . $pros->path) : asset('Images/1.jpg')) : asset('Images/1.jpg') }}" alt="{{ $pros->title }}">
-        <div class="project-info">
+            <a href="{{ route('project.detail', $pros->id) }}">
+                <img src="{{ $pros->path ? (file_exists(public_path('storage/public/' . $pros->path)) ? url('storage/public/' . $pros->path) : asset('Images/1.jpg')) : asset('Images/1.jpg') }}" alt="{{ $pros->title }}">
+            </a>
+            <div class="project-info">
                 <h3 class="project-title">{{ $pros->title }}</h3>
                 <p class="project-category">{{ $pros->category }}</p>
             </div>
         </div>
-        <a>
         @endforeach
     </div>
-        </div>
-        @else
-        <h1 class="no-projects">No projects available at the moment.</h1>
-        @endif
+</div>
+@else
+<h1 class="no-projects">No projects available at the moment.</h1>
+@endif
 
         <div class="cores">
     <div class="text-container">
@@ -221,7 +222,6 @@
 
 
 @if($tool->isNotEmpty())
-
     <div class="tools-container">
         <h1 class="tools-title">Our Latest Products</h1>
         <div class="tools-slider" id="toolsSlider">
@@ -252,6 +252,7 @@
         </div>
     </div>
 @endif
+
 
 
 

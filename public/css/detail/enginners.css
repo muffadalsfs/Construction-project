@@ -11,10 +11,10 @@
     
     /* Engineer Image */
     .engineer-image {
-        max-width: 100%;
-        height: auto;
+        max-width: 40%; /* Ensures the image is responsive and doesn't exceed container width */
+        height: auto; /* Maintains aspect ratio */
         margin-right: 20px;
-        object-fit: cover;
+        object-fit: cover; /* Ensures the image fits within its container without stretching */
     }
     
     /* Engineer Info */
@@ -49,6 +49,8 @@
         .engineer-image {
             margin-right: 0;
             margin-bottom: 15px; /* Add space between image and text when stacked */
+            max-height: 300px; /* Optional: constrain image height on smaller screens */
+            object-fit: cover; /* Preserve aspect ratio */
         }
     
         .engineer-info {
@@ -74,6 +76,7 @@
             font-size: 0.8rem; /* Further reduce paragraph font size */
         }
     }
+    
     
     .related-engineers {
         display: flex;

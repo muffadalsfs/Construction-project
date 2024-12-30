@@ -20,7 +20,7 @@ class="engineer-image">
             Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
         </p>
     </div>
-</div>
+</div> s
 
 <div class="related-engineers">
     @foreach($engi as $name)

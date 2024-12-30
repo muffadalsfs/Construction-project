@@ -261,20 +261,18 @@
 }
 
 /* third layr */
-/* Content Container */
 .content-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 50px;
   gap: 20px;
-  max-width: 1200px; /* Limit container width for large screens */
-  margin: 0 auto; /* Center the container horizontally */
+  max-width: 1200px; 
+  margin: 0 auto; 
 }
 
-/* Left Section: Text */
 .text-section {
-  flex: 1; /* Take up equal space */
+  flex: 1; 
   text-align: left;
   text-decoration: double;
 }
@@ -291,13 +289,13 @@
 
 .text-section p {
   font-size: 18px;
-  color: #555; /* Lighter color for the paragraph */
-  margin-bottom: 15px; /* More space between paragraphs */
-  line-height: 1.6; /* Increased line height for better readability */
-  font-family: 'Verdana', sans-serif; /* Different font family for paragraph */
-  text-align: justify; /* Justified text for a cleaner look */
-  letter-spacing: 0.5px; /* Slight letter spacing for better readability */
-  font-weight: 500;
+  color: #555; 
+  margin-bottom: 15px; 
+  line-height: 1.6; 
+  font-family: 'Verdana', sans-serif;
+  text-align: justify; 
+  letter-spacing: 0.5px;
+    font-weight: 500;
 }
 
 .text-section .cta-button {
@@ -321,7 +319,6 @@
   transform: scale(1.1);
 }
 
-/* Right Section: Image Grid */
 .image-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -334,13 +331,13 @@
   max-width: 300px;
   overflow: hidden;
   margin: 0 auto;
-  min-height: 200px; /* Add minimum height to prevent collapse */
-  position: relative; /* Set relative positioning to allow child elements to be positioned absolutely */
+  min-height: 200px; 
+  position: relative;
 }
 
 .image-box img {
   width: 100%;
-  height: 100%; /* Ensure the height fills the box properly */
+  height: 100%; 
   object-fit: cover;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
@@ -352,10 +349,10 @@
 
 .image-box .image-text {
   position: absolute;
-  top: 50%; /* Position in the center vertically */
-  left: 50%; /* Position in the center horizontally */
-  transform: translate(-50%, -50%); /* Offset by 50% to align perfectly center */
-  color: #fff; /* White text for contrast */
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  color: #fff; 
   font-size: 1.2rem;
   font-weight: bold;
   text-align: center;
@@ -398,7 +395,7 @@
 /* Container styling */
 /* Container styling */
 .project-container {
-  background-color: #000; /* Black background */
+  background-color: #000000;
   color: #fff; /* White text */
   padding: 20px;
   text-align: center; /* Center-align content */
@@ -444,10 +441,11 @@
 /* Grid layout for projects with side spacing */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusts to fit available space */
+  grid-template-columns: repeat(3, 1fr); /* Fixed 3 columns per row */
   gap: 20px; /* Spacing between cards */
   padding: 20px; /* Internal padding for the grid */
-  margin: 0 20px; /* Spacing on both sides of the grid */
+  margin: 0 auto; /* Centers the grid and adds left/right spacing */
+  max-width: 1200px; /* Optional: limits the max width of the grid */
   box-sizing: border-box; /* Ensure padding and margin are included in total width */
 }
 
@@ -511,9 +509,10 @@
   }
 
   .project-grid {
-      margin: 0 10px; /* Reduce side spacing */
-      gap: 15px; /* Reduce spacing between cards */
-  }
+    grid-template-columns: repeat(2, 1fr); /* 2 columns per row on medium screens */
+    gap: 15px; /* Adjust spacing between cards */
+    margin: 0 10px; /* Reduce side spacing */
+}
 }
 
 /* For mobile screens */
@@ -532,8 +531,9 @@
   }
 
   .project-grid {
-      gap: 10px; /* Smaller spacing between cards */
-  }
+    grid-template-columns: 1fr; /* 1 column per row on smaller screens */
+    gap: 10px; /* Reduce spacing between cards */
+}
 }
 
 /* For very small screens (phones) */
@@ -574,8 +574,7 @@
 
 /* Active button style */
 /* five layer */
-/* Main container for text and image */
-/* Container for the text and image */
+
 .cores {
   display: flex;
   align-items: center;
@@ -651,6 +650,7 @@
 
   .text-container h1 {
     font-size: 2rem; /* Smaller font size for the heading */
+    margin: 20px;
   }
 
   .text-container p {
@@ -663,13 +663,15 @@
 
   .image-container img {
     height: auto; /* Adjust image height for smaller screens */
-    max-height: 400px; /* Limit the height of the image */
+    max-height: 100%; /* Limit the height of the image */
   }
 }
 
 @media (max-width: 768px) {
   .text-container h1 {
     font-size: 1.8rem; /* Smaller font size for the heading */
+    margin: 20px;
+
   }
 
   .text-container p {
@@ -678,7 +680,7 @@
 
   .image-container img {
     height: auto; /* Allow image to scale based on content */
-    max-height: 300px; /* Limit the height of the image */
+    max-height: 100%; /* Limit the height of the image */
   }
 
   .box {
@@ -690,6 +692,8 @@
 @media (max-width: 480px) {
   .text-container h1 {
     font-size: 1.5rem; /* Even smaller font size for very small screens */
+    margin: 20px;
+
   }
 
   .text-container p {
@@ -744,12 +748,12 @@
 
 .video-thumbnail {
   position: relative;
-  overflow: hidden;
+  overflow: hidden; 
 }
 
 .video-thumbnail img {
   width: 100%;
-  height: auto;
+  height: 660px;
   display: block;
 }
 
@@ -777,7 +781,7 @@ video {
 
 .text-containers {
   flex: 1;
-  max-width: 48%;
+  max-width: 49%;
   padding: 100px;
   position: relative;
   z-index: 2;
@@ -868,7 +872,7 @@ video {
 
   .play-button {
     font-size: 35px; /* Adjust play button size for mobile */
-    padding: 10px; /* Adjust padding for mobile devices */
+    padding: 14px 20px 16px 26px;
   }
 }
 
@@ -1005,7 +1009,7 @@ video {
 
 @media (max-width: 768px) {
   .engineer-grid {
-      grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+      grid-template-columns: repeat(1, 1fr); /* Two cards per row */
   }
 }
 
@@ -1254,6 +1258,7 @@ a{
 }
 
 /* Responsive Design for Single Card */
+/* Responsive Design for Single Card */
 @media (max-width: 768px) {
   .tool-card {
     flex: 0 0 100%; /* Full width for one card */
@@ -1261,13 +1266,15 @@ a{
   }
 
   .tools-wrapper {
-    justify-content: center; /* Center the single card */
+    display: block; /* Ensure the wrapper does not display flex, making cards stack */
+    gap: 20px; /* Adjust space between cards */
   }
 
   .tools-slider {
-    overflow: hidden; /* Hide the scrollbar */
+    overflow: visible; /* No scroll needed */
   }
 }
+
 
 
 

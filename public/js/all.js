@@ -59,7 +59,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const wrapper = slider.querySelector(".tools-wrapper");
     const sliderButtons = document.querySelectorAll(".slider-button");
     let slideIndex = 0;
-    const slideInterval = 3000; // Auto-slide every 3 seconds
+
+    // Default auto-slide interval (slower on small screens)
+    const slideIntervalDefault = 3000; // 3 seconds (for larger screens)
+    const slideIntervalSmallScreen = 5000; // 5 seconds (slower for small screens)
+    let slideInterval = window.innerWidth <= 768 ? slideIntervalSmallScreen : slideIntervalDefault;
+
     let autoSlide;
 
     // Function to calculate card width dynamically
@@ -70,14 +75,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to slide
     const slide = (direction = "next") => {
-        const cardWidth = getCardWidth();
-        const cards = wrapper.querySelectorAll(".tool-card");
-        if (direction === "next") {
-            slideIndex = (slideIndex + 1) % cards.length;
-        } else {
-            slideIndex = (slideIndex - 1 + cards.length) % cards.length;
+        if (window.innerWidth > 768) { // Only slide for larger screens
+            const cardWidth = getCardWidth();
+            const cards = wrapper.querySelectorAll(".tool-card");
+            if (direction === "next") {
+                slideIndex = (slideIndex + 1) % cards.length;
+            } else {
+                slideIndex = (slideIndex - 1 + cards.length) % cards.length;
+            }
+            wrapper.style.transition = "transform 0.6s ease"; // Transition speed
+            wrapper.style.transform = `translateX(-${slideIndex * cardWidth}px)`;
         }
-        wrapper.style.transform = `translateX(-${slideIndex * cardWidth}px)`;
     };
 
     // Start auto slider
@@ -100,17 +108,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Restart slider on window resize to adjust card width
+    // Restart slider on window resize to adjust card width and interval speed
     window.addEventListener("resize", () => {
         stopAutoSlide();
         slideIndex = 0; // Reset index to avoid out-of-bound issues
         wrapper.style.transform = "translateX(0)"; // Reset position
+        // Adjust auto-slide interval based on screen size
+        slideInterval = window.innerWidth <= 768 ? slideIntervalSmallScreen : slideIntervalDefault;
         startAutoSlide();
     });
 
     // Initialize auto slider
     startAutoSlide();
 });
-
-
-    

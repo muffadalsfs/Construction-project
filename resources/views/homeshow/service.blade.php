@@ -2,7 +2,7 @@
 
 @section('content')
 <link rel="stylesheet" href="{{ asset('css/logoshow.css') }}">
-<link rel="stylesheet" href="{{asset('css/shows/services.css')}}">
+
 <div class="image-container">
     <img src="{{ asset('Images/banner2.jpg') }}" alt="Service Image" class="top-image">
     <h1 class="image-title"> Archives: Services</h1>
@@ -13,7 +13,7 @@
 <div class="services-container">
     @foreach($service as $serv)
     <div class="service-card">
-        <a href="{{ route('detailservice', $serv->id) }}">
+        <a href="{{ route('detailservice', $serv->id) }}" class="service-link">
             <div class="image-wrapper">
                 <img src="{{ $serv->path ? (file_exists(public_path('storage/public/' . $serv->path)) ? url('storage/public/' . $serv->path) : asset('Images/1.jpg')) : asset('Images/1.jpg') }}" 
                      alt="{{ $serv->title }}" 
@@ -29,12 +29,14 @@
 </div>
 
 
+
+
 @endsection
 <style>
 
 .services-heading {
-  text-align: center;
-  padding: 30px 0; 
+  text-align: center; /* Centers the heading */
+  padding: 30px 0;
   font-family: "Rubik", Sans-serif;
   font-size: 36px;
   font-weight: 500;
@@ -44,14 +46,14 @@
 .services-container {
   display: flex;
   flex-wrap: wrap; 
-  justify-content: space-between; 
-  gap: 15px; 
-  padding: 20px; 
+  justify-content: space-between; /* Space between cards */
+  gap: 15px; /* Adjust the gap between the cards */
+  padding: 0 20px; /* Add padding to the left and right to ensure spacing */
 }
 
 .service-card {
-  flex: 1 1 calc(20% - 15px);
-  max-width: calc(20% - 15px);
+  flex: 1 1 calc(25% - 15px); /* Four cards per row */
+  max-width: calc(25% - 15px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   overflow: hidden;
@@ -71,26 +73,35 @@
 
 .image-wrapper {
   width: 100%;
-  height: 150px;
+  height: 200px; /* Fix the height of the image wrapper */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
   border-radius: 8px;
+  padding: 0;
 }
 
 .service-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 100%; /* Ensure the image takes full width */
+  height: 100%; /* Ensure the image takes full height */
+  object-fit: cover; /* Ensure the image is fully contained without distortion */
 }
 
 .service-title {
   font-size: 1rem;
   color: #007bff;
   margin: 10px 0 5px;
-  text-decoration: none;
+  text-decoration: none; /* Ensure no underline */
+  display: block;
+}
+
+.service-link {
+  text-decoration: none; /* Remove underline from anchor links */
 }
 
 .service-title:hover {
-  text-decoration: none;
+  text-decoration: none; /* No underline on hover */
 }
 
 .limited-content {
@@ -102,25 +113,27 @@
 
 @media (max-width: 1024px) {
   .service-card {
-    flex: 1 1 calc(25% - 15px);
-    max-width: calc(25% - 15px);
+    flex: 1 1 calc(33.33% - 15px); /* Three cards per row */
+    max-width: calc(33.33% - 15px);
   }
 }
 
 @media (max-width: 768px) {
   .service-card {
-    flex: 1 1 calc(33.33% - 15px);
-    max-width: calc(33.33% - 15px);
+    flex: 1 1 calc(50% - 15px); /* Two cards per row */
+    max-width: calc(50% - 15px);
   }
 }
 
 @media (max-width: 480px) {
   .service-card {
-    flex: 1 1 calc(50% - 15px);
-    max-width: calc(50% - 15px);
+    flex: 1 1 calc(100% - 15px); /* One card per row */
+    max-width: calc(100% - 15px);
     height: auto;
   }
 }
+
+
 
 
 </style>
