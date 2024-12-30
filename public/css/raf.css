@@ -446,7 +446,7 @@
   padding: 20px; /* Internal padding for the grid */
   margin: 0 auto; /* Centers the grid and adds left/right spacing */
   max-width: 1200px; /* Optional: limits the max width of the grid */
-  box-sizing: border-box; /* Ensure padding and margin are included in total width */
+  box-sizing: border-box; /* Ensure padding and margin are included in total width */ 
 }
 
 /* Card styling */

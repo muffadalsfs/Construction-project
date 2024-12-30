@@ -44,26 +44,20 @@
 }
 
 .services-container {
-  display: flex;
-  flex-wrap: wrap; 
-  justify-content: space-between; /* Space between cards */
-  gap: 15px; /* Adjust the gap between the cards */
-  padding: 0 20px; /* Add padding to the left and right to ensure spacing */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Fixed 3 columns per row */
+  gap: 20px; /* Spacing between cards */
+  padding: 20px; /* Internal padding for the grid */
+  margin: 0 auto; /* Centers the grid and adds left/right spacing */
+  max-width: 1200px; /* Optional: limits the max width of the grid */
+  box-sizing: border-box; /* Ensure padding and margin are included in total width */
 }
 
 .service-card {
-  flex: 1 1 calc(25% - 15px); /* Four cards per row */
-  max-width: calc(25% - 15px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  background-color: #222; /* Dark card background */
+  border-radius: 10px;
   overflow: hidden;
-  background-color: #fff;
   text-align: center;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 300px;
   transition: transform 0.3s ease;
 }
 
@@ -83,9 +77,9 @@
 }
 
 .service-image {
-  width: 100%; /* Ensure the image takes full width */
-  height: 100%; /* Ensure the image takes full height */
-  object-fit: cover; /* Ensure the image is fully contained without distortion */
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Auto-adjust image size */
 }
 
 .service-title {
@@ -115,6 +109,8 @@
   .service-card {
     flex: 1 1 calc(33.33% - 15px); /* Three cards per row */
     max-width: calc(33.33% - 15px);
+     gap: 10px; /* Minimal spacing between cards */
+      margin: 0 5px; /* Narrow side spacing */
   }
 }
 
