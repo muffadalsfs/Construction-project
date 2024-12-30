@@ -22,9 +22,15 @@
         <div class="blog-content">
             <p class="title">{{ $user->title }}</p>
             <p class="limited-content">{{ \Illuminate\Support\Str::limit($user->content, 100) }}</p>
+            @auth 
+                @if (Auth::id() === $user->user_id)
+                <a href="{{ route('blog.delete', $user->id) }}" class="delete-button">Delete</a>
+                <a href="{{ route('blog.edit', $user->id) }}" class="edit-button">Edit</a>
+                @endif
+                @endauth
             <div class="blog-meta">
                 <span>Created by: {{ $user->user->name }}</span>
-                <span class="comment-option">Comments</span>
+                <span class="comment-option">Comments</span> 
             </div>
         </div>
     </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Enginner;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 class Engineercontroller extends Controller
 {
     public function create()
@@ -19,6 +20,7 @@ class Engineercontroller extends Controller
         $eg=new Enginner();
         $eg->name=$request->name;
         $eg->path=$image;
+        $eg->user_id = Auth::id();
        $eg->save();
        return redirect()->route('enginners.index')->with('success', 'Engineer added successfully!');
     }

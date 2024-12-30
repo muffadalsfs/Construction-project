@@ -13,7 +13,7 @@
 
 
 
-
+@if($enginner->isNotEmpty())
 <div class="engineer-container">
     <h3 class="section-title">Engineers</h3>
     <div class="engineer-grid">
@@ -25,11 +25,13 @@
                     <div class="overlay">
                     <a href="{{ route('enginners.detail', $eg->id) }}"><p class="engineer-name">{{ $eg->name }}</p></a>
                     </div>
+                    
                 </div>
             </div>
         @endforeach
+        @endif
     </div>
-</div>vv
+</div>
 
 
 @endsection

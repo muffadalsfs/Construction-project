@@ -19,6 +19,7 @@ class ProjectSeeder extends Seeder
             'value' => '45core',
             'category' => 'Automotive',
             'path' => 'images/1.jpg', // Correct relative path
+            'user_id' => 1,
         ]);
         
     }

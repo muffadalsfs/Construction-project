@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Project;
 use Illuminate\Support\Facades\Storage; 
+use Illuminate\Support\Facades\Auth;
 class ProjectController extends Controller
 {
     public function store(Request $request)
@@ -20,6 +21,7 @@ class ProjectController extends Controller
         $project->path = $image;
         $project->location=$request->location;
         $project->value=$request->value;
+        $project->user_id = Auth::id();
         $project->Category=$request->Category;
         $project->save();
     

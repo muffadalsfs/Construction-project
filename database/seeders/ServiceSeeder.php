@@ -18,6 +18,7 @@ class ServiceSeeder extends Seeder
             'name' => 'building',
             'content' => 'jajajsjs',
             'path' => 'service.jpg',
+            'user_id' => 1,
         ]);
     }
 }

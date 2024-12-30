@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Service;
 use Illuminate\Support\Facades\Storage; 
+use Illuminate\Support\Facades\Auth;
 class servicecontroller extends Controller
 {
     public function service(){
@@ -18,6 +19,7 @@ class servicecontroller extends Controller
        $service->name=$request->name;
        $service->content=$request->content;
        $service->path=$image;
+       $service->user_id = Auth::id();
        $service->save();
        return redirect()->route('showservice');
     }

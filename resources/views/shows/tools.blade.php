@@ -14,7 +14,8 @@
             <p>Price: {{ $tool->price }}</p>
 </a>
                 
-            
+@auth 
+@if (Auth::id() === $tool->user_id)
             <div class="action-buttons">
                 <a href="{{ route('tools.edit', $tool->id) }}" class="edit-button">Edit</a>
                 
@@ -24,6 +25,8 @@
                     <button type="submit" class="delete-button">Delete</button>
                 </form>
             </div>
+            @endif
+            @endauth
         </div>
     @endforeach
 </div>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Tool;
 
 use Illuminate\Support\Facades\Storage; 
+use Illuminate\Support\Facades\Auth;
 class Toolcontroller extends Controller
 {
     public function create()
@@ -20,6 +21,7 @@ class Toolcontroller extends Controller
         $to->name=$request->name;
         $to->path=$image;
         $to->price=$request->price;
+        $to->user_id = Auth::id();
         $to->save();
         return redirect()->route('tools.index');
 

@@ -17,7 +17,7 @@ class EnginnerSeeder extends Seeder
             
              'name'=>'rahul',
              'path' => 'enginner.jpg',
-             
+             'user_id' => 1,
          ]);   
     }
 }

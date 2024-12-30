@@ -20,10 +20,20 @@
                      class="service-image">
             </div>
             <div class="service-content">
-                <h3 class="service-title">{{ $serv->name }}</h3>
+                <h3 class="service-title">{{ $serv->name }}</h3> 
             </div>
         </a>
         <p class="limited-content">{{ \Illuminate\Support\Str::limit($serv->content, 100) }}</p>
+        @auth 
+                @if (Auth::id() === $serv->user_id)
+                <a href="{{ route('editservice', $serv->id) }}" class="edit-button">Edit</a>
+                <form action="{{ route('deleteservice', $serv->id) }}" method="POST" class="delete-form" onsubmit="return confirm('Are you sure you want to delete this service?');">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="delete-button">Delete</button>
+                </form>
+                @endif
+                @endauth
     </div>
     @endforeach
 </div>
@@ -103,6 +113,50 @@
   color: #666;
   margin-top: 5px;
   text-align: center;
+}
+.edit-button,
+.delete-button {
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  text-decoration: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px; /* Set consistent width */
+  height: 36px; /* Set consistent height */
+  box-sizing: border-box; /* Ensure padding is considered within dimensions */
+}
+
+.detail-button {
+  background-color: #007bff;
+}
+
+.detail-button:hover {
+  background-color: #0056b3;
+}
+
+.edit-button {
+  background-color: #28a745;
+}
+
+.edit-button:hover {
+  background-color: #1e7e34;
+}
+
+.delete-button {
+  background-color: #dc3545;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+.delete-form {
+  margin: 0;
 }
 
 @media (max-width: 1024px) {

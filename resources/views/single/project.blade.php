@@ -25,7 +25,7 @@
         class="blog-image">
            
         </div>
-
+       
         <h3>Our Professional & Expert Team</h3>
         <p class="paragraph">Project name:{{$project->title}}</p>
         <p class="paragraph">Customer name:{{$project->name}}</p>
@@ -59,6 +59,7 @@
             <a href="{{ url('/') }}" class="cancel-button">Back to Home</a>
         </div>
     </div>
+ 
     @endforeach
 </body>
 </html>

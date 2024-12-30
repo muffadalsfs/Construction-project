@@ -14,12 +14,16 @@
             <p class="limited-content">{{ \Illuminate\Support\Str::limit($serv->content, 100) }}</p>
             <div class="service-actions">
                 <a href="{{ route('detailservice', $serv->id) }}" class="detail-button">View Details</a>
+                @auth 
+                @if (Auth::id() === $serv->user_id)
                 <a href="{{ route('editservice', $serv->id) }}" class="edit-button">Edit</a>
                 <form action="{{ route('deleteservice', $serv->id) }}" method="POST" class="delete-form" onsubmit="return confirm('Are you sure you want to delete this service?');">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="delete-button">Delete</button>
                 </form>
+                @endif
+                @endauth
             </div>
         </div>
     </div>

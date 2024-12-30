@@ -23,6 +23,12 @@
         <div class="card-content">
             <h2 class="blog-title">{{ $blogs->title }}</h2></a>
             <p class="blog-content">{{ Str::limit($blogs->content, 100, '...') }}</p>
+            @auth 
+                @if (Auth::id() === $blogs->user_id)
+                <a href="{{ route('blog.delete', $blogs->id) }}" class="delete-button">Delete</a>
+                <a href="{{ route('blog.edit', $blogs->id) }}" class="edit-button">Edit</a>
+                @endif
+                @endauth
             <div class="meta-info">
                 <span class="username">{{ $blogs->user->name ?? 'Anonymous' }}</span>
                 <span class="comments">{{ $blogs->comments_count ?? 0 }} Comments</span>

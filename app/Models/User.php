@@ -45,4 +45,17 @@ class User extends Authenticatable
     public function Blog(){
         return $this->hasMany(Blog::class);
     }
+    public function Tool(){
+        return $this->hasMany(Blog::class);
+    }
+    public function Service(){
+        return $this->hasMany(Blog::class);
+    }
+    public function Project(){
+        return $this->hasMany(Blog::class);
+    }
+    public function Enginner(){
+        return $this->hasMany(Blog::class);
+    }
+
 }

@@ -3,7 +3,7 @@
 @section('content')
 
 <link rel="stylesheet"  href="{{ asset('css/raf.css') }}">
-
+@if($Project->isNotEmpty())
 <div class="slider-container">
   <div class="slider" id="project-slider">
     @foreach($Project as $projects)
@@ -27,7 +27,7 @@
     @endforeach
   </div>
 </div> 
-
+@endif
 <div class="highlight-box">
     <p class="highlight-text">Are you looking for a Construction & Industrial Experts?</p>
     <button class="highlight-button">Request</button>
@@ -158,7 +158,8 @@
                     </a>
                 </div>
             </div>
-            @auth
+            @auth 
+@if (Auth::id() === $eg->user_id)
             <div class="engineer-actions">
                 <a href="{{ route('engineers.edit', $eg->id) }}" class="btn-edit">Edit</a>
                 <form action="{{ route('engineers.destroy', $eg->id) }}" method="POST" style="display: inline;">
@@ -166,6 +167,7 @@
                     @method('DELETE')
                     <button type="submit" class="btn-delete" onclick="return confirm('Are you sure you want to delete this engineer?')">Delete</button>
                 </form>
+                @endauth
             </div>
             @endauth
         </div>
@@ -237,6 +239,7 @@
                             <p class="tool-price">${{ $tools->price }}</p>
                         </div>
                         @auth
+                        @if(auth()->user()->id === $tools->user_id)
                             <div class="tool-actions">
                                 <a href="{{ route('tools.edit', $tools->id) }}" class="btn-edit">Edit</a>
                                 <form action="{{ route('tools.delete', $tools->id) }}" method="POST" style="display: inline;">
@@ -245,6 +248,7 @@
                                     <button type="submit" class="btn-delete" onclick="return confirm('Are you sure you want to delete this tool?')">Delete</button>
                                 </form>
                             </div>
+                            @endauth
                         @endauth
                     </div>
                 @endforeach

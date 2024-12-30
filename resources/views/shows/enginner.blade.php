@@ -13,7 +13,8 @@
             <a href="{{ route('enginners.detail', $enginners->id) }}">   <img src="{{ $enginners->path ? (file_exists(public_path('storage/public/' . $enginners->path)) ? url('storage/public/' . $enginners->path) : asset('Images/12.jpg')) : asset('Images/12.jpg') }}" alt="{{ $enginners->title }}"
             class="engineer-image"></a>
         <h3>{{ $enginners->name }}</h3>
-
+        @auth 
+        @if (Auth::id() === $enginners->user_id)
                 <div class="action-buttons">
                     <a href="{{ route('engineers.edit', $enginners->id) }}" class="edit-button">Edit</a>
                     <form action="{{ route('engineers.destroy', $enginners->id) }}" method="POST" class="delete-form">
@@ -21,6 +22,8 @@
                         @method('DELETE')
                         <button type="submit" class="delete-button">Delete</button>
                     </form>
+                    @endif
+                    @endauth
                 </div>
             </div>
         @endforeach

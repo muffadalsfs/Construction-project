@@ -31,7 +31,7 @@
 
 
 
-  
+@if($service->isNotEmpty())
 <h1 class="services-heading">Our Services</h1>
 <h1 class="services"></h1>
 <div class="services-container">
@@ -49,7 +49,7 @@
     </div>
     @endforeach
 </div>
-
+@endif
 
       <div class="counters-container">
         <div class="counter-card">
@@ -77,7 +77,7 @@
 
 
 
-
+      @if($enginner->isNotEmpty())
       <div class="engineer-container">
     @if($enginner->count() > 0)
         <h3 class="section-title">Engineers</h3>
@@ -91,7 +91,7 @@
                 <a href="{{ route('enginners.detail', $eg->id) }}"><p class="engineer-name">{{ $eg->name }}</p></a>
                 </div>
             </div>
-            @auth
+        @if (Auth::id() === $eg->user_id)
             <div class="engineer-actions">
                 <a href="{{ route('engineers.edit', $eg->id) }}" class="btn-edit">Edit</a>
                 <form action="{{ route('engineers.destroy', $eg->id) }}" method="POST" style="display: inline;">
@@ -100,11 +100,13 @@
                     <button type="submit" class="btn-delete" onclick="return confirm('Are you sure you want to delete this engineer?')">Delete</button>
                 </form>
             </div>
+            
             @endauth
         </div>
         @endforeach
     </div>
 </div>
+@endif
 
 
 

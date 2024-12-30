@@ -34,7 +34,14 @@
         <a href="{{ route('project.detail', $product->id) }}">  <h3 class="project-title">{{ $product->title }}</h3></a>
             <p class="project-content">{{ $product->content }}</p>
         </div>
-
+        @auth 
+                @if (Auth::id() === $product->user_id)
+                <a href="{{ route('project.edit', $product->id) }}" class="project-button">Edit</a>
+                <a href="{{ route('project.delete', $product->id) }}" 
+                   onclick="return confirm('Are you sure you want to delete this project?')" class="project-button">Delete</a>
+            </div>
+            @endif
+            @endauth
     </div>
     @empty
     <p>No projects available</p>
