@@ -1,117 +1,167 @@
 .image-container {
     position: relative;
     width: 100%;
-    max-width: 100%; /* Adjust max width */
-    height: 300px; /* Set a fixed height */
-    margin: auto; /* Center the container */
+    max-width: 100%;
+    height: 300px;
+    margin: auto;
 }
 
 .image-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures image scales without distortion */
+    object-fit: cover;
 }
 
 .image-container h1 {
     position: absolute;
     top: 40%;
-    
-    right:50%;
+    right: 50%;
     font-family: Roboto, sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  font-style: normal;
-  color: #f9f9f9;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    color: #f9f9f9;
 }
+
 .card-container {
-display: flex;
-flex-wrap: wrap;
-gap: 20px;
-justify-content: center;
-margin: 20px auto;
-max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 1200px;
 }
 
 .card {
-width: 30%; /* Adjust for 3 cards per row */
-background-color: #f9f9f9;
-border: 1px solid #ddd;
-border-radius: 8px;
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-overflow: hidden;
-text-align: center;
-transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    width: 30%;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card img {
-width: 100%;
-height: 200px;
-object-fit: cover;
-transition: transform 0.3s ease; /* Smooth zoom effect */
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
 .card h2 {
-font-size: 1.5em;
-margin: 10px 0;
-transition: color 0.3s ease; /* Smooth text color change */
+    font-size: 1.5em;
+    margin: 10px 0;
+    transition: color 0.3s ease;
 }
 
 .card p {
-font-size: 1em;
-color: #555;
-padding: 0 10px 10px;
+    font-size: 1em;
+    color: #555;
+    padding: 0 10px 10px;
 }
 
-/* Hover Effects */
 .card:hover {
-transform: translateY(-10px); /* Moves the card slightly upwards */
-box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Darker shadow */
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
 .card:hover img {
-transform: scale(1.1); /* Zoom in on the image */
+    transform: scale(1.1);
 }
 
 .card:hover h2 {
-color: #007bff; /* Change title color on hover */
+    color: #007bff;
 }
+
+.button-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 20px auto;
+}
+
+.edit-button {
+    display: inline-block;
+    padding: 10px 15px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.edit-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.delete-button {
+    display: inline-block;
+    padding: 10px 15px;
+    color: #fff;
+    background-color: #dc3545;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+
+.edit-button, .delete-button {
+    text-align: center;
+}
+
+.edit-button, .delete-button {
+    margin: 0 10px;
+}
+
 @media (max-width: 768px) {
-    /* Adjust image container for smaller screens */
     .image-container {
-        height: 200px; /* Reduce height for smaller screens */
+        height: 200px;
     }
 
     .image-container h1 {
-        font-size: 28px; /* Reduce font size */
-        top: 50%; /* Ensure vertical centering */
+        font-size: 28px;
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        padding: 0 10px; /* Add padding for better spacing */
-        text-align: center; /* Ensure text is centered */
+        padding: 0 10px;
+        text-align: center;
         justify-content: center;
     }
 
-    /* Adjust card layout for smaller screens */
     .card-container {
-        flex-direction: column; /* Stack cards vertically */
-        gap: 15px; /* Adjust spacing */
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
     }
 
     .card {
-        width: 90%; /* Make cards take up most of the screen width */
-        margin: auto; /* Center the cards */
+        width: 45%;
+        margin: 10px;
     }
 
-    .card img {
-        height: 150px; /* Adjust image height */
+    .button-container {
+        flex-direction: row;
+        gap: 10px;
     }
 
-    .card h2 {
-        font-size: 1.2em; /* Adjust title font size */
-        text-align: center;
-    }
-
-    .card p {
-        font-size: 0.9em; /* Adjust paragraph font size */
+    .edit-button, .delete-button {
+        width: auto;
     }
 }

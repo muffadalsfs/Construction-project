@@ -35,7 +35,14 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
         </p>
         <div class="button-group">
-            <a href="showservice" class="back-link">Back</a>
+        @auth
+    <a href="{{ route('showservice') }}" class="back-link">Back</a>
+@endauth
+
+@guest
+    <a href="{{ url('/') }}" class="back-link">Back</a>
+@endguest
+
         </div>
     </div>
 </div>

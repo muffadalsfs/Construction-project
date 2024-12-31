@@ -96,11 +96,11 @@ Route::controller(servicecontroller::class)->group(function(){
 
 });
 //VIEWS OF ALL FILES
-    Route::view('enginner' ,'enginner');
-    Route::view('service','service');
-    Route::view('blog','blog');
-    Route::view('project', 'project');
-    Route::view('Tool' ,'tool');
+    Route::view('enginnerform' ,'enginner');
+    Route::view('serviceform','service');
+    Route::view('blogform','blog');
+    Route::view('projectform', 'project');
+    Route::view('Toolform' ,'tool');
     Route::view ('header','header');
     //DEATIL ROUTE
     // Route::perfix('blog')->group(function(){
@@ -115,6 +115,7 @@ Route::controller(servicecontroller::class)->group(function(){
   });
  route::prefix('enginners')->controller(Engineercontroller::class)->group(function(){
   Route::get('{id}','detail')->name('enginners.detail');
+  Route::get('about', 'about')->name('enginners.about'); // Static route defined first
 
  });
  route::prefix('tools')->controller(Toolcontroller::class)->group(function(){
@@ -123,15 +124,15 @@ Route::controller(servicecontroller::class)->group(function(){
     Route::get('detail{id}',[servicecontroller::class,'detail'])->name('detailservice');
     // Route::get('detail/{id}', [ProjectController::class,'detail'])->name('project.detail'); // View project details
 
-    Route::get('sp',[ProjectController::class,'sp'])->name('sp');
-    Route::get('singlepage',[ProjectController::class,'singlepage'])->name('singlepage');
-    Route::get('element',[ProjectController::class,'element'])->name('element');
-    Route::get('card',[Engineercontroller::class,'element'])->name('card');
+    Route::get('projectshow',[ProjectController::class,'sp'])->name('projectshow');
+    Route::get('singleproject',[ProjectController::class,'singlepage'])->name('singleproject');
+    Route::get('projectgallery',[ProjectController::class,'element'])->name('projectgallery');
+    Route::get('teamgallery',[Engineercontroller::class,'element'])->name('teamgallery');
     Route::get('serviceshow',[servicecontroller::class,'all'])->name('serviceshow');
     Route::get('singleservice',[servicecontroller::class,'single'])->name('singleservice');
-    Route::get('elementservice',[servicecontroller::class,'elementservice'])->name('elementservice');
-    Route::get('all',[Blogcontroller::class,'all'])->name('all');
-    Route::get('homeblog',[Blogcontroller::class,'homeblog'])->name('homeblog');
+    Route::get('servicegallery',[servicecontroller::class,'elementservice'])->name('servicegallery');
+    Route::get('bloggallery',[Blogcontroller::class,'all'])->name('bloggallery');
+    Route::get('blogshow',[Blogcontroller::class,'homeblog'])->name('blogshow');
     Route::get('singleblog',[Blogcontroller::class,'singlepage'])->name('singleblog');
 //FOREGET AND RESET ROUTE
     Route::get('/forgot-password', [PasswordResetController::class, 'showForgotPasswordForm'])->name('password.request');

@@ -123,6 +123,14 @@ a{
     grid-template-columns: repeat(2, 1fr); /* 2 services per row for smaller screens */
     padding: 10px; /* Less padding on small screens */
   }
+  .button-container {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Adjust spacing between buttons */
+}
+
+.edit-button, .delete-button {
+    text-align: center; /* Center the text inside the buttons */
+}
 }
 
 @media (max-width: 480px) {

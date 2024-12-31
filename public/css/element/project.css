@@ -96,6 +96,47 @@
 a {
     text-decoration: none;
 }
+.project-button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #007bff; /* Blue background for edit button */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    margin: 5px; /* Adds space between buttons */
+}
+
+/* Hover effect for the edit button */
+.project-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Style for the delete button */
+.project-button.delete {
+    background-color: #dc3545; /* Red background for delete button */
+}
+
+/* Hover effect for the delete button */
+.project-button.delete:hover {
+    background-color: #c82333; /* Darker red on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Button container style */
+.button-container {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    align-items: center; /* Align buttons vertically in the middle */
+    gap: 15px; /* Adds space between buttons */
+    margin: 20px auto; /* Centers the container on the page */
+}
 
 /* Media Queries for responsiveness */
 
@@ -114,11 +155,28 @@ a {
         font-size: 14px; /* Slightly smaller font size for mobile */
         padding: 8px 15px;
     }
+    .button-container {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px; /* Adjust the gap between buttons */
+    }
+
+    .project-button {
+       
+        text-align: center; /* Ensure text is centered */
+    }
 }
 
 /* For medium screens (tablets) */
 @media (max-width: 1023px) {
     .project-card {
         width: 48%; /* Two cards per row for tablets */
+    }
+    .button-container {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px; /* Adjust the gap between buttons */
+    }
+
+    .project-button {
+        text-align: center; /* Ensure text is centered */
     }
 }

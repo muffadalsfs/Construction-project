@@ -96,7 +96,42 @@
     color: gold;
     border-bottom: 2px solid gold;
 }
+.project-button {
+    display: inline-block;
+    padding: 10px 15px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+}
 
+.project-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.project-button.delete {
+    background-color: #dc3545;
+}
+
+.project-button.delete:hover {
+    background-color: #c82333;
+}
+
+.button-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 20px auto;
+}
 /* Responsive Design for Small Screens */
 @media (max-width: 768px) {
     #project-grid {
@@ -111,7 +146,14 @@
         font-size: 14px;
         padding: 8px 15px;
     }
+    .button-container {
+        flex-direction: column;
+        gap: 10px;
+    }
 
+    .project-button {
+        text-align: center;
+    }
 }
 
 @media (max-width: 480px) {

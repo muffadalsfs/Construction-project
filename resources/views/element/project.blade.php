@@ -36,10 +36,12 @@
         </div>
         @auth 
                 @if (Auth::id() === $product->user_id)
-                <a href="{{ route('project.edit', $product->id) }}" class="project-button">Edit</a>
-                <a href="{{ route('project.delete', $product->id) }}" 
-                   onclick="return confirm('Are you sure you want to delete this project?')" class="project-button">Delete</a>
-            </div>
+                <div class="button-container">
+    <a href="{{ route('project.edit', $product->id) }}" class="project-button">Edit</a>
+    <a href="{{ route('project.delete', $product->id) }}" 
+       onclick="return confirm('Are you sure you want to delete this project?')" class="project-button">Delete</a>
+</div>
+
             @endif
             @endauth
     </div>

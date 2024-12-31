@@ -74,5 +74,8 @@ class Engineercontroller extends Controller
           $engi=Enginner::latest()->take(3)->get();
           return view('detail.enginner', compact('enginner','engi'));
       }
-
+      public function about()
+      {
+          return view('about');
+      }
 }

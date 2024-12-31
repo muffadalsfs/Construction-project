@@ -9,7 +9,7 @@
  
 </div>
 
-<h1 class="services-heading">Our Services</h1>
+<h1 class="services-heading">Our Services</h1> 
 <div class="services-container">
     @foreach($service as $serv)
     <div class="service-card">
@@ -26,12 +26,15 @@
         <p class="limited-content">{{ \Illuminate\Support\Str::limit($serv->content, 100) }}</p>
         @auth 
                 @if (Auth::id() === $serv->user_id)
-                <a href="{{ route('editservice', $serv->id) }}" class="edit-button">Edit</a>
-                <form action="{{ route('deleteservice', $serv->id) }}" method="POST" class="delete-form" onsubmit="return confirm('Are you sure you want to delete this service?');">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="delete-button">Delete</button>
-                </form>
+                <div class="button-container">
+    <a href="{{ route('editservice', $serv->id) }}" class="edit-button">Edit</a>
+    <form action="{{ route('deleteservice', $serv->id) }}" method="POST" class="delete-form" onsubmit="return confirm('Are you sure you want to delete this service?');">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="delete-button">Delete</button>
+    </form>
+</div>
+
                 @endif
                 @endauth
     </div>

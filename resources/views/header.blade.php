@@ -32,7 +32,7 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="{{route('serviceshow')}}">Show all service </a></li>
-              <li><a class="dropdown-item" href="service">ADD NEW </a></li>
+              <li><a class="dropdown-item" href="serviceform">ADD NEW </a></li>
               <li><a class="dropdown-item" href="{{route('singleservice')}}">Single service</a></li>
              
             </ul>
@@ -42,10 +42,10 @@
               Project
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="{{route('sp')}}">Show all </a></li>
+            <li><a class="dropdown-item" href="{{route('projectshow')}}">Show all </a></li>
 
-              <li><a class="dropdown-item" href="project">ADD new </a></li>
-              <li><a class="dropdown-item" href="{{route('singlepage')}}">SINGLE PROJECT</a></li>
+              <li><a class="dropdown-item" href="projectform">ADD new </a></li>
+              <li><a class="dropdown-item" href="{{route('singleproject')}}">SINGLE PROJECT</a></li>
              
             </ul>
           </li>
@@ -54,11 +54,11 @@
             Element
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="{{route('element')}}">Project Gallery </a></li>
+            <li><a class="dropdown-item" href="{{route('projectgallery')}}">Project Gallery </a></li>
 
-              <li><a class="dropdown-item" href="{{route('card')}}">Team gallery</a></li>
-              <li><a class="dropdown-item" href="all">Blog Gallery</a></li>
-              <li><a class="dropdown-item" href="{{route('elementservice')}}">Service gallery</a></li>
+              <li><a class="dropdown-item" href="{{route('teamgallery')}}">Team gallery</a></li>
+              <li><a class="dropdown-item" href="bloggallery">Blog Gallery</a></li>
+              <li><a class="dropdown-item" href="{{route('servicegallery')}}">Service gallery</a></li>
              
             </ul>
           </li>
@@ -67,9 +67,9 @@
             Blog
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="{{route('homeblog')}}">Show all </a></li>
+            <li><a class="dropdown-item" href="{{route('blogshow')}}">Show all </a></li>
 
-              <li><a class="dropdown-item" href="blog">Add new</a></li>
+              <li><a class="dropdown-item" href="blogform">Add new</a></li>
               <li><a class="dropdown-item" href="{{route('singleblog')}}">Single Blog</a></li>
              
              
@@ -122,7 +122,7 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="{{route('serviceshow')}}">Show all service </a></li>
-              <li><a class="dropdown-item" href="service">ADD NEW </a></li>
+              <li><a class="dropdown-item" href="serviceform">ADD NEW </a></li>
               <li><a class="dropdown-item" href="{{route('singleservice')}}">Single service</a></li>
              
             </ul>
@@ -132,10 +132,10 @@
               Project
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="{{route('sp')}}">Show all </a></li>
+            <li><a class="dropdown-item" href="{{route('projectshow')}}">Show all </a></li>
 
-              <li><a class="dropdown-item" href="project">ADD new </a></li>
-              <li><a class="dropdown-item" href="{{route('singlepage')}}">SINGLE PROJECT</a></li>
+              <li><a class="dropdown-item" href="projectform">ADD new </a></li>
+              <li><a class="dropdown-item" href="{{route('singleproject')}}">SINGLE PROJECT</a></li>
              
             </ul>
           </li>
@@ -144,11 +144,11 @@
             Element
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="{{route('element')}}">Project Gallery </a></li>
+            <li><a class="dropdown-item" href="{{route('projectgallery')}}">Project Gallery </a></li>
 
-              <li><a class="dropdown-item" href="{{route('card')}}">Team gallery</a></li>
-              <li><a class="dropdown-item" href="all">Blog Gallery</a></li>
-              <li><a class="dropdown-item" href="{{route('elementservice')}}">Service gallery</a></li>
+              <li><a class="dropdown-item" href="{{route('teamgallery')}}">Team gallery</a></li>
+              <li><a class="dropdown-item" href="bloggallery">Blog Gallery</a></li>
+              <li><a class="dropdown-item" href="{{route('servicegallery')}}">Service gallery</a></li>
              
             </ul>
           </li>
@@ -157,9 +157,9 @@
             Blog
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="{{route('homeblog')}}">Show all </a></li>
+            <li><a class="dropdown-item" href="{{route('blogshow')}}">Show all </a></li>
 
-              <li><a class="dropdown-item" href="blog">Add new</a></li>
+              <li><a class="dropdown-item" href="blogform">Add new</a></li>
               <li><a class="dropdown-item" href="{{route('singleblog')}}">Single Blog</a></li>
              
              

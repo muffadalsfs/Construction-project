@@ -18,10 +18,12 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         <p>Praesent libero. Sed cursus ante dapibus diam.</p>
         <a href="{{ route('project.detail', $projects->id) }}"><button>Learn More</button></a>
-        @auth
+        @auth 
+        @if (Auth::id() === $projects->user_id)
         <a href="{{ route('project.edit', $projects->id) }}" class="edit-btn">Edit</a>
         <a href="{{ route('project.delete', $projects->id) }}" class="delete-btn" onclick="return confirm('Are you sure you want to delete this project?')">Delete</a>
         @endauth
+        @endif
       </div>
     </div>
     @endforeach
